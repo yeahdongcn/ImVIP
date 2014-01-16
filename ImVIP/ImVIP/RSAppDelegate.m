@@ -8,14 +8,42 @@
 
 #import "RSAppDelegate.h"
 
+#import "MSDynamicsDrawerViewController.h"
+
+#import "RSMenuViewController.h"
+
+#import "UIImage+Color.h"
+
+#import "SFUIViewMacroses.h"
+
+@interface RSAppDelegate ()
+
+@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
+
+@end
+
 @implementation RSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
+    
+    [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
+    
+    RSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+    menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+    [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    
+    self.dynamicsDrawerViewController.paneViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Root"];
+    
+    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.window.bounds];
+    backgroundView.image = [UIImage imageWithColor:[UIColor blackColor]];
+    backgroundView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
+    [self.window insertSubview:backgroundView atIndex:0];
+    
     return YES;
 }
-							
+						
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -1,5 +1,5 @@
 //
-//  RSViewController.h
+//  RSNavigationBar.h
 //  ImVIP
 //
 //  Created by R0CKSTAR on 1/16/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RSViewController : UIViewController
+@interface RSNavigationBar : UINavigationBar
 
 @end

@@ -14,13 +14,19 @@
 		D017349018876DAA00C07608 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D017348F18876DAA00C07608 /* main.m */; };
 		D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D017349318876DAA00C07608 /* RSAppDelegate.m */; };
 		D017349718876DAA00C07608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D017349518876DAA00C07608 /* Main.storyboard */; };
-		D017349A18876DAA00C07608 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D017349918876DAA00C07608 /* RSViewController.m */; };
 		D017349C18876DAA00C07608 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D017349B18876DAA00C07608 /* Images.xcassets */; };
 		D01734A318876DAA00C07608 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01734A218876DAA00C07608 /* XCTest.framework */; };
 		D01734A418876DAA00C07608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348318876DAA00C07608 /* Foundation.framework */; };
 		D01734A518876DAA00C07608 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348718876DAA00C07608 /* UIKit.framework */; };
 		D01734AD18876DAA00C07608 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01734AB18876DAA00C07608 /* InfoPlist.strings */; };
 		D01734AF18876DAA00C07608 /* ImVIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734AE18876DAA00C07608 /* ImVIPTests.m */; };
+		D01734BA1887797F00C07608 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734B91887797F00C07608 /* UIImage+Color.m */; };
+		D01734BE1887800900C07608 /* RSPaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734BD1887800900C07608 /* RSPaneViewController.m */; };
+		D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734C318878BEE00C07608 /* RSMenuViewController.m */; };
+		D01734CE1887BA2B00C07608 /* RSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734CD1887BA2B00C07608 /* RSNavigationBar.m */; };
+		D01734D11887C9AD00C07608 /* RSCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734D01887C9AD00C07608 /* RSCardView.m */; };
+		D01734D31887C9BD00C07608 /* RSCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01734D21887C9BD00C07608 /* RSCardView.xib */; };
+		ECC1382A82A84BA9A347A2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7771E61A14EFFBA17B572 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B206531C80E4AC297ED7197 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C9E7771E61A14EFFBA17B572 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D017348018876DAA00C07608 /* ImVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D017348318876DAA00C07608 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D017348518876DAA00C07608 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +53,24 @@
 		D017349218876DAA00C07608 /* RSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAppDelegate.h; sourceTree = "<group>"; };
 		D017349318876DAA00C07608 /* RSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAppDelegate.m; sourceTree = "<group>"; };
 		D017349618876DAA00C07608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D017349818876DAA00C07608 /* RSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSViewController.h; sourceTree = "<group>"; };
-		D017349918876DAA00C07608 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
 		D017349B18876DAA00C07608 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D01734A118876DAA00C07608 /* ImVIPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImVIPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01734A218876DAA00C07608 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D01734AA18876DAA00C07608 /* ImVIPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImVIPTests-Info.plist"; sourceTree = "<group>"; };
 		D01734AC18876DAA00C07608 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D01734AE18876DAA00C07608 /* ImVIPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImVIPTests.m; sourceTree = "<group>"; };
+		D01734B81887797F00C07608 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		D01734B91887797F00C07608 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		D01734BC1887800900C07608 /* RSPaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPaneViewController.h; sourceTree = "<group>"; };
+		D01734BD1887800900C07608 /* RSPaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSPaneViewController.m; sourceTree = "<group>"; };
+		D01734C218878BEE00C07608 /* RSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSMenuViewController.h; sourceTree = "<group>"; };
+		D01734C318878BEE00C07608 /* RSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMenuViewController.m; sourceTree = "<group>"; };
+		D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUIViewMacroses.h; sourceTree = "<group>"; };
+		D01734CC1887BA2B00C07608 /* RSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSNavigationBar.h; sourceTree = "<group>"; };
+		D01734CD1887BA2B00C07608 /* RSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSNavigationBar.m; sourceTree = "<group>"; };
+		D01734CF1887C9AD00C07608 /* RSCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardView.h; sourceTree = "<group>"; };
+		D01734D01887C9AD00C07608 /* RSCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardView.m; sourceTree = "<group>"; };
+		D01734D21887C9BD00C07608 /* RSCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSCardView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +81,7 @@
 				D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */,
 				D017348818876DAA00C07608 /* UIKit.framework in Frameworks */,
 				D017348418876DAA00C07608 /* Foundation.framework in Frameworks */,
+				ECC1382A82A84BA9A347A2AE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +105,7 @@
 				D01734A818876DAA00C07608 /* ImVIPTests */,
 				D017348218876DAA00C07608 /* Frameworks */,
 				D017348118876DAA00C07608 /* Products */,
+				9B206531C80E4AC297ED7197 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +125,7 @@
 				D017348518876DAA00C07608 /* CoreGraphics.framework */,
 				D017348718876DAA00C07608 /* UIKit.framework */,
 				D01734A218876DAA00C07608 /* XCTest.framework */,
+				C9E7771E61A14EFFBA17B572 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,13 +133,23 @@
 		D017348918876DAA00C07608 /* ImVIP */ = {
 			isa = PBXGroup;
 			children = (
+				D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */,
 				D017349218876DAA00C07608 /* RSAppDelegate.h */,
 				D017349318876DAA00C07608 /* RSAppDelegate.m */,
 				D017349518876DAA00C07608 /* Main.storyboard */,
-				D017349818876DAA00C07608 /* RSViewController.h */,
-				D017349918876DAA00C07608 /* RSViewController.m */,
 				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
+				D01734B81887797F00C07608 /* UIImage+Color.h */,
+				D01734B91887797F00C07608 /* UIImage+Color.m */,
+				D01734C218878BEE00C07608 /* RSMenuViewController.h */,
+				D01734C318878BEE00C07608 /* RSMenuViewController.m */,
+				D01734CC1887BA2B00C07608 /* RSNavigationBar.h */,
+				D01734CD1887BA2B00C07608 /* RSNavigationBar.m */,
+				D01734BC1887800900C07608 /* RSPaneViewController.h */,
+				D01734BD1887800900C07608 /* RSPaneViewController.m */,
+				D01734CF1887C9AD00C07608 /* RSCardView.h */,
+				D01734D01887C9AD00C07608 /* RSCardView.m */,
+				D01734D21887C9BD00C07608 /* RSCardView.xib */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";
@@ -159,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D01734B218876DAA00C07608 /* Build configuration list for PBXNativeTarget "ImVIP" */;
 			buildPhases = (
+				57A6AE682C0744708666CAE8 /* Check Pods Manifest.lock */,
 				D017347C18876DAA00C07608 /* Sources */,
 				D017347D18876DAA00C07608 /* Frameworks */,
 				D017347E18876DAA00C07608 /* Resources */,
+				111E9D1CE9944B7FBE1F81AB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D017349C18876DAA00C07608 /* Images.xcassets in Resources */,
+				D01734D31887C9BD00C07608 /* RSCardView.xib in Resources */,
 				D017348E18876DAA00C07608 /* InfoPlist.strings in Resources */,
 				D017349718876DAA00C07608 /* Main.storyboard in Resources */,
 			);
@@ -245,14 +279,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		111E9D1CE9944B7FBE1F81AB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57A6AE682C0744708666CAE8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D017347C18876DAA00C07608 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */,
+				D01734D11887C9AD00C07608 /* RSCardView.m in Sources */,
+				D01734BA1887797F00C07608 /* UIImage+Color.m in Sources */,
+				D01734BE1887800900C07608 /* RSPaneViewController.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
+				D01734CE1887BA2B00C07608 /* RSNavigationBar.m in Sources */,
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,
-				D017349A18876DAA00C07608 /* RSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +447,7 @@
 		};
 		D01734B318876DAA00C07608 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B206531C80E4AC297ED7197 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -389,6 +461,7 @@
 		};
 		D01734B418876DAA00C07608 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B206531C80E4AC297ED7197 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -461,6 +534,7 @@
 				D01734B418876DAA00C07608 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D01734B518876DAA00C07608 /* Build configuration list for PBXNativeTarget "ImVIPTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +543,7 @@
 				D01734B718876DAA00C07608 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
