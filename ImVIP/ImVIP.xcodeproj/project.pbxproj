@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D017348418876DAA00C07608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348318876DAA00C07608 /* Foundation.framework */; };
+		D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348518876DAA00C07608 /* CoreGraphics.framework */; };
+		D017348818876DAA00C07608 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348718876DAA00C07608 /* UIKit.framework */; };
+		D017348E18876DAA00C07608 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D017348C18876DAA00C07608 /* InfoPlist.strings */; };
+		D017349018876DAA00C07608 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D017348F18876DAA00C07608 /* main.m */; };
+		D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D017349318876DAA00C07608 /* RSAppDelegate.m */; };
+		D017349718876DAA00C07608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D017349518876DAA00C07608 /* Main.storyboard */; };
+		D017349A18876DAA00C07608 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D017349918876DAA00C07608 /* RSViewController.m */; };
+		D017349C18876DAA00C07608 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D017349B18876DAA00C07608 /* Images.xcassets */; };
+		D01734A318876DAA00C07608 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01734A218876DAA00C07608 /* XCTest.framework */; };
+		D01734A418876DAA00C07608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348318876DAA00C07608 /* Foundation.framework */; };
+		D01734A518876DAA00C07608 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348718876DAA00C07608 /* UIKit.framework */; };
+		D01734AD18876DAA00C07608 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01734AB18876DAA00C07608 /* InfoPlist.strings */; };
+		D01734AF18876DAA00C07608 /* ImVIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734AE18876DAA00C07608 /* ImVIPTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D01734A618876DAA00C07608 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D017347818876DAA00C07608 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D017347F18876DAA00C07608;
+			remoteInfo = ImVIP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D017348018876DAA00C07608 /* ImVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D017348318876DAA00C07608 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D017348518876DAA00C07608 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D017348718876DAA00C07608 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D017348B18876DAA00C07608 /* ImVIP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImVIP-Info.plist"; sourceTree = "<group>"; };
+		D017348D18876DAA00C07608 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D017348F18876DAA00C07608 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D017349118876DAA00C07608 /* ImVIP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImVIP-Prefix.pch"; sourceTree = "<group>"; };
+		D017349218876DAA00C07608 /* RSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAppDelegate.h; sourceTree = "<group>"; };
+		D017349318876DAA00C07608 /* RSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAppDelegate.m; sourceTree = "<group>"; };
+		D017349618876DAA00C07608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D017349818876DAA00C07608 /* RSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSViewController.h; sourceTree = "<group>"; };
+		D017349918876DAA00C07608 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
+		D017349B18876DAA00C07608 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D01734A118876DAA00C07608 /* ImVIPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImVIPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01734A218876DAA00C07608 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D01734AA18876DAA00C07608 /* ImVIPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImVIPTests-Info.plist"; sourceTree = "<group>"; };
+		D01734AC18876DAA00C07608 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D01734AE18876DAA00C07608 /* ImVIPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImVIPTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D017347D18876DAA00C07608 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */,
+				D017348818876DAA00C07608 /* UIKit.framework in Frameworks */,
+				D017348418876DAA00C07608 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D017349E18876DAA00C07608 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01734A318876DAA00C07608 /* XCTest.framework in Frameworks */,
+				D01734A518876DAA00C07608 /* UIKit.framework in Frameworks */,
+				D01734A418876DAA00C07608 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D017347718876DAA00C07608 = {
+			isa = PBXGroup;
+			children = (
+				D017348918876DAA00C07608 /* ImVIP */,
+				D01734A818876DAA00C07608 /* ImVIPTests */,
+				D017348218876DAA00C07608 /* Frameworks */,
+				D017348118876DAA00C07608 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D017348118876DAA00C07608 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D017348018876DAA00C07608 /* ImVIP.app */,
+				D01734A118876DAA00C07608 /* ImVIPTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D017348218876DAA00C07608 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D017348318876DAA00C07608 /* Foundation.framework */,
+				D017348518876DAA00C07608 /* CoreGraphics.framework */,
+				D017348718876DAA00C07608 /* UIKit.framework */,
+				D01734A218876DAA00C07608 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D017348918876DAA00C07608 /* ImVIP */ = {
+			isa = PBXGroup;
+			children = (
+				D017349218876DAA00C07608 /* RSAppDelegate.h */,
+				D017349318876DAA00C07608 /* RSAppDelegate.m */,
+				D017349518876DAA00C07608 /* Main.storyboard */,
+				D017349818876DAA00C07608 /* RSViewController.h */,
+				D017349918876DAA00C07608 /* RSViewController.m */,
+				D017349B18876DAA00C07608 /* Images.xcassets */,
+				D017348A18876DAA00C07608 /* Supporting Files */,
+			);
+			path = ImVIP;
+			sourceTree = "<group>";
+		};
+		D017348A18876DAA00C07608 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D017348B18876DAA00C07608 /* ImVIP-Info.plist */,
+				D017348C18876DAA00C07608 /* InfoPlist.strings */,
+				D017348F18876DAA00C07608 /* main.m */,
+				D017349118876DAA00C07608 /* ImVIP-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D01734A818876DAA00C07608 /* ImVIPTests */ = {
+			isa = PBXGroup;
+			children = (
+				D01734AE18876DAA00C07608 /* ImVIPTests.m */,
+				D01734A918876DAA00C07608 /* Supporting Files */,
+			);
+			path = ImVIPTests;
+			sourceTree = "<group>";
+		};
+		D01734A918876DAA00C07608 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D01734AA18876DAA00C07608 /* ImVIPTests-Info.plist */,
+				D01734AB18876DAA00C07608 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D017347F18876DAA00C07608 /* ImVIP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D01734B218876DAA00C07608 /* Build configuration list for PBXNativeTarget "ImVIP" */;
+			buildPhases = (
+				D017347C18876DAA00C07608 /* Sources */,
+				D017347D18876DAA00C07608 /* Frameworks */,
+				D017347E18876DAA00C07608 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImVIP;
+			productName = ImVIP;
+			productReference = D017348018876DAA00C07608 /* ImVIP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D01734A018876DAA00C07608 /* ImVIPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D01734B518876DAA00C07608 /* Build configuration list for PBXNativeTarget "ImVIPTests" */;
+			buildPhases = (
+				D017349D18876DAA00C07608 /* Sources */,
+				D017349E18876DAA00C07608 /* Frameworks */,
+				D017349F18876DAA00C07608 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D01734A718876DAA00C07608 /* PBXTargetDependency */,
+			);
+			name = ImVIPTests;
+			productName = ImVIPTests;
+			productReference = D01734A118876DAA00C07608 /* ImVIPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D017347818876DAA00C07608 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RS;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = P.D.Q.;
+				TargetAttributes = {
+					D01734A018876DAA00C07608 = {
+						TestTargetID = D017347F18876DAA00C07608;
+					};
+				};
+			};
+			buildConfigurationList = D017347B18876DAA00C07608 /* Build configuration list for PBXProject "ImVIP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D017347718876DAA00C07608;
+			productRefGroup = D017348118876DAA00C07608 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D017347F18876DAA00C07608 /* ImVIP */,
+				D01734A018876DAA00C07608 /* ImVIPTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D017347E18876DAA00C07608 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D017349C18876DAA00C07608 /* Images.xcassets in Resources */,
+				D017348E18876DAA00C07608 /* InfoPlist.strings in Resources */,
+				D017349718876DAA00C07608 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D017349F18876DAA00C07608 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01734AD18876DAA00C07608 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D017347C18876DAA00C07608 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D017349018876DAA00C07608 /* main.m in Sources */,
+				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,
+				D017349A18876DAA00C07608 /* RSViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D017349D18876DAA00C07608 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01734AF18876DAA00C07608 /* ImVIPTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D01734A718876DAA00C07608 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D017347F18876DAA00C07608 /* ImVIP */;
+			targetProxy = D01734A618876DAA00C07608 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D017348C18876DAA00C07608 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D017348D18876DAA00C07608 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D017349518876DAA00C07608 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D017349618876DAA00C07608 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D01734AB18876DAA00C07608 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D01734AC18876DAA00C07608 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D01734B018876DAA00C07608 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D01734B118876DAA00C07608 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D01734B318876DAA00C07608 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImVIP/ImVIP-Prefix.pch";
+				INFOPLIST_FILE = "ImVIP/ImVIP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D01734B418876DAA00C07608 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImVIP/ImVIP-Prefix.pch";
+				INFOPLIST_FILE = "ImVIP/ImVIP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D01734B618876DAA00C07608 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImVIP.app/ImVIP";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImVIP/ImVIP-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ImVIPTests/ImVIPTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D01734B718876DAA00C07608 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImVIP.app/ImVIP";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImVIP/ImVIP-Prefix.pch";
+				INFOPLIST_FILE = "ImVIPTests/ImVIPTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D017347B18876DAA00C07608 /* Build configuration list for PBXProject "ImVIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D01734B018876DAA00C07608 /* Debug */,
+				D01734B118876DAA00C07608 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D01734B218876DAA00C07608 /* Build configuration list for PBXNativeTarget "ImVIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D01734B318876DAA00C07608 /* Debug */,
+				D01734B418876DAA00C07608 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D01734B518876DAA00C07608 /* Build configuration list for PBXNativeTarget "ImVIPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D01734B618876DAA00C07608 /* Debug */,
+				D01734B718876DAA00C07608 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D017347818876DAA00C07608 /* Project object */;
+}
