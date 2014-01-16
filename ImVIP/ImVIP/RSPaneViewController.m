@@ -23,13 +23,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.carousel.type = iCarouselTypeRotary;
+    self.carousel.vertical = YES;
+    self.carousel.clipsToBounds = YES;
 }
 
 #pragma mark - iCarouselDataSource
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    return 2;
+    return 100;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
@@ -38,6 +42,7 @@
         
     } else {
         RSCardView *cardView = [[[NSBundle mainBundle] loadNibNamed:@"RSCardView" owner:nil options:nil] firstObject];
+        cardView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 200);
         cardView.borderColor = [UIColor purpleColor];
         view = cardView;
     }

@@ -25,6 +25,8 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            self.backgroundColor = [UIColor clearColor];
+            
             self.tabView.layer.cornerRadius = 5;
             self.contentView.layer.cornerRadius = 5;
             self.contentView.layer.borderWidth = 5;
