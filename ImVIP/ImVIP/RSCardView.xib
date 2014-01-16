@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -10,42 +10,24 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qe6-b7-VJY">
+                <view contentMode="scaleToFill" id="qe6-b7-VJY">
                     <rect key="frame" x="10" y="10" width="60" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r3B-Qb-ajS">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="r3B-Qb-ajS">
                             <rect key="frame" x="15" y="0.0" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="3VH-kn-bd8"/>
-                                <constraint firstAttribute="width" constant="30" id="pZF-T6-dgc"/>
-                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.023990205319999999" blue="0.059320379329999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="r3B-Qb-ajS" firstAttribute="top" secondItem="qe6-b7-VJY" secondAttribute="top" id="PLW-vz-oTB"/>
-                        <constraint firstAttribute="width" constant="60" id="QAE-mE-v83"/>
-                        <constraint firstAttribute="height" constant="40" id="VAq-33-a5C"/>
-                        <constraint firstAttribute="centerX" secondItem="r3B-Qb-ajS" secondAttribute="centerX" id="j3g-OV-bkG"/>
-                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haV-z5-4Zh">
+                <view contentMode="scaleToFill" id="haV-z5-4Zh">
                     <rect key="frame" x="10" y="40" width="180" height="150"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="haV-z5-4Zh" secondAttribute="bottom" constant="10" id="Bxg-LB-bgA"/>
-                <constraint firstAttribute="trailing" secondItem="haV-z5-4Zh" secondAttribute="trailing" constant="10" id="X3g-dt-VdG"/>
-                <constraint firstItem="haV-z5-4Zh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="40" id="aPm-ty-kvX"/>
-                <constraint firstItem="haV-z5-4Zh" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="jOC-xi-tvb"/>
-                <constraint firstItem="qe6-b7-VJY" firstAttribute="top" secondItem="1" secondAttribute="top" constant="10" id="jcY-9K-Ghn"/>
-                <constraint firstItem="qe6-b7-VJY" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="q1d-B8-Il8"/>
-            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
