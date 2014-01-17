@@ -25,6 +25,7 @@
 		D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734C318878BEE00C07608 /* RSMenuViewController.m */; };
 		D01734D11887C9AD00C07608 /* RSCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734D01887C9AD00C07608 /* RSCardView.m */; };
 		D01734D31887C9BD00C07608 /* RSCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01734D21887C9BD00C07608 /* RSCardView.xib */; };
+		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
 		ECC1382A82A84BA9A347A2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7771E61A14EFFBA17B572 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		D01734CF1887C9AD00C07608 /* RSCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardView.h; sourceTree = "<group>"; };
 		D01734D01887C9AD00C07608 /* RSCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardView.m; sourceTree = "<group>"; };
 		D01734D21887C9BD00C07608 /* RSCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSCardView.xib; sourceTree = "<group>"; };
+		D0D9C6391888F9950000D1E5 /* uiss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = uiss.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,12 +132,11 @@
 		D017348918876DAA00C07608 /* ImVIP */ = {
 			isa = PBXGroup;
 			children = (
+				D0D9C6381888F9950000D1E5 /* UISS */,
 				D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */,
 				D017349218876DAA00C07608 /* RSAppDelegate.h */,
 				D017349318876DAA00C07608 /* RSAppDelegate.m */,
 				D017349518876DAA00C07608 /* Main.storyboard */,
-				D017349B18876DAA00C07608 /* Images.xcassets */,
-				D017348A18876DAA00C07608 /* Supporting Files */,
 				D01734B81887797F00C07608 /* UIImage+Color.h */,
 				D01734B91887797F00C07608 /* UIImage+Color.m */,
 				D01734C218878BEE00C07608 /* RSMenuViewController.h */,
@@ -145,6 +146,8 @@
 				D01734CF1887C9AD00C07608 /* RSCardView.h */,
 				D01734D01887C9AD00C07608 /* RSCardView.m */,
 				D01734D21887C9BD00C07608 /* RSCardView.xib */,
+				D017349B18876DAA00C07608 /* Images.xcassets */,
+				D017348A18876DAA00C07608 /* Supporting Files */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";
@@ -176,6 +179,14 @@
 				D01734AB18876DAA00C07608 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0D9C6381888F9950000D1E5 /* UISS */ = {
+			isa = PBXGroup;
+			children = (
+				D0D9C6391888F9950000D1E5 /* uiss.json */,
+			);
+			path = UISS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 				D01734D31887C9BD00C07608 /* RSCardView.xib in Resources */,
 				D017348E18876DAA00C07608 /* InfoPlist.strings in Resources */,
 				D017349718876DAA00C07608 /* Main.storyboard in Resources */,
+				D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

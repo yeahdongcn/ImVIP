@@ -12,11 +12,16 @@
 
 #import "RSMenuViewController.h"
 
+#import "UISS.h"
+
+
 #import "UIImage+Color.h"
 
 #import "SFUIViewMacroses.h"
 
 @interface RSAppDelegate ()
+
+@property (nonatomic, strong) UISS *uiss;
 
 @property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
@@ -26,9 +31,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_bg"] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    self.uiss = [UISS configureWithDefaultJSONFile];
+    self.uiss.statusWindowEnabled = YES;
     
     self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
     
