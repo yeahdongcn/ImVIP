@@ -26,14 +26,13 @@
     
     self.carousel.type = iCarouselTypeRotary;
     self.carousel.vertical = YES;
-    self.carousel.clipsToBounds = YES;
 }
 
 #pragma mark - iCarouselDataSource
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    return 100;
+    return 3;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view

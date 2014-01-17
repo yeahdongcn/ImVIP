@@ -30,11 +30,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Xus-4Z-Xf8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a5S-IY-QnD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Od-Vg-RYZ" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -60,13 +60,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="751-af-syv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-96" y="1345"/>
+            <point key="canvasLocation" x="452" y="441"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EZk-2Y-aQ7">
             <objects>
                 <navigationController storyboardIdentifier="Root" definesPresentationContext="YES" id="5jx-hu-ogh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="95w-QP-3jT" customClass="RSNavigationBar">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="95w-QP-3jT">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -75,15 +75,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtK-A0-4EO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-224" y="363"/>
-        </scene>
-        <!--Right View Controller-->
-        <scene sceneID="bsa-XV-0hD">
-            <objects>
-                <pageViewController storyboardIdentifier="List2" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="B6g-9L-frP" customClass="RSRightViewController" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tfv-8e-Ee6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="588" y="509"/>
+            <point key="canvasLocation" x="-11" y="441"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="oPB-IH-Xah">
@@ -111,7 +103,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLd-VK-JTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="338" y="-37"/>
+            <point key="canvasLocation" x="452" y="-260"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
