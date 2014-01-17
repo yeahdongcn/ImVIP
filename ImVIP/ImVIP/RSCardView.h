@@ -10,6 +10,8 @@
 
 @interface RSCardView : UIView
 
-@property (nonatomic, copy) UIColor *borderColor;
+@property (nonatomic) UIColor *borderColor;
+
+@property (nonatomic) UIColor *contentBackgroundColor;
 
 @end

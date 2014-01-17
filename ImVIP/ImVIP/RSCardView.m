@@ -30,8 +30,6 @@
             self.tabView.layer.cornerRadius = 5;
             self.contentView.layer.cornerRadius = 5;
             self.contentView.layer.borderWidth = 5;
-            
-            self.contentView.backgroundColor = [UIColor whiteColor];
         });
     }
     return self;
@@ -39,10 +37,13 @@
 
 - (void)setBorderColor:(UIColor *)borderColor
 {
-    _borderColor = [borderColor copy];
-    
-    self.tabView.backgroundColor = _borderColor;
-    self.contentView.layer.borderColor = [_borderColor CGColor];
+    self.tabView.backgroundColor = borderColor;
+    self.contentView.layer.borderColor = [borderColor CGColor];
+}
+
+- (void)setContentBackgroundColor:(UIColor *)contentBackgroundColor
+{
+    self.contentView.backgroundColor = contentBackgroundColor;
 }
 
 @end

@@ -1,17 +1,21 @@
 {
     "Variables": {
-        "bg": "#24212f",
-        "bar": "#8d5fa6",
-        "tint": "#f2f1f3"
+        "customBlack": "#24212f",
+        "customPurple": "#8d5fa6",
+        "customWhite": "#f2f1f3"
     },
     "UINavigationBar": {
         "backgroundImage:default": "nav_bg",
         "shadowImage": "",
-        "tintColor": "$tint"
+        "tintColor": "$customWhite"
     },
     "RSPaneViewController": {
         "iCarousel": {
-            "backgroundColor": "$bg"
+            "backgroundColor": "$customBlack"
+        },
+        "RSCardView": {
+            "borderColor": "$customPurple",
+            "contentBackgroundColor": "$customWhite"
         }
     }
 }

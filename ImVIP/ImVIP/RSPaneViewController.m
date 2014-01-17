@@ -32,20 +32,38 @@
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    return 3;
+    return 5;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    if (view) {
-        
-    } else {
+    if (!view) {
         RSCardView *cardView = [[[NSBundle mainBundle] loadNibNamed:@"RSCardView" owner:nil options:nil] firstObject];
         cardView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 200);
-        cardView.borderColor = [UIColor purpleColor];
         view = cardView;
     }
     return view;
+}
+
+- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
+{
+//    iCarouselOptionShowBackfaces,
+//    iCarouselOptionOffsetMultiplier,
+//    iCarouselOptionVisibleItems,
+//    iCarouselOptionCount,
+//    iCarouselOptionArc,
+//	  iCarouselOptionAngle,
+//    iCarouselOptionRadius,
+//    iCarouselOptionTilt,
+//    iCarouselOptionSpacing,
+//    iCarouselOptionFadeMin,
+//    iCarouselOptionFadeMax,
+//    iCarouselOptionFadeRange
+    switch (option) {
+        default:
+            break;
+    }
+    return value;
 }
 
 @end
