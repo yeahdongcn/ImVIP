@@ -47,8 +47,13 @@
     
     self.dynamicsDrawerViewController.paneViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Root"];
     
+    int hexValue = 0x24212f;
+    CGFloat red = ((hexValue & 0xFF0000) >> 16) / 255.0f;
+    CGFloat green = ((hexValue & 0x00FF00) >> 8) / 255.0f;
+    CGFloat blue = (hexValue & 0x0000FF) / 255.0f;
+    
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.window.bounds];
-    backgroundView.image = [UIImage imageWithColor:[UIColor blackColor]];
+    backgroundView.image = [UIImage imageWithColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
     backgroundView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
     [self.window insertSubview:backgroundView atIndex:0];
 

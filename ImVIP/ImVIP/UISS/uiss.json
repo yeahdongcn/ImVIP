@@ -9,6 +9,11 @@
         "shadowImage": "",
         "tintColor": "$customWhite"
     },
+    "RSAppDelegate": {
+        "UIImageView": {
+            "backgroundColor": "$customBlack"
+        }
+    },
     "RSPaneViewController": {
         "iCarousel": {
             "backgroundColor": "$customBlack"
