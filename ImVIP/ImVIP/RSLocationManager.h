@@ -10,8 +10,12 @@
 
 #import <CoreLocation/CoreLocation.h>
 
+@class RSLocationManagerProfile;
+
 @interface RSLocationManager : CLLocationManager
 
 + (instancetype)manager;
+
+@property (nonatomic, strong) RSLocationManagerProfile *profile;
 
 @end

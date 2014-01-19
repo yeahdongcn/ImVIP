@@ -25,6 +25,11 @@
     return manager;
 }
 
+- (void)setProfile:(RSLocationManagerProfile *)profile
+{
+    _profile = profile;
+}
+
 /*
  *  locationManager:didUpdateLocations:
  *
