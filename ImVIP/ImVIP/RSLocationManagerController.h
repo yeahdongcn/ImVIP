@@ -10,11 +10,12 @@
 
 #import "RSLocationManager.h"
 
+NSString *const RSLocationManagerControllerStartUpdatingLocationNotification;
+NSString *const RSLocationManagerControllerStartUpdatingHeadingNotification;
+
 @interface RSLocationManagerController : NSObject
 
 + (instancetype)controller;
-
-@property (nonatomic, readonly) RSLocationManager *locationManager;
 
 @property (nonatomic, strong) RSLocationManagerProfile *foregroundProfile;
 

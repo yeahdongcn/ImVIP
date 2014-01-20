@@ -10,4 +10,47 @@
 
 @implementation RSLocationManagerProfile
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.distanceFilter = kCLDistanceFilterNone;
+        self.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationsUpdater = ^(NSArray *locations) {
+            NSLog(@"%@", locations);
+        };
+        self.headingUpdater = ^(CLHeading *heading) {
+            NSLog(@"%@", heading);
+        };
+        self.errorHandler = ^(NSError *error) {
+            NSLog(@"%@", error);
+        };
+    }
+    return self;
+}
+
+@end
+
+@implementation RSLocationManagerForegroundProfile
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
+
+@end
+
+@implementation RSLocationManagerBackgroundProfile
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
+
 @end

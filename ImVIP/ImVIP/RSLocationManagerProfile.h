@@ -46,3 +46,11 @@ typedef void (^didFailWithError)(NSError *);
 @property (assign, nonatomic) CLLocationAccuracy desiredAccuracy;
 
 @end
+
+@interface RSLocationManagerForegroundProfile : RSLocationManagerProfile
+
+@end
+
+@interface RSLocationManagerBackgroundProfile : RSLocationManagerProfile
+
+@end

@@ -32,7 +32,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [RSLocationManagerController controller];
+    [RSLocationManagerController controller].foregroundProfile = [[RSLocationManagerProfile alloc] init];
+    [[NSNotificationCenter defaultCenter] postNotificationName:RSLocationManagerControllerStartUpdatingLocationNotification object:nil];
     
     self.uiss = [UISS configureWithDefaultJSONFile];
     self.uiss.statusWindowEnabled = YES;

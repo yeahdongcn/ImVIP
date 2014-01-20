@@ -22,4 +22,6 @@
 
 @property (copy, nonatomic) didFailWithError errorHandler;
 
+@property (copy, nonatomic) didFailWithError serviceRestarter;
+
 @end

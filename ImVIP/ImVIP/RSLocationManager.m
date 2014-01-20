@@ -25,7 +25,11 @@
 
 - (void)updateProfile:(RSLocationManagerProfile *)profile
 {
-    
+    self.distanceFilter = profile.distanceFilter;
+    self.desiredAccuracy = profile.desiredAccuracy;
+    self.locationsUpdater = profile.locationsUpdater;
+    self.headingUpdater = profile.headingUpdater;
+    self.errorHandler = profile.errorHandler;
 }
 
 /*
@@ -148,6 +152,10 @@ rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region
 + (void)locationManager:(RSLocationManager *)manager
        didFailWithError:(NSError *)error
 {
+    if (manager.serviceRestarter) {
+        manager.serviceRestarter(error);
+    }
+    
     if (manager.errorHandler) {
         manager.errorHandler(error);
     }
