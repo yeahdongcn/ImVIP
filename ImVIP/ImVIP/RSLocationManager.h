@@ -10,12 +10,14 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-@class RSLocationManagerProfile;
+#import "RSLocationManagerProfile.h"
 
 @interface RSLocationManager : CLLocationManager
 
-+ (instancetype)manager;
+- (void)updateProfile:(RSLocationManagerProfile *)profile;
 
-@property (nonatomic, strong) RSLocationManagerProfile *profile;
+@property (copy, nonatomic) didUpdateLocations locationsUpdater;
+
+@property (copy, nonatomic) didUpdateHeading headingUpdater;
 
 @end

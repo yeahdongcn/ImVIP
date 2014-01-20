@@ -14,20 +14,18 @@
 
 @implementation RSLocationManager
 
-+ (instancetype)manager
+- (id)init
 {
-    static RSLocationManager *manager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        manager = [[self alloc] init];
-        manager.delegate = (id<CLLocationManagerDelegate>)self;
-    });
-    return manager;
+    self = [super init];
+    if (self) {
+        self.delegate = (id<CLLocationManagerDelegate>)[self class];
+    }
+    return self;
 }
 
-- (void)setProfile:(RSLocationManagerProfile *)profile
+- (void)updateProfile:(RSLocationManagerProfile *)profile
 {
-    _profile = profile;
+    
 }
 
 /*
@@ -43,8 +41,9 @@
 + (void)locationManager:(RSLocationManager *)manager
 	 didUpdateLocations:(NSArray *)locations
 {
-    int a = 0;
-    a++;
+    if (manager.locationsUpdater) {
+        manager.locationsUpdater(locations);
+    }
 }
 
 /*
@@ -56,7 +55,9 @@
 + (void)locationManager:(RSLocationManager *)manager
        didUpdateHeading:(CLHeading *)newHeading
 {
-    
+    if (manager.headingUpdater) {
+        manager.headingUpdater(newHeading);
+    }
 }
 
 /*

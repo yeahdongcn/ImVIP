@@ -14,7 +14,7 @@
 
 #import "UISS.h"
 
-#import "RSLocationManager.h"
+#import "RSLocationManagerController.h"
 
 #import "UIImage+Color.h"
 
@@ -32,10 +32,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [RSLocationManagerController controller];
+    
     self.uiss = [UISS configureWithDefaultJSONFile];
     self.uiss.statusWindowEnabled = YES;
-    
-    [[RSLocationManager manager] startUpdatingLocation];
     
     self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
     
