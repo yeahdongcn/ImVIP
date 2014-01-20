@@ -32,7 +32,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [RSLocationManagerController controller].foregroundProfile = [[RSLocationManagerProfile alloc] init];
+    [RSLocationManagerController controller].foregroundProfile = [[RSLocationManagerForegroundProfile alloc] init];
+    [RSLocationManagerController controller].backgroundProfile = [[RSLocationManagerBackgroundProfile alloc] init];
     [[NSNotificationCenter defaultCenter] postNotificationName:RSLocationManagerControllerStartUpdatingLocationNotification object:nil];
     
     self.uiss = [UISS configureWithDefaultJSONFile];

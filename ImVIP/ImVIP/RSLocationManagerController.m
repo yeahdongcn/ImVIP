@@ -25,13 +25,20 @@ typedef NS_OPTIONS(NSUInteger, RSLocationManagerControllerService) {
 
 @property (nonatomic) BOOL isServiceDenied;
 
+@property (nonatomic, weak) RSLocationManagerProfile *currentProfile;
+
 @end
 
 @implementation RSLocationManagerController
 
 - (void)__didBecomeActive:(NSNotification *)notification
 {
+    if (self.currentProfile == self.foregroundProfile) {
+        return;
+    }
+    
     [self.locationManager updateProfile:self.foregroundProfile];
+    self.currentProfile = self.foregroundProfile;
     
     if (self.isServiceDenied) {
         if (self.service & RSLocationManagerControllerServiceLocation) {
@@ -48,7 +55,12 @@ typedef NS_OPTIONS(NSUInteger, RSLocationManagerControllerService) {
 
 - (void)__willResignActive:(NSNotification *)notification
 {
+    if (self.currentProfile == self.backgroundProfile) {
+        return;
+    }
+    
     [self.locationManager updateProfile:self.backgroundProfile];
+    self.currentProfile = self.backgroundProfile;
 }
 
 - (void)__startUpdatingLocation:(NSNotification *)notification
@@ -114,6 +126,16 @@ typedef NS_OPTIONS(NSUInteger, RSLocationManagerControllerService) {
         };
     }
     return _locationManager;
+}
+
+- (void)setForegroundProfile:(RSLocationManagerProfile *)foregroundProfile
+{
+    if (_foregroundProfile == nil) {
+        [self.locationManager updateProfile:foregroundProfile];
+        self.currentProfile = foregroundProfile;
+    }
+    
+    _foregroundProfile = foregroundProfile;
 }
 
 @end

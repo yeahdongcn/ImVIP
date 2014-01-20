@@ -16,15 +16,6 @@
     if (self) {
         self.distanceFilter = kCLDistanceFilterNone;
         self.desiredAccuracy = kCLLocationAccuracyBest;
-        self.locationsUpdater = ^(NSArray *locations) {
-            NSLog(@"%@", locations);
-        };
-        self.headingUpdater = ^(CLHeading *heading) {
-            NSLog(@"%@", heading);
-        };
-        self.errorHandler = ^(NSError *error) {
-            NSLog(@"%@", error);
-        };
     }
     return self;
 }
@@ -37,6 +28,17 @@
 {
     self = [super init];
     if (self) {
+        self.distanceFilter = kCLDistanceFilterNone;
+        self.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationsUpdater = ^(NSArray *locations) {
+            NSLog(@"fg %@", locations);
+        };
+        self.headingUpdater = ^(CLHeading *heading) {
+            NSLog(@"fg %@", heading);
+        };
+        self.errorHandler = ^(NSError *error) {
+            NSLog(@"fg %@", error);
+        };
     }
     return self;
 }
@@ -49,6 +51,17 @@
 {
     self = [super init];
     if (self) {
+        self.distanceFilter = 5;
+        self.desiredAccuracy = kCLLocationAccuracyKilometer;
+        self.locationsUpdater = ^(NSArray *locations) {
+            NSLog(@"bg %@", locations);
+        };
+        self.headingUpdater = ^(CLHeading *heading) {
+            NSLog(@"bg %@", heading);
+        };
+        self.errorHandler = ^(NSError *error) {
+            NSLog(@"bg %@", error);
+        };
     }
     return self;
 }
