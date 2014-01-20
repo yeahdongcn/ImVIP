@@ -20,4 +20,6 @@
 
 @property (copy, nonatomic) didUpdateHeading headingUpdater;
 
+@property (copy, nonatomic) didFailWithError errorHandler;
+
 @end

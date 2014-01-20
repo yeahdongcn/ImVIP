@@ -12,12 +12,15 @@
 
 typedef void (^didUpdateLocations)(NSArray *);
 typedef void (^didUpdateHeading)(CLHeading *);
+typedef void (^didFailWithError)(NSError *);
 
 @interface RSLocationManagerProfile : NSObject
 
 @property (copy, nonatomic) didUpdateLocations locationsUpdater;
 
 @property (copy, nonatomic) didUpdateHeading headingUpdater;
+
+@property (copy, nonatomic) didFailWithError errorHandler;
 
 /*
  *  distanceFilter

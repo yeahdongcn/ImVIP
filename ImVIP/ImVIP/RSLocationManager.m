@@ -148,7 +148,9 @@ rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region
 + (void)locationManager:(RSLocationManager *)manager
        didFailWithError:(NSError *)error
 {
-    
+    if (manager.errorHandler) {
+        manager.errorHandler(error);
+    }
 }
 
 /*
