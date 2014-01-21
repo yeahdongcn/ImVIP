@@ -14,7 +14,7 @@
 
 #import "UISS.h"
 
-#import "RSLocationManagerController.h"
+#import "RSLBSController.h"
 
 #import "UIImage+Color.h"
 
@@ -32,9 +32,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [RSLocationManagerController controller].foregroundProfile = [[RSLocationManagerForegroundProfile alloc] init];
-    [RSLocationManagerController controller].backgroundProfile = [[RSLocationManagerBackgroundProfile alloc] init];
-    [[NSNotificationCenter defaultCenter] postNotificationName:RSLocationManagerControllerStartUpdatingLocationNotification object:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        RSLocationManager *locMan = [RSLBSController controller].locationManager;
+        locMan.locationsUpdater = ^(NSArray *locations) {
+            NSLog(@"%@", locations);
+        };
+        locMan.errorHandler = ^(NSError *error) {
+            if ([RSLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Title"
+                                                                message:@"Message"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+        };
+        [[NSNotificationCenter defaultCenter] postNotificationName:RSLBSControllerStartUpdatingLocationNotification object:nil];
+    });
     
     self.uiss = [UISS configureWithDefaultJSONFile];
     self.uiss.statusWindowEnabled = YES;

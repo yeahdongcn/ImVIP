@@ -10,11 +10,11 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-#import "RSLocationManagerProfile.h"
+typedef void (^didUpdateLocations)(NSArray *);
+typedef void (^didUpdateHeading)(CLHeading *);
+typedef void (^didFailWithError)(NSError *);
 
 @interface RSLocationManager : CLLocationManager
-
-- (void)updateProfile:(RSLocationManagerProfile *)profile;
 
 @property (copy, nonatomic) didUpdateLocations locationsUpdater;
 

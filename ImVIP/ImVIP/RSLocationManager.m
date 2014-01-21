@@ -23,15 +23,6 @@
     return self;
 }
 
-- (void)updateProfile:(RSLocationManagerProfile *)profile
-{
-    self.distanceFilter = profile.distanceFilter;
-    self.desiredAccuracy = profile.desiredAccuracy;
-    self.locationsUpdater = profile.locationsUpdater;
-    self.headingUpdater = profile.headingUpdater;
-    self.errorHandler = profile.errorHandler;
-}
-
 /*
  *  locationManager:didUpdateLocations:
  *

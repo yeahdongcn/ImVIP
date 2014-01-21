@@ -27,8 +27,7 @@
 		D01734D31887C9BD00C07608 /* RSCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01734D21887C9BD00C07608 /* RSCardView.xib */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
 		D0D9C63F1889278F0000D1E5 /* RSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */; };
-		D0D9C642188CC0A40000D1E5 /* RSLocationManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C641188CC0A40000D1E5 /* RSLocationManagerController.m */; };
-		D0F28F82188C0D4500C6CA9D /* RSLocationManagerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F28F81188C0D4500C6CA9D /* RSLocationManagerProfile.m */; };
+		D0D9C642188CC0A40000D1E5 /* RSLBSController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C641188CC0A40000D1E5 /* RSLBSController.m */; };
 		ECC1382A82A84BA9A347A2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7771E61A14EFFBA17B572 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -75,10 +74,8 @@
 		D0D9C6391888F9950000D1E5 /* uiss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = uiss.json; sourceTree = "<group>"; };
 		D0D9C63D1889278F0000D1E5 /* RSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLocationManager.h; sourceTree = "<group>"; };
 		D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLocationManager.m; sourceTree = "<group>"; };
-		D0D9C640188CC0A40000D1E5 /* RSLocationManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLocationManagerController.h; sourceTree = "<group>"; };
-		D0D9C641188CC0A40000D1E5 /* RSLocationManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLocationManagerController.m; sourceTree = "<group>"; };
-		D0F28F80188C0D4500C6CA9D /* RSLocationManagerProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLocationManagerProfile.h; sourceTree = "<group>"; };
-		D0F28F81188C0D4500C6CA9D /* RSLocationManagerProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLocationManagerProfile.m; sourceTree = "<group>"; };
+		D0D9C640188CC0A40000D1E5 /* RSLBSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLBSController.h; sourceTree = "<group>"; };
+		D0D9C641188CC0A40000D1E5 /* RSLBSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLBSController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,12 +154,10 @@
 				D01734D21887C9BD00C07608 /* RSCardView.xib */,
 				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
-				D0D9C640188CC0A40000D1E5 /* RSLocationManagerController.h */,
-				D0D9C641188CC0A40000D1E5 /* RSLocationManagerController.m */,
+				D0D9C640188CC0A40000D1E5 /* RSLBSController.h */,
+				D0D9C641188CC0A40000D1E5 /* RSLBSController.m */,
 				D0D9C63D1889278F0000D1E5 /* RSLocationManager.h */,
 				D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */,
-				D0F28F80188C0D4500C6CA9D /* RSLocationManagerProfile.h */,
-				D0F28F81188C0D4500C6CA9D /* RSLocationManagerProfile.m */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";
@@ -352,9 +347,8 @@
 				D01734BA1887797F00C07608 /* UIImage+Color.m in Sources */,
 				D01734BE1887800900C07608 /* RSPaneViewController.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
-				D0D9C642188CC0A40000D1E5 /* RSLocationManagerController.m in Sources */,
+				D0D9C642188CC0A40000D1E5 /* RSLBSController.m in Sources */,
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,
-				D0F28F82188C0D4500C6CA9D /* RSLocationManagerProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
