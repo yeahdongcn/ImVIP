@@ -52,7 +52,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0A5-j5-XWy">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="uNL-bG-uAI"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="uNL-bG-uAI">
+                            <connections>
+                                <segue destination="kZV-lY-hYS" kind="push" id="fAm-Es-uFU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="carousel" destination="4Od-Vg-RYZ" id="07K-c3-N4K"/>
@@ -61,6 +65,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="751-af-syv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="452" y="441"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Orx-aV-aWs">
+            <objects>
+                <viewController id="kZV-lY-hYS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cqz-S3-xtR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wa1-mR-ah3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EPd-Y4-jUs">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tXI-VS-eFL">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="9De-Pk-jhk">
+                            <connections>
+                                <segue destination="Cbq-cs-xhq" kind="push" id="7yG-tU-ed5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXA-o9-HS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944" y="441"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Mwo-4W-I3t">
+            <objects>
+                <viewController id="Cbq-cs-xhq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hl1-YT-gv5"/>
+                        <viewControllerLayoutGuide type="bottom" id="JJZ-ub-skg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fqw-Sa-Ddb">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lvK-HV-xD0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQP-AB-MhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="441"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EZk-2Y-aQ7">
@@ -103,7 +151,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLd-VK-JTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="452" y="-260"/>
+            <point key="canvasLocation" x="-11" y="1204"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
