@@ -42,21 +42,27 @@
                                     <outlet property="delegate" destination="hvV-u9-zXT" id="EIV-yR-zLA"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sn-ag-Dve">
+                                <rect key="frame" x="290" y="474" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="kZV-lY-hYS" kind="push" id="B3v-zG-xoW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8Sn-ag-Dve" secondAttribute="bottom" id="499-WL-397"/>
                             <constraint firstItem="4Od-Vg-RYZ" firstAttribute="leading" secondItem="a5S-IY-QnD" secondAttribute="leading" id="Hu7-7E-D7n"/>
+                            <constraint firstAttribute="trailing" secondItem="8Sn-ag-Dve" secondAttribute="trailing" id="mYM-ik-o5o"/>
                             <constraint firstItem="4Od-Vg-RYZ" firstAttribute="top" secondItem="54g-Nm-DMv" secondAttribute="bottom" id="myn-sU-Cpg"/>
                             <constraint firstAttribute="bottom" secondItem="4Od-Vg-RYZ" secondAttribute="bottom" id="o9q-Po-5i3"/>
                             <constraint firstAttribute="trailing" secondItem="4Od-Vg-RYZ" secondAttribute="trailing" id="sPe-Ie-IJx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0A5-j5-XWy">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="uNL-bG-uAI">
-                            <connections>
-                                <segue destination="kZV-lY-hYS" kind="push" id="fAm-Es-uFU"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="n7T-1R-3Fg"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="uNL-bG-uAI"/>
                     </navigationItem>
                     <connections>
                         <outlet property="carousel" destination="4Od-Vg-RYZ" id="07K-c3-N4K"/>
@@ -89,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXA-o9-HS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944" y="441"/>
+            <point key="canvasLocation" x="992" y="129"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Mwo-4W-I3t">

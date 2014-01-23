@@ -2,7 +2,8 @@
     "Variables": {
         "customBlack": "#24212f",
         "customPurple": "#8d5fa6",
-        "customWhite": "#f2f1f3"
+        "customWhite": "#f2f1f3",
+        "customRed": "#f3706f"
     },
     "UINavigationBar": {
         "backgroundImage:default": "nav_bg",
@@ -16,6 +17,10 @@
         "RSCardView": {
             "borderColor": "$customPurple",
             "contentBackgroundColor": "$customWhite"
+        },
+        "UIButton": {
+            "backgroundImage:default": "new",
+            "tintColor": "$customPurple"
         }
     }
 }
