@@ -61,8 +61,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0A5-j5-XWy">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="n7T-1R-3Fg"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="uNL-bG-uAI"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="n7T-1R-3Fg"/>
+                        <barButtonItem key="rightBarButtonItem" image="person" id="uNL-bG-uAI"/>
                     </navigationItem>
                     <connections>
                         <outlet property="carousel" destination="4Od-Vg-RYZ" id="07K-c3-N4K"/>
@@ -160,6 +160,10 @@
             <point key="canvasLocation" x="-11" y="1204"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="36" height="36"/>
+        <image name="person" width="36" height="36"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
