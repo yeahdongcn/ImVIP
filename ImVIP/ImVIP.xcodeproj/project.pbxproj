@@ -25,6 +25,7 @@
 		D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734C318878BEE00C07608 /* RSMenuViewController.m */; };
 		D01734D11887C9AD00C07608 /* RSCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734D01887C9AD00C07608 /* RSCardView.m */; };
 		D01734D31887C9BD00C07608 /* RSCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01734D21887C9BD00C07608 /* RSCardView.xib */; };
+		D04FD2601892BC0E00EA5646 /* RSUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04FD25F1892BC0E00EA5646 /* RSUserViewController.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
 		D0D9C63F1889278F0000D1E5 /* RSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */; };
 		D0D9C642188CC0A40000D1E5 /* RSLBSController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C641188CC0A40000D1E5 /* RSLBSController.m */; };
@@ -71,6 +72,8 @@
 		D01734CF1887C9AD00C07608 /* RSCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardView.h; sourceTree = "<group>"; };
 		D01734D01887C9AD00C07608 /* RSCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardView.m; sourceTree = "<group>"; };
 		D01734D21887C9BD00C07608 /* RSCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSCardView.xib; sourceTree = "<group>"; };
+		D04FD25E1892BC0E00EA5646 /* RSUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUserViewController.h; sourceTree = "<group>"; };
+		D04FD25F1892BC0E00EA5646 /* RSUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUserViewController.m; sourceTree = "<group>"; };
 		D0D9C6391888F9950000D1E5 /* uiss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = uiss.json; sourceTree = "<group>"; };
 		D0D9C63D1889278F0000D1E5 /* RSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLocationManager.h; sourceTree = "<group>"; };
 		D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLocationManager.m; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				D0D9C641188CC0A40000D1E5 /* RSLBSController.m */,
 				D0D9C63D1889278F0000D1E5 /* RSLocationManager.h */,
 				D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */,
+				D04FD25E1892BC0E00EA5646 /* RSUserViewController.h */,
+				D04FD25F1892BC0E00EA5646 /* RSUserViewController.m */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				D01734D11887C9AD00C07608 /* RSCardView.m in Sources */,
 				D0D9C63F1889278F0000D1E5 /* RSLocationManager.m in Sources */,
 				D01734BA1887797F00C07608 /* UIImage+Color.m in Sources */,
+				D04FD2601892BC0E00EA5646 /* RSUserViewController.m in Sources */,
 				D01734BE1887800900C07608 /* RSPaneViewController.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
 				D0D9C642188CC0A40000D1E5 /* RSLBSController.m in Sources */,

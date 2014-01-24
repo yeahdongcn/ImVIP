@@ -12,6 +12,8 @@
 
 #import "RSMenuViewController.h"
 
+#import "RSUserViewController.h"
+
 #import "UISS.h"
 
 #import "RSLBSController.h"
@@ -57,9 +59,14 @@
     
     [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
     
+    [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler]] forDirection:MSDynamicsDrawerDirectionRight];
+    
     RSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
     [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    
+    RSUserViewController *userViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"User"];
+    [self.dynamicsDrawerViewController setDrawerViewController:userViewController forDirection:MSDynamicsDrawerDirectionRight];
     
     self.dynamicsDrawerViewController.paneViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Root"];
     
