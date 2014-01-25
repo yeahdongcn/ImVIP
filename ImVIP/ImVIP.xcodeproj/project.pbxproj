@@ -21,11 +21,11 @@
 		D01734AD18876DAA00C07608 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01734AB18876DAA00C07608 /* InfoPlist.strings */; };
 		D01734AF18876DAA00C07608 /* ImVIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734AE18876DAA00C07608 /* ImVIPTests.m */; };
 		D01734BA1887797F00C07608 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734B91887797F00C07608 /* UIImage+Color.m */; };
-		D01734BE1887800900C07608 /* RSPaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734BD1887800900C07608 /* RSPaneViewController.m */; };
 		D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734C318878BEE00C07608 /* RSMenuViewController.m */; };
 		D01734D11887C9AD00C07608 /* RSCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734D01887C9AD00C07608 /* RSCardView.m */; };
 		D01734D31887C9BD00C07608 /* RSCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01734D21887C9BD00C07608 /* RSCardView.xib */; };
 		D04FD2601892BC0E00EA5646 /* RSUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04FD25F1892BC0E00EA5646 /* RSUserViewController.m */; };
+		D09E2CAD1893A9C000786A56 /* RSCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E2CAC1893A9C000786A56 /* RSCardsViewController.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
 		D0D9C63F1889278F0000D1E5 /* RSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */; };
 		D0D9C642188CC0A40000D1E5 /* RSLBSController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C641188CC0A40000D1E5 /* RSLBSController.m */; };
@@ -64,8 +64,6 @@
 		D01734AE18876DAA00C07608 /* ImVIPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImVIPTests.m; sourceTree = "<group>"; };
 		D01734B81887797F00C07608 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		D01734B91887797F00C07608 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
-		D01734BC1887800900C07608 /* RSPaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPaneViewController.h; sourceTree = "<group>"; };
-		D01734BD1887800900C07608 /* RSPaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSPaneViewController.m; sourceTree = "<group>"; };
 		D01734C218878BEE00C07608 /* RSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSMenuViewController.h; sourceTree = "<group>"; };
 		D01734C318878BEE00C07608 /* RSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMenuViewController.m; sourceTree = "<group>"; };
 		D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUIViewMacroses.h; sourceTree = "<group>"; };
@@ -74,6 +72,8 @@
 		D01734D21887C9BD00C07608 /* RSCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSCardView.xib; sourceTree = "<group>"; };
 		D04FD25E1892BC0E00EA5646 /* RSUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUserViewController.h; sourceTree = "<group>"; };
 		D04FD25F1892BC0E00EA5646 /* RSUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUserViewController.m; sourceTree = "<group>"; };
+		D09E2CAB1893A9C000786A56 /* RSCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardsViewController.h; sourceTree = "<group>"; };
+		D09E2CAC1893A9C000786A56 /* RSCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardsViewController.m; sourceTree = "<group>"; };
 		D0D9C6391888F9950000D1E5 /* uiss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = uiss.json; sourceTree = "<group>"; };
 		D0D9C63D1889278F0000D1E5 /* RSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLocationManager.h; sourceTree = "<group>"; };
 		D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLocationManager.m; sourceTree = "<group>"; };
@@ -150,8 +150,6 @@
 				D01734B91887797F00C07608 /* UIImage+Color.m */,
 				D01734C218878BEE00C07608 /* RSMenuViewController.h */,
 				D01734C318878BEE00C07608 /* RSMenuViewController.m */,
-				D01734BC1887800900C07608 /* RSPaneViewController.h */,
-				D01734BD1887800900C07608 /* RSPaneViewController.m */,
 				D01734CF1887C9AD00C07608 /* RSCardView.h */,
 				D01734D01887C9AD00C07608 /* RSCardView.m */,
 				D01734D21887C9BD00C07608 /* RSCardView.xib */,
@@ -163,6 +161,8 @@
 				D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */,
 				D04FD25E1892BC0E00EA5646 /* RSUserViewController.h */,
 				D04FD25F1892BC0E00EA5646 /* RSUserViewController.m */,
+				D09E2CAB1893A9C000786A56 /* RSCardsViewController.h */,
+				D09E2CAC1893A9C000786A56 /* RSCardsViewController.m */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";
@@ -348,10 +348,10 @@
 			files = (
 				D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */,
 				D01734D11887C9AD00C07608 /* RSCardView.m in Sources */,
+				D09E2CAD1893A9C000786A56 /* RSCardsViewController.m in Sources */,
 				D0D9C63F1889278F0000D1E5 /* RSLocationManager.m in Sources */,
 				D01734BA1887797F00C07608 /* UIImage+Color.m in Sources */,
 				D04FD2601892BC0E00EA5646 /* RSUserViewController.m in Sources */,
-				D01734BE1887800900C07608 /* RSPaneViewController.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
 				D0D9C642188CC0A40000D1E5 /* RSLBSController.m in Sources */,
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,

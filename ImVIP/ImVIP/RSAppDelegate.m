@@ -34,26 +34,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        RSLocationManager *locMan = [RSLBSController controller].locationManager;
-        locMan.locationsUpdater = ^(NSArray *locations) {
-            NSLog(@"%@", locations);
-        };
-        locMan.errorHandler = ^(NSError *error) {
-            if ([RSLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Title"
-                                                                message:@"Message"
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
-            }
-        };
-        [[NSNotificationCenter defaultCenter] postNotificationName:RSLBSControllerStartUpdatingLocationNotification object:nil];
-    });
-    
     self.uiss = [UISS configureWithDefaultJSONFile];
-    self.uiss.statusWindowEnabled = YES;
+    self.uiss.statusWindowEnabled = NO;
     
     self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
     
@@ -68,7 +50,8 @@
     RSUserViewController *userViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"User"];
     [self.dynamicsDrawerViewController setDrawerViewController:userViewController forDirection:MSDynamicsDrawerDirectionRight];
     
-    self.dynamicsDrawerViewController.paneViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Root"];
+    // Transition to the first view controller
+    [menuViewController transitionToViewController:RSPaneViewControllerTypeCards];
     
     int hexValue = 0x24212f;
     CGFloat red = ((hexValue & 0xFF0000) >> 16) / 255.0f;

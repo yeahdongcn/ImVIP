@@ -21,56 +21,37 @@
             </objects>
             <point key="canvasLocation" x="-11" y="-260"/>
         </scene>
-        <!--Pane View Controller-->
-        <scene sceneID="dB5-N7-TM3">
+        <!--Cards View Controller-->
+        <scene sceneID="NjE-Mf-iGi">
             <objects>
-                <viewController id="hvV-u9-zXT" customClass="RSPaneViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="54g-Nm-DMv"/>
-                        <viewControllerLayoutGuide type="bottom" id="Xus-4Z-Xf8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="a5S-IY-QnD">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                <tableViewController storyboardIdentifier="Cards" id="OlD-Kd-Frq" customClass="RSCardsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="shs-UX-nbL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Od-Vg-RYZ" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="hvV-u9-zXT" id="HHn-Hs-sUu"/>
-                                    <outlet property="delegate" destination="hvV-u9-zXT" id="EIV-yR-zLA"/>
-                                </connections>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sn-ag-Dve">
-                                <rect key="frame" x="290" y="474" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="kZV-lY-hYS" kind="push" id="B3v-zG-xoW"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="8Sn-ag-Dve" secondAttribute="bottom" id="499-WL-397"/>
-                            <constraint firstItem="4Od-Vg-RYZ" firstAttribute="leading" secondItem="a5S-IY-QnD" secondAttribute="leading" id="Hu7-7E-D7n"/>
-                            <constraint firstAttribute="trailing" secondItem="8Sn-ag-Dve" secondAttribute="trailing" id="mYM-ik-o5o"/>
-                            <constraint firstItem="4Od-Vg-RYZ" firstAttribute="top" secondItem="54g-Nm-DMv" secondAttribute="bottom" id="myn-sU-Cpg"/>
-                            <constraint firstAttribute="bottom" secondItem="4Od-Vg-RYZ" secondAttribute="bottom" id="o9q-Po-5i3"/>
-                            <constraint firstAttribute="trailing" secondItem="4Od-Vg-RYZ" secondAttribute="trailing" id="sPe-Ie-IJx"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="0A5-j5-XWy">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="n7T-1R-3Fg"/>
-                        <barButtonItem key="rightBarButtonItem" image="user" id="uNL-bG-uAI"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="imc-65-91A">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="imc-65-91A" id="oJa-Ny-VRE">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OlD-Kd-Frq" id="Nla-s4-U0N"/>
+                            <outlet property="delegate" destination="OlD-Kd-Frq" id="gde-m5-oPf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="FNy-2J-dgD">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="4V2-1I-fSE"/>
+                        <barButtonItem key="rightBarButtonItem" image="user" id="zQX-Pz-CGH"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="carousel" destination="4Od-Vg-RYZ" id="07K-c3-N4K"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="751-af-syv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WS1-jr-jOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="452" y="441"/>
+            <point key="canvasLocation" x="-11" y="453"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Orx-aV-aWs">
@@ -81,7 +62,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wa1-mR-ah3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EPd-Y4-jUs">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -89,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXA-o9-HS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="441"/>
+            <point key="canvasLocation" x="512" y="453"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="fdF-Gm-fHw">
@@ -119,21 +100,6 @@
             </objects>
             <point key="canvasLocation" x="-11" y="1945"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="EZk-2Y-aQ7">
-            <objects>
-                <navigationController storyboardIdentifier="Root" definesPresentationContext="YES" id="5jx-hu-ogh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="95w-QP-3jT">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="hvV-u9-zXT" kind="relationship" relationship="rootViewController" id="Q8h-Xx-hTZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GtK-A0-4EO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-11" y="441"/>
-        </scene>
         <!--Menu View Controller-->
         <scene sceneID="oPB-IH-Xah">
             <objects>
@@ -143,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Kve-Xe-KXs">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Kve-Xe-KXs">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kve-Xe-KXs" id="VzI-M9-ANn">
@@ -164,7 +130,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="menu" width="24" height="24"/>
+        <image name="hamburger" width="24" height="24"/>
         <image name="user" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

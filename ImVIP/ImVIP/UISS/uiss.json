@@ -10,13 +10,9 @@
         "shadowImage": "",
         "tintColor": "$customWhite"
     },
-    "RSPaneViewController": {
-        "iCarousel": {
+    "RSCardsViewController": {
+        "UITableView": {
             "backgroundColor": "$customBlack"
-        },
-        "RSCardView": {
-            "borderColor": "$customPurple",
-            "contentBackgroundColor": "$customWhite"
         },
         "UIButton": {
             "backgroundImage:default": "new",
