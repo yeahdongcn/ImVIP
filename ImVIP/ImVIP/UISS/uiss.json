@@ -13,10 +13,6 @@
     "RSCardsViewController": {
         "UITableView": {
             "backgroundColor": "$customBlack"
-        },
-        "UIButton": {
-            "backgroundImage:default": "add",
-            "tintColor": "$customPurple"
         }
     }
 }
