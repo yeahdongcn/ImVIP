@@ -10,6 +10,8 @@
 
 @interface RSCardsViewController () <UITableViewDataSource, UITableViewDelegate>
 
+- (IBAction)addNewCard:(id)sender;
+
 @end
 
 @implementation RSCardsViewController
@@ -44,6 +46,11 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     return cell;
+}
+
+- (IBAction)addNewCard:(id)sender
+{
+    NSLog(@"Add new card.");
 }
 
 @end

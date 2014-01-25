@@ -72,12 +72,14 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RST-BU-HTH">
-                                <rect key="frame" x="256" y="504" width="64" height="64"/>
+                                <rect key="frame" x="290" y="534" width="30" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="add">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" image="add_hl"/>
+                                <connections>
+                                    <action selector="addNewCard:" destination="Eln-hB-Fzv" eventType="touchUpInside" id="6LK-7w-zur"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -152,10 +154,6 @@
             <point key="canvasLocation" x="-11" y="1204"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="add" width="64" height="64"/>
-        <image name="add_hl" width="64" height="64"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
