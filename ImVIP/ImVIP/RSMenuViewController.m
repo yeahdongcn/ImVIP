@@ -121,7 +121,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.imageView.image = [UIImage imageNamed:@"creditcard"];
+    cell.imageView.image = [UIImage imageNamed:@"menu_creditcard"];
     cell.textLabel.text = self.paneViewControllerTitles[@([self __paneViewControllerTypeForIndexPath:indexPath])];
     
     return cell;
