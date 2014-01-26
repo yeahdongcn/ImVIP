@@ -1,22 +1,33 @@
 {
     "Variables": {
-        "customBlack": "#24212f",
-        "customPurple": "#8d5fa6",
-        "customWhite": "#f2f1f3",
-        "customRed": "#f3706f"
+        "font_color": "#ffffff",
+        "cards_bg_color": "#f3f3f7",
+        "cards_separator_color": "#d3d3ea",
+        "cards_cell_title_color": "#2b1e6a",
+        "cards_cell_subtitle_color": "#b5b4ba",
+        "window_bg_color": "#252134"
     },
     "UINavigationBar": {
-        "backgroundImage:default": "nav_bg",
+        "backgroundImage:default": "navi_bg",
         "shadowImage": "",
-        "tintColor": "$customWhite"
+        "tintColor": "$font_color"
     },
     "RSCardsViewController": {
         "UITableView": {
-            "backgroundColor": "$customBlack"
+            "backgroundColor": "$cards_bg_color",
+            "separatorColor":  "$cards_separator_color",
+            "UIButton" : {
+                "image:default": "arrow"
+            },
+            "RSCardTitleLabel": {
+                "textColor": "$cards_cell_title_color"
+            },
+            "RSCardSubtitleLabel": {
+                "textColor": "$cards_cell_subtitle_color"
+            }
         },
         "UIButton": {
-            "backgroundImage:default": "add",
-            "backgroundImage:highlight": "add_hl"
+            "image:default": "add"
         }
     }
 }
