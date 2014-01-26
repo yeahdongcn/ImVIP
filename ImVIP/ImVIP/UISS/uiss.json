@@ -17,7 +17,7 @@
             "backgroundColor": "$cards_bg_color",
             "separatorColor":  "$cards_separator_color",
             "UIButton" : {
-                "image:default": "arrow"
+                "image:default": "cards_arrow"
             },
             "RSCardTitleLabel": {
                 "textColor": "$cards_cell_title_color"
@@ -27,7 +27,7 @@
             }
         },
         "UIButton": {
-            "image:default": "add"
+            "image:default": "cards_add"
         }
     }
 }
