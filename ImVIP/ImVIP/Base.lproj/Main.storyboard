@@ -192,13 +192,22 @@
                                         <constraint firstAttribute="centerY" secondItem="aen-Ft-iJn" secondAttribute="centerY" id="yYd-Y5-G0X"/>
                                     </constraints>
                                 </view>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WF-hI-Pca">
+                                    <rect key="frame" x="153" y="145" width="0.0" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="LcE-c2-R6i" secondAttribute="bottom" id="5hN-RS-MKy"/>
+                                <constraint firstItem="9WF-hI-Pca" firstAttribute="leading" secondItem="ObE-br-zy7" secondAttribute="trailing" constant="10" id="9yF-Sr-25k"/>
                                 <constraint firstItem="ObE-br-zy7" firstAttribute="leading" secondItem="f0a-Ch-bHu" secondAttribute="leading" constant="55" id="TaV-c1-CJh"/>
                                 <constraint firstItem="LcE-c2-R6i" firstAttribute="top" secondItem="f0a-Ch-bHu" secondAttribute="top" id="YqZ-ux-nZx"/>
                                 <constraint firstItem="LcE-c2-R6i" firstAttribute="leading" secondItem="f0a-Ch-bHu" secondAttribute="leading" constant="53" id="ZcL-ZE-vaH"/>
+                                <constraint firstItem="9WF-hI-Pca" firstAttribute="bottom" secondItem="LcE-c2-R6i" secondAttribute="bottom" constant="-15" id="bSf-rU-7O3"/>
                                 <constraint firstAttribute="bottom" secondItem="ObE-br-zy7" secondAttribute="bottom" constant="-44" id="fJ4-zo-72q"/>
                                 <constraint firstAttribute="trailing" secondItem="LcE-c2-R6i" secondAttribute="trailing" id="urN-Cm-XAq"/>
                             </constraints>
@@ -224,7 +233,9 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="avatar" destination="aen-Ft-iJn" id="9f0-sc-0LJ"/>
                         <outlet property="bg" destination="5bT-F3-tJp" id="rzF-pc-3g4"/>
+                        <outlet property="username" destination="9WF-hI-Pca" id="OCy-MR-2PU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHq-vy-tIb" userLabel="First Responder" sceneMemberID="firstResponder"/>

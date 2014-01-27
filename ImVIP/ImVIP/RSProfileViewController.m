@@ -24,6 +24,10 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *bg;
 
+@property (nonatomic, weak) IBOutlet UIButton *avatar;
+
+@property (nonatomic, weak) IBOutlet UILabel *username;
+
 @property (nonatomic) CGRect bgFrame;
 
 - (IBAction)avatarClicked:(id)sender;
@@ -39,6 +43,8 @@
     [super viewDidLoad];
     
     self.bgFrame = self.bg.frame;
+    
+    self.username.text = @"Guest";
 }
 
 #pragma mark - Table view data source

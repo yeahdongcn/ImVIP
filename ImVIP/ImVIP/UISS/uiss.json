@@ -53,6 +53,9 @@
             "UIImageView": {
                 "image": "profile_avatar_bg"
             }
+        },
+        "UILabel": {
+            "textColor": "$navi_tint_color"
         }
     }
 }
