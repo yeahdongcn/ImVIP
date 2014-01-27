@@ -1,5 +1,5 @@
 //
-//  RSUserViewController.h
+//  RSProfileViewController.h
 //  ImVIP
 //
 //  Created by R0CKSTAR on 14-1-24.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RSUserViewController : UITableViewController
+@interface RSProfileViewController : UITableViewController
 
 @end

@@ -1,11 +1,14 @@
 {
     "Variables": {
         "font_color": "#ffffff",
+        "window_bg_color": "#252134",
+        
         "cards_bg_color": "#f3f3f7",
         "cards_separator_color": "#d3d3ea",
         "cards_cell_title_color": "#2b1e6a",
         "cards_cell_subtitle_color": "#b5b4ba",
-        "window_bg_color": "#252134"
+        
+        "profile_bg_color": "#b9b9ef"
     },
     "UINavigationBar": {
         "backgroundImage:default": "navi_bg",
@@ -28,6 +31,11 @@
         },
         "UIButton": {
             "image:default": "cards_add"
+        }
+    },
+    "RSProfileViewController": {
+        "UITableView": {
+            "backgroundColor": "$cards_bg_color"
         }
     }
 }

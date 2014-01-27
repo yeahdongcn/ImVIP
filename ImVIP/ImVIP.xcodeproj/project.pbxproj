@@ -23,7 +23,7 @@
 		D01734BA1887797F00C07608 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734B91887797F00C07608 /* UIImage+Color.m */; };
 		D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734C318878BEE00C07608 /* RSMenuViewController.m */; };
 		D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D045895B1894FA4D00077C69 /* RSCardCell.m */; };
-		D04FD2601892BC0E00EA5646 /* RSUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04FD25F1892BC0E00EA5646 /* RSUserViewController.m */; };
+		D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */; };
 		D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
 		D0D9C63F1889278F0000D1E5 /* RSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */; };
@@ -68,8 +68,8 @@
 		D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUIViewMacroses.h; sourceTree = "<group>"; };
 		D045895A1894FA4D00077C69 /* RSCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardCell.h; sourceTree = "<group>"; };
 		D045895B1894FA4D00077C69 /* RSCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardCell.m; sourceTree = "<group>"; };
-		D04FD25E1892BC0E00EA5646 /* RSUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUserViewController.h; sourceTree = "<group>"; };
-		D04FD25F1892BC0E00EA5646 /* RSUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUserViewController.m; sourceTree = "<group>"; };
+		D04FD25E1892BC0E00EA5646 /* RSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSProfileViewController.h; sourceTree = "<group>"; };
+		D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSProfileViewController.m; sourceTree = "<group>"; };
 		D09E2CAE1893DA7100786A56 /* RSCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardsViewController.h; sourceTree = "<group>"; };
 		D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardsViewController.m; sourceTree = "<group>"; };
 		D0D9C6391888F9950000D1E5 /* uiss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = uiss.json; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 				D0D9C641188CC0A40000D1E5 /* RSLBSController.m */,
 				D0D9C63D1889278F0000D1E5 /* RSLocationManager.h */,
 				D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */,
-				D04FD25E1892BC0E00EA5646 /* RSUserViewController.h */,
-				D04FD25F1892BC0E00EA5646 /* RSUserViewController.m */,
+				D04FD25E1892BC0E00EA5646 /* RSProfileViewController.h */,
+				D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */,
 				D09E2CAE1893DA7100786A56 /* RSCardsViewController.h */,
 				D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */,
 				D045895A1894FA4D00077C69 /* RSCardCell.h */,
@@ -347,7 +347,7 @@
 				D01734BA1887797F00C07608 /* UIImage+Color.m in Sources */,
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
 				D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */,
-				D04FD2601892BC0E00EA5646 /* RSUserViewController.m in Sources */,
+				D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
 				D0D9C642188CC0A40000D1E5 /* RSLBSController.m in Sources */,
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,

@@ -12,7 +12,7 @@
 
 #import "RSMenuViewController.h"
 
-#import "RSUserViewController.h"
+#import "RSProfileViewController.h"
 
 #import "UISS.h"
 
@@ -47,7 +47,7 @@
     menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
     [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
     
-    RSUserViewController *userViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"User"];
+    RSProfileViewController *userViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Profile"];
     [self.dynamicsDrawerViewController setDrawerViewController:userViewController forDirection:MSDynamicsDrawerDirectionRight];
     
     // Transition to the first view controller
