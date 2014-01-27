@@ -1,12 +1,21 @@
 {
     "Variables": {
-        "navi_tint_color": "#ffffff",
         "win_bg_color": "#252134",
+        
+        "navi_tint_color": "#ffffff",
         
         "tv_bg_color": "#f3f3f7",
         "tv_sep_color": "#d3d3ea",
         "tv_cell_title_color": "#2b1e6a",
         "tv_cell_subtitle_color": "#b5b4ba",
+    },
+    "RSTitleView": {
+        "UILabel": {
+            "textColor": "$navi_tint_color"
+        },
+        "UIImageView": {
+            "image": "navi_indicator"
+        }
     },
     "UINavigationBar": {
         "backgroundImage:default": "navi_bg",

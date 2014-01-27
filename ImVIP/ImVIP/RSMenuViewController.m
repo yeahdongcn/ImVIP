@@ -10,6 +10,8 @@
 
 #import "MSDynamicsDrawerViewController.h"
 
+#import "RSTitleView.h"
+
 @interface RSMenuViewController ()
 
 @property (nonatomic, strong) NSDictionary *paneViewControllerTitles;
@@ -90,7 +92,10 @@
     BOOL animateTransition = self.dynamicsDrawerViewController.paneViewController != nil;
     
     UIViewController *paneViewController = [self.storyboard instantiateViewControllerWithIdentifier:self.paneViewControllerIdentifiers[@(paneViewControllerType)]];
-    paneViewController.navigationItem.title = self.paneViewControllerTitles[@(paneViewControllerType)];
+    RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
+    titleView.label.text = self.paneViewControllerTitles[@(paneViewControllerType)];
+    titleView.showIndicator = YES;
+    paneViewController.navigationItem.titleView = titleView;
     
     self.paneRevealLeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_menu"] style:UIBarButtonItemStyleBordered target:self action:@selector(__dynamicsDrawerRevealLeftBarButtonItemTapped:)];
     paneViewController.navigationItem.leftBarButtonItem = self.paneRevealLeftBarButtonItem;

@@ -30,6 +30,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.imageView.image = [UIImage imageNamed:@"icon"];
     
     return cell;
 }
