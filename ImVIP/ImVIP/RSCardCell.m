@@ -8,6 +8,12 @@
 
 #import "RSCardCell.h"
 
+@interface RSCardTitleLabel : UILabel
+@end
+
+@interface RSCardSubtitleLabel : UILabel
+@end
+
 @implementation RSCardTitleLabel
 @end
 

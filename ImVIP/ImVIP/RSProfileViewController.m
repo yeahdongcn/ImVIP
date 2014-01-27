@@ -8,7 +8,23 @@
 
 #import "RSProfileViewController.h"
 
+@interface RSBgView : UIView
+@end
+
+@implementation RSBgView
+@end
+
+@interface RSAvatarView : UIView
+@end
+
+@implementation RSAvatarView
+@end
+
 @interface RSProfileViewController ()
+
+- (IBAction)avatarClicked:(id)sender;
+
+- (IBAction)bgClicked:(id)sender;
 
 @end
 
@@ -44,6 +60,16 @@
     // Configure the cell...
     
     return cell;
+}
+
+- (IBAction)avatarClicked:(id)sender
+{
+    NSLog(@"avatar");
+}
+
+- (IBAction)bgClicked:(id)sender
+{
+    NSLog(@"bg");
 }
 
 @end

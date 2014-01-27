@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RSCardTitleLabel : UILabel
-@end
-
-@interface RSCardSubtitleLabel : UILabel
-@end
-
 @interface RSCardCell : UITableViewCell
 
 @end
