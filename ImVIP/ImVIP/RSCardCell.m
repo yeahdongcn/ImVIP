@@ -8,6 +8,8 @@
 
 #import "RSCardCell.h"
 
+#import "ColorUtils.h"
+
 @interface RSCardCellTitleLabel : UILabel
 @end
 
@@ -20,15 +22,30 @@
 @implementation RSCardCellSubtitleLabel
 @end
 
+@interface RSCardCellBgView : UIView
+@end
+
+@implementation RSCardCellBgView
+@end
+
+@interface RSCardCellButton : UIButton
+@end
+
+@implementation RSCardCellButton
+@end
+
 @implementation RSCardCell
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        UIButton *accessoryView = [UIButton buttonWithType:UIButtonTypeCustom];
+        RSCardCellButton *accessoryView = [RSCardCellButton buttonWithType:UIButtonTypeSystem];
         [accessoryView sizeToFit];
         self.accessoryView = accessoryView;
+        
+        RSCardCellBgView *selectedBackgroundView = [[RSCardCellBgView alloc] init];
+        self.selectedBackgroundView = selectedBackgroundView;
     }
     return self;
 }

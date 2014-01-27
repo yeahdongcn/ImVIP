@@ -8,6 +8,9 @@
         "tv_sep_color": "#d3d3ea",
         "tv_cell_title_color": "#2b1e6a",
         "tv_cell_subtitle_color": "#b5b4ba",
+        "tv_cell_subtitle_hl_color": "#fefefe",
+        "tv_cell_selected_bg_color": "#00cab5",
+        "tv_cell_accessory_tint_color": "#d3d3ea"
     },
     "RSTitleView": {
         "UILabel": {
@@ -22,18 +25,28 @@
         "shadowImage": "",
         "tintColor": "$navi_tint_color"
     },
+    "RSMenuViewController": {
+        "UITableView": {
+            "backgroundColor": "$tv_bg_color"
+        }
+    },
     "RSCardsViewController": {
         "UITableView": {
             "backgroundColor": "$tv_bg_color",
             "separatorColor":  "$tv_sep_color",
-            "UIButton" : {
-                "image:default": "cards_arrow"
+            "RSCardCellButton" : {
+                "image:default": "cards_arrow",
+                "tintColor": "$tv_cell_accessory_tint_color",
             },
             "RSCardCellTitleLabel": {
                 "textColor": "$tv_cell_title_color"
             },
             "RSCardCellSubtitleLabel": {
-                "textColor": "$tv_cell_subtitle_color"
+                "textColor": "$tv_cell_subtitle_color",
+                "highlightedTextColor": "$tv_cell_subtitle_hl_color"
+            },
+            "RSCardCellBgView": {
+                "backgroundColor": "$tv_cell_selected_bg_color"
             }
         },
         "UIButton": {
