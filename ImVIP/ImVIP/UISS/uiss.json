@@ -20,10 +20,10 @@
             "UIButton" : {
                 "image:default": "cards_arrow"
             },
-            "RSCardTitleLabel": {
+            "RSCardCellTitleLabel": {
                 "textColor": "$tv_cell_title_color"
             },
-            "RSCardSubtitleLabel": {
+            "RSCardCellSubtitleLabel": {
                 "textColor": "$tv_cell_subtitle_color"
             }
         },
@@ -35,12 +35,12 @@
         "UITableView": {
             "backgroundColor": "$tv_bg_color"
         },
-        "RSBgView": {
+        "RSProfileViewBgView": {
             "UIImageView": {
                 "image": "profile_bg"
             }
         },
-        "RSAvatarView": {
+        "RSProfileViewAvatarView": {
             "UIImageView": {
                 "image": "profile_avatar_bg"
             }

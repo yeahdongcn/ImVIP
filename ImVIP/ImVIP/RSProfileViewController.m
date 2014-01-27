@@ -8,16 +8,16 @@
 
 #import "RSProfileViewController.h"
 
-@interface RSBgView : UIView
+@interface RSProfileViewBgView : UIView
 @end
 
-@implementation RSBgView
+@implementation RSProfileViewBgView
 @end
 
-@interface RSAvatarView : UIView
+@interface RSProfileViewAvatarView : UIView
 @end
 
-@implementation RSAvatarView
+@implementation RSProfileViewAvatarView
 @end
 
 @interface RSProfileViewController ()
