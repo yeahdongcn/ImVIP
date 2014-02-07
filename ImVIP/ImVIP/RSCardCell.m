@@ -8,46 +8,67 @@
 
 #import "RSCardCell.h"
 
-#import "ColorUtils.h"
+new_class(RSCardCellTitleLabel, UILabel)
 
-@interface RSCardCellTitleLabel : UILabel
-@end
+new_class(RSCardCellSubtitleLabel, UILabel)
 
-@interface RSCardCellSubtitleLabel : UILabel
-@end
+new_class(RSCardCellBgView, UIView)
 
-@implementation RSCardCellTitleLabel
-@end
+new_class(RSCardCellButton, UIButton)
 
-@implementation RSCardCellSubtitleLabel
-@end
+@interface RSCardCell ()
 
-@interface RSCardCellBgView : UIView
-@end
+@property (nonatomic, strong) UIImage *accessoryViewNormalImage;
+@property (nonatomic, strong) UIImage *accessoryViewHighlightedImage;
 
-@implementation RSCardCellBgView
-@end
-
-@interface RSCardCellButton : UIButton
-@end
-
-@implementation RSCardCellButton
 @end
 
 @implementation RSCardCell
+
+- (void)__updateAccessoryView:(BOOL)highlighted
+{
+    if (self.accessoryViewNormalImage && self.accessoryViewHighlightedImage) {
+        RSCardCellButton *accessoryView = (RSCardCellButton *)self.accessoryView;
+        if (highlighted) {
+            [accessoryView setImage:self.accessoryViewHighlightedImage forState:UIControlStateNormal];
+        } else {
+            [accessoryView setImage:self.accessoryViewNormalImage forState:UIControlStateNormal];
+        }
+    }
+}
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        RSCardCellButton *accessoryView = [RSCardCellButton buttonWithType:UIButtonTypeSystem];
+        RSCardCellButton *accessoryView = [RSCardCellButton buttonWithType:UIButtonTypeCustom];
         [accessoryView sizeToFit];
         self.accessoryView = accessoryView;
         
         RSCardCellBgView *selectedBackgroundView = [[RSCardCellBgView alloc] init];
         self.selectedBackgroundView = selectedBackgroundView;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.accessoryViewNormalImage = [accessoryView imageForState:UIControlStateNormal];
+            self.accessoryViewHighlightedImage = [accessoryView imageForState:UIControlStateHighlighted];
+            [accessoryView setImage:nil forState:UIControlStateHighlighted];
+        });
     }
     return self;
+}
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+    [super setHighlighted:highlighted animated:animated];
+    
+    [self __updateAccessoryView:highlighted];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+    
+    [self __updateAccessoryView:selected];
 }
 
 @end

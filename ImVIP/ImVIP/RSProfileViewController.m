@@ -8,17 +8,9 @@
 
 #import "RSProfileViewController.h"
 
-@interface RSProfileViewBgView : UIView
-@end
+new_class(RSProfileViewBgView, UIView)
 
-@implementation RSProfileViewBgView
-@end
-
-@interface RSProfileViewAvatarView : UIView
-@end
-
-@implementation RSProfileViewAvatarView
-@end
+new_class(RSProfileViewAvatarView, UIView)
 
 @interface RSProfileViewController ()
 

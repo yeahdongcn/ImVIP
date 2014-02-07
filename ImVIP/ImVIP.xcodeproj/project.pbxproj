@@ -20,7 +20,6 @@
 		D01734A518876DAA00C07608 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348718876DAA00C07608 /* UIKit.framework */; };
 		D01734AD18876DAA00C07608 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01734AB18876DAA00C07608 /* InfoPlist.strings */; };
 		D01734AF18876DAA00C07608 /* ImVIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734AE18876DAA00C07608 /* ImVIPTests.m */; };
-		D01734BA1887797F00C07608 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734B91887797F00C07608 /* UIImage+Color.m */; };
 		D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734C318878BEE00C07608 /* RSMenuViewController.m */; };
 		D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D045895B1894FA4D00077C69 /* RSCardCell.m */; };
 		D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */; };
@@ -28,8 +27,6 @@
 		D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */; };
 		D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1E9BF18963D9800D3C770 /* RSTitleView.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
-		D0D9C63F1889278F0000D1E5 /* RSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */; };
-		D0D9C642188CC0A40000D1E5 /* RSLBSController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C641188CC0A40000D1E5 /* RSLBSController.m */; };
 		ECC1382A82A84BA9A347A2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7771E61A14EFFBA17B572 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +60,6 @@
 		D01734AA18876DAA00C07608 /* ImVIPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImVIPTests-Info.plist"; sourceTree = "<group>"; };
 		D01734AC18876DAA00C07608 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D01734AE18876DAA00C07608 /* ImVIPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImVIPTests.m; sourceTree = "<group>"; };
-		D01734B81887797F00C07608 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
-		D01734B91887797F00C07608 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		D01734C218878BEE00C07608 /* RSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSMenuViewController.h; sourceTree = "<group>"; };
 		D01734C318878BEE00C07608 /* RSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMenuViewController.m; sourceTree = "<group>"; };
 		D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUIViewMacroses.h; sourceTree = "<group>"; };
@@ -78,10 +73,6 @@
 		D0A1E9BE18963D9800D3C770 /* RSTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTitleView.h; sourceTree = "<group>"; };
 		D0A1E9BF18963D9800D3C770 /* RSTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTitleView.m; sourceTree = "<group>"; };
 		D0D9C6391888F9950000D1E5 /* uiss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = uiss.json; sourceTree = "<group>"; };
-		D0D9C63D1889278F0000D1E5 /* RSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLocationManager.h; sourceTree = "<group>"; };
-		D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLocationManager.m; sourceTree = "<group>"; };
-		D0D9C640188CC0A40000D1E5 /* RSLBSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLBSController.h; sourceTree = "<group>"; };
-		D0D9C641188CC0A40000D1E5 /* RSLBSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLBSController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,20 +136,11 @@
 			isa = PBXGroup;
 			children = (
 				D0D9C6381888F9950000D1E5 /* UISS */,
-				D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */,
 				D017349218876DAA00C07608 /* RSAppDelegate.h */,
 				D017349318876DAA00C07608 /* RSAppDelegate.m */,
 				D017349518876DAA00C07608 /* Main.storyboard */,
-				D01734B81887797F00C07608 /* UIImage+Color.h */,
-				D01734B91887797F00C07608 /* UIImage+Color.m */,
 				D01734C218878BEE00C07608 /* RSMenuViewController.h */,
 				D01734C318878BEE00C07608 /* RSMenuViewController.m */,
-				D017349B18876DAA00C07608 /* Images.xcassets */,
-				D017348A18876DAA00C07608 /* Supporting Files */,
-				D0D9C640188CC0A40000D1E5 /* RSLBSController.h */,
-				D0D9C641188CC0A40000D1E5 /* RSLBSController.m */,
-				D0D9C63D1889278F0000D1E5 /* RSLocationManager.h */,
-				D0D9C63E1889278F0000D1E5 /* RSLocationManager.m */,
 				D04FD25E1892BC0E00EA5646 /* RSProfileViewController.h */,
 				D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */,
 				D09E2CAE1893DA7100786A56 /* RSCardsViewController.h */,
@@ -168,6 +150,8 @@
 				D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */,
 				D0A1E9BE18963D9800D3C770 /* RSTitleView.h */,
 				D0A1E9BF18963D9800D3C770 /* RSTitleView.m */,
+				D017349B18876DAA00C07608 /* Images.xcassets */,
+				D017348A18876DAA00C07608 /* Supporting Files */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";
@@ -175,6 +159,7 @@
 		D017348A18876DAA00C07608 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */,
 				D017348B18876DAA00C07608 /* ImVIP-Info.plist */,
 				D017348C18876DAA00C07608 /* InfoPlist.strings */,
 				D017348F18876DAA00C07608 /* main.m */,
@@ -352,14 +337,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */,
-				D0D9C63F1889278F0000D1E5 /* RSLocationManager.m in Sources */,
-				D01734BA1887797F00C07608 /* UIImage+Color.m in Sources */,
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
 				D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */,
 				D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */,
 				D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
-				D0D9C642188CC0A40000D1E5 /* RSLBSController.m in Sources */,
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

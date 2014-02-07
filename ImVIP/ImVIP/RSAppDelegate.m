@@ -16,11 +16,9 @@
 
 #import "UISS.h"
 
-#import "RSLBSController.h"
-
-#import "UIImage+Color.h"
-
 #import "SFUIViewMacroses.h"
+
+new_class(RSWindowBgView, UIImageView)
 
 @interface RSAppDelegate ()
 
@@ -35,13 +33,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.uiss = [UISS configureWithDefaultJSONFile];
-    self.uiss.statusWindowEnabled = NO;
+    self.uiss.statusWindowEnabled = YES;
     
     self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
-    
-    [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
-    
-    [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler]] forDirection:MSDynamicsDrawerDirectionRight];
+    MSDynamicsDrawerShadowStyler *shadowStyler = [MSDynamicsDrawerShadowStyler styler];
+    shadowStyler.shadowRadius  = 2.0f;
+    shadowStyler.shadowOpacity = 0.2f;
+    [self.dynamicsDrawerViewController addStylersFromArray:@[
+                                                             [MSDynamicsDrawerScaleStyler styler],
+                                                             [MSDynamicsDrawerFadeStyler styler],
+                                                             shadowStyler
+                                                             ]
+                                              forDirection:MSDynamicsDrawerDirectionLeft];
+    [self.dynamicsDrawerViewController addStylersFromArray:@[
+                                                             [MSDynamicsDrawerScaleStyler styler],
+                                                             [MSDynamicsDrawerFadeStyler styler],
+                                                             shadowStyler
+                                                             ]
+                                              forDirection:MSDynamicsDrawerDirectionRight];
     
     RSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
@@ -52,14 +61,8 @@
     
     // Transition to the first view controller
     [menuViewController transitionToViewController:RSPaneViewControllerTypeCards];
-    
-    int hexValue = 0x252134;
-    CGFloat red = ((hexValue & 0xFF0000) >> 16) / 255.0f;
-    CGFloat green = ((hexValue & 0x00FF00) >> 8) / 255.0f;
-    CGFloat blue = (hexValue & 0x0000FF) / 255.0f;
-    
-    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.window.bounds];
-    backgroundView.image = [UIImage imageWithColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
+
+    RSWindowBgView *backgroundView = [[RSWindowBgView alloc] initWithFrame:self.window.bounds];
     backgroundView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
     [self.window insertSubview:backgroundView atIndex:0];
     

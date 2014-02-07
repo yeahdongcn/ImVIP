@@ -9,8 +9,10 @@
         "tv_cell_title_color": "#2b1e6a",
         "tv_cell_subtitle_color": "#b5b4ba",
         "tv_cell_subtitle_hl_color": "#fefefe",
-        "tv_cell_selected_bg_color": "#00cab5",
-        "tv_cell_accessory_tint_color": "#d3d3ea"
+        "tv_cell_selected_bg_color": "#00cab5"
+    },
+    "RSWindowBgView": {
+        "backgroundColor": "$win_bg_color"
     },
     "RSTitleView": {
         "UILabel": {
@@ -36,7 +38,7 @@
             "separatorColor":  "$tv_sep_color",
             "RSCardCellButton" : {
                 "image:default": "cards_arrow",
-                "tintColor": "$tv_cell_accessory_tint_color",
+                "image:highlighted": "cards_arrow_hl"
             },
             "RSCardCellTitleLabel": {
                 "textColor": "$tv_cell_title_color"
