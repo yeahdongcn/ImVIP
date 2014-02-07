@@ -19,6 +19,7 @@ new_class(RSCardCellButton, UIButton)
 @interface RSCardCell ()
 
 @property (nonatomic, strong) UIImage *accessoryViewNormalImage;
+
 @property (nonatomic, strong) UIImage *accessoryViewHighlightedImage;
 
 @end
