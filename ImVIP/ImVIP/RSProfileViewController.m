@@ -8,19 +8,19 @@
 
 #import "RSProfileViewController.h"
 
-new_class(RSProfileViewBgView, UIView)
+new_class(RSProfileViewBackgroundView, UIView)
 
 new_class(RSProfileViewAvatarView, UIView)
 
 @interface RSProfileViewController ()
 
-@property (nonatomic, weak) IBOutlet UIImageView *bg;
+@property (nonatomic, weak) IBOutlet UIImageView *background;
 
 @property (nonatomic, weak) IBOutlet UIButton *avatar;
 
 @property (nonatomic, weak) IBOutlet UILabel *username;
 
-@property (nonatomic) CGRect bgFrame;
+@property (nonatomic) CGRect backgroundFrame;
 
 @end
 
@@ -40,7 +40,7 @@ new_class(RSProfileViewAvatarView, UIView)
 {
     [super viewDidLoad];
     
-    self.bgFrame = self.bg.frame;
+    self.backgroundFrame = self.background.frame;
     
     self.username.text = @"Guest";
 }
@@ -74,12 +74,12 @@ new_class(RSProfileViewAvatarView, UIView)
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat yOffset  = scrollView.contentOffset.y;
     if (yOffset < 0) {
-        CGRect frame = self.bgFrame;
+        CGRect frame = self.backgroundFrame;
         frame.origin.y += yOffset;
         frame.size.height -= yOffset;
-        self.bg.frame = frame;
-    } else if (!CGRectEqualToRect(self.bg.frame, self.bgFrame)){
-        self.bg.frame = self.bgFrame;
+        self.background.frame = frame;
+    } else if (!CGRectEqualToRect(self.background.frame, self.backgroundFrame)){
+        self.background.frame = self.backgroundFrame;
     }
 }
 

@@ -16,7 +16,7 @@
 
 #import "SFUIViewMacroses.h"
 
-new_class(RSWindowBgView, UIImageView)
+new_class(RSWindowBackgroundView, UIImageView)
 
 @interface RSAppDelegate ()
 
@@ -57,7 +57,7 @@ new_class(RSWindowBgView, UIImageView)
     // Transition to the first view controller
     [menuViewController transitionToViewController:RSPaneViewControllerTypeCards];
 
-    RSWindowBgView *backgroundView = [[RSWindowBgView alloc] initWithFrame:self.window.bounds];
+    RSWindowBackgroundView *backgroundView = [[RSWindowBackgroundView alloc] initWithFrame:self.window.bounds];
     backgroundView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
     [self.window insertSubview:backgroundView atIndex:0];
 

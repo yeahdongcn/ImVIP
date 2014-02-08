@@ -12,9 +12,9 @@ new_class(RSCardCellTitleLabel, UILabel)
 
 new_class(RSCardCellSubtitleLabel, UILabel)
 
-new_class(RSCardCellBgView, UIView)
+new_class(RSCardCellSelectedBackgroundView, UIView)
 
-new_class(RSCardCellButton, UIButton)
+new_class(RSCardCellAccessoryView, UIButton)
 
 @interface RSCardCell ()
 
@@ -26,10 +26,10 @@ new_class(RSCardCellButton, UIButton)
 
 @implementation RSCardCell
 
-- (void)__updateAccessoryView:(BOOL)highlighted
+- (void)__onAccessoryViewUpdated:(BOOL)highlighted
 {
     if (self.accessoryViewNormalImage && self.accessoryViewHighlightedImage) {
-        RSCardCellButton *accessoryView = (RSCardCellButton *)self.accessoryView;
+        RSCardCellAccessoryView *accessoryView = (RSCardCellAccessoryView *)self.accessoryView;
         if (highlighted) {
             [accessoryView setImage:self.accessoryViewHighlightedImage forState:UIControlStateNormal];
         } else {
@@ -42,11 +42,11 @@ new_class(RSCardCellButton, UIButton)
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        RSCardCellButton *accessoryView = [RSCardCellButton buttonWithType:UIButtonTypeCustom];
+        RSCardCellAccessoryView *accessoryView = [RSCardCellAccessoryView buttonWithType:UIButtonTypeCustom];
         [accessoryView sizeToFit];
         self.accessoryView = accessoryView;
         
-        RSCardCellBgView *selectedBackgroundView = [RSCardCellBgView new];
+        RSCardCellSelectedBackgroundView *selectedBackgroundView = [RSCardCellSelectedBackgroundView new];
         self.selectedBackgroundView = selectedBackgroundView;
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -62,14 +62,14 @@ new_class(RSCardCellButton, UIButton)
 {
     [super setHighlighted:highlighted animated:animated];
     
-    [self __updateAccessoryView:highlighted];
+    [self __onAccessoryViewUpdated:highlighted];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
     
-    [self __updateAccessoryView:selected];
+    [self __onAccessoryViewUpdated:selected];
 }
 
 @end

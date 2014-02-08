@@ -152,7 +152,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LcE-c2-R6i" customClass="RSProfileViewBgView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LcE-c2-R6i" customClass="RSProfileViewBackgroundView">
                                     <rect key="frame" x="53" y="0.0" width="267" height="160"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -256,7 +256,7 @@
                     </tableView>
                     <connections>
                         <outlet property="avatar" destination="aen-Ft-iJn" id="9f0-sc-0LJ"/>
-                        <outlet property="bg" destination="5bT-F3-tJp" id="rzF-pc-3g4"/>
+                        <outlet property="background" destination="5bT-F3-tJp" id="86D-r9-Obc"/>
                         <outlet property="username" destination="9WF-hI-Pca" id="OCy-MR-2PU"/>
                     </connections>
                 </tableViewController>

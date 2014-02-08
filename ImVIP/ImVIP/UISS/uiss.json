@@ -11,7 +11,7 @@
         "tv_cell_subtitle_hl_color": "#fefefe",
         "tv_cell_selected_bg_color": "#00cab5"
     },
-    "RSWindowBgView": {
+    "RSWindowBackgroundView": {
         "backgroundColor": "$win_bg_color"
     },
     "RSTitleView": {
@@ -38,7 +38,7 @@
         "UITableView": {
             "backgroundColor": "$tv_bg_color",
             "separatorColor":  "$tv_sep_color",
-            "RSCardCellButton" : {
+            "RSCardCellAccessoryView" : {
                 "image:default": "cards_arrow",
                 "image:highlighted": "cards_arrow_hl"
             },
@@ -49,7 +49,7 @@
                 "textColor": "$tv_cell_subtitle_color",
                 "highlightedTextColor": "$tv_cell_subtitle_hl_color"
             },
-            "RSCardCellBgView": {
+            "RSCardCellSelectedBackgroundView": {
                 "backgroundColor": "$tv_cell_selected_bg_color"
             }
         },
@@ -61,7 +61,7 @@
         "UITableView": {
             "backgroundColor": "$tv_bg_color"
         },
-        "RSProfileViewBgView": {
+        "RSProfileViewBackgroundView": {
             "UIImageView": {
                 "image": "profile_bg"
             }
