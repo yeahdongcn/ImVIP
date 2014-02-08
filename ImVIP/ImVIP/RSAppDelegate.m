@@ -29,7 +29,7 @@ new_class(RSWindowBgView, UIImageView)
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.uiss = [UISS configureWithDefaultJSONFile];
-    self.uiss.statusWindowEnabled = YES;
+    self.uiss.statusWindowEnabled = NO;
     
     self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
     MSDynamicsDrawerShadowStyler *shadowStyler = [MSDynamicsDrawerShadowStyler styler];
