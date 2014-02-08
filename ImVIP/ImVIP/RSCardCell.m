@@ -46,7 +46,7 @@ new_class(RSCardCellButton, UIButton)
         [accessoryView sizeToFit];
         self.accessoryView = accessoryView;
         
-        RSCardCellBgView *selectedBackgroundView = [[RSCardCellBgView alloc] init];
+        RSCardCellBgView *selectedBackgroundView = [RSCardCellBgView new];
         self.selectedBackgroundView = selectedBackgroundView;
         
         dispatch_async(dispatch_get_main_queue(), ^{

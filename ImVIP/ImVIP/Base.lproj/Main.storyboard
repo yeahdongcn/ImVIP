@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXA-o9-HS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="596" y="973"/>
+            <point key="canvasLocation" x="596" y="837"/>
         </scene>
         <!--Cards View Controller-->
         <scene sceneID="vfh-KW-YOD">
@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="-11" y="481"/>
         </scene>
-        <!--View Controller-->
+        <!--Card View Controller-->
         <scene sceneID="WBc-zp-rGg">
             <objects>
-                <viewController id="DP7-UT-EK1" sceneMemberID="viewController">
+                <viewController id="DP7-UT-EK1" customClass="RSCardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gr9-yo-Usq"/>
                         <viewControllerLayoutGuide type="bottom" id="IbZ-pN-jYg"/>
@@ -134,11 +134,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yOu-AD-iju"/>
+                    <navigationItem key="navigationItem" id="yOu-AD-iju">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="NTa-t3-Q2l"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hij-Qg-HRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="560" y="189"/>
+            <point key="canvasLocation" x="596" y="149"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="fdF-Gm-fHw">

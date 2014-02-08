@@ -37,12 +37,12 @@
                                            };
 }
 
-- (void)__dynamicsDrawerRevealLeftBarButtonItemTapped:(id)sender
+- (void)__openMenu
 {
     [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateOpen inDirection:MSDynamicsDrawerDirectionLeft animated:YES allowUserInterruption:YES completion:nil];
 }
 
-- (void)__dynamicsDrawerRevealRightBarButtonItemTapped:(id)sender
+- (void)__openProfile
 {
     [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateOpen inDirection:MSDynamicsDrawerDirectionRight animated:YES allowUserInterruption:YES completion:nil];
 }
@@ -97,10 +97,10 @@
     titleView.showIndicator = YES;
     paneViewController.navigationItem.titleView = titleView;
     
-    self.paneRevealLeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_menu"] style:UIBarButtonItemStyleBordered target:self action:@selector(__dynamicsDrawerRevealLeftBarButtonItemTapped:)];
+    self.paneRevealLeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_menu"] style:UIBarButtonItemStyleBordered target:self action:@selector(__openMenu)];
     paneViewController.navigationItem.leftBarButtonItem = self.paneRevealLeftBarButtonItem;
     
-    self.paneRevealRightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_user"] style:UIBarButtonItemStyleBordered target:self action:@selector(__dynamicsDrawerRevealRightBarButtonItemTapped:)];
+    self.paneRevealRightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_profile"] style:UIBarButtonItemStyleBordered target:self action:@selector(__openProfile)];
     paneViewController.navigationItem.rightBarButtonItem = self.paneRevealRightBarButtonItem;
     
     UINavigationController *paneNavigationViewController = [[UINavigationController alloc] initWithRootViewController:paneViewController];
