@@ -22,13 +22,19 @@ new_class(RSProfileViewAvatarView, UIView)
 
 @property (nonatomic) CGRect bgFrame;
 
-- (IBAction)avatarClicked:(id)sender;
-
-- (IBAction)bgClicked:(id)sender;
-
 @end
 
 @implementation RSProfileViewController
+
+- (IBAction)__onAvatarClicked
+{
+    NSLog(@"avatar");
+}
+
+- (IBAction)__onBgClicked
+{
+    NSLog(@"bg");
+}
 
 - (void)viewDidLoad
 {
@@ -75,16 +81,6 @@ new_class(RSProfileViewAvatarView, UIView)
     } else if (!CGRectEqualToRect(self.bg.frame, self.bgFrame)){
         self.bg.frame = self.bgFrame;
     }
-}
-
-- (IBAction)avatarClicked:(id)sender
-{
-    NSLog(@"avatar");
-}
-
-- (IBAction)bgClicked:(id)sender
-{
-    NSLog(@"bg");
 }
 
 @end

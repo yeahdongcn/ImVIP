@@ -8,30 +8,48 @@
 
 #import "RSCardViewController.h"
 
+#import "RSAppDelegate.h"
+
 @interface RSCardViewController ()
+
+@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @end
 
 @implementation RSCardViewController
 
-- (void)__edit
+- (void)__onEdit
 {
-    
 }
 
-- (void)__back
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    [[self navigationController] popViewControllerAnimated:YES];
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
+    }
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    [self.dynamicsDrawerViewController setPaneDragRevealEnabled:NO forDirection:MSDynamicsDrawerDirectionLeft | MSDynamicsDrawerDirectionRight];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.dynamicsDrawerViewController setPaneDragRevealEnabled:YES forDirection:MSDynamicsDrawerDirectionLeft | MSDynamicsDrawerDirectionRight];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_back"] style:UIBarButtonItemStyleBordered target:self action:@selector(__back)];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_edit"] style:UIBarButtonItemStyleBordered target:self action:@selector(__edit)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(__onEdit)];
 }
 
 - (void)didReceiveMemoryWarning

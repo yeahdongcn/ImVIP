@@ -134,9 +134,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yOu-AD-iju">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="NTa-t3-Q2l"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="yOu-AD-iju"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hij-Qg-HRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,7 +167,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="bgClicked:" destination="jHn-p4-uAz" eventType="touchUpInside" id="cze-M1-ipC"/>
+                                                <action selector="__onBgClicked" destination="jHn-p4-uAz" eventType="touchUpInside" id="Bh3-dX-eio"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -200,7 +198,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="avatarClicked:" destination="jHn-p4-uAz" eventType="touchUpInside" id="U0C-Gh-JwI"/>
+                                                <action selector="__onAvatarClicked" destination="jHn-p4-uAz" eventType="touchUpInside" id="Icu-B9-VDU"/>
                                             </connections>
                                         </button>
                                     </subviews>

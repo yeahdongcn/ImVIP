@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MSDynamicsDrawerViewController.h"
+
 @interface RSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @end

@@ -8,8 +8,6 @@
 
 #import "RSAppDelegate.h"
 
-#import "MSDynamicsDrawerViewController.h"
-
 #import "RSMenuViewController.h"
 
 #import "RSProfileViewController.h"
@@ -23,8 +21,6 @@ new_class(RSWindowBgView, UIImageView)
 @interface RSAppDelegate ()
 
 @property (nonatomic, strong) UISS *uiss;
-
-@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @end
 
@@ -53,7 +49,6 @@ new_class(RSWindowBgView, UIImageView)
                                               forDirection:MSDynamicsDrawerDirectionRight];
     
     RSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
     [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
     
     RSProfileViewController *userViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Profile"];
@@ -65,7 +60,7 @@ new_class(RSWindowBgView, UIImageView)
     RSWindowBgView *backgroundView = [[RSWindowBgView alloc] initWithFrame:self.window.bounds];
     backgroundView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
     [self.window insertSubview:backgroundView atIndex:0];
-    
+
     return YES;
 }
 

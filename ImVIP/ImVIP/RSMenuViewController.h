@@ -12,13 +12,9 @@ typedef NS_ENUM(NSUInteger, RSPaneViewControllerType) {
     RSPaneViewControllerTypeCards
 };
 
-@class MSDynamicsDrawerViewController;
-
 @interface RSMenuViewController : UITableViewController
 
 @property (nonatomic, assign) RSPaneViewControllerType paneViewControllerType;
-
-@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 - (void)transitionToViewController:(RSPaneViewControllerType)paneViewControllerType;
 

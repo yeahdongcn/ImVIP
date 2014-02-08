@@ -8,11 +8,13 @@
 
 #import "RSMenuViewController.h"
 
-#import "MSDynamicsDrawerViewController.h"
+#import "RSAppDelegate.h"
 
 #import "RSTitleView.h"
 
 @interface RSMenuViewController ()
+
+@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @property (nonatomic, strong) NSDictionary *paneViewControllerTitles;
 
@@ -28,6 +30,7 @@
 
 - (void)__initialize
 {
+    self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
     self.paneViewControllerType = NSUIntegerMax;
     self.paneViewControllerTitles = @{
                                       @(RSPaneViewControllerTypeCards) : @"Cards",
@@ -72,11 +75,6 @@
         [self __initialize];
     }
     return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
 }
 
 #pragma mark - RSMenuViewController

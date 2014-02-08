@@ -25,7 +25,9 @@
     "UINavigationBar": {
         "backgroundImage:default": "navi_bg",
         "shadowImage": "",
-        "tintColor": "$navi_tint_color"
+        "tintColor": "$navi_tint_color",
+        "backIndicatorImage": "navi_back",
+        "backIndicatorTransitionMaskImage": "navi_back"
     },
     "RSMenuViewController": {
         "UITableView": {
