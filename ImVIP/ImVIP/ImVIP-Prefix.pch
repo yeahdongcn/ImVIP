@@ -19,4 +19,6 @@
 @implementation class_name\
 @end
 
+#define empty_string @""
+
 #endif

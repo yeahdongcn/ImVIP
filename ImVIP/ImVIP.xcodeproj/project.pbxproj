@@ -147,16 +147,16 @@
 				D04FD25E1892BC0E00EA5646 /* RSProfileViewController.h */,
 				D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */,
 				D09E2CAE1893DA7100786A56 /* RSCardsViewController.h */,
-				D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */,
 				D045895A1894FA4D00077C69 /* RSCardCell.h */,
 				D045895B1894FA4D00077C69 /* RSCardCell.m */,
+				D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */,
+				D04B82E518A4DA5D007971B3 /* RSCardViewController.h */,
+				D04B82E618A4DA5D007971B3 /* RSCardViewController.m */,
 				D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */,
 				D0A1E9BE18963D9800D3C770 /* RSTitleView.h */,
 				D0A1E9BF18963D9800D3C770 /* RSTitleView.m */,
 				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
-				D04B82E518A4DA5D007971B3 /* RSCardViewController.h */,
-				D04B82E618A4DA5D007971B3 /* RSCardViewController.m */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";
