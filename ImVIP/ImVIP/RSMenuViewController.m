@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) NSDictionary *paneViewControllerTitles;
 
+@property (nonatomic, strong) NSDictionary *paneViewControllerImages;
+
 @property (nonatomic, strong) NSDictionary *paneViewControllerIdentifiers;
 
 @property (nonatomic, strong) UIBarButtonItem *paneRevealLeftBarButtonItem;
@@ -33,10 +35,25 @@
     self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
     self.paneViewControllerType = NSUIntegerMax;
     self.paneViewControllerTitles = @{
-                                      @(RSPaneViewControllerTypeCards) : @"Cards",
+                                      @(RSPaneViewControllerTypeCards)      : @"Cards",
+                                      @(RSPaneViewControllerTypeLBS)        : @"LBS",
+                                      @(RSPaneViewControllerTypeSale)       : @"Sale",
+                                      @(RSPaneViewControllerTypeBarcodes)   : @"Barcodes",
+                                      @(RSPaneViewControllerTypeStatistics) : @"Statistics",
+                                      };
+    self.paneViewControllerImages = @{
+                                      @(RSPaneViewControllerTypeCards)      : @"menu_cards",
+                                      @(RSPaneViewControllerTypeLBS)        : @"menu_lbs",
+                                      @(RSPaneViewControllerTypeSale)       : @"menu_sale",
+                                      @(RSPaneViewControllerTypeBarcodes)   : @"menu_barcodes",
+                                      @(RSPaneViewControllerTypeStatistics) : @"menu_statistics",
                                       };
     self.paneViewControllerIdentifiers = @{
                                            @(RSPaneViewControllerTypeCards) : @"Cards",
+                                           @(RSPaneViewControllerTypeLBS) : @"Cards",
+                                           @(RSPaneViewControllerTypeSale) : @"Cards",
+                                           @(RSPaneViewControllerTypeBarcodes) : @"Cards",
+                                           @(RSPaneViewControllerTypeStatistics) : @"Cards",
                                            };
 }
 
@@ -116,7 +133,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -125,7 +142,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.imageView.image = [UIImage imageNamed:@"menu_creditcard"];
+    cell.imageView.image = [UIImage imageNamed:self.paneViewControllerImages[@([self __paneViewControllerTypeForIndexPath:indexPath])]];
     cell.textLabel.text = self.paneViewControllerTitles[@([self __paneViewControllerTypeForIndexPath:indexPath])];
     
     return cell;
