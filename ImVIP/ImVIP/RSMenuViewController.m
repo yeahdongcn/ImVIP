@@ -24,6 +24,8 @@ new_class(RSMenuTableHeaderView, UIView)
 
 @property (nonatomic, strong) NSDictionary *paneViewControllerIdentifiers;
 
+@property (nonatomic, strong) NSMutableDictionary *paneViewControllerNavigationViewControllers;
+
 @property (nonatomic, strong) UIBarButtonItem *paneRevealLeftBarButtonItem;
 
 @property (nonatomic, strong) UIBarButtonItem *paneRevealRightBarButtonItem;
@@ -109,6 +111,14 @@ new_class(RSMenuTableHeaderView, UIView)
 
 #pragma mark - RSMenuViewController
 
+- (NSMutableDictionary *)paneViewControllerNavigationViewControllers
+{
+    if (!_paneViewControllerNavigationViewControllers) {
+        _paneViewControllerNavigationViewControllers = [NSMutableDictionary new];
+    }
+    return _paneViewControllerNavigationViewControllers;
+}
+
 - (void)transitionToViewController:(RSPaneViewControllerType)paneViewControllerType
 {
     // Close pane if already displaying the pane view controller
@@ -119,19 +129,26 @@ new_class(RSMenuTableHeaderView, UIView)
     
     BOOL animateTransition = self.dynamicsDrawerViewController.paneViewController != nil;
     
-    UIViewController *paneViewController = [self.storyboard instantiateViewControllerWithIdentifier:self.paneViewControllerIdentifiers[@(paneViewControllerType)]];
-    RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
-    titleView.label.text = self.paneViewControllerTitles[@(paneViewControllerType)];
-    titleView.showIndicator = YES;
-    paneViewController.navigationItem.titleView = titleView;
+    UINavigationController *paneNavigationViewController = self.paneViewControllerNavigationViewControllers[@(paneViewControllerType)];
+    if (!paneNavigationViewController) {
+        UIViewController *paneViewController = [self.storyboard instantiateViewControllerWithIdentifier:self.paneViewControllerIdentifiers[@(paneViewControllerType)]];
+        
+        RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
+        titleView.label.text = self.paneViewControllerTitles[@(paneViewControllerType)];
+        titleView.showIndicator = YES;
+        paneViewController.navigationItem.titleView = titleView;
+        
+        self.paneRevealLeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_menu"] style:UIBarButtonItemStylePlain target:self action:@selector(__openMenu)];
+        paneViewController.navigationItem.leftBarButtonItem = self.paneRevealLeftBarButtonItem;
+        
+        self.paneRevealRightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_profile"] style:UIBarButtonItemStylePlain target:self action:@selector(__openProfile)];
+        paneViewController.navigationItem.rightBarButtonItem = self.paneRevealRightBarButtonItem;
+        
+        paneNavigationViewController = [[UINavigationController alloc] initWithRootViewController:paneViewController];
+        
+        [self.paneViewControllerNavigationViewControllers setObject:paneNavigationViewController forKey:@(paneViewControllerType)];
+    }
     
-    self.paneRevealLeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_menu"] style:UIBarButtonItemStylePlain target:self action:@selector(__openMenu)];
-    paneViewController.navigationItem.leftBarButtonItem = self.paneRevealLeftBarButtonItem;
-    
-    self.paneRevealRightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_profile"] style:UIBarButtonItemStylePlain target:self action:@selector(__openProfile)];
-    paneViewController.navigationItem.rightBarButtonItem = self.paneRevealRightBarButtonItem;
-    
-    UINavigationController *paneNavigationViewController = [[UINavigationController alloc] initWithRootViewController:paneViewController];
     [self.dynamicsDrawerViewController setPaneViewController:paneNavigationViewController animated:animateTransition completion:nil];
     
     self.paneViewControllerType = paneViewControllerType;
