@@ -12,6 +12,8 @@
 
 #import "RSTitleView.h"
 
+new_class(RSMenuTableHeaderView, UIView)
+
 @interface RSMenuViewController ()
 
 @property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
@@ -94,6 +96,17 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.clearsSelectionOnViewWillAppear = NO;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
+    });
+}
+
 #pragma mark - RSMenuViewController
 
 - (void)transitionToViewController:(RSPaneViewControllerType)paneViewControllerType
@@ -154,14 +167,6 @@
 {
     RSPaneViewControllerType paneViewControllerType = [self __paneViewControllerTypeForIndexPath:indexPath];
     [self transitionToViewController:paneViewControllerType];
-    
-    // Prevent visual display bug with cell dividers
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    double delayInSeconds = 0.3;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self.tableView reloadData];
-    });
 }
 
 #pragma mark - MSDynamicsDrawerViewControllerDelegate

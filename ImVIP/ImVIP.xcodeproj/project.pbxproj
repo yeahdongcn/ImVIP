@@ -21,6 +21,7 @@
 		D01734AD18876DAA00C07608 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01734AB18876DAA00C07608 /* InfoPlist.strings */; };
 		D01734AF18876DAA00C07608 /* ImVIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734AE18876DAA00C07608 /* ImVIPTests.m */; };
 		D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734C318878BEE00C07608 /* RSMenuViewController.m */; };
+		D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0194F7B18A9BA4A00297511 /* RSMenuCell.m */; };
 		D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D045895B1894FA4D00077C69 /* RSCardCell.m */; };
 		D04B82E718A4DA5D007971B3 /* RSCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04B82E618A4DA5D007971B3 /* RSCardViewController.m */; };
 		D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */; };
@@ -64,6 +65,8 @@
 		D01734C218878BEE00C07608 /* RSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSMenuViewController.h; sourceTree = "<group>"; };
 		D01734C318878BEE00C07608 /* RSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMenuViewController.m; sourceTree = "<group>"; };
 		D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUIViewMacroses.h; sourceTree = "<group>"; };
+		D0194F7A18A9BA4A00297511 /* RSMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSMenuCell.h; sourceTree = "<group>"; };
+		D0194F7B18A9BA4A00297511 /* RSMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMenuCell.m; sourceTree = "<group>"; };
 		D045895A1894FA4D00077C69 /* RSCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardCell.h; sourceTree = "<group>"; };
 		D045895B1894FA4D00077C69 /* RSCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardCell.m; sourceTree = "<group>"; };
 		D04B82E518A4DA5D007971B3 /* RSCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardViewController.h; sourceTree = "<group>"; };
@@ -144,17 +147,19 @@
 				D017349518876DAA00C07608 /* Main.storyboard */,
 				D01734C218878BEE00C07608 /* RSMenuViewController.h */,
 				D01734C318878BEE00C07608 /* RSMenuViewController.m */,
+				D0194F7A18A9BA4A00297511 /* RSMenuCell.h */,
+				D0194F7B18A9BA4A00297511 /* RSMenuCell.m */,
 				D04FD25E1892BC0E00EA5646 /* RSProfileViewController.h */,
 				D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */,
 				D09E2CAE1893DA7100786A56 /* RSCardsViewController.h */,
+				D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */,
 				D045895A1894FA4D00077C69 /* RSCardCell.h */,
 				D045895B1894FA4D00077C69 /* RSCardCell.m */,
-				D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */,
-				D04B82E518A4DA5D007971B3 /* RSCardViewController.h */,
-				D04B82E618A4DA5D007971B3 /* RSCardViewController.m */,
 				D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */,
 				D0A1E9BE18963D9800D3C770 /* RSTitleView.h */,
 				D0A1E9BF18963D9800D3C770 /* RSTitleView.m */,
+				D04B82E518A4DA5D007971B3 /* RSCardViewController.h */,
+				D04B82E618A4DA5D007971B3 /* RSCardViewController.m */,
 				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
 			);
@@ -342,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */,
+				D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */,
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
 				D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */,
 				D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */,

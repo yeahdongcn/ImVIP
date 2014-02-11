@@ -9,7 +9,11 @@
         "tv_cell_title_color": "#2b1e6a",
         "tv_cell_subtitle_color": "#b5b4ba",
         "tv_cell_subtitle_hl_color": "#fefefe",
-        "tv_cell_selected_bg_color": "#00cab5"
+        "tv_cell_selected_bg_color": "#00cab5",
+        
+        "menu_tv_bg_color": "#3d3d3d",
+        "menu_tv_cell_title_color": "#fefefe",
+        "menu_tv_cell_selected_bg_color": "#6b58ca",
     },
     "RSWindowBackgroundView": {
         "backgroundColor": "$win_bg_color"
@@ -30,8 +34,20 @@
         "backIndicatorTransitionMaskImage": "navi_back"
     },
     "RSMenuViewController": {
+        "RSMenuTableHeaderView": {
+            "backgroundColor": "$menu_tv_bg_color"
+        },
         "UITableView": {
-            "backgroundColor": "$tv_bg_color"
+            "backgroundColor": "$menu_tv_bg_color",
+            "RSMenuCell": {
+                "backgroundColor": "$menu_tv_bg_color",
+                "UILabel": {
+                    "textColor": "$menu_tv_cell_title_color"
+                },
+                "RSMenuCellSelectedBackgroundView": {
+                    "backgroundColor": "$menu_tv_cell_selected_bg_color",
+                }
+            }
         }
     },
     "RSCardsViewController": {
