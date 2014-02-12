@@ -16,6 +16,8 @@
 
 #import "SFUIViewMacroses.h"
 
+#import <Parse/Parse.h>
+
 new_class(RSWindowBackgroundView, UIImageView)
 
 @interface RSAppDelegate ()
@@ -28,9 +30,11 @@ new_class(RSWindowBackgroundView, UIImageView)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // UISS
     self.uiss = [UISS configureWithDefaultJSONFile];
     self.uiss.statusWindowEnabled = NO;
     
+    // Dynamics drawer
     self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
     MSDynamicsDrawerShadowStyler *shadowStyler = [MSDynamicsDrawerShadowStyler styler];
     shadowStyler.shadowRadius  = 2.0f;
@@ -57,9 +61,15 @@ new_class(RSWindowBackgroundView, UIImageView)
     // Transition to the first view controller
     [menuViewController transitionToViewController:RSPaneViewControllerTypeCards];
 
+    // Custom background
     RSWindowBackgroundView *backgroundView = [[RSWindowBackgroundView alloc] initWithFrame:self.window.bounds];
     backgroundView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
     [self.window insertSubview:backgroundView atIndex:0];
+    
+    // Parse
+    [Parse setApplicationId:@"x7V953gWi3DPhAoOQwsVcbZXEx8vA1HkzNaAt8ww"
+                  clientKey:@"CPSVj3gxvOCL5tQajc06YtDQ5Z1AUlDjHJHUAwl0"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
     return YES;
 }

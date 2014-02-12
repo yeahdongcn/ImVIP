@@ -86,7 +86,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="DP7-UT-EK1" kind="push" id="Rtb-96-Kap"/>
+                                            <segue destination="DP7-UT-EK1" kind="push" identifier="OpenCard" id="Rtb-96-Kap"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -102,7 +102,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kZV-lY-hYS" kind="push" id="Ybc-mf-8Ob"/>
+                                    <segue destination="kZV-lY-hYS" kind="push" identifier="NewCard" id="Ybc-mf-8Ob"/>
                                 </connections>
                             </button>
                         </subviews>

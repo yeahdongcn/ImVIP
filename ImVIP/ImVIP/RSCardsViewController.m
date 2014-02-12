@@ -42,4 +42,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"NewCard"]) {
+        NSLog(@"%@", segue);
+    } else if ([segue.identifier isEqualToString:@"OpenCard"]) {
+        NSLog(@"%@", segue);
+    }
+}
+
 @end
