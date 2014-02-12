@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D000DC3A18AB45410037C0F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D000DC3C18AB45410037C0F8 /* Localizable.strings */; };
 		D017348418876DAA00C07608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348318876DAA00C07608 /* Foundation.framework */; };
 		D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348518876DAA00C07608 /* CoreGraphics.framework */; };
 		D017348818876DAA00C07608 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348718876DAA00C07608 /* UIKit.framework */; };
@@ -45,6 +46,8 @@
 /* Begin PBXFileReference section */
 		9B206531C80E4AC297ED7197 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C9E7771E61A14EFFBA17B572 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D000DC3B18AB45410037C0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D000DC3D18AB45530037C0F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D017348018876DAA00C07608 /* ImVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D017348318876DAA00C07608 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D017348518876DAA00C07608 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,7 @@
 				D017348F18876DAA00C07608 /* main.m */,
 				D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */,
 				D017349118876DAA00C07608 /* ImVIP-Prefix.pch */,
+				D000DC3C18AB45410037C0F8 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -273,6 +277,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = D017347718876DAA00C07608;
 			productRefGroup = D017348118876DAA00C07608 /* Products */;
@@ -291,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D017349C18876DAA00C07608 /* Images.xcassets in Resources */,
+				D000DC3A18AB45410037C0F8 /* Localizable.strings in Resources */,
 				D017348E18876DAA00C07608 /* InfoPlist.strings in Resources */,
 				D017349718876DAA00C07608 /* Main.storyboard in Resources */,
 				D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */,
@@ -377,6 +383,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D000DC3C18AB45410037C0F8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D000DC3B18AB45410037C0F8 /* Base */,
+				D000DC3D18AB45530037C0F8 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D017348C18876DAA00C07608 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

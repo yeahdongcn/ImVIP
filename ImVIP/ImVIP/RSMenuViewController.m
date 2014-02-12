@@ -39,11 +39,11 @@ new_class(RSMenuTableHeaderView, UIView)
     self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
     self.paneViewControllerType = NSUIntegerMax;
     self.paneViewControllerTitles = @{
-                                      @(RSPaneViewControllerTypeCards)      : @"Cards",
-                                      @(RSPaneViewControllerTypeLBS)        : @"LBS",
-                                      @(RSPaneViewControllerTypeSale)       : @"Sale",
-                                      @(RSPaneViewControllerTypeBarcodes)   : @"Barcodes",
-                                      @(RSPaneViewControllerTypeStatistics) : @"Statistics",
+                                      @(RSPaneViewControllerTypeCards)      : RSLocalizedString(@"My Cards"),
+                                      @(RSPaneViewControllerTypeLBS)        : RSLocalizedString(@"Nearby Businesses"),
+                                      @(RSPaneViewControllerTypeSale)       : RSLocalizedString(@"Promotions"),
+                                      @(RSPaneViewControllerTypeBarcodes)   : RSLocalizedString(@"Barcode Scanning"),
+                                      @(RSPaneViewControllerTypeStatistics) : RSLocalizedString(@"Statistics"),
                                       };
     self.paneViewControllerImages = @{
                                       @(RSPaneViewControllerTypeCards)      : @"menu_cards",
@@ -53,10 +53,10 @@ new_class(RSMenuTableHeaderView, UIView)
                                       @(RSPaneViewControllerTypeStatistics) : @"menu_statistics",
                                       };
     self.paneViewControllerIdentifiers = @{
-                                           @(RSPaneViewControllerTypeCards) : @"Cards",
-                                           @(RSPaneViewControllerTypeLBS) : @"Cards",
-                                           @(RSPaneViewControllerTypeSale) : @"Cards",
-                                           @(RSPaneViewControllerTypeBarcodes) : @"Cards",
+                                           @(RSPaneViewControllerTypeCards)      : @"Cards",
+                                           @(RSPaneViewControllerTypeLBS)        : @"Cards",
+                                           @(RSPaneViewControllerTypeSale)       : @"Cards",
+                                           @(RSPaneViewControllerTypeBarcodes)   : @"Cards",
                                            @(RSPaneViewControllerTypeStatistics) : @"Cards",
                                            };
 }

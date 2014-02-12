@@ -21,4 +21,6 @@
 
 #define empty_string @""
 
+#define RSLocalizedString(key) NSLocalizedString(key, nil)
+
 #endif
