@@ -16,7 +16,9 @@
 
 #import "SFUIViewMacroses.h"
 
-#import <Parse/Parse.h>
+#import <BmobSDK/Bmob.h>
+
+#import <TestFlight.h>
 
 new_class(RSWindowBackgroundView, UIImageView)
 
@@ -66,11 +68,12 @@ new_class(RSWindowBackgroundView, UIImageView)
     backgroundView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
     [self.window insertSubview:backgroundView atIndex:0];
     
-    // Parse
-    [Parse setApplicationId:@"x7V953gWi3DPhAoOQwsVcbZXEx8vA1HkzNaAt8ww"
-                  clientKey:@"CPSVj3gxvOCL5tQajc06YtDQ5Z1AUlDjHJHUAwl0"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
+    // Bmob
+    [Bmob registWithAppKey:@"7f0528f19873c62d6ffbcfa2f25d1c1c"];
+    
+    // TestFlight
+    [TestFlight takeOff:@"2d88fd65-7bc4-4e45-9dc9-01e9db1c23c5"];
+    
     return YES;
 }
 

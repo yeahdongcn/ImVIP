@@ -3,7 +3,9 @@ platform :ios, '7.0'
 pod 'AFNetworking'
 #pod 'ColorUtils'
 pod 'MSDynamicsDrawerViewController', '~> 1.3.4'
-pod 'Parse-iOS-SDK', '~> 1.2.18'
 pod 'SpinKit'
 pod 'TDImageColors'
+pod 'TestFlightSDK', '~> 2.2.1'
 pod 'UISS', :git => 'https://github.com/yeahdongcn/UISS.git'
+
+#end
