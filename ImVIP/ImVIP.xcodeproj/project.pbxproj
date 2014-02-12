@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D000DC3A18AB45410037C0F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D000DC3C18AB45410037C0F8 /* Localizable.strings */; };
-		D000DCAF18AB6F890037C0F8 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D000DCAE18AB6F890037C0F8 /* BmobSDK.framework */; };
 		D000DCB218AB72220037C0F8 /* RSNewCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB118AB72220037C0F8 /* RSNewCardViewController.m */; };
+		D011DEBC18ABA8720093F905 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D011DEBB18ABA8720093F905 /* BmobSDK.framework */; };
 		D017348418876DAA00C07608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348318876DAA00C07608 /* Foundation.framework */; };
 		D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348518876DAA00C07608 /* CoreGraphics.framework */; };
 		D017348818876DAA00C07608 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348718876DAA00C07608 /* UIKit.framework */; };
@@ -50,9 +50,9 @@
 		C9E7771E61A14EFFBA17B572 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D000DC3B18AB45410037C0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D000DC3D18AB45530037C0F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		D000DCAE18AB6F890037C0F8 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Bmob/BmobSDK.framework; sourceTree = "<group>"; };
 		D000DCB018AB72220037C0F8 /* RSNewCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSNewCardViewController.h; sourceTree = "<group>"; };
 		D000DCB118AB72220037C0F8 /* RSNewCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSNewCardViewController.m; sourceTree = "<group>"; };
+		D011DEBB18ABA8720093F905 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Bmob/BmobSDK.framework; sourceTree = "<group>"; };
 		D017348018876DAA00C07608 /* ImVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D017348318876DAA00C07608 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D017348518876DAA00C07608 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,7 +98,7 @@
 				D017348818876DAA00C07608 /* UIKit.framework in Frameworks */,
 				D017348418876DAA00C07608 /* Foundation.framework in Frameworks */,
 				ECC1382A82A84BA9A347A2AE /* libPods.a in Frameworks */,
-				D000DCAF18AB6F890037C0F8 /* BmobSDK.framework in Frameworks */,
+				D011DEBC18ABA8720093F905 /* BmobSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +138,7 @@
 		D017348218876DAA00C07608 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D000DCAE18AB6F890037C0F8 /* BmobSDK.framework */,
+				D011DEBB18ABA8720093F905 /* BmobSDK.framework */,
 				D017348318876DAA00C07608 /* Foundation.framework */,
 				D017348518876DAA00C07608 /* CoreGraphics.framework */,
 				D017348718876DAA00C07608 /* UIKit.framework */,
@@ -509,7 +509,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/R0CKSTAR/Desktop/v/ImVIP/Bmob,
+					"$(SRCROOT)/Bmob/",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImVIP/ImVIP-Prefix.pch";
@@ -527,7 +527,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/R0CKSTAR/Desktop/v/ImVIP/Bmob,
+					"$(SRCROOT)/Bmob/",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImVIP/ImVIP-Prefix.pch";
