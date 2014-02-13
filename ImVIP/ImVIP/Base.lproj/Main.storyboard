@@ -125,91 +125,193 @@
         <scene sceneID="cJj-4s-why">
             <objects>
                 <tableViewController id="WRk-BX-kdE" customClass="RSNewCardViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mh3-yW-WkA">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mh3-yW-WkA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="P6a-98-DfN">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="n2n-35-K1j">
+                            <rect key="frame" x="0.0" y="300" width="320" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <sections>
                             <tableViewSection id="Ngk-3Z-GOD">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vC4-1j-b3g">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="vC4-1j-b3g">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vC4-1j-b3g" id="JAg-U3-mvB">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商家名称：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBZ-ry-95r" customClass="RSNewCardLabel">
+                                                    <rect key="frame" x="20" y="20" width="80" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bF-b9-Cza" customClass="RSNewCardTextField">
+                                                    <rect key="frame" x="108" y="15" width="192" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="9bF-b9-Cza" secondAttribute="centerY" id="1Wn-5w-Pue"/>
+                                                <constraint firstItem="sBZ-ry-95r" firstAttribute="centerY" secondItem="JAg-U3-mvB" secondAttribute="centerY" id="5Kk-7h-qNq"/>
+                                                <constraint firstItem="9bF-b9-Cza" firstAttribute="leading" secondItem="sBZ-ry-95r" secondAttribute="trailing" constant="8" symbolic="YES" id="Q6S-5y-6uE"/>
+                                                <constraint firstAttribute="trailing" secondItem="9bF-b9-Cza" secondAttribute="trailing" constant="20" symbolic="YES" id="WRu-kD-v6o"/>
+                                                <constraint firstItem="sBZ-ry-95r" firstAttribute="leading" secondItem="JAg-U3-mvB" secondAttribute="leading" constant="20" symbolic="YES" id="rzb-Bw-jHj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Z4c-MG-7h3">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="6w0-cY-q4k">
+                                        <rect key="frame" x="0.0" y="60" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6w0-cY-q4k" id="HDJ-b9-Ti0">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jet-hz-VZB" customClass="RSNewCardLabel">
+                                                    <rect key="frame" x="20" y="20" width="48" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWF-Ko-mfW" customClass="RSNewCardTextField">
+                                                    <rect key="frame" x="76" y="15" width="224" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jet-hz-VZB" firstAttribute="leading" secondItem="HDJ-b9-Ti0" secondAttribute="leading" constant="20" symbolic="YES" id="1Qk-WZ-WwX"/>
+                                                <constraint firstItem="TWF-Ko-mfW" firstAttribute="leading" secondItem="jet-hz-VZB" secondAttribute="trailing" constant="8" symbolic="YES" id="1n0-wj-AG8"/>
+                                                <constraint firstAttribute="trailing" secondItem="TWF-Ko-mfW" secondAttribute="trailing" constant="20" symbolic="YES" id="70g-7H-WDO"/>
+                                                <constraint firstItem="jet-hz-VZB" firstAttribute="centerY" secondItem="HDJ-b9-Ti0" secondAttribute="centerY" id="ClQ-nj-lce"/>
+                                                <constraint firstAttribute="centerY" secondItem="TWF-Ko-mfW" secondAttribute="centerY" id="cXP-AO-wbU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="Z4c-MG-7h3">
+                                        <rect key="frame" x="0.0" y="120" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z4c-MG-7h3" id="mN7-SN-73n">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us6-Lj-pBt" customClass="RSNewCardButton">
+                                                    <rect key="frame" x="20" y="14" width="77" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="扫一扫" image="new_scan"/>
+                                                    <connections>
+                                                        <action selector="__scanCode:" destination="WRk-BX-kdE" eventType="touchUpInside" id="jIv-rC-cgh"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="或者直接输入" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-Fn-g5I" customClass="RSNewCardLabel">
+                                                    <rect key="frame" x="105" y="20" width="96" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ayr-vw-FfC" customClass="RSNewCardTextField">
+                                                    <rect key="frame" x="209" y="15" width="91" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="RIa-Fn-g5I" secondAttribute="centerY" id="FlP-xF-RUV"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ayr-vw-FfC" secondAttribute="trailing" constant="20" symbolic="YES" id="HH5-qg-k7c"/>
+                                                <constraint firstItem="RIa-Fn-g5I" firstAttribute="leading" secondItem="Us6-Lj-pBt" secondAttribute="trailing" constant="8" symbolic="YES" id="Oce-iv-1ov"/>
+                                                <constraint firstItem="Ayr-vw-FfC" firstAttribute="leading" secondItem="RIa-Fn-g5I" secondAttribute="trailing" constant="8" symbolic="YES" id="RKv-ua-NT4"/>
+                                                <constraint firstAttribute="centerY" secondItem="Us6-Lj-pBt" secondAttribute="centerY" id="RUx-PZ-QAL"/>
+                                                <constraint firstAttribute="centerY" secondItem="Ayr-vw-FfC" secondAttribute="centerY" id="fuH-R7-72V"/>
+                                                <constraint firstItem="Us6-Lj-pBt" firstAttribute="leading" secondItem="mN7-SN-73n" secondAttribute="leading" constant="20" symbolic="YES" id="hpx-D7-VUD"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fV9-k2-IeH">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="fV9-k2-IeH">
+                                        <rect key="frame" x="0.0" y="180" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fV9-k2-IeH" id="mdR-ew-3cB">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择卡片颜色：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM2-R1-voq" customClass="RSNewCardLabel">
+                                                    <rect key="frame" x="20" y="20" width="112" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttn-3M-aHp" customClass="RSNewCardButton">
+                                                    <rect key="frame" x="140" y="14" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="new_image"/>
+                                                    <connections>
+                                                        <action selector="__openImage:" destination="WRk-BX-kdE" eventType="touchUpInside" id="uJ9-Uo-dmm"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FT5-UH-SKM" customClass="RSNewCardButton">
+                                                    <rect key="frame" x="180" y="14" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="new_camera"/>
+                                                    <connections>
+                                                        <action selector="__openCamera:" destination="WRk-BX-kdE" eventType="touchUpInside" id="n6s-lR-rrH"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTy-ag-nWR">
+                                                    <rect key="frame" x="260" y="15" width="40" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="28y-HT-CRr"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Q35-ei-Mfw"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ttn-3M-aHp" firstAttribute="leading" secondItem="HM2-R1-voq" secondAttribute="trailing" constant="8" symbolic="YES" id="2Rk-Gr-cqU"/>
+                                                <constraint firstItem="FT5-UH-SKM" firstAttribute="leading" secondItem="ttn-3M-aHp" secondAttribute="trailing" constant="8" symbolic="YES" id="3u2-Oh-XTm"/>
+                                                <constraint firstAttribute="trailing" secondItem="jTy-ag-nWR" secondAttribute="trailing" constant="20" symbolic="YES" id="7Gw-xj-mAa"/>
+                                                <constraint firstAttribute="centerY" secondItem="FT5-UH-SKM" secondAttribute="centerY" id="Jy9-LQ-rLr"/>
+                                                <constraint firstItem="HM2-R1-voq" firstAttribute="centerY" secondItem="mdR-ew-3cB" secondAttribute="centerY" id="OPL-tX-0uj"/>
+                                                <constraint firstAttribute="centerY" secondItem="ttn-3M-aHp" secondAttribute="centerY" id="Uu2-MQ-w3g"/>
+                                                <constraint firstAttribute="centerY" secondItem="jTy-ag-nWR" secondAttribute="centerY" id="WLJ-MA-MSB"/>
+                                                <constraint firstItem="HM2-R1-voq" firstAttribute="leading" secondItem="mdR-ew-3cB" secondAttribute="leading" constant="20" symbolic="YES" id="e9u-2F-ZUt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GDn-pI-JSK">
-                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="GDn-pI-JSK">
+                                        <rect key="frame" x="0.0" y="240" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GDn-pI-JSK" id="Gpb-fE-xTf">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dbs-mc-h67">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dbs-mc-h67" id="OBc-M2-PTG">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8d2-A3-NaZ">
-                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8d2-A3-NaZ" id="EM2-DX-oB8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dfs-vt-ZJp">
-                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dfs-vt-ZJp" id="iLW-FR-Emn">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="L8o-eH-fxG">
-                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8o-eH-fxG" id="Woz-aO-spN">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bHH-3h-Ux8">
-                                        <rect key="frame" x="0.0" y="352" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bHH-3h-Ux8" id="P4a-XV-Nb8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rA1-XQ-YdZ">
-                                        <rect key="frame" x="0.0" y="396" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rA1-XQ-YdZ" id="hVO-xe-YwS">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euK-hR-lxq" customClass="RSNewCardButton">
+                                                    <rect key="frame" x="114" y="14" width="92" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="存入卡包" image="new_wallet"/>
+                                                    <connections>
+                                                        <action selector="__saveCard:" destination="WRk-BX-kdE" eventType="touchUpInside" id="jCY-pJ-qEn"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="euK-hR-lxq" secondAttribute="centerX" id="g2Z-mA-1MO"/>
+                                                <constraint firstAttribute="centerY" secondItem="euK-hR-lxq" secondAttribute="centerY" id="r5P-MH-OLP"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -221,6 +323,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="5U9-Jg-af6"/>
+                    <connections>
+                        <outlet property="codeField" destination="Ayr-vw-FfC" id="vSf-jP-hXu"/>
+                        <outlet property="colorView" destination="jTy-ag-nWR" id="hwv-5H-X1G"/>
+                        <outlet property="subtitleField" destination="TWF-Ko-mfW" id="c7d-NF-MHC"/>
+                        <outlet property="titleField" destination="9bF-b9-Cza" id="1zs-Wj-err"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRe-Zg-oyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -393,6 +501,12 @@
             <point key="canvasLocation" x="593" y="-260"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="new_camera" width="32" height="32"/>
+        <image name="new_image" width="32" height="32"/>
+        <image name="new_scan" width="32" height="32"/>
+        <image name="new_wallet" width="32" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

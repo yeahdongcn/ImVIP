@@ -8,30 +8,82 @@
 
 #import "RSNewCardViewController.h"
 
+#import "RSTitleView.h"
+
+#import "RSAppDelegate.h"
+
+new_class(RSNewCardLabel, UILabel)
+
+new_class(RSNewCardButton, UIButton)
+
+new_class(RSNewCardTextField, UITextField)
+
 @interface RSNewCardViewController ()
+
+@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
+
+@property (nonatomic, weak) IBOutlet UITextField *titleField;
+
+@property (nonatomic, weak) IBOutlet UITextField *subtitleField;
+
+@property (nonatomic, weak) IBOutlet UITextField *codeField;
+
+@property (nonatomic, weak) IBOutlet UIView *colorView;
 
 @end
 
 @implementation RSNewCardViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (IBAction)__openImage:(id)sender
 {
-    self = [super initWithStyle:style];
+    
+}
+
+- (IBAction)__openCamera:(id)sender
+{
+    
+}
+
+- (IBAction)__saveCard:(id)sender
+{
+    
+}
+
+- (IBAction)__scanCode:(id)sender
+{
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.dynamicsDrawerViewController setPaneDragRevealEnabled:NO forDirection:MSDynamicsDrawerDirectionLeft | MSDynamicsDrawerDirectionRight];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.dynamicsDrawerViewController setPaneDragRevealEnabled:YES forDirection:MSDynamicsDrawerDirectionLeft | MSDynamicsDrawerDirectionRight];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
+    titleView.label.text = RSLocalizedString(@"New Card");
+    self.navigationItem.titleView = titleView;
 }
 
 - (void)didReceiveMemoryWarning

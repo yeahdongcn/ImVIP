@@ -1,10 +1,15 @@
-
-
-
-
+//
+//  i18n Chinese - Simplified
+//  ImVIP
+//
+//  Created by R0CKSTAR on 2/12/14.
+//  Copyright (c) 2014 P.D.Q. All rights reserved.
+//
 
 "My Cards"          = "我的VIP卡";
 "Nearby Businesses" = "附近商家";
 "Promotions"        = "促销活动";
 "Barcode Scanning"  = "条码扫描";
 "Statistics"        = "统计信息";
+
+"New Card"          = "添加卡片";
