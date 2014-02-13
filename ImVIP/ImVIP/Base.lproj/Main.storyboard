@@ -97,6 +97,9 @@
                             <constraint firstAttribute="bottom" secondItem="RST-BU-HTH" secondAttribute="bottom" constant="2" id="tux-EI-eEa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="UjZ-5A-7EN" id="YLn-r1-LqB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tRT-FO-IkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
