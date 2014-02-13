@@ -12,6 +12,10 @@
 
 #import "RSAppDelegate.h"
 
+#import <BmobSDK/BmobObject.h>
+
+#import <AVFoundation/AVFoundation.h>
+
 new_class(RSNewCardLabel, UILabel)
 
 new_class(RSNewCardButton, UIButton)
@@ -29,6 +33,8 @@ new_class(RSNewCardTextField, UITextField)
 @property (nonatomic, weak) IBOutlet UITextField *codeField;
 
 @property (nonatomic, weak) IBOutlet UIView *colorView;
+
+@property (nonatomic, strong) AVMetadataMachineReadableCodeObject *codeObject;
 
 @end
 
@@ -84,6 +90,8 @@ new_class(RSNewCardTextField, UITextField)
     RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
     titleView.label.text = RSLocalizedString(@"New Card");
     self.navigationItem.titleView = titleView;
+    
+    self.colorView.layer.cornerRadius = 4.f;
 }
 
 - (void)didReceiveMemoryWarning
