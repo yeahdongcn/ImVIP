@@ -12,7 +12,7 @@
 
 #import "RSProfileViewController.h"
 
-#import "UISS.h"
+#import <UISS.h>
 
 #import "SFUIViewMacroses.h"
 

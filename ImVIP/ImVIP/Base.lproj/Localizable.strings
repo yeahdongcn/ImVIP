@@ -13,3 +13,9 @@
 "Statistics"        = "Statistics";
 
 "New Card"          = "New Card";
+
+"Require fields should not be empty" = "Require fields should not be empty";
+"Business name field is empty"       = "Business name field is empty";
+"Code field is empty"                = "Code field is empty";
+"Please retry"                       = "Please retry";
+"Yes"                                = "Yes";

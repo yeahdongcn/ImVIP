@@ -156,7 +156,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bF-b9-Cza" customClass="RSNewCardTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填项" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bF-b9-Cza" customClass="RSNewCardTextField">
                                                     <rect key="frame" x="108" y="15" width="192" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -224,7 +224,7 @@
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ayr-vw-FfC" customClass="RSNewCardTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填项" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ayr-vw-FfC" customClass="RSNewCardTextField">
                                                     <rect key="frame" x="196" y="15" width="104" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -311,10 +311,21 @@
                                                         <action selector="__saveCard:" destination="WRk-BX-kdE" eventType="touchUpInside" id="jCY-pJ-qEn"/>
                                                     </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1d-9e-YGl">
+                                                    <rect key="frame" x="267" y="13" width="33" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="33" id="MaP-og-y8I"/>
+                                                        <constraint firstAttribute="height" constant="33" id="r8p-Mk-ZPr"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="n1d-9e-YGl" secondAttribute="centerY" id="JxG-TB-fhf"/>
                                                 <constraint firstAttribute="centerX" secondItem="euK-hR-lxq" secondAttribute="centerX" id="g2Z-mA-1MO"/>
                                                 <constraint firstAttribute="centerY" secondItem="euK-hR-lxq" secondAttribute="centerY" id="r5P-MH-OLP"/>
+                                                <constraint firstAttribute="trailing" secondItem="n1d-9e-YGl" secondAttribute="trailing" constant="20" symbolic="YES" id="vcc-0Y-Tq0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -330,6 +341,7 @@
                     <connections>
                         <outlet property="codeField" destination="Ayr-vw-FfC" id="vSf-jP-hXu"/>
                         <outlet property="colorView" destination="jTy-ag-nWR" id="hwv-5H-X1G"/>
+                        <outlet property="spinnerBackgroundView" destination="n1d-9e-YGl" id="IzB-Xp-Sau"/>
                         <outlet property="subtitleField" destination="TWF-Ko-mfW" id="c7d-NF-MHC"/>
                         <outlet property="titleField" destination="9bF-b9-Cza" id="1zs-Wj-err"/>
                     </connections>

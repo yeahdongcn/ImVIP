@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MSDynamicsDrawerViewController.h"
+#import <MSDynamicsDrawerViewController.h>
 
 @interface RSAppDelegate : UIResponder <UIApplicationDelegate>
 

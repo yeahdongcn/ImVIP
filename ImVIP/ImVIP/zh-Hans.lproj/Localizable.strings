@@ -13,3 +13,9 @@
 "Statistics"        = "统计信息";
 
 "New Card"          = "添加卡片";
+
+"Require fields should not be empty" = "必填项不能为空";
+"Business name field is empty"       = "商户信息为空";
+"Code field is empty"                = "卡号为空";
+"Please retry"                       = "请重试";
+"Yes"                                = "确定";
