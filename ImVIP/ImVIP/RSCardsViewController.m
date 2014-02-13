@@ -16,23 +16,27 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @property (nonatomic, copy) NSArray *cards;
 
 @end
 
 @implementation RSCardsViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (void)__refresh
 {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BmobQuery *query = [BmobQuery queryWithClassName:@"Card"];
         [query findObjectsInBackgroundWithBlock:^(NSArray *cards, NSError *error) {
             self.cards = cards;
-            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.refreshControl endRefreshing];
+                
+                [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+            });
         }];
-    }
-    return self;
+    });
 }
 
 - (void)viewDidLoad
@@ -40,6 +44,25 @@
     [super viewDidLoad];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:empty_string style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(__refresh) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+    
+    
+    double delayInSeconds = .3;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^(void){
+            
+            self.tableView.contentOffset = CGPointMake(0, -self.refreshControl.frame.size.height);
+            
+        } completion:^(BOOL finished){
+            [self.refreshControl beginRefreshing];
+        }];
+        
+    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -56,7 +79,8 @@
     BmobObject *card = [self.cards objectAtIndex:[indexPath row]];
     cell.imageView.image = [UIImage imageNamed:@"icon"];
     cell.textLabel.text = [card objectForKey:@"title"];
-    cell.detailTextLabel.text = [card objectForKey:@"subtitle"];
+//    cell.detailTextLabel.text = [card objectForKey:@"subtitle"];
+    cell.detailTextLabel.text = [card objectForKey:@"updatedAt"];
     
     return cell;
 }
