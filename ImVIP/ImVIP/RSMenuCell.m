@@ -18,6 +18,10 @@ new_class(RSMenuCellSelectedBackgroundView, UIView)
     if (self) {
         RSMenuCellSelectedBackgroundView *selectedBackgroundView = [RSMenuCellSelectedBackgroundView new];
         self.selectedBackgroundView = selectedBackgroundView;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.textLabel.font = [UIFont fontWithName:@"FZQingKeBenYueSongS-R-GB" size:18];
+        });
     }
     return self;
 }
