@@ -56,8 +56,8 @@ new_class(RSMenuTableHeaderView, UIView)
                                            @(RSPaneViewControllerTypeCards)      : @"Cards",
                                            @(RSPaneViewControllerTypeLBS)        : @"Map",
                                            @(RSPaneViewControllerTypeSale)       : @"Sales",
-                                           @(RSPaneViewControllerTypeBarcodes)   : @"Cards",
-                                           @(RSPaneViewControllerTypeStatistics) : @"Cards",
+                                           @(RSPaneViewControllerTypeBarcodes)   : @"Scanner",
+                                           @(RSPaneViewControllerTypeStatistics) : @"Statistics",
                                            };
 }
 

@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cZ-6Y-c77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11" y="1589"/>
+            <point key="canvasLocation" x="-11" y="1985"/>
         </scene>
         <!--Sales View Controller-->
         <scene sceneID="dEp-mu-bgD">
@@ -187,7 +187,44 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTo-2s-FJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11" y="2341"/>
+            <point key="canvasLocation" x="-11" y="2797"/>
+        </scene>
+        <!--Statistics View Controller-->
+        <scene sceneID="cqs-Gy-8ZW">
+            <objects>
+                <viewController storyboardIdentifier="Statistics" id="42v-P3-IfJ" customClass="RSStatisticsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MOI-S2-Khf"/>
+                        <viewControllerLayoutGuide type="bottom" id="FJu-TH-3EJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ifb-xr-iWI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Umc-jS-UIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="588" y="2797"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="0RJ-S4-UWZ">
+            <objects>
+                <viewController storyboardIdentifier="Scanner" id="uWa-Xa-Pf6" customClass="RSScannerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FYt-Sq-ssD"/>
+                        <viewControllerLayoutGuide type="bottom" id="ggd-Rf-p7c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hr3-fm-b1v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="a9H-H5-yEQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Urg-fP-ReF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="588" y="1985"/>
         </scene>
         <!--New Card View Controller-->
         <scene sceneID="cJj-4s-why">
@@ -284,6 +321,7 @@
                                                     <state key="normal" title="扫一扫" image="new_scan"/>
                                                     <connections>
                                                         <action selector="__scanCode:" destination="WRk-BX-kdE" eventType="touchUpInside" id="jIv-rC-cgh"/>
+                                                        <segue destination="uWa-Xa-Pf6" kind="push" id="hN5-iQ-ggs"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="或者直接输入" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-Fn-g5I" customClass="RSNewCardLabel">
@@ -371,10 +409,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euK-hR-lxq" customClass="RSNewCardButton">
-                                                    <rect key="frame" x="120" y="20" width="80" height="20"/>
+                                                    <rect key="frame" x="116" y="20" width="89" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <state key="normal" title="存入卡包" image="new_wallet"/>
+                                                    <state key="normal" title="我的VIP卡" image="new_wallet"/>
                                                     <connections>
                                                         <action selector="__saveCard:" destination="WRk-BX-kdE" eventType="touchUpInside" id="jCY-pJ-qEn"/>
                                                     </connections>
