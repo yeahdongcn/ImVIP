@@ -8,6 +8,9 @@
 
 #import <MSDynamicsDrawerViewController.h>
 
+/**
+ *  Subclass for exporting panePanGestureRecognizer
+ */
 @interface RSDynamicsDrawerViewController : MSDynamicsDrawerViewController
 
 @property (nonatomic, readonly) UIPanGestureRecognizer *panePanGestureRecognizer;
