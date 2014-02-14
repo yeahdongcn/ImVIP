@@ -16,7 +16,7 @@ new_class(RSMenuTableHeaderView, UIView)
 
 @interface RSMenuViewController ()
 
-@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
+@property (nonatomic, weak) RSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @property (nonatomic, strong) NSDictionary *paneViewControllerTitles;
 

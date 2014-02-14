@@ -13,6 +13,7 @@
 		D000DCB718ADC1EB0037C0F8 /* RSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB618ADC1EB0037C0F8 /* RSMapViewController.m */; };
 		D000DCBA18ADC5C30037C0F8 /* RSSalesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB918ADC5C30037C0F8 /* RSSalesViewController.m */; };
 		D000DCBC18ADC7CE0037C0F8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */; };
+		D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m */; };
 		D011DEBC18ABA8720093F905 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D011DEBB18ABA8720093F905 /* BmobSDK.framework */; };
 		D017348418876DAA00C07608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348318876DAA00C07608 /* Foundation.framework */; };
 		D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348518876DAA00C07608 /* CoreGraphics.framework */; };
@@ -62,6 +63,8 @@
 		D000DCB818ADC5C30037C0F8 /* RSSalesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSalesViewController.h; sourceTree = "<group>"; };
 		D000DCB918ADC5C30037C0F8 /* RSSalesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSalesViewController.m; sourceTree = "<group>"; };
 		D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D000DCBD18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDynamicsDrawerViewController.h; sourceTree = "<group>"; };
+		D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDynamicsDrawerViewController.m; sourceTree = "<group>"; };
 		D011DEBB18ABA8720093F905 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Bmob/BmobSDK.framework; sourceTree = "<group>"; };
 		D017348018876DAA00C07608 /* ImVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D017348318876DAA00C07608 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -197,6 +200,8 @@
 		D017348A18876DAA00C07608 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D000DCBD18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.h */,
+				D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m */,
 				D000DCB318ADBCEC0037C0F8 /* FZQingKeBenYueSongS-R-GB.TTF */,
 				D017348B18876DAA00C07608 /* ImVIP-Info.plist */,
 				D017348C18876DAA00C07608 /* InfoPlist.strings */,
@@ -388,6 +393,7 @@
 				D000DCB218AB72220037C0F8 /* RSNewCardViewController.mm in Sources */,
 				D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */,
 				D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */,
+				D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,
 				D04B82E718A4DA5D007971B3 /* RSCardViewController.m in Sources */,

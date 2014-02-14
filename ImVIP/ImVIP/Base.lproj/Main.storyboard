@@ -581,23 +581,6 @@
             </objects>
             <point key="canvasLocation" x="593" y="-260"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="fFk-zs-MeV">
-            <objects>
-                <viewController id="ztz-Yn-1RZ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YcM-e1-pTf"/>
-                        <viewControllerLayoutGuide type="bottom" id="PwG-Dt-u4P"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ESQ-mb-att">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FnR-Xd-poA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="new_camera" width="16" height="16"/>

@@ -8,15 +8,28 @@
 
 #import "RSMapViewController.h"
 
+#import "RSAppDelegate.h"
+
 #import <BMKMapView.h>
 
-@interface RSMapViewController () <BMKMapViewDelegate>
+@interface RSMapViewController () <BMKMapViewDelegate, UIGestureRecognizerDelegate>
+
+@property (nonatomic, weak) RSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @property (nonatomic, weak) IBOutlet BMKMapView *mapView;
 
 @end
 
 @implementation RSMapViewController
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -32,6 +45,8 @@
     
     [self.mapView viewWillAppear];
     self.mapView.delegate = self;
+    
+    self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = NO;
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -40,6 +55,8 @@
     
     [self.mapView viewWillDisappear];
     self.mapView.delegate = nil;
+    
+    self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = YES;
 }
 
 @end

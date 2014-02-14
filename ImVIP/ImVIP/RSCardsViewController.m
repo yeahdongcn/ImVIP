@@ -32,8 +32,7 @@
             self.cards = cards;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.refreshControl endRefreshing];
-                
-                [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationTop];
+                [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
             });
         }];
     });
@@ -70,7 +69,6 @@
     BmobObject *card = [self.cards objectAtIndex:[indexPath row]];
     cell.imageView.image = [UIImage imageNamed:@"icon"];
     cell.textLabel.text = [card objectForKey:@"title"];
-//    cell.detailTextLabel.text = [card objectForKey:@"subtitle"];
     cell.detailTextLabel.text = [card objectForKey:@"updatedAt"];
     
     return cell;

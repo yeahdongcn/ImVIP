@@ -30,7 +30,7 @@ new_class(RSNewCardTextField, UITextField)
 
 @interface RSNewCardViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
-@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
+@property (nonatomic, weak) RSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @property (nonatomic, weak) IBOutlet UITextField *titleField;
 
@@ -162,14 +162,14 @@ new_class(RSNewCardTextField, UITextField)
 {
     [super viewWillAppear:animated];
     
-    [self.dynamicsDrawerViewController setPaneDragRevealEnabled:NO forDirection:MSDynamicsDrawerDirectionLeft | MSDynamicsDrawerDirectionRight];
+    self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
-    [self.dynamicsDrawerViewController setPaneDragRevealEnabled:YES forDirection:MSDynamicsDrawerDirectionLeft | MSDynamicsDrawerDirectionRight];
+    self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = YES;
 }
 
 - (void)viewDidLoad

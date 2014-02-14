@@ -41,7 +41,7 @@ new_class(RSWindowBackgroundView, UIImageView)
     self.uiss.statusWindowEnabled = NO;
     
     // Dynamics drawer
-    self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
+    self.dynamicsDrawerViewController = (RSDynamicsDrawerViewController *)self.window.rootViewController;
     MSDynamicsDrawerShadowStyler *shadowStyler = [MSDynamicsDrawerShadowStyler styler];
     shadowStyler.shadowRadius  = 2.0f;
     shadowStyler.shadowOpacity = 0.2f;
