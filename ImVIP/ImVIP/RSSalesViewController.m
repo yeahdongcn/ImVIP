@@ -14,30 +14,27 @@
 
 @implementation RSSalesViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (void)__refresh
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        sleep(2);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.refreshControl endRefreshing];
+        });
+    });
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.refreshControl addTarget:self action:@selector(__refresh) forControlEvents:UIControlEventValueChanged];
+    
+    [self __refresh];
+    [self.refreshControl beginRefreshing];
+    [UIView animateWithDuration:.3 animations:^{
+        self.tableView.contentOffset = CGPointMake(0, -self.refreshControl.frame.size.height);
+    }];
 }
 
 #pragma mark - Table view data source

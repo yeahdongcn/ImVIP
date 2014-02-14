@@ -181,6 +181,9 @@
                             <outlet property="delegate" destination="phw-ZT-lJw" id="cKz-be-Vzg"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="uKa-Lj-mpm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTo-2s-FJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
