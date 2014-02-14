@@ -12,15 +12,21 @@
 
 #import <BMKMapView.h>
 
-@interface RSMapViewController () <BMKMapViewDelegate, UIGestureRecognizerDelegate>
+#import <BMKSearch.h>
+
+@interface RSMapViewController () <BMKMapViewDelegate, BMKSearchDelegate>
 
 @property (nonatomic, weak) RSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @property (nonatomic, weak) IBOutlet BMKMapView *mapView;
 
+@property (nonatomic, strong) BMKSearch *mapSearch;
+
 @end
 
 @implementation RSMapViewController
+
+#pragma mark - NSObjet
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -31,10 +37,13 @@
     return self;
 }
 
+#pragma mark - UIViewController
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self.mapView setDelegate:self];
     [self.mapView setShowsUserLocation:YES];
     [self.mapView setShowMapScaleBar:YES];
 }
@@ -57,6 +66,17 @@
     self.mapView.delegate = nil;
     
     self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = YES;
+}
+
+#pragma mark - RSMapViewController
+
+- (BMKSearch *)mapSearch
+{
+    if (!_mapSearch) {
+        _mapSearch = [[BMKSearch alloc] init];
+        [_mapSearch setDelegate:self];
+    }
+    return _mapSearch;
 }
 
 @end
