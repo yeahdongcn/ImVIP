@@ -20,11 +20,15 @@
 
 #import <TestFlight.h>
 
+#import <BMapKit.h>
+
 new_class(RSWindowBackgroundView, UIImageView)
 
 @interface RSAppDelegate ()
 
 @property (nonatomic, strong) UISS *uiss;
+
+@property (nonatomic, strong) BMKMapManager *mapManager;
 
 @end
 
@@ -74,6 +78,10 @@ new_class(RSWindowBackgroundView, UIImageView)
     // TestFlight
     [TestFlight takeOff:@"2d88fd65-7bc4-4e45-9dc9-01e9db1c23c5"];
     
+    // Baidu Map
+    self.mapManager = [[BMKMapManager alloc] init];
+    [self.mapManager start:@"imq3rI54PfsGfgmXHLYbHREg"  generalDelegate:nil];
+
     return YES;
 }
 

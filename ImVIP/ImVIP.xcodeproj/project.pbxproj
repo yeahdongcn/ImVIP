@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D000DC3A18AB45410037C0F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D000DC3C18AB45410037C0F8 /* Localizable.strings */; };
-		D000DCB218AB72220037C0F8 /* RSNewCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB118AB72220037C0F8 /* RSNewCardViewController.m */; };
+		D000DCB218AB72220037C0F8 /* RSNewCardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB118AB72220037C0F8 /* RSNewCardViewController.mm */; };
 		D000DCB418ADBCEC0037C0F8 /* FZQingKeBenYueSongS-R-GB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D000DCB318ADBCEC0037C0F8 /* FZQingKeBenYueSongS-R-GB.TTF */; };
+		D000DCB718ADC1EB0037C0F8 /* RSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB618ADC1EB0037C0F8 /* RSMapViewController.m */; };
+		D000DCBA18ADC5C30037C0F8 /* RSSalesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB918ADC5C30037C0F8 /* RSSalesViewController.m */; };
+		D000DCBC18ADC7CE0037C0F8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */; };
 		D011DEBC18ABA8720093F905 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D011DEBB18ABA8720093F905 /* BmobSDK.framework */; };
 		D017348418876DAA00C07608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348318876DAA00C07608 /* Foundation.framework */; };
 		D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348518876DAA00C07608 /* CoreGraphics.framework */; };
@@ -52,8 +55,13 @@
 		D000DC3B18AB45410037C0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D000DC3D18AB45530037C0F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D000DCB018AB72220037C0F8 /* RSNewCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSNewCardViewController.h; sourceTree = "<group>"; };
-		D000DCB118AB72220037C0F8 /* RSNewCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSNewCardViewController.m; sourceTree = "<group>"; };
+		D000DCB118AB72220037C0F8 /* RSNewCardViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RSNewCardViewController.mm; sourceTree = "<group>"; };
 		D000DCB318ADBCEC0037C0F8 /* FZQingKeBenYueSongS-R-GB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FZQingKeBenYueSongS-R-GB.TTF"; path = "Fonts/FZQingKeBenYueSongS-R-GB.TTF"; sourceTree = SOURCE_ROOT; };
+		D000DCB518ADC1EB0037C0F8 /* RSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSMapViewController.h; sourceTree = "<group>"; };
+		D000DCB618ADC1EB0037C0F8 /* RSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMapViewController.m; sourceTree = "<group>"; };
+		D000DCB818ADC5C30037C0F8 /* RSSalesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSalesViewController.h; sourceTree = "<group>"; };
+		D000DCB918ADC5C30037C0F8 /* RSSalesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSalesViewController.m; sourceTree = "<group>"; };
+		D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D011DEBB18ABA8720093F905 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Bmob/BmobSDK.framework; sourceTree = "<group>"; };
 		D017348018876DAA00C07608 /* ImVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D017348318876DAA00C07608 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D000DCBC18ADC7CE0037C0F8 /* AVFoundation.framework in Frameworks */,
 				D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */,
 				D017348818876DAA00C07608 /* UIKit.framework in Frameworks */,
 				D017348418876DAA00C07608 /* Foundation.framework in Frameworks */,
@@ -140,6 +149,7 @@
 		D017348218876DAA00C07608 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */,
 				D011DEBB18ABA8720093F905 /* BmobSDK.framework */,
 				D017348318876DAA00C07608 /* Foundation.framework */,
 				D017348518876DAA00C07608 /* CoreGraphics.framework */,
@@ -173,7 +183,11 @@
 				D04B82E518A4DA5D007971B3 /* RSCardViewController.h */,
 				D04B82E618A4DA5D007971B3 /* RSCardViewController.m */,
 				D000DCB018AB72220037C0F8 /* RSNewCardViewController.h */,
-				D000DCB118AB72220037C0F8 /* RSNewCardViewController.m */,
+				D000DCB118AB72220037C0F8 /* RSNewCardViewController.mm */,
+				D000DCB518ADC1EB0037C0F8 /* RSMapViewController.h */,
+				D000DCB618ADC1EB0037C0F8 /* RSMapViewController.m */,
+				D000DCB818ADC5C30037C0F8 /* RSSalesViewController.h */,
+				D000DCB918ADC5C30037C0F8 /* RSSalesViewController.m */,
 				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
 			);
@@ -366,10 +380,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */,
+				D000DCB718ADC1EB0037C0F8 /* RSMapViewController.m in Sources */,
+				D000DCBA18ADC5C30037C0F8 /* RSSalesViewController.m in Sources */,
 				D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */,
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
 				D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */,
-				D000DCB218AB72220037C0F8 /* RSNewCardViewController.m in Sources */,
+				D000DCB218AB72220037C0F8 /* RSNewCardViewController.mm in Sources */,
 				D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */,
 				D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,

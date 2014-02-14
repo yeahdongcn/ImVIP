@@ -48,14 +48,14 @@ new_class(RSMenuTableHeaderView, UIView)
     self.paneViewControllerImages = @{
                                       @(RSPaneViewControllerTypeCards)      : @"menu_cards",
                                       @(RSPaneViewControllerTypeLBS)        : @"menu_lbs",
-                                      @(RSPaneViewControllerTypeSale)       : @"menu_sale",
+                                      @(RSPaneViewControllerTypeSale)       : @"menu_sales",
                                       @(RSPaneViewControllerTypeBarcodes)   : @"menu_barcodes",
                                       @(RSPaneViewControllerTypeStatistics) : @"menu_statistics",
                                       };
     self.paneViewControllerIdentifiers = @{
                                            @(RSPaneViewControllerTypeCards)      : @"Cards",
-                                           @(RSPaneViewControllerTypeLBS)        : @"Cards",
-                                           @(RSPaneViewControllerTypeSale)       : @"Cards",
+                                           @(RSPaneViewControllerTypeLBS)        : @"Map",
+                                           @(RSPaneViewControllerTypeSale)       : @"Sales",
                                            @(RSPaneViewControllerTypeBarcodes)   : @"Cards",
                                            @(RSPaneViewControllerTypeStatistics) : @"Cards",
                                            };

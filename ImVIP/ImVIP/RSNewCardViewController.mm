@@ -73,7 +73,7 @@ new_class(RSNewCardTextField, UITextField)
     [self __dismissKeyboard];
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary | UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     picker.allowsEditing = NO;
     picker.delegate = self;
     [self presentViewController:picker animated:YES completion:nil];

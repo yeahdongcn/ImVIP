@@ -1,6 +1,7 @@
 platform :ios, '7.0'
 
 pod 'AFNetworking'
+pod 'Baidu-Maps-iOS-SDK', '~> 2.1.1'
 pod 'ColorUtils'
 pod 'MSDynamicsDrawerViewController', '~> 1.3.4'
 pod 'SpinKit'
