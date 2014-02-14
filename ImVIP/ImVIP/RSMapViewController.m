@@ -10,7 +10,7 @@
 
 #import <BMKMapView.h>
 
-@interface RSMapViewController ()
+@interface RSMapViewController () <BMKMapViewDelegate>
 
 @property (nonatomic, weak) IBOutlet BMKMapView *mapView;
 
@@ -24,6 +24,22 @@
     
     [self.mapView setShowsUserLocation:YES];
     [self.mapView setShowMapScaleBar:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.mapView viewWillAppear];
+    self.mapView.delegate = self;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.mapView viewWillDisappear];
+    self.mapView.delegate = nil;
 }
 
 @end
