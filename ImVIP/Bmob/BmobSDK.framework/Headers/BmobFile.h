@@ -40,16 +40,16 @@
  */
 -(id)initWithClassName:(NSString*)className withFilePath:(NSString*)filePath;
 
-
 /**
- *	创建BmobFile对象
+ *  创建BmobFile对象
  *
- *	@param	className	关联的数据库表名
- *	@param	filePath	二进制文件
+ *  @param className 关联的数据库表名
+ *  @param fileName  文件名称，请加上后缀
+ *  @param data      二进制数据
  *
- *	@return	BmobFile对象实例
+ *  @return BmobFile对象实例
  */
--(id)initWithClassName:(NSString *)className withFileData:(NSData*)data;
+-(id)initWithClassName:(NSString *)className  withFileName:(NSString*)fileName  withFileData:(NSData*)data;
 
 /**
  *	上传文件并保存

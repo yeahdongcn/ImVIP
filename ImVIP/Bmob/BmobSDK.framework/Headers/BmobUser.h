@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "BmobConfig.h"
+#import "BmobObject.h"
 
-@interface BmobUser : NSObject
+@interface BmobUser : BmobObject
 
 
 

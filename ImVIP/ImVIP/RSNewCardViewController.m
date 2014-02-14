@@ -86,6 +86,7 @@ new_class(RSNewCardTextField, UITextField)
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     picker.allowsEditing = NO;
+    picker.delegate = self;
     [self presentViewController:picker animated:YES completion:nil];
 }
 

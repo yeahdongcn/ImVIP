@@ -13,7 +13,7 @@
 
 
 /**
- *  传入参数调用云函数
+ *  传入参数同步调用云函数
  *
  *  @param function   函数名
  *  @param parameters 传递给函数的参数
