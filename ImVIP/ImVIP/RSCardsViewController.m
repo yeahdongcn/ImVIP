@@ -49,20 +49,11 @@
     [self.refreshControl addTarget:self action:@selector(__refresh) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
     
-    
-    double delayInSeconds = .3;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        
-        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^(void){
-            
-            self.tableView.contentOffset = CGPointMake(0, -self.refreshControl.frame.size.height);
-            
-        } completion:^(BOOL finished){
-            [self.refreshControl beginRefreshing];
-        }];
-        
-    });
+    [self __refresh];
+    [self.refreshControl beginRefreshing];
+    [UIView animateWithDuration:.3 animations:^{
+        self.tableView.contentOffset = CGPointMake(0, -self.refreshControl.frame.size.height);
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
