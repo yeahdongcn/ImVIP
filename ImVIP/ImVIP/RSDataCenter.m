@@ -28,9 +28,9 @@
     return defaultCenter;
 }
 
-- (void)queryCards:(BOOL)shouldRefresh withCallback:(void(^)(NSArray *))callback
+- (void)queryCards:(BOOL)needQuery withCallback:(void(^)(NSArray *))callback
 {
-    if (shouldRefresh == NO && self.cards && callback) {
+    if (needQuery == NO && self.cards && callback) {
         dispatch_async(dispatch_get_main_queue(), ^{
             callback(self.cards);
         });

@@ -80,7 +80,7 @@ new_class(RSWindowBackgroundView, UIImageView)
     
     // Baidu Map
     self.mapManager = [[BMKMapManager alloc] init];
-    [self.mapManager start:@"imq3rI54PfsGfgmXHLYbHREg"  generalDelegate:nil];
+    [self.mapManager start:@"imq3rI54PfsGfgmXHLYbHREg" generalDelegate:nil];
 
     return YES;
 }

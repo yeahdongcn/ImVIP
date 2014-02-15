@@ -16,7 +16,7 @@
 
 @property (nonatomic, readonly) NSArray *cards;
 
-- (void)queryCards:(BOOL)shouldRefresh withCallback:(void(^)(NSArray *))callback;
+- (void)queryCards:(BOOL)needQuery withCallback:(void(^)(NSArray *))callback;
 
 - (BmobObject *)cardAtIndex:(NSInteger)index;
 
