@@ -11,8 +11,10 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "RSDataCenter.h"
 
 #define new_class(class_name, super_class) @interface class_name : super_class\
 @end\
@@ -21,6 +23,10 @@
 
 #define empty_string @""
 
+#define space_string @" "
+
 #define RSLocalizedString(key) NSLocalizedString(key, nil)
+
+#define DataCenter [RSDataCenter defaultCenter]
 
 #endif

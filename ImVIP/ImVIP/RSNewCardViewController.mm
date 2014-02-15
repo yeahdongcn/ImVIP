@@ -12,8 +12,6 @@
 
 #import "RSAppDelegate.h"
 
-#import <BmobSDK/BmobObject.h>
-
 #import <AVFoundation/AVFoundation.h>
 
 #import <TDImageColors.h>
@@ -115,11 +113,10 @@ new_class(RSNewCardTextField, UITextField)
     [self.spinnerBackgroundView addSubview:spinner];
     [spinner startAnimating];
     
-    BmobObject *card = [[BmobObject alloc] initWithClassName:@"Card"];
+    NSMutableDictionary *card = [NSMutableDictionary new];
     [card setObject:title forKey:@"title"];
     NSString *subtitle = [[self.subtitleField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     [card setObject:subtitle forKey:@"subtitle"];
-    
     if ([self.codeObject stringValue] == nil
         || [[self.codeObject stringValue] isEqualToString:empty_string]) {
         NSString *codeValue = [[self.codeField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -131,16 +128,15 @@ new_class(RSNewCardTextField, UITextField)
     }
     [card setObject:[self.color stringValue] forKey:@"color"];
     
-    [card saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+    [DataCenter saveCard:card withCallback:^(BOOL succeeded, NSError *error) {
         [spinner stopAnimating];
         [spinner removeFromSuperview];
-        if (isSuccessful) {
+        if (succeeded) {
             [self.navigationController popViewControllerAnimated:YES];
         } else {
             [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") message:[error localizedDescription] delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
         }
     }];
-    return;
 }
 
 - (IBAction)__scanCode:(id)sender

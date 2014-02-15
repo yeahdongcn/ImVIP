@@ -17,6 +17,7 @@
 		D000DCC218AE13A90037C0F8 /* RSStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */; };
 		D000DCC518AE14780037C0F8 /* RSScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCC418AE14780037C0F8 /* RSScannerViewController.m */; };
 		D011DEBC18ABA8720093F905 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D011DEBB18ABA8720093F905 /* BmobSDK.framework */; };
+		D011DEC218AF9A0C0093F905 /* RSDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D011DEC118AF9A0C0093F905 /* RSDataCenter.m */; };
 		D017348418876DAA00C07608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348318876DAA00C07608 /* Foundation.framework */; };
 		D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348518876DAA00C07608 /* CoreGraphics.framework */; };
 		D017348818876DAA00C07608 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348718876DAA00C07608 /* UIKit.framework */; };
@@ -72,6 +73,8 @@
 		D000DCC318AE14780037C0F8 /* RSScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSScannerViewController.h; sourceTree = "<group>"; };
 		D000DCC418AE14780037C0F8 /* RSScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSScannerViewController.m; sourceTree = "<group>"; };
 		D011DEBB18ABA8720093F905 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Bmob/BmobSDK.framework; sourceTree = "<group>"; };
+		D011DEC018AF9A0C0093F905 /* RSDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDataCenter.h; sourceTree = "<group>"; };
+		D011DEC118AF9A0C0093F905 /* RSDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDataCenter.m; sourceTree = "<group>"; };
 		D017348018876DAA00C07608 /* ImVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D017348318876DAA00C07608 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D017348518876DAA00C07608 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -203,6 +206,8 @@
 				D000DCC418AE14780037C0F8 /* RSScannerViewController.m */,
 				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
+				D011DEC018AF9A0C0093F905 /* RSDataCenter.h */,
+				D011DEC118AF9A0C0093F905 /* RSDataCenter.m */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
 				D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */,
 				D000DCB218AB72220037C0F8 /* RSNewCardViewController.mm in Sources */,
+				D011DEC218AF9A0C0093F905 /* RSDataCenter.m in Sources */,
 				D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */,
 				D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */,
 				D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m in Sources */,
