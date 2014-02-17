@@ -120,7 +120,7 @@
 {
 	if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
         BMKPinAnnotationView *annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
-        annotationView.pinColor = BMKPinAnnotationColorPurple;
+        annotationView.pinColor = BMKPinAnnotationColorRed;
         annotationView.animatesDrop = YES;
         return annotationView;
     }
