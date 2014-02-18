@@ -10,6 +10,9 @@
 
 #import <BmobSDK/BmobQuery.h>
 
+NSString *const RSDataCenterCardsWillArrive = @"com.pdq.imvip.datacenter.cardsWillArrive";
+NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDidArrive";
+
 @interface RSDataCenter ()
 
 @property (nonatomic, strong) NSArray *cards;
@@ -28,9 +31,10 @@
     return defaultCenter;
 }
 
-- (void)queryCards:(BOOL)needQuery withCallback:(void(^)(NSArray *))callback
+- (void)queryCardsNeedRefresh:(BOOL)needRefresh
+                 withCallback:(void(^)(NSArray *))callback
 {
-    if (needQuery == NO && self.cards && callback) {
+    if (needRefresh == NO && self.cards && callback) {
         dispatch_async(dispatch_get_main_queue(), ^{
             callback(self.cards);
         });
@@ -54,7 +58,8 @@
     return [self.cards objectAtIndex:index];
 }
 
-- (void)saveCard:(NSDictionary *)info withCallback:(void(^)(BOOL, NSError *))callback
+- (void)saveCard:(NSDictionary *)info
+    withCallback:(void(^)(BOOL, NSError *))callback
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BmobObject *card = [[BmobObject alloc] initWithClassName:@"Card"];
@@ -66,6 +71,17 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     callback(succeeded, error);
                 });
+            }
+            
+            // Update in background
+            if (succeeded) {
+                // Going to refresh cards in background
+                [[NSNotificationCenter defaultCenter] postNotificationName:RSDataCenterCardsWillArrive object:nil];
+                
+                [self queryCardsNeedRefresh:YES withCallback:^(NSArray *cards) {
+                    // Cards ready
+                    [[NSNotificationCenter defaultCenter] postNotificationName:RSDataCenterCardsDidArrive object:cards];
+                }];
             }
         }];
     });

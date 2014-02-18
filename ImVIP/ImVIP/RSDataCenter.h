@@ -10,16 +10,21 @@
 
 #import <BmobSDK/BmobObject.h>
 
+extern NSString *const RSDataCenterCardsWillArrive;
+extern NSString *const RSDataCenterCardsDidArrive;
+
 @interface RSDataCenter : NSObject
 
 + (instancetype)defaultCenter;
 
 @property (nonatomic, readonly) NSArray *cards;
 
-- (void)queryCards:(BOOL)needQuery withCallback:(void(^)(NSArray *))callback;
+- (void)queryCardsNeedRefresh:(BOOL)needRefresh
+                 withCallback:(void(^)(NSArray *))callback;
 
 - (BmobObject *)cardAtIndex:(NSInteger)index;
 
-- (void)saveCard:(NSDictionary *)info withCallback:(void(^)(BOOL, NSError *))callback;
+- (void)saveCard:(NSDictionary *)info
+    withCallback:(void(^)(BOOL, NSError *))callback;
 
 @end

@@ -20,7 +20,11 @@
 
 @property (nonatomic, strong) BMKSearch *mapSearch;
 
-@property (nonatomic) BOOL isFirstTimeLoaded;
+@property (nonatomic) BOOL isLoadAtFirstTime;
+
+@property (nonatomic) BOOL needReload;
+
+@property (nonatomic) BOOL isViewAppear;
 
 @property (nonatomic) NSUInteger indexOfCard;
 
@@ -46,6 +50,31 @@
                           pageIndex:0];
 }
 
+- (void)__reload
+{
+    self.needReload = NO;
+    
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    
+    [DataCenter queryCardsNeedRefresh:NO withCallback:^(NSArray *cards) {
+        [self __resetSearch];
+        [self __doSearch];
+    }];
+}
+- (void)__cardsWillArrive:(NSNotification *)notification
+{
+    // Nothing to do currently
+}
+
+- (void)__cardsDidArrive:(NSNotification *)notification
+{
+    if (self.isViewAppear) {
+        [self __reload];
+    } else {
+        self.needReload = YES;
+    }
+}
+
 #pragma mark - NSObjet
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -53,8 +82,15 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__cardsWillArrive:) name:RSDataCenterCardsWillArrive object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__cardsDidArrive:) name:RSDataCenterCardsDidArrive object:nil];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - UIViewController
@@ -63,12 +99,30 @@
 {
     [super viewDidLoad];
     
-    self.isFirstTimeLoaded = YES;
+    self.isLoadAtFirstTime = YES;
     self.radius = 1000;
     
     [self.mapView setDelegate:self];
     [self.mapView setShowsUserLocation:YES];
     [self.mapView setShowMapScaleBar:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.isViewAppear = YES;
+    
+    if (self.needReload) {
+        [self __reload];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    self.isViewAppear = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -81,7 +135,7 @@
     self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = NO;
 }
 
--(void)viewWillDisappear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
@@ -104,12 +158,12 @@
 
 - (void)mapView:(BMKMapView *)mapView didUpdateUserLocation:(BMKUserLocation *)userLocation
 {
-    if (self.isFirstTimeLoaded) {
-        self.isFirstTimeLoaded = NO;
+    if (self.isLoadAtFirstTime) {
+        self.isLoadAtFirstTime = NO;
         
         [mapView setRegion:BMKCoordinateRegionMakeWithDistance(userLocation.coordinate, self.radius, self.radius) animated:YES];
         
-        [DataCenter queryCards:NO withCallback:^(NSArray *cards) {
+        [DataCenter queryCardsNeedRefresh:NO withCallback:^(NSArray *cards) {
             [self __resetSearch];
             [self __doSearch];
         }];
