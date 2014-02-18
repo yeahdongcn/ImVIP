@@ -24,10 +24,10 @@
     return defaultAchievements;
 }
 
-- (void)setNumOfCards:(NSUInteger)numOfCards
+- (void)setNumberOfCards:(NSUInteger)numberOfCards
 {
     NSString *text = nil;
-    switch (numOfCards) {
+    switch (numberOfCards) {
         case 1:
             text = RSLocalizedString(@"First Blood");
             break;

@@ -12,6 +12,6 @@
 
 + (instancetype)defaultAchievements;
 
-- (void)setNumOfCards:(NSUInteger)numOfCards;
+- (void)setNumberOfCards:(NSUInteger)numberOfCards;
 
 @end
