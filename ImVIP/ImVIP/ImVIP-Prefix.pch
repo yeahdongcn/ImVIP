@@ -13,8 +13,12 @@
 #ifdef __OBJC__
 
 #import <UIKit/UIKit.h>
+
 #import <Foundation/Foundation.h>
+
 #import "RSDataCenter.h"
+
+#import "RSAchievements.h"
 
 #define new_class(class_name, super_class) @interface class_name : super_class\
 @end\
@@ -27,6 +31,8 @@
 
 #define RSLocalizedString(key) NSLocalizedString(key, nil)
 
-#define DataCenter [RSDataCenter defaultCenter]
+#define DataCenter   [RSDataCenter defaultCenter]
+
+#define Achievements [RSAchievements defaultAchievements]
 
 #endif

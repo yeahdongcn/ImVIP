@@ -133,6 +133,8 @@ new_class(RSNewCardTextField, UITextField)
         [spinner removeFromSuperview];
         if (succeeded) {
             [self.navigationController popViewControllerAnimated:YES];
+            
+            [Achievements setNumOfCards:[DataCenter.cards count] + 1];
         } else {
             [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") message:[error localizedDescription] delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
         }

@@ -19,3 +19,15 @@
 "Code field is empty"                = "卡号为空";
 "Please retry"                       = "请重试";
 "Yes"                                = "确定";
+
+"First Blood"   = "First Blood";
+"Double Kill"   = "Double Kill";
+"Triple Kill"   = "Triple Kill";
+"Killing Spree" = "Killing Spree";
+"Dominating"    = "Dominating";
+"Mega Kill"     = "Mega Kill";
+"Unstoppable"   = "Unstoppable";
+"Wicked Sick"   = "Wicked Sick";
+"Monster Kill"  = "Monster Kill";
+"Godlike"       = "Godlike";
+"Holy Shit"     = "Holy Shit";

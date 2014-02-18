@@ -40,6 +40,7 @@
 		D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */; };
 		D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1E9BF18963D9800D3C770 /* RSTitleView.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
+		D0F76EFC18B345640069CAB9 /* RSAchievements.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F76EFB18B345640069CAB9 /* RSAchievements.m */; };
 		ECC1382A82A84BA9A347A2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7771E61A14EFFBA17B572 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,8 @@
 		D0A1E9BE18963D9800D3C770 /* RSTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTitleView.h; sourceTree = "<group>"; };
 		D0A1E9BF18963D9800D3C770 /* RSTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTitleView.m; sourceTree = "<group>"; };
 		D0D9C6391888F9950000D1E5 /* uiss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = uiss.json; sourceTree = "<group>"; };
+		D0F76EFA18B345640069CAB9 /* RSAchievements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAchievements.h; sourceTree = "<group>"; };
+		D0F76EFB18B345640069CAB9 /* RSAchievements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAchievements.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,10 +207,12 @@
 				D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */,
 				D000DCC318AE14780037C0F8 /* RSScannerViewController.h */,
 				D000DCC418AE14780037C0F8 /* RSScannerViewController.m */,
-				D017349B18876DAA00C07608 /* Images.xcassets */,
-				D017348A18876DAA00C07608 /* Supporting Files */,
 				D011DEC018AF9A0C0093F905 /* RSDataCenter.h */,
 				D011DEC118AF9A0C0093F905 /* RSDataCenter.m */,
+				D0F76EFA18B345640069CAB9 /* RSAchievements.h */,
+				D0F76EFB18B345640069CAB9 /* RSAchievements.m */,
+				D017349B18876DAA00C07608 /* Images.xcassets */,
+				D017348A18876DAA00C07608 /* Supporting Files */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */,
 				D000DCB718ADC1EB0037C0F8 /* RSMapViewController.m in Sources */,
 				D000DCBA18ADC5C30037C0F8 /* RSSalesViewController.m in Sources */,
+				D0F76EFC18B345640069CAB9 /* RSAchievements.m in Sources */,
 				D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */,
 				D000DCC218AE13A90037C0F8 /* RSStatisticsViewController.m in Sources */,
 				D000DCC518AE14780037C0F8 /* RSScannerViewController.m in Sources */,
