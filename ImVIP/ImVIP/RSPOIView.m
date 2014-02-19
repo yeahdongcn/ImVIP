@@ -19,11 +19,11 @@
 
 - (void)__clicked
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"警告"
-                                                        message:@"栈已经溢出。"
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[self.phoneButton titleForState:UIControlStateNormal]
+                                                        message:nil
                                                        delegate:self
-                                              cancelButtonTitle:@"取消"
-                                              otherButtonTitles:@"确定", nil];
+                                              cancelButtonTitle:RSLocalizedString(@"Cancel")
+                                              otherButtonTitles:RSLocalizedString(@"Call"), nil];
     
     void (^handler)(NSInteger) = ^(NSInteger buttonIndex) {
         if (buttonIndex == alertView.cancelButtonIndex) {
