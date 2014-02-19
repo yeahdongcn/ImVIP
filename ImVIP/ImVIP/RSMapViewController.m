@@ -214,6 +214,7 @@
     [self presentSemiView:poiView withOptions:@{
                                                 KNSemiModalOptionKeys.shadowRadius  : @(2.0),
                                                 KNSemiModalOptionKeys.shadowOpacity : @(0.2),
+                                                KNSemiModalOptionKeys.shadowOffset  : [NSValue valueWithCGSize:CGSizeZero],
                                                 }];
 }
 
