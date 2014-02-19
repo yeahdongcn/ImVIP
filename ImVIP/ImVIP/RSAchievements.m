@@ -66,9 +66,11 @@
     }
     
     if (text) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+        double delayInSeconds = 2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             NSDictionary *options = @{kCRToastNotificationTypeKey             : @(CRToastTypeNavigationBar),
-                                      kCRToastNotificationPresentationTypeKey : @(CRToastPresentationTypeCover),
+                                      kCRToastNotificationPresentationTypeKey : @(CRToastPresentationTypePush),
                                       kCRToastTextKey                         : text,
                                       kCRToastImageKey                        : [UIImage imageNamed:@"achievements_checkmark"],
                                       kCRToastBackgroundColorKey              : [UIColor colorWithRGBValue:0x00cab5],
