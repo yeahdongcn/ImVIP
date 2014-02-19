@@ -43,7 +43,7 @@
 {
     self.indexOfCard++;
     
-    BmobObject *card = [DataCenter cardAtIndex:self.indexOfCard];
+    BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
     [self.mapSearch poiSearchNearBy:[card objectForKey:@"title"]
                              center:self.mapView.userLocation.location.coordinate
                              radius:self.radius
@@ -56,11 +56,12 @@
     
     [self.mapView removeAnnotations:self.mapView.annotations];
     
-    [DataCenter queryCardsNeedRefresh:NO withCallback:^(NSArray *cards) {
+    [DataCenter getCardsAsyncWithCallback:^(NSArray *cards) {
         [self __resetSearch];
         [self __doSearch];
-    }];
+    } whetherNeedQuery:NO];
 }
+
 - (void)__cardsWillArrive:(NSNotification *)notification
 {
     // Nothing to do currently
@@ -163,10 +164,10 @@
         
         [mapView setRegion:BMKCoordinateRegionMakeWithDistance(userLocation.coordinate, self.radius, self.radius) animated:YES];
         
-        [DataCenter queryCardsNeedRefresh:NO withCallback:^(NSArray *cards) {
+        [DataCenter getCardsAsyncWithCallback:^(NSArray *cards) {
             [self __resetSearch];
             [self __doSearch];
-        }];
+        } whetherNeedQuery:NO];
     }
 }
 

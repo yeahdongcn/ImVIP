@@ -65,6 +65,13 @@
             break;
     }
     
+    NSMutableDictionary *achievement = [NSMutableDictionary new];
+    [achievement setObject:@(numberOfCards) forKey:@"NumberOfCards"];
+    [achievement setObject:text ? text : RSStringEmpty forKey:@"Text"];
+    [DataCenter saveAchievement:achievement withCallback:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Save achievement: succeeded = %d, error = %@", succeeded, error);
+    }];
+    
     if (text) {
         double delayInSeconds = 2;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));

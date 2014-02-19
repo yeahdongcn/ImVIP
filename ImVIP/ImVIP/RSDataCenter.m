@@ -31,10 +31,10 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
     return defaultCenter;
 }
 
-- (void)queryCardsNeedRefresh:(BOOL)needRefresh
-                 withCallback:(void(^)(NSArray *))callback
+- (void)getCardsAsyncWithCallback:(void(^)(NSArray *))callback
+                 whetherNeedQuery:(BOOL)needQuery
 {
-    if (needRefresh == NO && self.cards && callback) {
+    if (needQuery == NO && self.cards && callback) {
         dispatch_async(dispatch_get_main_queue(), ^{
             callback(self.cards);
         });
@@ -53,7 +53,7 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
     }
 }
 
-- (BmobObject *)cardAtIndex:(NSInteger)index
+- (BmobObject *)getCachedCardAtIndex:(NSInteger)index
 {
     return [self.cards objectAtIndex:index];
 }
@@ -78,12 +78,66 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
                 // Going to refresh cards in background
                 [[NSNotificationCenter defaultCenter] postNotificationName:RSDataCenterCardsWillArrive object:nil];
                 
-                [self queryCardsNeedRefresh:YES withCallback:^(NSArray *cards) {
+                [self getCardsAsyncWithCallback:^(NSArray *cards) {
                     // Cards ready
                     [[NSNotificationCenter defaultCenter] postNotificationName:RSDataCenterCardsDidArrive object:cards];
-                }];
+                } whetherNeedQuery:YES];
             }
         }];
+    });
+}
+
+- (void)getAchievementAsyncWithCallback:(void(^)(BmobObject *))callback
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *achievementId = [[NSUserDefaults standardUserDefaults] objectForKey:@"AchievementId"];
+        if (achievementId && ![achievementId isEqualToString:RSStringEmpty]) {
+            BmobQuery *query = [BmobQuery queryWithClassName:@"Achievement"];
+            [query getObjectInBackgroundWithId:achievementId block:^(BmobObject *achievement, NSError *error) {
+                if (callback) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        callback(achievement);
+                    });
+                }
+            }];
+        }
+    });
+}
+
+- (void)saveAchievement:(NSDictionary *)info
+           withCallback:(void(^)(BOOL, NSError *))callback
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *achievementId = [[NSUserDefaults standardUserDefaults] objectForKey:@"AchievementId"];
+        if (achievementId && ![achievementId isEqualToString:RSStringEmpty]) {
+            [self getAchievementAsyncWithCallback:^(BmobObject *achievement) {
+                [info enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                    [achievement setObject:obj forKey:key];
+                }];
+                [achievement updateInBackgroundWithResultBlock:^(BOOL succeeded, NSError *error) {
+                    if (callback) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            callback(succeeded, error);
+                        });
+                    }
+                }];
+            }];
+        } else {
+            BmobObject *achievement = [[BmobObject alloc] initWithClassName:@"Achievement"];
+            [info enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                [achievement setObject:obj forKey:key];
+            }];
+            [achievement saveInBackgroundWithResultBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [[NSUserDefaults standardUserDefaults] setObject:achievement.objectId forKey:@"AchievementId"];
+                }
+                if (callback) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        callback(succeeded, error);
+                    });
+                }
+            }];
+        }
     });
 }
 

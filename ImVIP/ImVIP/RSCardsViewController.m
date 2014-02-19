@@ -24,10 +24,10 @@
 
 - (void)__refresh
 {
-    [DataCenter queryCardsNeedRefresh:YES withCallback:^(NSArray *cards) {
+    [DataCenter getCardsAsyncWithCallback:^(NSArray *cards) {
         [self.refreshControl endRefreshing];
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }];
+    } whetherNeedQuery:YES];
 }
 
 - (void)__fakeRefresh
@@ -80,7 +80,7 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:empty_string style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:RSStringEmpty style:UIBarButtonItemStylePlain target:nil action:nil];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(__refresh) forControlEvents:UIControlEventValueChanged];
@@ -122,7 +122,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    BmobObject *card = [DataCenter cardAtIndex:[indexPath row]];
+    BmobObject *card = [DataCenter getCachedCardAtIndex:[indexPath row]];
     cell.imageView.image = [UIImage imageNamed:@"icon"];
     cell.textLabel.text = [card objectForKey:@"title"];
     cell.detailTextLabel.text = [card objectForKey:@"updatedAt"];

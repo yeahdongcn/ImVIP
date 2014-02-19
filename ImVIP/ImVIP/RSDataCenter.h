@@ -19,12 +19,17 @@ extern NSString *const RSDataCenterCardsDidArrive;
 
 @property (nonatomic, readonly) NSArray *cards;
 
-- (void)queryCardsNeedRefresh:(BOOL)needRefresh
-                 withCallback:(void(^)(NSArray *))callback;
+- (void)getCardsAsyncWithCallback:(void(^)(NSArray *))callback
+                 whetherNeedQuery:(BOOL)needQuery;
 
-- (BmobObject *)cardAtIndex:(NSInteger)index;
+- (BmobObject *)getCachedCardAtIndex:(NSInteger)index;
 
 - (void)saveCard:(NSDictionary *)info
     withCallback:(void(^)(BOOL, NSError *))callback;
+
+- (void)getAchievementAsyncWithCallback:(void(^)(BmobObject *))callback;
+
+- (void)saveAchievement:(NSDictionary *)info
+           withCallback:(void(^)(BOOL, NSError *))callback;
 
 @end

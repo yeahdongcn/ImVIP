@@ -94,7 +94,7 @@ new_class(RSNewCardTextField, UITextField)
     
     NSString *title = [[self.titleField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    if ([title isEqualToString:empty_string]) {
+    if ([title isEqualToString:RSStringEmpty]) {
         [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Require fields should not be empty") message:RSLocalizedString(@"Business name field is empty") delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
         return;
     }
@@ -118,7 +118,7 @@ new_class(RSNewCardTextField, UITextField)
     NSString *subtitle = [[self.subtitleField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     [card setObject:subtitle forKey:@"subtitle"];
     if ([self.codeObject stringValue] == nil
-        || [[self.codeObject stringValue] isEqualToString:empty_string]) {
+        || [[self.codeObject stringValue] isEqualToString:RSStringEmpty]) {
         NSString *codeValue = [[self.codeField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [card setObject:codeValue forKey:@"codeValue"];
         [card setObject:AVMetadataObjectTypeUPCECode forKey:@"codeType"];

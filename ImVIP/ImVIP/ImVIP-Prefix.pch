@@ -20,19 +20,23 @@
 
 #import "RSAchievements.h"
 
+#import "RSStatistics.h"
+
 #define new_class(class_name, super_class) @interface class_name : super_class\
 @end\
 @implementation class_name\
 @end
 
-#define empty_string @""
+#define RSStringEmpty @""
 
-#define space_string @" "
+#define RSStringSpace @" "
 
 #define RSLocalizedString(key) NSLocalizedString(key, nil)
 
 #define DataCenter   [RSDataCenter defaultCenter]
 
 #define Achievements [RSAchievements defaultAchievements]
+
+#define Statistics   [RSStatistics defaultStatistics]
 
 #endif
