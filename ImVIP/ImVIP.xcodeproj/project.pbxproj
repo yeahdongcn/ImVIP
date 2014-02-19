@@ -42,6 +42,8 @@
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
 		D0F76EFC18B345640069CAB9 /* RSAchievements.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F76EFB18B345640069CAB9 /* RSAchievements.m */; };
 		D0F76EFF18B442FC0069CAB9 /* RSStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F76EFE18B442FC0069CAB9 /* RSStatistics.m */; };
+		D0F76F0218B47F3E0069CAB9 /* RSPOIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F76F0118B47F3E0069CAB9 /* RSPOIView.xib */; };
+		D0F76F0518B481770069CAB9 /* RSPOIView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F76F0418B481770069CAB9 /* RSPOIView.m */; };
 		ECC1382A82A84BA9A347A2AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7771E61A14EFFBA17B572 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,9 @@
 		D0F76EFB18B345640069CAB9 /* RSAchievements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAchievements.m; sourceTree = "<group>"; };
 		D0F76EFD18B442FC0069CAB9 /* RSStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSStatistics.h; sourceTree = "<group>"; };
 		D0F76EFE18B442FC0069CAB9 /* RSStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSStatistics.m; sourceTree = "<group>"; };
+		D0F76F0118B47F3E0069CAB9 /* RSPOIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSPOIView.xib; sourceTree = "<group>"; };
+		D0F76F0318B481760069CAB9 /* RSPOIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPOIView.h; sourceTree = "<group>"; };
+		D0F76F0418B481770069CAB9 /* RSPOIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSPOIView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +216,9 @@
 				D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */,
 				D000DCC318AE14780037C0F8 /* RSScannerViewController.h */,
 				D000DCC418AE14780037C0F8 /* RSScannerViewController.m */,
+				D0F76F0118B47F3E0069CAB9 /* RSPOIView.xib */,
+				D0F76F0318B481760069CAB9 /* RSPOIView.h */,
+				D0F76F0418B481770069CAB9 /* RSPOIView.m */,
 				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
 			);
@@ -365,6 +373,7 @@
 				D017349718876DAA00C07608 /* Main.storyboard in Resources */,
 				D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */,
 				D000DCB418ADBCEC0037C0F8 /* FZQingKeBenYueSongS-R-GB.TTF in Resources */,
+				D0F76F0218B47F3E0069CAB9 /* RSPOIView.xib in Resources */,
 				D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +442,7 @@
 				D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,
+				D0F76F0518B481770069CAB9 /* RSPOIView.m in Sources */,
 				D04B82E718A4DA5D007971B3 /* RSCardViewController.m in Sources */,
 				D0F76EFF18B442FC0069CAB9 /* RSStatistics.m in Sources */,
 			);

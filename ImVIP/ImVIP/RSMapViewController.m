@@ -10,7 +10,15 @@
 
 #import "RSAppDelegate.h"
 
+#import "RSPOIView.h"
+
+#import "SFUIViewMacroses.h"
+
 #import <BMapKit.h>
+
+#import <UIViewController+KNSemiModal.h>
+
+#import <objc/runtime.h>
 
 @interface RSMapViewController () <BMKMapViewDelegate, BMKSearchDelegate>
 
@@ -29,6 +37,8 @@
 @property (nonatomic) NSUInteger indexOfCard;
 
 @property (nonatomic) NSInteger radius;
+
+@property (nonatomic, strong) NSMutableDictionary *poiInfoMap;
 
 @end
 
@@ -55,6 +65,7 @@
     self.needReload = NO;
     
     [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.poiInfoMap removeAllObjects];
     
     [DataCenter getCardsAsyncWithCallback:^(NSArray *cards) {
         [self __resetSearch];
@@ -157,6 +168,16 @@
     return _mapSearch;
 }
 
+- (NSMutableDictionary *)poiInfoMap
+{
+    if (!_poiInfoMap) {
+        _poiInfoMap = [[NSMutableDictionary alloc] init];
+    }
+    return _poiInfoMap;
+}
+
+#pragma mark - BMKMapViewDelegate
+
 - (void)mapView:(BMKMapView *)mapView didUpdateUserLocation:(BMKUserLocation *)userLocation
 {
     if (self.isLoadAtFirstTime) {
@@ -182,13 +203,30 @@
     return nil;
 }
 
+- (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view;
+{
+    RSPOIView *poiView = (RSPOIView *)[[[NSBundle mainBundle] loadNibNamed:@"RSPOIView" owner:nil options:nil] firstObject];
+    poiView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
+    BMKPoiInfo *info = [self.poiInfoMap objectForKey:objc_getAssociatedObject(view.annotation, @"uid")];
+    poiView.nameLabel.text = info.name;
+    poiView.addressLabel.text = info.address;
+    [poiView.phoneButton setTitle:info.phone forState:UIControlStateNormal];
+    [self presentSemiView:poiView withOptions:@{
+                                                KNSemiModalOptionKeys.shadowRadius  : @(2.0),
+                                                KNSemiModalOptionKeys.shadowOpacity : @(0.2),
+                                                }];
+}
+
 #pragma mark - BMKSearchDelegate
 
 - (void)onGetPoiResult:(NSArray *)poiResultList searchType:(int)type errorCode:(int)error
 {
     for (BMKPoiResult *result in poiResultList) {
         for (BMKPoiInfo *info in result.poiInfoList) {
+            [self.poiInfoMap setObject:info forKey:info.uid];
+            
             BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc] init];
+            objc_setAssociatedObject(annotation, @"uid", info.uid, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             annotation.title = info.name;
             annotation.coordinate = info.pt;
             [self.mapView addAnnotation:annotation];

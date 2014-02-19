@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="LcM-L9-GmD" customClass="RSPOIView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uB5-f5-OAe">
+                    <rect key="frame" x="20" y="20" width="44" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mH-Y5-eiX">
+                    <rect key="frame" x="20" y="54" width="60" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yks-gb-4d5">
+                    <rect key="frame" x="20" y="78" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uB5-f5-OAe" firstAttribute="leading" secondItem="5mH-Y5-eiX" secondAttribute="leading" id="19W-rG-Vop"/>
+                <constraint firstAttribute="centerY" secondItem="5mH-Y5-eiX" secondAttribute="centerY" id="5rf-LC-M6t"/>
+                <constraint firstAttribute="bottom" secondItem="yks-gb-4d5" secondAttribute="bottom" constant="20" symbolic="YES" id="EHN-FB-KVL"/>
+                <constraint firstItem="uB5-f5-OAe" firstAttribute="leading" secondItem="yks-gb-4d5" secondAttribute="leading" id="UQL-E1-cei"/>
+                <constraint firstItem="uB5-f5-OAe" firstAttribute="top" secondItem="LcM-L9-GmD" secondAttribute="top" constant="20" symbolic="YES" id="gWw-al-sh1"/>
+                <constraint firstItem="uB5-f5-OAe" firstAttribute="leading" secondItem="LcM-L9-GmD" secondAttribute="leading" constant="20" symbolic="YES" id="y2n-3e-P6n"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addressLabel" destination="5mH-Y5-eiX" id="8zK-TC-gAq"/>
+                <outlet property="nameLabel" destination="uB5-f5-OAe" id="5MZ-bS-250"/>
+                <outlet property="phoneButton" destination="yks-gb-4d5" id="mFX-s0-fHn"/>
+            </connections>
+        </view>
+    </objects>
+</document>

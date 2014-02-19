@@ -15,7 +15,11 @@
         "menu_tv_cell_title_color": "#fefefe",
         "menu_tv_cell_selected_bg_color": "#6b58ca",
         
-        "new_card_button_tint_color": "#00cab5"
+        "new_card_button_tint_color": "#00cab5",
+        
+        "poi_bg_color": "#6b58ca",
+        "poi_label_color": "#fafafa",
+        "poi_button_text_color": "#1dc9af",
     },
     "RSWindowBackgroundView": {
         "backgroundColor": "$win_bg_color"
@@ -106,6 +110,15 @@
         },
         "UILabel": {
             "textColor": "$navi_tint_color"
+        }
+    },
+    "RSPOIView": {
+        "backgroundColor": "$poi_bg_color",
+        "UILabel": {
+            "textColor": "$poi_label_color"
+        },
+        "UIButton": {
+            "titleColor:normal": "$poi_button_text_color"
         }
     }
 }
