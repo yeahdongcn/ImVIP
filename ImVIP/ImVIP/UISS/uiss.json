@@ -60,6 +60,12 @@
         "UITableView": {
             "backgroundColor": "$tv_bg_color",
             "separatorColor":  "$tv_sep_color",
+        },
+        "RSCardShowButton": {
+            
+        },
+        "RSCardDeleteButton": {
+            
         }
     },
     "RSCardsViewController": {

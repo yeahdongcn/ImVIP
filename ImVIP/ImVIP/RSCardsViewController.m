@@ -8,6 +8,8 @@
 
 #import "RSCardsViewController.h"
 
+#import "RSCardViewController.h"
+
 @interface RSCardsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -137,10 +139,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"NewCard"]) {
-        NSLog(@"%@", segue);
-    } else if ([segue.identifier isEqualToString:@"OpenCard"]) {
-        NSLog(@"%@", segue);
+    if ([segue.identifier isEqualToString:@"OpenCard"]) {
+        RSCardViewController *controller = segue.destinationViewController;
+        controller.indexOfCard = [[self.tableView indexPathForSelectedRow] row];
     }
 }
 

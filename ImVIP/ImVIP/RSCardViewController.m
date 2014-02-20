@@ -12,7 +12,17 @@
 
 #import "RSCardView.h"
 
+#import "RSTitleView.h"
+
 #import "SFUIViewMacroses.h"
+
+#import <ColorUtils.h>
+
+#import <UIColor+TDAdditions.h>
+
+new_class(RSCardShowButton, UIButton)
+
+new_class(RSCardDeleteButton, UIButton)
 
 @interface RSCardViewController ()
 
@@ -20,12 +30,26 @@
 
 @property (nonatomic, weak) IBOutlet UIView *cardContentView;
 
+@property (nonatomic, weak) IBOutlet RSCardShowButton   *showButton;
+
+@property (nonatomic, weak) IBOutlet RSCardDeleteButton *deleteButton;
+
 @end
 
 @implementation RSCardViewController
 
 - (void)__onEdit
 {
+}
+
+- (void)__setLabelsColorContainedIn:(UIView *)contentView withColorHex:(uint32_t)hex
+{
+    for (UIView *view in contentView.subviews) {
+        if ([view isKindOfClass:[UILabel class]]) {
+            UILabel *label = (UILabel *)view;
+            label.textColor = [UIColor colorWithRGBValue:hex];
+        }
+    }
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -40,7 +64,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
+    
     self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = NO;
 }
 
@@ -55,10 +79,24 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_edit"] style:UIBarButtonItemStylePlain target:self action:@selector(__onEdit)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(__onEdit)];
+    
+    BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
+    
+    RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
+    titleView.label.text = [card objectForKey:@"title"];
+    self.navigationItem.titleView = titleView;
     
     RSCardView *cardView = (RSCardView *)[[[NSBundle mainBundle] loadNibNamed:@"RSCardView" owner:nil options:nil] firstObject];
     cardView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
+    cardView.layer.cornerRadius = 11.f;
+    UIColor *backgroundColor = [UIColor colorWithString:[card objectForKey:@"color"]];
+    cardView.backgroundColor = backgroundColor;
+    if ([backgroundColor isDarkColor]) {
+        [self __setLabelsColorContainedIn:cardView withColorHex:0x1dc9af];
+    } else {
+        [self __setLabelsColorContainedIn:cardView withColorHex:0x6b58ca];
+    }
     [self.cardContentView addSubview:cardView];
 }
 

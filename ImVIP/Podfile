@@ -1,6 +1,5 @@
 platform :ios, '7.0'
 
-pod 'AFNetworking'
 pod 'Baidu-Maps-iOS-SDK'
 pod 'ColorUtils'
 pod 'CRToast', :git => 'https://github.com/yeahdongcn/CRToast.git'
