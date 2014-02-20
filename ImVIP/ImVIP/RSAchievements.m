@@ -66,8 +66,8 @@
     }
     
     NSMutableDictionary *achievement = [NSMutableDictionary new];
-    [achievement setObject:@(numberOfCards) forKey:@"NumberOfCards"];
-    [achievement setObject:text ? text : RSStringEmpty forKey:@"Text"];
+    [achievement setObject:@(numberOfCards) forKey:@"numberOfCards"];
+    [achievement setObject:text ? text : kRSTextDefault forKey:@"text"];
     [DataCenter saveAchievement:achievement withCallback:^(BOOL succeeded, NSError *error) {
         NSLog(@"Save achievement: succeeded = %d, error = %@", succeeded, error);
     }];

@@ -94,24 +94,27 @@ new_class(RSNewCardTextField, UITextField)
     
     NSString *title = [[self.titleField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    if ([title isEqualToString:RSStringEmpty]) {
+    if ([title length] == 0) {
         [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Required fields should not be empty") message:RSLocalizedString(@"Business name field is empty") delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
         return;
     }
     
     if (self.codeObject == nil) {
         NSString *code = [[self.codeField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (code == nil) {
+        if ([code length] == 0) {
             [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Required fields should not be empty") message:RSLocalizedString(@"Code field is empty") delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
             return;
-        } else {
-            self.codeObject = [[AVMetadataMachineReadableCodeObject alloc] init];
         }
     }
     
     RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStylePlane color:[UIColor colorWithRGBValue:0x6755c7]];
     [self.spinnerBackgroundView addSubview:spinner];
     [spinner startAnimating];
+    
+    NSString *tag = [[self.tagField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *codeValue = self.codeObject ? [self.codeObject stringValue] : [[self.codeField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *codeType = self.codeObject ? [self.codeObject type] : AVMetadataObjectTypeUPCECode;
+    NSString *color = [self.color stringValue];
     
     BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
     if (card) {
@@ -129,26 +132,17 @@ new_class(RSNewCardTextField, UITextField)
         // We don't have the card yet, we have create then save
         NSMutableDictionary *card = [NSMutableDictionary new];
         [card setObject:title forKey:@"title"];
-        NSString *tag = [[self.tagField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [card setObject:tag forKey:@"tag"];
-        if ([self.codeObject stringValue] == nil
-            || [[self.codeObject stringValue] isEqualToString:RSStringEmpty]) {
-            NSString *codeValue = [[self.codeField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            [card setObject:codeValue forKey:@"codeValue"];
-            [card setObject:AVMetadataObjectTypeUPCECode forKey:@"codeType"];
-        } else {
-            [card setObject:[self.codeObject stringValue] forKey:@"codeValue"];
-            [card setObject:[self.codeObject type] forKey:@"codeType"];
-        }
-        [card setObject:[self.color stringValue] forKey:@"color"];
+        [card setObject:codeValue forKey:@"codeValue"];
+        [card setObject:codeType forKey:@"codeType"];
+        [card setObject:color forKey:@"color"];
         
         [DataCenter saveCard:card withCallback:^(BOOL succeeded, NSError *error) {
             [spinner stopAnimating];
             [spinner removeFromSuperview];
             if (succeeded) {
-                [self.navigationController popViewControllerAnimated:YES];
-                
                 [Achievements setNumberOfCards:[DataCenter numberOfCachedCard] + 1];
+                [self.navigationController popViewControllerAnimated:YES];
             } else {
                 [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") message:[error localizedDescription] delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
             }
@@ -167,6 +161,7 @@ new_class(RSNewCardTextField, UITextField)
     if (self) {
         self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
         self.color = [UIColor grayColor];
+        self.indexOfCard = NSNotFound;
     }
     return self;
 }
@@ -204,13 +199,15 @@ new_class(RSNewCardTextField, UITextField)
 {
     _indexOfCard = indexOfCard;
     
-    double delayInSeconds = .3;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
-        self.titleField.text = [card objectForKey:@"title"];
-        self.codeField.text = [card objectForKey:@"codeValue"];
-    });
+    if (_indexOfCard != NSNotFound) {
+        double delayInSeconds = .3;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
+            self.titleField.text = [card objectForKey:@"title"];
+            self.codeField.text = [card objectForKey:@"codeValue"];
+        });
+    }
 }
 
 #pragma mark - Navigation

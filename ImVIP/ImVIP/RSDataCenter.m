@@ -55,7 +55,11 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
 
 - (BmobObject *)getCachedCardAtIndex:(NSInteger)index
 {
-    return [self.cachedCards objectAtIndex:index];
+    if (index < 0 || index >= [self numberOfCachedCard]) {
+        return nil;
+    } else {
+        return [self.cachedCards objectAtIndex:index];
+    }
 }
 
 - (NSUInteger)numberOfCachedCard
@@ -109,7 +113,7 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *achievementId = [[NSUserDefaults standardUserDefaults] objectForKey:@"AchievementId"];
-        if (achievementId && ![achievementId isEqualToString:RSStringEmpty]) {
+        if (achievementId && [achievementId length] > 0) {
             BmobQuery *query = [BmobQuery queryWithClassName:@"Achievement"];
             [query getObjectInBackgroundWithId:achievementId block:^(BmobObject *achievement, NSError *error) {
                 if (callback) {
@@ -127,7 +131,7 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *achievementId = [[NSUserDefaults standardUserDefaults] objectForKey:@"AchievementId"];
-        if (achievementId && ![achievementId isEqualToString:RSStringEmpty]) {
+        if (achievementId && [achievementId length] > 0) {
             [self getAchievementAsyncWithCallback:^(BmobObject *achievement) {
                 [info enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
                     [achievement setObject:obj forKey:key];
