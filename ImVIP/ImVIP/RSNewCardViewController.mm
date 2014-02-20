@@ -32,7 +32,7 @@ new_class(RSNewCardTextField, UITextField)
 
 @property (nonatomic, weak) IBOutlet UITextField *titleField;
 
-@property (nonatomic, weak) IBOutlet UITextField *subtitleField;
+@property (nonatomic, weak) IBOutlet UITextField *tagField;
 
 @property (nonatomic, weak) IBOutlet UITextField *codeField;
 
@@ -55,8 +55,8 @@ new_class(RSNewCardTextField, UITextField)
         return;
     }
     
-    if ([self.subtitleField isFirstResponder]) {
-        [self.subtitleField resignFirstResponder];
+    if ([self.tagField isFirstResponder]) {
+        [self.tagField resignFirstResponder];
         return;
     }
     
@@ -113,32 +113,47 @@ new_class(RSNewCardTextField, UITextField)
     [self.spinnerBackgroundView addSubview:spinner];
     [spinner startAnimating];
     
-    NSMutableDictionary *card = [NSMutableDictionary new];
-    [card setObject:title forKey:@"title"];
-    NSString *subtitle = [[self.subtitleField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    [card setObject:subtitle forKey:@"subtitle"];
-    if ([self.codeObject stringValue] == nil
-        || [[self.codeObject stringValue] isEqualToString:RSStringEmpty]) {
-        NSString *codeValue = [[self.codeField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [card setObject:codeValue forKey:@"codeValue"];
-        [card setObject:AVMetadataObjectTypeUPCECode forKey:@"codeType"];
+    BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
+    if (card) {
+        // We have the card object so next step is to fill then update
+        [DataCenter updateCardAtIndex:self.indexOfCard withCallback:^(BOOL succeeded, NSError *error) {
+            [spinner stopAnimating];
+            [spinner removeFromSuperview];
+            if (succeeded) {
+                [self.navigationController popViewControllerAnimated:YES];
+            } else {
+                [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") message:[error localizedDescription] delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
+            }
+        }];
     } else {
-        [card setObject:[self.codeObject stringValue] forKey:@"codeValue"];
-        [card setObject:[self.codeObject type] forKey:@"codeType"];
-    }
-    [card setObject:[self.color stringValue] forKey:@"color"];
-    
-    [DataCenter saveCard:card withCallback:^(BOOL succeeded, NSError *error) {
-        [spinner stopAnimating];
-        [spinner removeFromSuperview];
-        if (succeeded) {
-            [self.navigationController popViewControllerAnimated:YES];
-            
-            [Achievements setNumberOfCards:[DataCenter numberOfCachedCard] + 1];
+        // We don't have the card yet, we have create then save
+        NSMutableDictionary *card = [NSMutableDictionary new];
+        [card setObject:title forKey:@"title"];
+        NSString *tag = [[self.tagField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [card setObject:tag forKey:@"tag"];
+        if ([self.codeObject stringValue] == nil
+            || [[self.codeObject stringValue] isEqualToString:RSStringEmpty]) {
+            NSString *codeValue = [[self.codeField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            [card setObject:codeValue forKey:@"codeValue"];
+            [card setObject:AVMetadataObjectTypeUPCECode forKey:@"codeType"];
         } else {
-            [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") message:[error localizedDescription] delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
+            [card setObject:[self.codeObject stringValue] forKey:@"codeValue"];
+            [card setObject:[self.codeObject type] forKey:@"codeType"];
         }
-    }];
+        [card setObject:[self.color stringValue] forKey:@"color"];
+        
+        [DataCenter saveCard:card withCallback:^(BOOL succeeded, NSError *error) {
+            [spinner stopAnimating];
+            [spinner removeFromSuperview];
+            if (succeeded) {
+                [self.navigationController popViewControllerAnimated:YES];
+                
+                [Achievements setNumberOfCards:[DataCenter numberOfCachedCard] + 1];
+            } else {
+                [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") message:[error localizedDescription] delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
+            }
+        }];
+    }
 }
 
 - (IBAction)__scanCode:(id)sender
@@ -181,7 +196,7 @@ new_class(RSNewCardTextField, UITextField)
     self.colorView.layer.cornerRadius = 3.f;
     
     self.titleField.delegate = self;
-    self.subtitleField.delegate = self;
+    self.tagField.delegate = self;
     self.codeField.delegate = self;
 }
 

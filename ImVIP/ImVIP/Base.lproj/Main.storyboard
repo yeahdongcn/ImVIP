@@ -411,13 +411,13 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="或者直接输入" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-Fn-g5I" customClass="RSNewCardLabel">
-                                                    <rect key="frame" x="92" y="20" width="96" height="20"/>
+                                                    <rect key="frame" x="92" y="22" width="72" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填项" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ayr-vw-FfC" customClass="RSNewCardTextField">
-                                                    <rect key="frame" x="196" y="15" width="104" height="30"/>
+                                                    <rect key="frame" x="172" y="15" width="128" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -448,18 +448,26 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttn-3M-aHp" customClass="RSNewCardButton">
-                                                    <rect key="frame" x="108" y="20" width="48" height="20"/>
+                                                    <rect key="frame" x="108" y="20" width="60" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="tGW-ut-rwy"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <inset key="titleEdgeInsets" minX="5" minY="2" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="相册" image="new_image"/>
                                                     <connections>
                                                         <action selector="__openImage:" destination="WRk-BX-kdE" eventType="touchUpInside" id="uJ9-Uo-dmm"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FT5-UH-SKM" customClass="RSNewCardButton">
-                                                    <rect key="frame" x="164" y="20" width="48" height="20"/>
+                                                    <rect key="frame" x="176" y="20" width="60" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="Seg-Ys-pew"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <inset key="titleEdgeInsets" minX="5" minY="2" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="拍照" image="new_camera"/>
                                                     <connections>
                                                         <action selector="__openCamera:" destination="WRk-BX-kdE" eventType="touchUpInside" id="n6s-lR-rrH"/>
@@ -495,9 +503,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euK-hR-lxq" customClass="RSNewCardButton">
-                                                    <rect key="frame" x="116" y="20" width="89" height="20"/>
+                                                    <rect key="frame" x="20" y="20" width="280" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <inset key="titleEdgeInsets" minX="10" minY="2" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="我的VIP卡" image="new_wallet"/>
                                                     <connections>
                                                         <action selector="__saveCard:" destination="WRk-BX-kdE" eventType="touchUpInside" id="jCY-pJ-qEn"/>
@@ -515,6 +524,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="n1d-9e-YGl" secondAttribute="centerY" id="JxG-TB-fhf"/>
+                                                <constraint firstItem="euK-hR-lxq" firstAttribute="leading" secondItem="Gpb-fE-xTf" secondAttribute="leading" constant="20" symbolic="YES" id="M3j-aV-Ph7"/>
+                                                <constraint firstAttribute="trailing" secondItem="euK-hR-lxq" secondAttribute="trailing" constant="20" symbolic="YES" id="aHd-9G-OtY"/>
                                                 <constraint firstAttribute="centerX" secondItem="euK-hR-lxq" secondAttribute="centerX" id="g2Z-mA-1MO"/>
                                                 <constraint firstAttribute="centerY" secondItem="euK-hR-lxq" secondAttribute="centerY" id="r5P-MH-OLP"/>
                                                 <constraint firstAttribute="trailing" secondItem="n1d-9e-YGl" secondAttribute="trailing" constant="20" symbolic="YES" id="vcc-0Y-Tq0"/>
@@ -534,7 +545,7 @@
                         <outlet property="codeField" destination="Ayr-vw-FfC" id="vSf-jP-hXu"/>
                         <outlet property="colorView" destination="jTy-ag-nWR" id="hwv-5H-X1G"/>
                         <outlet property="spinnerBackgroundView" destination="n1d-9e-YGl" id="IzB-Xp-Sau"/>
-                        <outlet property="subtitleField" destination="TWF-Ko-mfW" id="c7d-NF-MHC"/>
+                        <outlet property="tagField" destination="TWF-Ko-mfW" id="hYb-Wv-LUQ"/>
                         <outlet property="titleField" destination="9bF-b9-Cza" id="1zs-Wj-err"/>
                     </connections>
                 </tableViewController>
