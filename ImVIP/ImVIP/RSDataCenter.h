@@ -27,6 +27,9 @@ extern NSString *const RSDataCenterCardsDidArrive;
 - (void)saveCard:(NSDictionary *)info
     withCallback:(void(^)(BOOL, NSError *))callback;
 
+- (void)updateCardAtIndex:(NSInteger)index
+             withCallback:(void(^)(BOOL, NSError *))callback;
+
 - (void)getAchievementAsyncWithCallback:(void(^)(BmobObject *))callback;
 
 - (void)saveAchievement:(NSDictionary *)info

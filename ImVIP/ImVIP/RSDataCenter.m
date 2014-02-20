@@ -92,6 +92,19 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
     });
 }
 
+- (void)updateCardAtIndex:(NSInteger)index
+             withCallback:(void(^)(BOOL, NSError *))callback
+{
+    BmobObject *card = [self getCachedCardAtIndex:index];
+    [card updateInBackgroundWithResultBlock:^(BOOL succeeded, NSError *error) {
+        if (callback) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(succeeded, error);
+            });
+        }
+    }];
+}
+
 - (void)getAchievementAsyncWithCallback:(void(^)(BmobObject *))callback
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
