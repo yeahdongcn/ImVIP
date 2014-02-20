@@ -15,7 +15,7 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
 
 @interface RSDataCenter ()
 
-@property (nonatomic, strong) NSArray *cards;
+@property (nonatomic, strong) NSArray *cachedCards;
 
 @end
 
@@ -34,18 +34,18 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
 - (void)getCardsAsyncWithCallback:(void(^)(NSArray *))callback
                  whetherNeedQuery:(BOOL)needQuery
 {
-    if (needQuery == NO && self.cards && callback) {
+    if (needQuery == NO && self.cachedCards && callback) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            callback(self.cards);
+            callback(self.cachedCards);
         });
     } else {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             BmobQuery *query = [BmobQuery queryWithClassName:@"Card"];
             [query findObjectsInBackgroundWithBlock:^(NSArray *cards, NSError *error) {
-                self.cards = cards;
+                self.cachedCards = cards;
                 if (callback) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        callback(self.cards);
+                        callback(self.cachedCards);
                     });
                 }
             }];
@@ -55,7 +55,12 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
 
 - (BmobObject *)getCachedCardAtIndex:(NSInteger)index
 {
-    return [self.cards objectAtIndex:index];
+    return [self.cachedCards objectAtIndex:index];
+}
+
+- (NSUInteger)numberOfCachedCard
+{
+    return [self.cachedCards count];
 }
 
 - (void)saveCard:(NSDictionary *)info

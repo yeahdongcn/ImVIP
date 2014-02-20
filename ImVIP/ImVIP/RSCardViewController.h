@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RSCardViewController : UIViewController
+@interface RSCardViewController : UITableViewController
 
 @end

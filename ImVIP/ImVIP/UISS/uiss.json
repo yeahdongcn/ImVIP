@@ -22,14 +22,14 @@
         "poi_button_text_color": "#1dc9af",
     },
     "RSWindowBackgroundView": {
-        "backgroundColor": "$win_bg_color"
+        "backgroundColor": "$win_bg_color",
     },
     "RSTitleView": {
         "UILabel": {
-            "textColor": "$navi_tint_color"
+            "textColor": "$navi_tint_color",
         },
         "UIImageView": {
-            "image": "navi_indicator"
+            "image": "navi_indicator",
         }
     },
     "UINavigationBar": {
@@ -37,23 +37,29 @@
         "shadowImage": "",
         "tintColor": "$navi_tint_color",
         "backIndicatorImage": "navi_back",
-        "backIndicatorTransitionMaskImage": "navi_back"
+        "backIndicatorTransitionMaskImage": "navi_back",
     },
     "RSMenuViewController": {
         "RSMenuTableHeaderView": {
-            "backgroundColor": "$menu_tv_bg_color"
+            "backgroundColor": "$menu_tv_bg_color",
         },
         "UITableView": {
             "backgroundColor": "$menu_tv_bg_color",
             "RSMenuCell": {
                 "backgroundColor": "$menu_tv_bg_color",
                 "UILabel": {
-                    "textColor": "$menu_tv_cell_title_color"
+                    "textColor": "$menu_tv_cell_title_color",
                 },
                 "RSMenuCellSelectedBackgroundView": {
                     "backgroundColor": "$menu_tv_cell_selected_bg_color",
                 }
             }
+        }
+    },
+    "RSCardViewController": {
+        "UITableView": {
+            "backgroundColor": "$tv_bg_color",
+            "separatorColor":  "$tv_sep_color",
         }
     },
     "RSCardsViewController": {
@@ -62,33 +68,33 @@
             "separatorColor":  "$tv_sep_color",
             "RSCardCellAccessoryView" : {
                 "image:default": "cards_arrow",
-                "image:highlighted": "cards_arrow_hl"
+                "image:highlighted": "cards_arrow_hl",
             },
             "RSCardCellTitleLabel": {
-                "textColor": "$tv_cell_title_color"
+                "textColor": "$tv_cell_title_color",
             },
             "RSCardCellSubtitleLabel": {
                 "textColor": "$tv_cell_subtitle_color",
-                "highlightedTextColor": "$tv_cell_subtitle_hl_color"
+                "highlightedTextColor": "$tv_cell_subtitle_hl_color",
             },
             "RSCardCellSelectedBackgroundView": {
-                "backgroundColor": "$tv_cell_selected_bg_color"
+                "backgroundColor": "$tv_cell_selected_bg_color",
             }
         },
         "UIButton": {
-            "image:default": "cards_add"
+            "image:default": "cards_add",
         }
     },
     "RSNewCardViewController": {
         "UITableView": {
             "backgroundColor": "$tv_bg_color",
-            "separatorColor":  "$tv_sep_color"
+            "separatorColor":  "$tv_sep_color",
         },
         "RSNewCardLabel": {
-            "textColor": "$tv_cell_title_color"
+            "textColor": "$tv_cell_title_color",
         },
         "RSNewCardButton": {
-            "tintColor": "$new_card_button_tint_color"
+            "tintColor": "$new_card_button_tint_color",
         },
         "RSNewCardTextField": {
             
@@ -96,29 +102,29 @@
     },
     "RSProfileViewController": {
         "UITableView": {
-            "backgroundColor": "$tv_bg_color"
+            "backgroundColor": "$tv_bg_color",
         },
         "RSProfileViewBackgroundView": {
             "UIImageView": {
-                "image": "profile_bg"
+                "image": "profile_bg",
             }
         },
         "RSProfileViewAvatarView": {
             "UIImageView": {
-                "image": "profile_avatar_bg"
+                "image": "profile_avatar_bg",
             }
         },
         "UILabel": {
-            "textColor": "$navi_tint_color"
+            "textColor": "$navi_tint_color",
         }
     },
     "RSPOIView": {
         "backgroundColor": "$poi_bg_color",
         "UILabel": {
-            "textColor": "$poi_label_color"
+            "textColor": "$poi_label_color",
         },
         "UIButton": {
-            "titleColor:normal": "$poi_button_text_color"
+            "titleColor:normal": "$poi_button_text_color",
         }
     }
 }

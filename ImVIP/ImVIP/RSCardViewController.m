@@ -10,9 +10,15 @@
 
 #import "RSAppDelegate.h"
 
+#import "RSCardView.h"
+
+#import "SFUIViewMacroses.h"
+
 @interface RSCardViewController ()
 
 @property (nonatomic, weak) RSDynamicsDrawerViewController *dynamicsDrawerViewController;
+
+@property (nonatomic, weak) IBOutlet UIView *cardContentView;
 
 @end
 
@@ -50,6 +56,10 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_edit"] style:UIBarButtonItemStylePlain target:self action:@selector(__onEdit)];
+    
+    RSCardView *cardView = (RSCardView *)[[[NSBundle mainBundle] loadNibNamed:@"RSCardView" owner:nil options:nil] firstObject];
+    cardView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
+    [self.cardContentView addSubview:cardView];
 }
 
 @end

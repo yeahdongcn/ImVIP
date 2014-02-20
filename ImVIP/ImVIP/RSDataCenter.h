@@ -17,12 +17,12 @@ extern NSString *const RSDataCenterCardsDidArrive;
 
 + (instancetype)defaultCenter;
 
-@property (nonatomic, readonly) NSArray *cards;
-
 - (void)getCardsAsyncWithCallback:(void(^)(NSArray *))callback
                  whetherNeedQuery:(BOOL)needQuery;
 
 - (BmobObject *)getCachedCardAtIndex:(NSInteger)index;
+
+- (NSUInteger)numberOfCachedCard;
 
 - (void)saveCard:(NSDictionary *)info
     withCallback:(void(^)(BOOL, NSError *))callback;

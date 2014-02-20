@@ -233,7 +233,7 @@
             [self.mapView addAnnotation:annotation];
         }
     }
-    if (self.indexOfCard < (DataCenter.cards.count - 1)) {
+    if (self.indexOfCard < ([DataCenter numberOfCachedCard] - 1)) {
         [self __doSearch];
     }
 }

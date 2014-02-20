@@ -37,6 +37,8 @@
 		D04B82E718A4DA5D007971B3 /* RSCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04B82E618A4DA5D007971B3 /* RSCardViewController.m */; };
 		D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */; };
 		D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */; };
+		D09F2EBB18B59413004DC7E9 /* RSCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09F2EBA18B59413004DC7E9 /* RSCardView.xib */; };
+		D09F2EBE18B59690004DC7E9 /* RSCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EBD18B59690004DC7E9 /* RSCardView.m */; };
 		D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */; };
 		D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1E9BF18963D9800D3C770 /* RSTitleView.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
@@ -109,6 +111,9 @@
 		D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSProfileViewController.m; sourceTree = "<group>"; };
 		D09E2CAE1893DA7100786A56 /* RSCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardsViewController.h; sourceTree = "<group>"; };
 		D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardsViewController.m; sourceTree = "<group>"; };
+		D09F2EBA18B59413004DC7E9 /* RSCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSCardView.xib; sourceTree = "<group>"; };
+		D09F2EBC18B59690004DC7E9 /* RSCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardView.h; sourceTree = "<group>"; };
+		D09F2EBD18B59690004DC7E9 /* RSCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardView.m; sourceTree = "<group>"; };
 		D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSTitleView.xib; sourceTree = "<group>"; };
 		D0A1E9BE18963D9800D3C770 /* RSTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTitleView.h; sourceTree = "<group>"; };
 		D0A1E9BF18963D9800D3C770 /* RSTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTitleView.m; sourceTree = "<group>"; };
@@ -221,6 +226,9 @@
 				D0F76F0418B481770069CAB9 /* RSPOIView.m */,
 				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
+				D09F2EBA18B59413004DC7E9 /* RSCardView.xib */,
+				D09F2EBC18B59690004DC7E9 /* RSCardView.h */,
+				D09F2EBD18B59690004DC7E9 /* RSCardView.m */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";
@@ -375,6 +383,7 @@
 				D000DCB418ADBCEC0037C0F8 /* FZQingKeBenYueSongS-R-GB.TTF in Resources */,
 				D0F76F0218B47F3E0069CAB9 /* RSPOIView.xib in Resources */,
 				D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */,
+				D09F2EBB18B59413004DC7E9 /* RSCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +440,7 @@
 				D000DCBA18ADC5C30037C0F8 /* RSSalesViewController.m in Sources */,
 				D0F76EFC18B345640069CAB9 /* RSAchievements.m in Sources */,
 				D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */,
+				D09F2EBE18B59690004DC7E9 /* RSCardView.m in Sources */,
 				D000DCC218AE13A90037C0F8 /* RSStatisticsViewController.m in Sources */,
 				D000DCC518AE14780037C0F8 /* RSScannerViewController.m in Sources */,
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
