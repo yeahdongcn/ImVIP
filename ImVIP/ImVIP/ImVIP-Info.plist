@@ -26,6 +26,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Farrington-7B-Qiqi.ttf</string>
 		<string>FZQingKeBenYueSongS-R-GB.TTF</string>
 	</array>
 	<key>UIBackgroundModes</key>
