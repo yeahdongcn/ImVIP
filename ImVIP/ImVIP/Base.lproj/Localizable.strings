@@ -14,11 +14,11 @@
 
 "New Card"          = "New Card";
 
-"Require fields should not be empty" = "Require fields should not be empty";
-"Business name field is empty"       = "Business name field is empty";
-"Code field is empty"                = "Code field is empty";
-"Please retry"                       = "Please retry";
-"Yes"                                = "Yes";
+"Required fields should not be empty" = "Required fields should not be empty";
+"Business name field is empty"        = "Business name field is empty";
+"Code field is empty"                 = "Code field is empty";
+"Please retry"                        = "Please retry";
+"Yes"                                 = "Yes";
 
 "First Blood"   = "First Blood";
 "Double Kill"   = "Double Kill";

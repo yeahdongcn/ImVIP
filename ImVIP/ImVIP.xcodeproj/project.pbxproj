@@ -226,11 +226,11 @@
 				D0F76F0118B47F3E0069CAB9 /* RSPOIView.xib */,
 				D0F76F0318B481760069CAB9 /* RSPOIView.h */,
 				D0F76F0418B481770069CAB9 /* RSPOIView.m */,
-				D017349B18876DAA00C07608 /* Images.xcassets */,
-				D017348A18876DAA00C07608 /* Supporting Files */,
 				D09F2EBA18B59413004DC7E9 /* RSCardView.xib */,
 				D09F2EBC18B59690004DC7E9 /* RSCardView.h */,
 				D09F2EBD18B59690004DC7E9 /* RSCardView.m */,
+				D017349B18876DAA00C07608 /* Images.xcassets */,
+				D017348A18876DAA00C07608 /* Supporting Files */,
 			);
 			path = ImVIP;
 			sourceTree = "<group>";

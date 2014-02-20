@@ -10,4 +10,6 @@
 
 @interface RSNewCardViewController : UITableViewController
 
+@property (nonatomic) NSUInteger indexOfCard;
+
 @end

@@ -95,14 +95,14 @@ new_class(RSNewCardTextField, UITextField)
     NSString *title = [[self.titleField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if ([title isEqualToString:RSStringEmpty]) {
-        [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Require fields should not be empty") message:RSLocalizedString(@"Business name field is empty") delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
+        [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Required fields should not be empty") message:RSLocalizedString(@"Business name field is empty") delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
         return;
     }
     
     if (self.codeObject == nil) {
         NSString *code = [[self.codeField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         if (code == nil) {
-            [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Require Fields should not be empty") message:RSLocalizedString(@"Code field is empty") delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Required fields should not be empty") message:RSLocalizedString(@"Code field is empty") delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
             return;
         } else {
             self.codeObject = [[AVMetadataMachineReadableCodeObject alloc] init];
@@ -183,6 +183,19 @@ new_class(RSNewCardTextField, UITextField)
     self.titleField.delegate = self;
     self.subtitleField.delegate = self;
     self.codeField.delegate = self;
+}
+
+- (void)setIndexOfCard:(NSUInteger)indexOfCard
+{
+    _indexOfCard = indexOfCard;
+    
+    double delayInSeconds = .3;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
+        self.titleField.text = [card objectForKey:@"title"];
+        self.codeField.text = [card objectForKey:@"codeValue"];
+    });
 }
 
 #pragma mark - Navigation

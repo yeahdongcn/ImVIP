@@ -14,6 +14,8 @@
 
 #import "RSTitleView.h"
 
+#import "RSNewCardViewController.h"
+
 #import "SFUIViewMacroses.h"
 
 #import <ColorUtils.h>
@@ -40,6 +42,15 @@ new_class(RSCardDeleteButton, UIButton)
 
 - (void)__onEdit
 {
+    [self performSegueWithIdentifier:@"EditCard" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"EditCard"]) {
+        RSNewCardViewController *controller = segue.destinationViewController;
+        controller.indexOfCard = self.indexOfCard;
+    }
 }
 
 - (void)__setLabelsColorContainedIn:(UIView *)contentView withColorHex:(uint32_t)hex
@@ -92,10 +103,12 @@ new_class(RSCardDeleteButton, UIButton)
     cardView.layer.cornerRadius = 11.f;
     UIColor *backgroundColor = [UIColor colorWithString:[card objectForKey:@"color"]];
     cardView.backgroundColor = backgroundColor;
+    
+    // TODO: text colors to be determined
     if ([backgroundColor isDarkColor]) {
-        [self __setLabelsColorContainedIn:cardView withColorHex:0x1dc9af];
+        [self __setLabelsColorContainedIn:cardView withColorHex:0xfafafa];
     } else {
-        [self __setLabelsColorContainedIn:cardView withColorHex:0x6b58ca];
+        [self __setLabelsColorContainedIn:cardView withColorHex:0x0a0a0a];
     }
     [self.cardContentView addSubview:cardView];
 }
