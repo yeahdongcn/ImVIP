@@ -1,18 +1,18 @@
 //
-//  RSScannerViewController.m
+//  RSScanViewController.m
 //  ImVIP
 //
 //  Created by R0CKSTAR on 2/14/14.
 //  Copyright (c) 2014 P.D.Q. All rights reserved.
 //
 
-#import "RSScannerViewController.h"
+#import "RSScanViewController.h"
 
-@interface RSScannerViewController ()
+@interface RSScanViewController ()
 
 @end
 
-@implementation RSScannerViewController
+@implementation RSScanViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

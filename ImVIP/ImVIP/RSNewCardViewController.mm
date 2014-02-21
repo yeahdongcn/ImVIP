@@ -114,7 +114,7 @@ new_class(RSNewCardTextField, UITextField)
     // Get everything necessary
     NSString *tag = [[self.tagField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *codeValue = self.codeObject ? [self.codeObject stringValue] : [[self.codeField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *codeType = self.codeObject ? [self.codeObject type] : AVMetadataObjectTypeUPCECode;
+    NSString *codeType = self.codeObject ? [self.codeObject type] : AVMetadataObjectTypeCode39Code;
     NSString *color = [self.color stringValue];
     
     // Update & save callback
@@ -218,7 +218,7 @@ new_class(RSNewCardTextField, UITextField)
     _indexOfCard = indexOfCard;
     
     if (_indexOfCard != NSNotFound) {
-        double delayInSeconds = .3;
+        double delayInSeconds = .1;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];

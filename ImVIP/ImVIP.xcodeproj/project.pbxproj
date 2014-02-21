@@ -15,7 +15,7 @@
 		D000DCBC18ADC7CE0037C0F8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */; };
 		D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m */; };
 		D000DCC218AE13A90037C0F8 /* RSStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */; };
-		D000DCC518AE14780037C0F8 /* RSScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCC418AE14780037C0F8 /* RSScannerViewController.m */; };
+		D000DCC518AE14780037C0F8 /* RSScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCC418AE14780037C0F8 /* RSScanViewController.m */; };
 		D011DEBC18ABA8720093F905 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D011DEBB18ABA8720093F905 /* BmobSDK.framework */; };
 		D011DEC218AF9A0C0093F905 /* RSDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D011DEC118AF9A0C0093F905 /* RSDataCenter.m */; };
 		D017348418876DAA00C07608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348318876DAA00C07608 /* Foundation.framework */; };
@@ -77,8 +77,8 @@
 		D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDynamicsDrawerViewController.m; sourceTree = "<group>"; };
 		D000DCC018AE13A90037C0F8 /* RSStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSStatisticsViewController.h; sourceTree = "<group>"; };
 		D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSStatisticsViewController.m; sourceTree = "<group>"; };
-		D000DCC318AE14780037C0F8 /* RSScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSScannerViewController.h; sourceTree = "<group>"; };
-		D000DCC418AE14780037C0F8 /* RSScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSScannerViewController.m; sourceTree = "<group>"; };
+		D000DCC318AE14780037C0F8 /* RSScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSScanViewController.h; sourceTree = "<group>"; };
+		D000DCC418AE14780037C0F8 /* RSScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSScanViewController.m; sourceTree = "<group>"; };
 		D011DEBB18ABA8720093F905 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Bmob/BmobSDK.framework; sourceTree = "<group>"; };
 		D011DEC018AF9A0C0093F905 /* RSDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDataCenter.h; sourceTree = "<group>"; };
 		D011DEC118AF9A0C0093F905 /* RSDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDataCenter.m; sourceTree = "<group>"; };
@@ -221,8 +221,8 @@
 				D000DCB918ADC5C30037C0F8 /* RSSalesViewController.m */,
 				D000DCC018AE13A90037C0F8 /* RSStatisticsViewController.h */,
 				D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */,
-				D000DCC318AE14780037C0F8 /* RSScannerViewController.h */,
-				D000DCC418AE14780037C0F8 /* RSScannerViewController.m */,
+				D000DCC318AE14780037C0F8 /* RSScanViewController.h */,
+				D000DCC418AE14780037C0F8 /* RSScanViewController.m */,
 				D0F76F0118B47F3E0069CAB9 /* RSPOIView.xib */,
 				D0F76F0318B481760069CAB9 /* RSPOIView.h */,
 				D0F76F0418B481770069CAB9 /* RSPOIView.m */,
@@ -446,7 +446,7 @@
 				D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */,
 				D09F2EBE18B59690004DC7E9 /* RSCardView.m in Sources */,
 				D000DCC218AE13A90037C0F8 /* RSStatisticsViewController.m in Sources */,
-				D000DCC518AE14780037C0F8 /* RSScannerViewController.m in Sources */,
+				D000DCC518AE14780037C0F8 /* RSScanViewController.m in Sources */,
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
 				D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */,
 				D000DCB218AB72220037C0F8 /* RSNewCardViewController.mm in Sources */,

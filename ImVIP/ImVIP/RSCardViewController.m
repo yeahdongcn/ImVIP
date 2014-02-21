@@ -22,6 +22,8 @@
 
 #import <UIColor+TDAdditions.h>
 
+#import <RSBarcodes/RSCodeGen.h>
+
 new_class(RSCardShowButton, UIButton)
 
 new_class(RSCardDeleteButton, UIButton)
@@ -96,12 +98,18 @@ new_class(RSCardDeleteButton, UIButton)
     BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
     NSString *title = [card objectForKey:@"title"];
     NSString *codeValue = [card objectForKey:@"codeValue"];
+    NSString *codeType = [card objectForKey:@"codeType"];
     NSMutableString *separatedCode = [NSMutableString stringWithString:kRSTextDefault];
     for (int i = 0; i < [codeValue length]; i++) {
         [separatedCode appendString:[codeValue substringWithRange:NSMakeRange(i, 1)]];
         [separatedCode appendString:kRSTextSpace];
     }
     NSString *code = [NSString stringWithString:separatedCode];
+    UIImage *codeImage = [CodeGen genCodeWithContents:codeValue machineReadableCodeObjectType:codeType];
+    CGFloat scale = 1.0f;
+    while (codeImage.size.width * (scale + 0.5f) <= 300.0f) {
+        scale += 0.5f;
+    }
     
     RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
     titleView.label.text = title;
@@ -116,6 +124,7 @@ new_class(RSCardDeleteButton, UIButton)
     // Update card view content
     cardView.titleLabel.text = title;
     cardView.codeLabel.text = code;
+    cardView.codeView.image = resizeImage(codeImage, scale);
     
     // TODO: text colors to be determined
     if ([backgroundColor isDarkColor]) {

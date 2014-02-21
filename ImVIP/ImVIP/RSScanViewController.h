@@ -1,5 +1,5 @@
 //
-//  RSScannerViewController.h
+//  RSScanViewController.h
 //  ImVIP
 //
 //  Created by R0CKSTAR on 2/14/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RSScannerViewController : UIViewController
+@interface RSScanViewController : UIViewController
 
 @end

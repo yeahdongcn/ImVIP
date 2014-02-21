@@ -293,10 +293,10 @@
             </objects>
             <point key="canvasLocation" x="588" y="2797"/>
         </scene>
-        <!--Scanner View Controller-->
+        <!--Scan View Controller-->
         <scene sceneID="0RJ-S4-UWZ">
             <objects>
-                <viewController storyboardIdentifier="Scanner" id="uWa-Xa-Pf6" customClass="RSScannerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Scanner" id="uWa-Xa-Pf6" customClass="RSScanViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FYt-Sq-ssD"/>
                         <viewControllerLayoutGuide type="bottom" id="ggd-Rf-p7c"/>
@@ -474,12 +474,12 @@
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTy-ag-nWR">
-                                                    <rect key="frame" x="255" y="15" width="45" height="30"/>
+                                                    <rect key="frame" x="255" y="16" width="45" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="28y-HT-CRr"/>
-                                                        <constraint firstAttribute="height" constant="30" id="Q35-ei-Mfw"/>
+                                                        <constraint firstAttribute="height" constant="28" id="Q35-ei-Mfw"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
