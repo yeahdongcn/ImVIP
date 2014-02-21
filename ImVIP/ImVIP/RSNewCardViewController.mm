@@ -266,7 +266,13 @@ new_class(RSNewCardTextField, UITextField)
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
+    if (textField == self.titleField) {
+        [self.tagField becomeFirstResponder];
+    } else if (textField == self.tagField) {
+        [self.codeField becomeFirstResponder];
+    } else {
+        [textField resignFirstResponder];
+    }
     return NO;
 }
 
