@@ -159,6 +159,9 @@
                                                     <state key="normal" title="Button">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="I6E-Lu-0A9" kind="modal" id="Uay-SS-ZTx"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -209,6 +212,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UaM-7u-ObK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="593" y="481"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fLU-Fn-YdQ">
+            <objects>
+                <viewController id="I6E-Lu-0A9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pky-Dd-R2y"/>
+                        <viewControllerLayoutGuide type="bottom" id="xg2-p8-e1T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dih-EL-sgq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2v5-ke-dSU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2v5-ke-dSU" secondAttribute="trailing" id="MGL-xI-1V5"/>
+                            <constraint firstAttribute="bottom" secondItem="2v5-ke-dSU" secondAttribute="bottom" id="NRb-2T-lsz"/>
+                            <constraint firstItem="2v5-ke-dSU" firstAttribute="leading" secondItem="dih-EL-sgq" secondAttribute="leading" id="QWd-A3-g60"/>
+                            <constraint firstItem="2v5-ke-dSU" firstAttribute="top" secondItem="dih-EL-sgq" secondAttribute="top" id="Yad-9M-fe7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vgW-y3-DpH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbN-TY-6fW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="481"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="nfJ-hR-GJ1">

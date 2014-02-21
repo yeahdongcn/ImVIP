@@ -40,6 +40,8 @@
 		D09F2EBB18B59413004DC7E9 /* RSCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09F2EBA18B59413004DC7E9 /* RSCardView.xib */; };
 		D09F2EBE18B59690004DC7E9 /* RSCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EBD18B59690004DC7E9 /* RSCardView.m */; };
 		D09F2EC118B5EF1C004DC7E9 /* Farrington-7B-Qiqi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09F2EC018B5EF1C004DC7E9 /* Farrington-7B-Qiqi.ttf */; };
+		D09F2EC718B7422C004DC7E9 /* ANBlurredImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EC418B7422C004DC7E9 /* ANBlurredImageView.m */; };
+		D09F2EC818B7422C004DC7E9 /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EC618B7422C004DC7E9 /* UIImage+BoxBlur.m */; };
 		D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */; };
 		D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1E9BF18963D9800D3C770 /* RSTitleView.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
@@ -116,6 +118,10 @@
 		D09F2EBC18B59690004DC7E9 /* RSCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardView.h; sourceTree = "<group>"; };
 		D09F2EBD18B59690004DC7E9 /* RSCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardView.m; sourceTree = "<group>"; };
 		D09F2EC018B5EF1C004DC7E9 /* Farrington-7B-Qiqi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Farrington-7B-Qiqi.ttf"; path = "Fonts/Farrington-7B-Qiqi.ttf"; sourceTree = SOURCE_ROOT; };
+		D09F2EC318B7422C004DC7E9 /* ANBlurredImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANBlurredImageView.h; sourceTree = "<group>"; };
+		D09F2EC418B7422C004DC7E9 /* ANBlurredImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANBlurredImageView.m; sourceTree = "<group>"; };
+		D09F2EC518B7422C004DC7E9 /* UIImage+BoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BoxBlur.h"; sourceTree = "<group>"; };
+		D09F2EC618B7422C004DC7E9 /* UIImage+BoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BoxBlur.m"; sourceTree = "<group>"; };
 		D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSTitleView.xib; sourceTree = "<group>"; };
 		D0A1E9BE18963D9800D3C770 /* RSTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTitleView.h; sourceTree = "<group>"; };
 		D0A1E9BF18963D9800D3C770 /* RSTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTitleView.m; sourceTree = "<group>"; };
@@ -193,6 +199,7 @@
 		D017348918876DAA00C07608 /* ImVIP */ = {
 			isa = PBXGroup;
 			children = (
+				D09F2EC218B7422C004DC7E9 /* ANBlurredImageView */,
 				D0F76F0018B443450069CAB9 /* Data */,
 				D0D9C6381888F9950000D1E5 /* UISS */,
 				D017349218876DAA00C07608 /* RSAppDelegate.h */,
@@ -268,6 +275,17 @@
 				D01734AB18876DAA00C07608 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D09F2EC218B7422C004DC7E9 /* ANBlurredImageView */ = {
+			isa = PBXGroup;
+			children = (
+				D09F2EC318B7422C004DC7E9 /* ANBlurredImageView.h */,
+				D09F2EC418B7422C004DC7E9 /* ANBlurredImageView.m */,
+				D09F2EC518B7422C004DC7E9 /* UIImage+BoxBlur.h */,
+				D09F2EC618B7422C004DC7E9 /* UIImage+BoxBlur.m */,
+			);
+			path = ANBlurredImageView;
 			sourceTree = "<group>";
 		};
 		D0D9C6381888F9950000D1E5 /* UISS */ = {
@@ -447,6 +465,7 @@
 				D09F2EBE18B59690004DC7E9 /* RSCardView.m in Sources */,
 				D000DCC218AE13A90037C0F8 /* RSStatisticsViewController.m in Sources */,
 				D000DCC518AE14780037C0F8 /* RSScanViewController.m in Sources */,
+				D09F2EC718B7422C004DC7E9 /* ANBlurredImageView.m in Sources */,
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
 				D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */,
 				D000DCB218AB72220037C0F8 /* RSNewCardViewController.mm in Sources */,
@@ -458,6 +477,7 @@
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,
 				D0F76F0518B481770069CAB9 /* RSPOIView.m in Sources */,
 				D04B82E718A4DA5D007971B3 /* RSCardViewController.m in Sources */,
+				D09F2EC818B7422C004DC7E9 /* UIImage+BoxBlur.m in Sources */,
 				D0F76EFF18B442FC0069CAB9 /* RSStatistics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

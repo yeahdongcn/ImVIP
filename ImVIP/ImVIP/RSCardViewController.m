@@ -107,8 +107,15 @@ new_class(RSCardDeleteButton, UIButton)
     NSString *code = [NSString stringWithString:separatedCode];
     UIImage *codeImage = [CodeGen genCodeWithContents:codeValue machineReadableCodeObjectType:codeType];
     CGFloat scale = 1.0f;
-    while (codeImage.size.width * (scale + 0.5f) <= 300.0f) {
-        scale += 0.5f;
+    if ([codeType isEqualToString:AVMetadataObjectTypeQRCode]
+        || [codeType isEqualToString:AVMetadataObjectTypeAztecCode]) {
+        while (codeImage.size.height * (scale + 0.5f) <= 60.0f) {
+            scale += 0.5f;
+        }
+    } else {
+        while (codeImage.size.width * (scale + 0.5f) <= 300.0f) {
+            scale += 0.5f;
+        }
     }
     
     RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
