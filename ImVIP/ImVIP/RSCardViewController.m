@@ -18,6 +18,8 @@
 
 #import "SFUIViewMacroses.h"
 
+#import "RSBigCardViewController.h"
+
 #import <ColorUtils.h>
 
 #import <UIColor+TDAdditions.h>
@@ -32,15 +34,24 @@ new_class(RSCardDeleteButton, UIButton)
 
 @property (nonatomic, weak) RSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
-@property (nonatomic, weak) IBOutlet UIView *cardContentView;
+@property (nonatomic, weak) IBOutlet UIView             *cardContentView;
 
 @property (nonatomic, weak) IBOutlet RSCardShowButton   *showButton;
 
 @property (nonatomic, weak) IBOutlet RSCardDeleteButton *deleteButton;
 
+@property (nonatomic, strong) UIImage *snapshot;
+
 @end
 
 @implementation RSCardViewController
+
+- (IBAction)__onShow:(id)sender
+{
+    RSBigCardViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BigCard"];
+    viewController.snapshot = self.snapshot;
+    [self.navigationController pushViewController:viewController animated:NO];
+}
 
 - (void)__onEdit
 {
@@ -72,6 +83,20 @@ new_class(RSCardDeleteButton, UIButton)
         self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
     }
     return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (!self.snapshot) {
+        UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+        UIGraphicsBeginImageContextWithOptions(window.bounds.size, YES, 0.0f);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        [window.layer renderInContext:context];
+        self.snapshot = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

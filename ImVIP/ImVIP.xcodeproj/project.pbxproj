@@ -42,6 +42,7 @@
 		D09F2EC118B5EF1C004DC7E9 /* Farrington-7B-Qiqi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09F2EC018B5EF1C004DC7E9 /* Farrington-7B-Qiqi.ttf */; };
 		D09F2EC718B7422C004DC7E9 /* ANBlurredImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EC418B7422C004DC7E9 /* ANBlurredImageView.m */; };
 		D09F2EC818B7422C004DC7E9 /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EC618B7422C004DC7E9 /* UIImage+BoxBlur.m */; };
+		D09F2ECB18B74763004DC7E9 /* RSBigCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2ECA18B74763004DC7E9 /* RSBigCardViewController.m */; };
 		D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */; };
 		D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1E9BF18963D9800D3C770 /* RSTitleView.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
@@ -122,6 +123,8 @@
 		D09F2EC418B7422C004DC7E9 /* ANBlurredImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANBlurredImageView.m; sourceTree = "<group>"; };
 		D09F2EC518B7422C004DC7E9 /* UIImage+BoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BoxBlur.h"; sourceTree = "<group>"; };
 		D09F2EC618B7422C004DC7E9 /* UIImage+BoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BoxBlur.m"; sourceTree = "<group>"; };
+		D09F2EC918B74763004DC7E9 /* RSBigCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBigCardViewController.h; sourceTree = "<group>"; };
+		D09F2ECA18B74763004DC7E9 /* RSBigCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBigCardViewController.m; sourceTree = "<group>"; };
 		D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSTitleView.xib; sourceTree = "<group>"; };
 		D0A1E9BE18963D9800D3C770 /* RSTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTitleView.h; sourceTree = "<group>"; };
 		D0A1E9BF18963D9800D3C770 /* RSTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTitleView.m; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				D0A1E9BF18963D9800D3C770 /* RSTitleView.m */,
 				D04B82E518A4DA5D007971B3 /* RSCardViewController.h */,
 				D04B82E618A4DA5D007971B3 /* RSCardViewController.m */,
+				D09F2EC918B74763004DC7E9 /* RSBigCardViewController.h */,
+				D09F2ECA18B74763004DC7E9 /* RSBigCardViewController.m */,
 				D000DCB018AB72220037C0F8 /* RSNewCardViewController.h */,
 				D000DCB118AB72220037C0F8 /* RSNewCardViewController.mm */,
 				D000DCB518ADC1EB0037C0F8 /* RSMapViewController.h */,
@@ -471,6 +476,7 @@
 				D000DCB218AB72220037C0F8 /* RSNewCardViewController.mm in Sources */,
 				D011DEC218AF9A0C0093F905 /* RSDataCenter.m in Sources */,
 				D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */,
+				D09F2ECB18B74763004DC7E9 /* RSBigCardViewController.m in Sources */,
 				D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */,
 				D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,

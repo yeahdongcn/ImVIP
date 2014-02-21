@@ -15,7 +15,6 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.titleLabel.font = [UIFont fontWithName:@"FZQingKeBenYueSongS-R-GB" size:18];
             self.codeLabel.font = [UIFont fontWithName:@"Farrington-7B-Qiqi" size:16];
         });
     }

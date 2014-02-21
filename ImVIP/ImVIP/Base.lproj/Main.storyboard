@@ -160,7 +160,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="I6E-Lu-0A9" kind="modal" id="Uay-SS-ZTx"/>
+                                                        <action selector="__onShow:" destination="zlx-2M-cy0" eventType="touchUpInside" id="QX5-Ah-mTR"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -207,16 +207,17 @@
                         <outlet property="deleteButton" destination="vgI-dn-NjS" id="AvP-TE-UbC"/>
                         <outlet property="showButton" destination="qF0-95-bBM" id="6b5-y6-K06"/>
                         <segue destination="WRk-BX-kdE" kind="push" identifier="EditCard" id="mL8-zm-bQK"/>
+                        <segue destination="I6E-Lu-0A9" kind="push" identifier="" id="ftU-36-KJj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UaM-7u-ObK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="593" y="481"/>
         </scene>
-        <!--View Controller-->
+        <!--Big Card View Controller-->
         <scene sceneID="fLU-Fn-YdQ">
             <objects>
-                <viewController id="I6E-Lu-0A9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BigCard" id="I6E-Lu-0A9" customClass="RSBigCardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pky-Dd-R2y"/>
                         <viewControllerLayoutGuide type="bottom" id="xg2-p8-e1T"/>
@@ -225,13 +226,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2v5-ke-dSU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2v5-ke-dSU" customClass="ANBlurredImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKx-eY-enp">
+                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="UKx-eY-enp" firstAttribute="leading" secondItem="dih-EL-sgq" secondAttribute="leading" constant="20" symbolic="YES" id="9Ke-lk-kH0"/>
+                            <constraint firstItem="UKx-eY-enp" firstAttribute="top" secondItem="dih-EL-sgq" secondAttribute="top" constant="20" symbolic="YES" id="CNP-kG-vDw"/>
                             <constraint firstAttribute="trailing" secondItem="2v5-ke-dSU" secondAttribute="trailing" id="MGL-xI-1V5"/>
                             <constraint firstAttribute="bottom" secondItem="2v5-ke-dSU" secondAttribute="bottom" id="NRb-2T-lsz"/>
                             <constraint firstItem="2v5-ke-dSU" firstAttribute="leading" secondItem="dih-EL-sgq" secondAttribute="leading" id="QWd-A3-g60"/>
@@ -239,6 +249,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vgW-y3-DpH"/>
+                    <connections>
+                        <outlet property="blurredView" destination="2v5-ke-dSU" id="tLg-cI-G82"/>
+                        <outlet property="closeButton" destination="UKx-eY-enp" id="9hh-ly-6J6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbN-TY-6fW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
