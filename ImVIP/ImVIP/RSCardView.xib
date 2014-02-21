@@ -37,6 +37,14 @@
                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0CP-LR-huG">
+                    <rect key="frame" x="230" y="119" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="1Y3-I7-DLq"/>
+                        <constraint firstAttribute="height" constant="50" id="Tx1-Bn-NOl"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -46,12 +54,15 @@
                 <constraint firstItem="ksD-bN-Iam" firstAttribute="centerY" secondItem="t74-8B-F99" secondAttribute="centerY" id="QiV-Bz-pEs"/>
                 <constraint firstAttribute="centerY" secondItem="Rd6-Lt-qKQ" secondAttribute="centerY" constant="-10" id="bH1-Sk-fvW"/>
                 <constraint firstItem="YqU-l4-NYA" firstAttribute="leading" secondItem="ksD-bN-Iam" secondAttribute="leading" id="etq-B1-dlF"/>
+                <constraint firstAttribute="trailing" secondItem="0CP-LR-huG" secondAttribute="trailing" constant="20" symbolic="YES" id="pCM-sI-5Hr"/>
                 <constraint firstAttribute="bottom" secondItem="YqU-l4-NYA" secondAttribute="bottom" constant="20" symbolic="YES" id="pDT-Pz-cm9"/>
+                <constraint firstAttribute="bottom" secondItem="0CP-LR-huG" secondAttribute="bottom" constant="20" symbolic="YES" id="uvQ-IK-Xbk"/>
                 <constraint firstItem="ksD-bN-Iam" firstAttribute="leading" secondItem="N6T-6p-tCB" secondAttribute="leading" constant="20" symbolic="YES" id="yId-w9-vEw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="codeLabel" destination="Rd6-Lt-qKQ" id="VuB-n2-gXk"/>
+                <outlet property="codeView" destination="0CP-LR-huG" id="tKt-X4-7Ta"/>
                 <outlet property="iconView" destination="ksD-bN-Iam" id="vIP-g5-Jdx"/>
                 <outlet property="titleLabel" destination="t74-8B-F99" id="fqX-Y4-80w"/>
                 <outlet property="usernameLabel" destination="YqU-l4-NYA" id="7nb-7S-hcr"/>

@@ -118,11 +118,11 @@ new_class(RSNewCardTextField, UITextField)
     NSString *color = [self.color stringValue];
     
     // Update & save callback
-    void (^callback)(BOOL, NSError *, BOOL) = [^(BOOL succeeded, NSError *error, BOOL updateAchievements) {
+    void (^callback)(BOOL, NSError *, BOOL) = [^(BOOL succeeded, NSError *error, BOOL needUpdateAchievements) {
         [spinner stopAnimating];
         [spinner removeFromSuperview];
         if (succeeded) {
-            if (updateAchievements) {
+            if (needUpdateAchievements) {
                 [Achievements setNumberOfCards:[DataCenter numberOfCachedCard] + 1];
             }
             [self.navigationController popViewControllerAnimated:YES];

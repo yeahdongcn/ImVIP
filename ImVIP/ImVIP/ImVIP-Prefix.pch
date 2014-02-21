@@ -23,6 +23,7 @@
 #import "RSStatistics.h"
 
 static NSString *kRSTextDefault = @"";
+static NSString *kRSTextSpace   = @" ";
 
 #define new_class(class_name, super_class) @interface class_name : super_class\
 @end\

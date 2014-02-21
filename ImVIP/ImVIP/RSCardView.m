@@ -8,18 +8,6 @@
 
 #import "RSCardView.h"
 
-@interface RSCardView ()
-
-@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
-
-@property (nonatomic, weak) IBOutlet UILabel *codeLabel;
-
-@property (nonatomic, weak) IBOutlet UIImageView *iconView;
-
-@property (nonatomic, weak) IBOutlet UILabel *usernameLabel;
-
-@end
-
 @implementation RSCardView
 
 - (id)initWithCoder:(NSCoder *)aDecoder

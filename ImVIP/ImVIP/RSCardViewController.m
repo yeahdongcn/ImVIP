@@ -92,17 +92,30 @@ new_class(RSCardDeleteButton, UIButton)
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(__onEdit)];
     
+    // Get the card ready
     BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
+    NSString *title = [card objectForKey:@"title"];
+    NSString *codeValue = [card objectForKey:@"codeValue"];
+    NSMutableString *separatedCode = [NSMutableString stringWithString:kRSTextDefault];
+    for (int i = 0; i < [codeValue length]; i++) {
+        [separatedCode appendString:[codeValue substringWithRange:NSMakeRange(i, 1)]];
+        [separatedCode appendString:kRSTextSpace];
+    }
+    NSString *code = [NSString stringWithString:separatedCode];
     
     RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
-    titleView.label.text = [card objectForKey:@"title"];
+    titleView.label.text = title;
     self.navigationItem.titleView = titleView;
     
     RSCardView *cardView = (RSCardView *)[[[NSBundle mainBundle] loadNibNamed:@"RSCardView" owner:nil options:nil] firstObject];
+    // Update card view appearance
     cardView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
     cardView.layer.cornerRadius = 11.f;
     UIColor *backgroundColor = [UIColor colorWithString:[card objectForKey:@"color"]];
     cardView.backgroundColor = backgroundColor;
+    // Update card view content
+    cardView.titleLabel.text = title;
+    cardView.codeLabel.text = code;
     
     // TODO: text colors to be determined
     if ([backgroundColor isDarkColor]) {

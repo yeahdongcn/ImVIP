@@ -10,4 +10,14 @@
 
 @interface RSCardView : UIView
 
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+
+@property (nonatomic, weak) IBOutlet UILabel *codeLabel;
+
+@property (nonatomic, weak) IBOutlet UILabel *usernameLabel;
+
+@property (nonatomic, weak) IBOutlet UIImageView *iconView;
+
+@property (nonatomic, weak) IBOutlet UIImageView *codeView;
+
 @end
