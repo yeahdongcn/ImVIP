@@ -32,7 +32,7 @@
     
     [self __refresh];
     [self.refreshControl beginRefreshing];
-    [UIView animateWithDuration:.3 animations:^{
+    [UIView animateWithDuration:0.3f animations:^{
         self.tableView.contentOffset = CGPointMake(0, -self.refreshControl.frame.size.height);
     }];
 }

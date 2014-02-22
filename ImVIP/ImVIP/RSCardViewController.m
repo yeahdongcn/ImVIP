@@ -50,6 +50,7 @@ new_class(RSCardDeleteButton, UIButton)
 {
     RSBigCardViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BigCard"];
     viewController.snapshot = self.snapshot;
+    viewController.indexOfCard = self.indexOfCard;
     [self.navigationController pushViewController:viewController animated:NO];
 }
 
@@ -150,7 +151,7 @@ new_class(RSCardDeleteButton, UIButton)
     RSCardView *cardView = (RSCardView *)[[[NSBundle mainBundle] loadNibNamed:@"RSCardView" owner:nil options:nil] firstObject];
     // Update card view appearance
     cardView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
-    cardView.layer.cornerRadius = 11.f;
+    cardView.layer.cornerRadius = 11.0f;
     UIColor *backgroundColor = [UIColor colorWithString:[card objectForKey:@"color"]];
     cardView.backgroundColor = backgroundColor;
     // Update card view content

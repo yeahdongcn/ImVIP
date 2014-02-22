@@ -12,4 +12,6 @@
 
 @property (nonatomic, weak) UIImage *snapshot;
 
+@property (nonatomic) NSUInteger indexOfCard;
+
 @end

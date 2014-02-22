@@ -206,7 +206,7 @@ new_class(RSNewCardTextField, UITextField)
     titleView.label.text = RSLocalizedString(@"New Card");
     self.navigationItem.titleView = titleView;
     
-    self.colorView.layer.cornerRadius = 3.f;
+    self.colorView.layer.cornerRadius = 3.0f;
     
     self.titleField.delegate = self;
     self.tagField.delegate = self;

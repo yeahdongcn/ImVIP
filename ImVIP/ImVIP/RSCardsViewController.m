@@ -37,10 +37,10 @@
     self.needReload = NO;
     
     [self.refreshControl beginRefreshing];
-    [UIView animateWithDuration:.3 animations:^{
+    [UIView animateWithDuration:0.3f animations:^{
         self.tableView.contentOffset = CGPointMake(0, self.tableView.contentOffset.y - self.refreshControl.frame.size.height);
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:.3 animations:^{
+        [UIView animateWithDuration:0.3f animations:^{
             // Wait .3
         } completion:^(BOOL finished) {
             [self.refreshControl endRefreshing];
@@ -90,7 +90,7 @@
     
     [self __refresh];
     [self.refreshControl beginRefreshing];
-    [UIView animateWithDuration:.3 animations:^{
+    [UIView animateWithDuration:0.3f animations:^{
         self.tableView.contentOffset = CGPointMake(0, self.tableView.contentOffset.y - self.refreshControl.frame.size.height);
     }];
 }
