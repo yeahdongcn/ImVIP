@@ -479,25 +479,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us6-Lj-pBt" customClass="RSNewCardButton">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us6-Lj-pBt" customClass="RSNewCardButton">
                                                     <rect key="frame" x="20" y="20" width="64" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <state key="normal" title="扫一扫" image="new_scan"/>
                                                     <connections>
                                                         <action selector="__scanCode:" destination="WRk-BX-kdE" eventType="touchUpInside" id="jIv-rC-cgh"/>
-                                                        <segue destination="uWa-Xa-Pf6" kind="push" id="hN5-iQ-ggs"/>
+                                                        <segue destination="uWa-Xa-Pf6" kind="push" identifier="scanCode" id="hN5-iQ-ggs"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="或者直接输入" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-Fn-g5I" customClass="RSNewCardLabel">
-                                                    <rect key="frame" x="92" y="22" width="72" height="15"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="或者直接输入" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-Fn-g5I" customClass="RSNewCardLabel">
+                                                    <rect key="frame" x="89" y="22" width="126" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填项" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ayr-vw-FfC" customClass="RSNewCardTextField">
-                                                    <rect key="frame" x="172" y="15" width="128" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填项" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ayr-vw-FfC" customClass="RSNewCardTextField">
+                                                    <rect key="frame" x="220" y="15" width="80" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="adx-Yg-By3"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                 </textField>
@@ -505,8 +508,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="RIa-Fn-g5I" secondAttribute="centerY" id="FlP-xF-RUV"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ayr-vw-FfC" secondAttribute="trailing" constant="20" symbolic="YES" id="HH5-qg-k7c"/>
-                                                <constraint firstItem="RIa-Fn-g5I" firstAttribute="leading" secondItem="Us6-Lj-pBt" secondAttribute="trailing" constant="8" symbolic="YES" id="Oce-iv-1ov"/>
-                                                <constraint firstItem="Ayr-vw-FfC" firstAttribute="leading" secondItem="RIa-Fn-g5I" secondAttribute="trailing" constant="8" symbolic="YES" id="RKv-ua-NT4"/>
+                                                <constraint firstItem="RIa-Fn-g5I" firstAttribute="leading" secondItem="Us6-Lj-pBt" secondAttribute="trailing" constant="5" id="Oce-iv-1ov"/>
+                                                <constraint firstItem="Ayr-vw-FfC" firstAttribute="leading" secondItem="RIa-Fn-g5I" secondAttribute="trailing" constant="5" id="RKv-ua-NT4"/>
                                                 <constraint firstAttribute="centerY" secondItem="Us6-Lj-pBt" secondAttribute="centerY" id="RUx-PZ-QAL"/>
                                                 <constraint firstAttribute="centerY" secondItem="Ayr-vw-FfC" secondAttribute="centerY" id="fuH-R7-72V"/>
                                                 <constraint firstItem="Us6-Lj-pBt" firstAttribute="leading" secondItem="mN7-SN-73n" secondAttribute="leading" constant="20" symbolic="YES" id="hpx-D7-VUD"/>

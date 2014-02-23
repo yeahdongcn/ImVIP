@@ -8,25 +8,24 @@
 
 #import "RSScanViewController.h"
 
+#import "RSTitleView.h"
+
 @interface RSScanViewController ()
 
 @end
 
 @implementation RSScanViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    if (!self.navigationItem.titleView) {
+        RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
+        titleView.label.text = RSLocalizedString(@"Scan Code");
+        self.navigationItem.titleView = titleView;
+    }
 }
 
 - (void)didReceiveMemoryWarning

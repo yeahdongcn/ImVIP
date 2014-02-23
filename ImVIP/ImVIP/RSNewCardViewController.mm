@@ -12,6 +12,8 @@
 
 #import "RSAppDelegate.h"
 
+#import "RSScanViewController.h"
+
 #import <AVFoundation/AVFoundation.h>
 
 #import <TDImageColors.h>
@@ -202,6 +204,8 @@ new_class(RSNewCardTextField, UITextField)
 {
     [super viewDidLoad];
     
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:kRSTextDefault style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
     titleView.label.text = RSLocalizedString(@"New Card");
     self.navigationItem.titleView = titleView;
@@ -232,8 +236,16 @@ new_class(RSNewCardTextField, UITextField)
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"scanCode"]) {
+        __weak RSScanViewController *controller = [segue destinationViewController];
+        controller.barcodesHandler = [^(NSArray *barcodes) {
+            self.codeObject = [barcodes firstObject];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.codeField.text = [self.codeObject stringValue];
+                [controller.navigationController popViewControllerAnimated:YES];
+            });
+        } copy];
+    }
 }
 
 #pragma mark - UINavigationControllerDelegate
