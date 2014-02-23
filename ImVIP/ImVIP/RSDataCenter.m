@@ -12,6 +12,7 @@
 
 NSString *const RSDataCenterCardsWillArrive = @"com.pdq.imvip.datacenter.cardsWillArrive";
 NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDidArrive";
+NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUpdate";
 
 @interface RSDataCenter ()
 
@@ -105,6 +106,34 @@ NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDi
             dispatch_async(dispatch_get_main_queue(), ^{
                 callback(succeeded, error);
             });
+        }
+        
+        if (succeeded) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:RSDataCenterCardDidUpdate object:nil];
+        }
+    }];
+}
+
+- (void)deleteCardAtIndex:(NSInteger)index
+             withCallback:(void(^)(BOOL, NSError *))callback
+{
+    BmobObject *card = [self getCachedCardAtIndex:index];
+    [card deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (callback) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callback(succeeded, error);
+            });
+        }
+        
+        // Update in background
+        if (succeeded) {
+            // Going to refresh cards in background
+            [[NSNotificationCenter defaultCenter] postNotificationName:RSDataCenterCardsWillArrive object:nil];
+            
+            [self getCardsAsyncWithCallback:^(NSArray *cards) {
+                // Cards ready
+                [[NSNotificationCenter defaultCenter] postNotificationName:RSDataCenterCardsDidArrive object:cards];
+            } whetherNeedQuery:YES];
         }
     }];
 }

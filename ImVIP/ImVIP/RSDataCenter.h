@@ -12,6 +12,7 @@
 
 extern NSString *const RSDataCenterCardsWillArrive;
 extern NSString *const RSDataCenterCardsDidArrive;
+extern NSString *const RSDataCenterCardDidUpdate;
 
 @interface RSDataCenter : NSObject
 
@@ -28,6 +29,9 @@ extern NSString *const RSDataCenterCardsDidArrive;
     withCallback:(void(^)(BOOL, NSError *))callback;
 
 - (void)updateCardAtIndex:(NSInteger)index
+             withCallback:(void(^)(BOOL, NSError *))callback;
+
+- (void)deleteCardAtIndex:(NSInteger)index
              withCallback:(void(^)(BOOL, NSError *))callback;
 
 - (void)getAchievementAsyncWithCallback:(void(^)(BmobObject *))callback;

@@ -26,6 +26,8 @@
 
 #import <RSBarcodes/RSCodeGen.h>
 
+#import <RTSpinKitView.h>
+
 new_class(RSCardShowButton, UIButton)
 
 new_class(RSCardDeleteButton, UIButton)
@@ -34,13 +36,19 @@ new_class(RSCardDeleteButton, UIButton)
 
 @property (nonatomic, weak) RSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
-@property (nonatomic, weak) IBOutlet UIView             *cardContentView;
+@property (nonatomic, weak) IBOutlet UIView *cardContentView;
 
-@property (nonatomic, weak) IBOutlet RSCardShowButton   *showButton;
+@property (nonatomic, weak) IBOutlet RSCardShowButton *showButton;
 
 @property (nonatomic, weak) IBOutlet RSCardDeleteButton *deleteButton;
 
 @property (nonatomic, strong) UIImage *snapshot;
+
+@property (nonatomic, weak) IBOutlet UIView *spinnerBackgroundView;
+
+@property (nonatomic, strong) RSTitleView *titleView;
+
+@property (nonatomic, strong) RSCardView *cardView;
 
 @end
 
@@ -54,22 +62,75 @@ new_class(RSCardDeleteButton, UIButton)
     [self.navigationController pushViewController:viewController animated:NO];
 }
 
+- (IBAction)__onDelete:(id)sender
+{
+    // Start spinner
+    RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStylePlane color:[UIColor colorWithRGBValue:0x6755c7]];
+    [self.spinnerBackgroundView addSubview:spinner];
+    [spinner startAnimating];
+    
+    [DataCenter deleteCardAtIndex:self.indexOfCard withCallback:^(BOOL succeeded, NSError *error) {
+        [spinner stopAnimating];
+        [spinner removeFromSuperview];
+        if (succeeded) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") message:[error localizedDescription] delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
+        }
+    }];
+}
+
 - (void)__onEdit
 {
     [self performSegueWithIdentifier:@"EditCard" sender:self];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)__reloadCard
 {
-    if ([segue.identifier isEqualToString:@"EditCard"]) {
-        RSNewCardViewController *controller = segue.destinationViewController;
-        controller.indexOfCard = self.indexOfCard;
+    // Get the card ready
+    BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
+    NSString *title = [card objectForKey:@"title"];
+    NSString *codeValue = [card objectForKey:@"codeValue"];
+    NSString *codeType = [card objectForKey:@"codeType"];
+    UIColor *color = [UIColor colorWithString:[card objectForKey:@"color"]];
+    NSMutableString *separatedCode = [NSMutableString stringWithString:kRSTextDefault];
+    for (int i = 0; i < [codeValue length]; i++) {
+        [separatedCode appendString:[codeValue substringWithRange:NSMakeRange(i, 1)]];
+        [separatedCode appendString:kRSTextSpace];
+    }
+    NSString *code = [NSString stringWithString:separatedCode];
+    UIImage *codeImage = [CodeGen genCodeWithContents:codeValue machineReadableCodeObjectType:codeType];
+    CGFloat scale = 1.0f;
+    if ([codeType isEqualToString:AVMetadataObjectTypeQRCode]
+        || [codeType isEqualToString:AVMetadataObjectTypeAztecCode]) {
+        while (codeImage.size.height * (scale + 0.5f) <= 60.0f) {
+            scale += 0.5f;
+        }
+    } else {
+        while (codeImage.size.width * (scale + 0.5f) <= 300.0f) {
+            scale += 0.5f;
+        }
+    }
+    
+    // Update title view
+    self.titleView.label.text = title;
+    
+    // Update card view content
+    self.cardView.titleLabel.text = title;
+    self.cardView.codeLabel.text = code;
+    self.cardView.codeView.image = resizeImage(codeImage, scale);
+    self.cardView.backgroundColor = color;
+    
+    if ([color isDarkColor]) {
+        [self __updateLabelsColor:0xfafafa];
+    } else {
+        [self __updateLabelsColor:0x0a0a0a];
     }
 }
 
-- (void)__setLabelsColorContainedIn:(UIView *)contentView withColorHex:(uint32_t)hex
+- (void)__updateLabelsColor:(uint32_t)hex
 {
-    for (UIView *view in contentView.subviews) {
+    for (UIView *view in self.cardView.subviews) {
         if ([view isKindOfClass:[UILabel class]]) {
             UILabel *label = (UILabel *)view;
             label.textColor = [UIColor colorWithRGBValue:hex];
@@ -77,13 +138,25 @@ new_class(RSCardDeleteButton, UIButton)
     }
 }
 
+- (void)__cardDidUpdate:(NSNotification *)notification
+{
+    [self __reloadCard];
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__cardDidUpdate:) name:RSDataCenterCardDidUpdate object:nil];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -120,52 +193,23 @@ new_class(RSCardDeleteButton, UIButton)
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(__onEdit)];
     
-    // Get the card ready
-    BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
-    NSString *title = [card objectForKey:@"title"];
-    NSString *codeValue = [card objectForKey:@"codeValue"];
-    NSString *codeType = [card objectForKey:@"codeType"];
-    NSMutableString *separatedCode = [NSMutableString stringWithString:kRSTextDefault];
-    for (int i = 0; i < [codeValue length]; i++) {
-        [separatedCode appendString:[codeValue substringWithRange:NSMakeRange(i, 1)]];
-        [separatedCode appendString:kRSTextSpace];
-    }
-    NSString *code = [NSString stringWithString:separatedCode];
-    UIImage *codeImage = [CodeGen genCodeWithContents:codeValue machineReadableCodeObjectType:codeType];
-    CGFloat scale = 1.0f;
-    if ([codeType isEqualToString:AVMetadataObjectTypeQRCode]
-        || [codeType isEqualToString:AVMetadataObjectTypeAztecCode]) {
-        while (codeImage.size.height * (scale + 0.5f) <= 60.0f) {
-            scale += 0.5f;
-        }
-    } else {
-        while (codeImage.size.width * (scale + 0.5f) <= 300.0f) {
-            scale += 0.5f;
-        }
-    }
+    self.titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
+    self.navigationItem.titleView = self.titleView;
     
-    RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
-    titleView.label.text = title;
-    self.navigationItem.titleView = titleView;
+    self.cardView = (RSCardView *)[[[NSBundle mainBundle] loadNibNamed:@"RSCardView" owner:nil options:nil] firstObject];
+    self.cardView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
+    self.cardView.layer.cornerRadius = 11.0f;
+    [self.cardContentView addSubview:self.cardView];
     
-    RSCardView *cardView = (RSCardView *)[[[NSBundle mainBundle] loadNibNamed:@"RSCardView" owner:nil options:nil] firstObject];
-    // Update card view appearance
-    cardView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
-    cardView.layer.cornerRadius = 11.0f;
-    UIColor *backgroundColor = [UIColor colorWithString:[card objectForKey:@"color"]];
-    cardView.backgroundColor = backgroundColor;
-    // Update card view content
-    cardView.titleLabel.text = title;
-    cardView.codeLabel.text = code;
-    cardView.codeView.image = resizeImage(codeImage, scale);
-    
-    // TODO: text colors to be determined
-    if ([backgroundColor isDarkColor]) {
-        [self __setLabelsColorContainedIn:cardView withColorHex:0xfafafa];
-    } else {
-        [self __setLabelsColorContainedIn:cardView withColorHex:0x0a0a0a];
+    [self __reloadCard];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"EditCard"]) {
+        RSNewCardViewController *controller = segue.destinationViewController;
+        controller.indexOfCard = self.indexOfCard;
     }
-    [self.cardContentView addSubview:cardView];
 }
 
 @end

@@ -55,11 +55,11 @@
     CGFloat scale = 1.0f;
     if ([codeType isEqualToString:AVMetadataObjectTypeQRCode]
         || [codeType isEqualToString:AVMetadataObjectTypeAztecCode]) {
-        while (codeImage.size.height * (scale + 0.5f) <= 320.0f) {
+        while (codeImage.size.height * (scale + 0.5f) <= 300.0f) {
             scale += 0.5f;
         }
     } else {
-        while (codeImage.size.width * (scale + 0.5f) <= 480.0f) {
+        while (codeImage.size.width * (scale + 0.5f) <= 460.0f) {
             scale += 0.5f;
         }
     }

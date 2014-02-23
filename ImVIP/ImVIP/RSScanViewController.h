@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RSScanViewController : UIViewController
+#import <RSBarcodes/RSScannerViewController.h>
+
+@interface RSScanViewController : RSScannerViewController
 
 @end
