@@ -85,7 +85,7 @@
                                       kCRToastTimeIntervalKey                 : @(3.0),
                                       kCRToastAnimationOutTimeIntervalKey     : @(0.6),
                                       kCRToastFontKey                         : [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote],
-                                      kCRToastTextColorKey                    : [UIColor whiteColor],
+                                      kCRToastTextColorKey                    : [UIColor colorWithRGBValue:0xfafafa],
                                       kCRToastTextAlignmentKey                : @(NSTextAlignmentLeft),
                                       kCRToastAnimationInTypeKey              : @(CRToastAnimationTypeGravity),
                                       kCRToastAnimationOutTypeKey             : @(CRToastAnimationTypeGravity),

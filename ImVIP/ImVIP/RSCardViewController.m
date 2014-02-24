@@ -191,7 +191,12 @@ new_class(RSCardDeleteButton, UIButton)
 {
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(__onEdit)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_edit"] style:UIBarButtonItemStylePlain target:self action:@selector(__onEdit)];
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:kRSTextDefault style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    self.deleteButton.layer.cornerRadius = 5.0f;
+    self.showButton.layer.cornerRadius = 5.0f;
     
     self.titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
     self.navigationItem.titleView = self.titleView;
