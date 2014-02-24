@@ -21,6 +21,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:kRSTextDefault style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     if (!self.navigationItem.titleView) {
         RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
         titleView.label.text = RSLocalizedString(@"Scan Code");

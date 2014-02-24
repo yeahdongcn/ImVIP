@@ -241,8 +241,8 @@ new_class(RSCardDeleteButton, UIButton)
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"EditCard"]) {
-        RSNewCardViewController *controller = segue.destinationViewController;
-        controller.indexOfCard = self.indexOfCard;
+        RSNewCardViewController *viewController = segue.destinationViewController;
+        viewController.indexOfCard = self.indexOfCard;
     }
 }
 

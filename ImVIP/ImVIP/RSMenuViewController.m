@@ -14,6 +14,8 @@
 
 #import "RSScanViewController.h"
 
+#import "RSWebBrowserViewController.h"
+
 #import <AVFoundation/AVFoundation.h>
 
 #import <SIAlertView.h>
@@ -143,9 +145,25 @@ new_class(RSMenuTableHeaderView, UIView)
     if (!paneNavigationViewController) {
         NSString *identifier = self.paneViewControllerIdentifiers[@(paneViewControllerType)];
         UIViewController *paneViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+        
+        RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
+        titleView.label.text = self.paneViewControllerTitles[@(paneViewControllerType)];
+        titleView.showIndicator = YES;
+        paneViewController.navigationItem.titleView = titleView;
+        
+        self.paneRevealLeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_menu"] style:UIBarButtonItemStylePlain target:self action:@selector(__openMenu)];
+        paneViewController.navigationItem.leftBarButtonItem = self.paneRevealLeftBarButtonItem;
+        
+        self.paneRevealRightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_profile"] style:UIBarButtonItemStylePlain target:self action:@selector(__openProfile)];
+        paneViewController.navigationItem.rightBarButtonItem = self.paneRevealRightBarButtonItem;
+        
+        paneNavigationViewController = [[UINavigationController alloc] initWithRootViewController:paneViewController];
+        
+        [self.paneViewControllerNavigationViewControllers setObject:paneNavigationViewController forKey:@(paneViewControllerType)];
+        
         if ([identifier isEqualToString:@"Scanner"]) {
-            RSScanViewController *controller = (RSScanViewController *)paneViewController;
-            controller.barcodesHandler = [^(NSArray *barcodes) {
+            RSScanViewController *viewController = (RSScanViewController *)paneViewController;
+            viewController.barcodesHandler = [^(NSArray *barcodes) {
                 if (self.barcodesFound) {
                     return;
                 }
@@ -169,7 +187,15 @@ new_class(RSMenuTableHeaderView, UIView)
                     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Barcode Found") andMessage:[NSString stringWithFormat:RSLocalizedString(@"%d barcodes have been found"), [barcodes count]]];
                     for (int i = 0; i < [barcodes count]; i++) {
                         [alertView addButtonWithTitle:[[barcodes objectAtIndex:i] stringValue] type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView) {
-                            // TODO:
+                            RSWebBrowserViewController *viewController = [RSWebBrowserViewController webBrowser];
+                            [viewController loadURLString:@"http://www.baidu.com"];
+                            [paneNavigationViewController pushViewController:viewController animated:YES];
+                            
+                            double delayInSeconds = 1;
+                            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                                self.barcodesFound = NO;
+                            });
                         }];
                     }
                     [alertView addButtonWithTitle:RSLocalizedString(@"Cancel") type:SIAlertViewButtonTypeCancel handler:^(SIAlertView *alertView) {
@@ -182,21 +208,6 @@ new_class(RSMenuTableHeaderView, UIView)
                 });
             } copy];
         }
-        
-        RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
-        titleView.label.text = self.paneViewControllerTitles[@(paneViewControllerType)];
-        titleView.showIndicator = YES;
-        paneViewController.navigationItem.titleView = titleView;
-        
-        self.paneRevealLeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_menu"] style:UIBarButtonItemStylePlain target:self action:@selector(__openMenu)];
-        paneViewController.navigationItem.leftBarButtonItem = self.paneRevealLeftBarButtonItem;
-        
-        self.paneRevealRightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_profile"] style:UIBarButtonItemStylePlain target:self action:@selector(__openProfile)];
-        paneViewController.navigationItem.rightBarButtonItem = self.paneRevealRightBarButtonItem;
-        
-        paneNavigationViewController = [[UINavigationController alloc] initWithRootViewController:paneViewController];
-        
-        [self.paneViewControllerNavigationViewControllers setObject:paneNavigationViewController forKey:@(paneViewControllerType)];
     }
     
     [self.dynamicsDrawerViewController setPaneViewController:paneNavigationViewController animated:animateTransition completion:nil];

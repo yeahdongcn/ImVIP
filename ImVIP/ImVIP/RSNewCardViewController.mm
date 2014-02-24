@@ -267,8 +267,8 @@ new_class(RSNewCardTextField, UITextField)
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"scanCode"]) {
-        __weak RSScanViewController *controller = [segue destinationViewController];
-        controller.barcodesHandler = [^(NSArray *barcodes) {
+        __weak RSScanViewController *viewController = [segue destinationViewController];
+        viewController.barcodesHandler = [^(NSArray *barcodes) {
             if (self.barcodesFound) {
                 return;
             }
@@ -294,7 +294,13 @@ new_class(RSNewCardTextField, UITextField)
                     [alertView addButtonWithTitle:[[barcodes objectAtIndex:i] stringValue] type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView) {
                         self.codeObject = [barcodes objectAtIndex:i];
                         self.codeField.text = [self.codeObject stringValue];
-                        [controller.navigationController popViewControllerAnimated:YES];
+                        [viewController.navigationController popViewControllerAnimated:YES];
+                        
+                        double delayInSeconds = 1;
+                        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                            self.barcodesFound = NO;
+                        });
                     }];
                 }
                 [alertView addButtonWithTitle:RSLocalizedString(@"Cancel") type:SIAlertViewButtonTypeCancel handler:^(SIAlertView *alertView) {

@@ -140,8 +140,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"OpenCard"]) {
-        RSCardViewController *controller = segue.destinationViewController;
-        controller.indexOfCard = [[self.tableView indexPathForSelectedRow] row];
+        RSCardViewController *viewController = segue.destinationViewController;
+        viewController.indexOfCard = [[self.tableView indexPathForSelectedRow] row];
     }
 }
 

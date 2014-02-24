@@ -44,6 +44,7 @@
 		D09F2EC818B7422C004DC7E9 /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EC618B7422C004DC7E9 /* UIImage+BoxBlur.m */; };
 		D09F2ECB18B74763004DC7E9 /* RSBigCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2ECA18B74763004DC7E9 /* RSBigCardViewController.m */; };
 		D09F2ECD18BB2760004DC7E9 /* qrcode_found.wav in Resources */ = {isa = PBXBuildFile; fileRef = D09F2ECC18BB2760004DC7E9 /* qrcode_found.wav */; };
+		D09F2ED018BB2FEA004DC7E9 /* RSWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2ECF18BB2FEA004DC7E9 /* RSWebBrowserViewController.m */; };
 		D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */; };
 		D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1E9BF18963D9800D3C770 /* RSTitleView.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
@@ -127,6 +128,8 @@
 		D09F2EC918B74763004DC7E9 /* RSBigCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBigCardViewController.h; sourceTree = "<group>"; };
 		D09F2ECA18B74763004DC7E9 /* RSBigCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBigCardViewController.m; sourceTree = "<group>"; };
 		D09F2ECC18BB2760004DC7E9 /* qrcode_found.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = qrcode_found.wav; path = Sounds/qrcode_found.wav; sourceTree = SOURCE_ROOT; };
+		D09F2ECE18BB2FEA004DC7E9 /* RSWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSWebBrowserViewController.h; sourceTree = "<group>"; };
+		D09F2ECF18BB2FEA004DC7E9 /* RSWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSWebBrowserViewController.m; sourceTree = "<group>"; };
 		D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSTitleView.xib; sourceTree = "<group>"; };
 		D0A1E9BE18963D9800D3C770 /* RSTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTitleView.h; sourceTree = "<group>"; };
 		D0A1E9BF18963D9800D3C770 /* RSTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTitleView.m; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 				D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */,
 				D000DCC318AE14780037C0F8 /* RSScanViewController.h */,
 				D000DCC418AE14780037C0F8 /* RSScanViewController.m */,
+				D09F2ECE18BB2FEA004DC7E9 /* RSWebBrowserViewController.h */,
+				D09F2ECF18BB2FEA004DC7E9 /* RSWebBrowserViewController.m */,
 				D0F76F0118B47F3E0069CAB9 /* RSPOIView.xib */,
 				D0F76F0318B481760069CAB9 /* RSPOIView.h */,
 				D0F76F0418B481770069CAB9 /* RSPOIView.m */,
@@ -471,6 +476,7 @@
 				D000DCBA18ADC5C30037C0F8 /* RSSalesViewController.m in Sources */,
 				D0F76EFC18B345640069CAB9 /* RSAchievements.m in Sources */,
 				D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */,
+				D09F2ED018BB2FEA004DC7E9 /* RSWebBrowserViewController.m in Sources */,
 				D09F2EBE18B59690004DC7E9 /* RSCardView.m in Sources */,
 				D000DCC218AE13A90037C0F8 /* RSStatisticsViewController.m in Sources */,
 				D000DCC518AE14780037C0F8 /* RSScanViewController.m in Sources */,
