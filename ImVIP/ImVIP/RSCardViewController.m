@@ -28,6 +28,10 @@
 
 #import <RTSpinKitView.h>
 
+#import <objc/runtime.h>
+
+#import <SIAlertView.h>
+
 new_class(RSCardShowButton, UIButton)
 
 new_class(RSCardDeleteButton, UIButton)
@@ -64,20 +68,45 @@ new_class(RSCardDeleteButton, UIButton)
 
 - (IBAction)__onDelete:(id)sender
 {
-    // Start spinner
-    RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStylePlane color:[UIColor colorWithRGBValue:0x6755c7]];
-    [self.spinnerBackgroundView addSubview:spinner];
-    [spinner startAnimating];
+    BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
+    NSString *message = [NSString stringWithFormat:RSLocalizedString(@"%@ will be deleted"), [card objectForKey:@"title"]];
     
-    [DataCenter deleteCardAtIndex:self.indexOfCard withCallback:^(BOOL succeeded, NSError *error) {
-        [spinner stopAnimating];
-        [spinner removeFromSuperview];
-        if (succeeded) {
-            [self.navigationController popViewControllerAnimated:YES];
-        } else {
-            [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") message:[error localizedDescription] delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
-        }
-    }];
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Delete Card")
+                                                     andMessage:message];
+    
+    [alertView addButtonWithTitle:RSLocalizedString(@"Cancel")
+                             type:SIAlertViewButtonTypeCancel
+                          handler:nil];
+    [alertView addButtonWithTitle:RSLocalizedString(@"Delete")
+                             type:SIAlertViewButtonTypeDestructive
+                          handler:^(SIAlertView *alert) {
+                              // Start spinner
+                              RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStylePlane color:[UIColor colorWithRGBValue:0xfafafa]];
+                              [self.spinnerBackgroundView addSubview:spinner];
+                              [spinner startAnimating];
+                              
+                              [DataCenter deleteCardAtIndex:self.indexOfCard withCallback:^(BOOL succeeded, NSError *error) {
+                                  [spinner stopAnimating];
+                                  [spinner removeFromSuperview];
+                                  if (succeeded) {
+                                      [self.navigationController popViewControllerAnimated:YES];
+                                  } else {
+                                      SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") andMessage:[error localizedDescription]];
+                                      
+                                      [alertView addButtonWithTitle:RSLocalizedString(@"Yes")
+                                                               type:SIAlertViewButtonTypeDefault
+                                                            handler:nil];
+                                      
+                                      alertView.transitionStyle = SIAlertViewTransitionStyleSlideFromBottom;
+                                      
+                                      [alertView show];
+                                  }
+                              }];
+                          }];
+    
+    alertView.transitionStyle = SIAlertViewTransitionStyleSlideFromBottom;
+    
+    [alertView show];
 }
 
 - (void)__onEdit

@@ -36,3 +36,7 @@
 "Call"   = "呼叫";
 
 "Scan Code" = "扫一扫";
+
+"Delete" = "删除";
+"Delete Card" = "删除卡片";
+"%@ will be deleted" = "“%@”将会被删除";

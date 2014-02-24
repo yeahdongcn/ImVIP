@@ -22,6 +22,8 @@
 
 #import <ColorUtils.h>
 
+#import <SIAlertView.h>
+
 new_class(RSNewCardLabel, UILabel)
 
 new_class(RSNewCardButton, UIButton)
@@ -96,14 +98,30 @@ new_class(RSNewCardTextField, UITextField)
     
     NSString *title = [[self.titleField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if ([title length] == 0) {
-        [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Required fields should not be empty") message:RSLocalizedString(@"Business name field is empty") delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
+        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Required fields should not be empty") andMessage:RSLocalizedString(@"Business name field is empty")];
+        
+        [alertView addButtonWithTitle:RSLocalizedString(@"Yes")
+                                 type:SIAlertViewButtonTypeDefault
+                              handler:nil];
+        
+        alertView.transitionStyle = SIAlertViewTransitionStyleSlideFromBottom;
+        
+        [alertView show];
         return;
     }
     
     if (!self.codeObject) {
         NSString *code = [[self.codeField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         if ([code length] == 0) {
-            [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Required fields should not be empty") message:RSLocalizedString(@"Code field is empty") delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
+            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Required fields should not be empty") andMessage:RSLocalizedString(@"Code field is empty")];
+            
+            [alertView addButtonWithTitle:RSLocalizedString(@"Yes")
+                                     type:SIAlertViewButtonTypeDefault
+                                  handler:nil];
+            
+            alertView.transitionStyle = SIAlertViewTransitionStyleSlideFromBottom;
+            
+            [alertView show];
             return;
         }
     }
@@ -129,7 +147,15 @@ new_class(RSNewCardTextField, UITextField)
             }
             [self.navigationController popViewControllerAnimated:YES];
         } else {
-            [[[UIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") message:[error localizedDescription] delegate:nil cancelButtonTitle:RSLocalizedString(@"Yes") otherButtonTitles:nil] show];
+            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Please retry") andMessage:[error localizedDescription]];
+            
+            [alertView addButtonWithTitle:RSLocalizedString(@"Yes")
+                                     type:SIAlertViewButtonTypeDefault
+                                  handler:nil];
+            
+            alertView.transitionStyle = SIAlertViewTransitionStyleSlideFromBottom;
+            
+            [alertView show];
         }
     } copy];
     

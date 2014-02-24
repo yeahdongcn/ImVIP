@@ -10,6 +10,8 @@
 
 #import <objc/runtime.h>
 
+#import <SIAlertView.h>
+
 @implementation RSPOIView
 
 - (void)__call
@@ -19,19 +21,18 @@
 
 - (void)__clicked
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[self.phoneButton titleForState:UIControlStateNormal]
-                                                        message:nil
-                                                       delegate:self
-                                              cancelButtonTitle:RSLocalizedString(@"Cancel")
-                                              otherButtonTitles:RSLocalizedString(@"Call"), nil];
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:[self.phoneButton titleForState:UIControlStateNormal] andMessage:nil];
     
-    void (^handler)(NSInteger) = ^(NSInteger buttonIndex) {
-        if (buttonIndex == alertView.cancelButtonIndex) {
-        } else {
-            [self __call];
-        }
-    };
-    objc_setAssociatedObject(alertView, @"alert", handler, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    [alertView addButtonWithTitle:RSLocalizedString(@"Cancel")
+                             type:SIAlertViewButtonTypeCancel
+                          handler:nil];
+    [alertView addButtonWithTitle:RSLocalizedString(@"Call")
+                             type:SIAlertViewButtonTypeDefault
+                          handler:^(SIAlertView *alertView) {
+                              [self __call];
+                          }];
+    
+    alertView.transitionStyle = SIAlertViewTransitionStyleSlideFromBottom;
     
     [alertView show];
 }
@@ -45,12 +46,6 @@
         });
     }
     return self;
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    void (^handler)(NSInteger) = objc_getAssociatedObject(alertView, @"alert");
-    handler(buttonIndex);
 }
 
 @end

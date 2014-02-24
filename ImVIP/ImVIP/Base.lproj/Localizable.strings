@@ -36,3 +36,7 @@
 "Call"   = "Call";
 
 "Scan Code" = "Scan Code";
+
+"Delete" = "Delete";
+"Delete Card" = "Delete Card";
+"%@ will be deleted" = "\"%@\" will be deleted";
