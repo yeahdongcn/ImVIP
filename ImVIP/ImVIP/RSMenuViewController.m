@@ -41,21 +41,21 @@ new_class(RSMenuTableHeaderView, UIView)
     self.paneViewControllerTitles = @{
                                       @(RSPaneViewControllerTypeCards)      : RSLocalizedString(@"My Cards"),
                                       @(RSPaneViewControllerTypeLBS)        : RSLocalizedString(@"Nearby Businesses"),
-                                      @(RSPaneViewControllerTypeSale)       : RSLocalizedString(@"Promotions"),
+//                                      @(RSPaneViewControllerTypeSale)       : RSLocalizedString(@"Promotions"),
                                       @(RSPaneViewControllerTypeBarcodes)   : RSLocalizedString(@"Barcode Scanning"),
                                       @(RSPaneViewControllerTypeStatistics) : RSLocalizedString(@"Statistics"),
                                       };
     self.paneViewControllerImages = @{
                                       @(RSPaneViewControllerTypeCards)      : @"menu_cards",
                                       @(RSPaneViewControllerTypeLBS)        : @"menu_lbs",
-                                      @(RSPaneViewControllerTypeSale)       : @"menu_sales",
+//                                      @(RSPaneViewControllerTypeSale)       : @"menu_sales",
                                       @(RSPaneViewControllerTypeBarcodes)   : @"menu_barcodes",
                                       @(RSPaneViewControllerTypeStatistics) : @"menu_statistics",
                                       };
     self.paneViewControllerIdentifiers = @{
                                            @(RSPaneViewControllerTypeCards)      : @"Cards",
                                            @(RSPaneViewControllerTypeLBS)        : @"Map",
-                                           @(RSPaneViewControllerTypeSale)       : @"Sales",
+//                                           @(RSPaneViewControllerTypeSale)       : @"Sales",
                                            @(RSPaneViewControllerTypeBarcodes)   : @"Scanner",
                                            @(RSPaneViewControllerTypeStatistics) : @"Statistics",
                                            };
@@ -163,7 +163,7 @@ new_class(RSMenuTableHeaderView, UIView)
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return [self.paneViewControllerTitles count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

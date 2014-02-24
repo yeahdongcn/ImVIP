@@ -11,7 +11,7 @@
 typedef NS_ENUM(NSUInteger, RSPaneViewControllerType) {
     RSPaneViewControllerTypeCards,
     RSPaneViewControllerTypeLBS,
-    RSPaneViewControllerTypeSale,
+//    RSPaneViewControllerTypeSale,
     RSPaneViewControllerTypeBarcodes,
     RSPaneViewControllerTypeStatistics
 };
