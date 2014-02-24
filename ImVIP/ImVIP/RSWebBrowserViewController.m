@@ -10,6 +10,8 @@
 
 #import "RSAppDelegate.h"
 
+#import <ColorUtils.h>
+
 @interface RSWebBrowserViewController ()
 
 @property (nonatomic, weak) RSDynamicsDrawerViewController *dynamicsDrawerViewController;
@@ -30,7 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    [self setEdgesForExtendedLayout:UIRectEdgeAll];
+    
+    self.webView.backgroundColor = [UIColor colorWithRGBValue:0xf3f3f7];
 }
 
 + (RSWebBrowserViewController *)webBrowser {
