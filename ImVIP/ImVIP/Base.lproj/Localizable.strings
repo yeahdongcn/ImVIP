@@ -40,3 +40,6 @@
 "Delete" = "Delete";
 "Delete Card" = "Delete Card";
 "%@ will be deleted" = "\"%@\" will be deleted";
+
+"Barcode Found" = "Barcode Found";
+"%d barcodes have been found" = "%d barcodes have been found";

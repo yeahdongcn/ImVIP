@@ -48,6 +48,10 @@ new_class(RSNewCardTextField, UITextField)
 
 @property (nonatomic, strong) AVMetadataMachineReadableCodeObject *codeObject;
 
+@property (nonatomic) BOOL barcodesFound;
+
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+
 @end
 
 @implementation RSNewCardViewController
@@ -265,10 +269,41 @@ new_class(RSNewCardTextField, UITextField)
     if ([segue.identifier isEqualToString:@"scanCode"]) {
         __weak RSScanViewController *controller = [segue destinationViewController];
         controller.barcodesHandler = [^(NSArray *barcodes) {
-            self.codeObject = [barcodes firstObject];
+            if (self.barcodesFound) {
+                return;
+            }
+            self.barcodesFound = YES;
+            
+            if (!self.audioPlayer) {
+                NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                                     pathForResource:@"qrcode_found"
+                                                     ofType:@"wav"]];
+                NSError *error = nil;
+                self.audioPlayer = [[AVAudioPlayer alloc]
+                                    initWithContentsOfURL:url
+                                    error:&error];
+                if (error) {
+                    self.audioPlayer = nil;
+                }
+            }
+            [self.audioPlayer play];
+            
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.codeField.text = [self.codeObject stringValue];
-                [controller.navigationController popViewControllerAnimated:YES];
+                SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Barcode Found") andMessage:[NSString stringWithFormat:RSLocalizedString(@"%d barcodes have been found"), [barcodes count]]];
+                for (int i = 0; i < [barcodes count]; i++) {
+                    [alertView addButtonWithTitle:[[barcodes objectAtIndex:i] stringValue] type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView) {
+                        self.codeObject = [barcodes objectAtIndex:i];
+                        self.codeField.text = [self.codeObject stringValue];
+                        [controller.navigationController popViewControllerAnimated:YES];
+                    }];
+                }
+                [alertView addButtonWithTitle:RSLocalizedString(@"Cancel") type:SIAlertViewButtonTypeCancel handler:^(SIAlertView *alertView) {
+                    self.barcodesFound = NO;
+                }];
+                
+                alertView.transitionStyle = SIAlertViewTransitionStyleSlideFromBottom;
+                
+                [alertView show];
             });
         } copy];
     }

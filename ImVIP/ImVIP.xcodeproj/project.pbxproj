@@ -43,6 +43,7 @@
 		D09F2EC718B7422C004DC7E9 /* ANBlurredImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EC418B7422C004DC7E9 /* ANBlurredImageView.m */; };
 		D09F2EC818B7422C004DC7E9 /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EC618B7422C004DC7E9 /* UIImage+BoxBlur.m */; };
 		D09F2ECB18B74763004DC7E9 /* RSBigCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2ECA18B74763004DC7E9 /* RSBigCardViewController.m */; };
+		D09F2ECD18BB2760004DC7E9 /* qrcode_found.wav in Resources */ = {isa = PBXBuildFile; fileRef = D09F2ECC18BB2760004DC7E9 /* qrcode_found.wav */; };
 		D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */; };
 		D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1E9BF18963D9800D3C770 /* RSTitleView.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
@@ -125,6 +126,7 @@
 		D09F2EC618B7422C004DC7E9 /* UIImage+BoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BoxBlur.m"; sourceTree = "<group>"; };
 		D09F2EC918B74763004DC7E9 /* RSBigCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBigCardViewController.h; sourceTree = "<group>"; };
 		D09F2ECA18B74763004DC7E9 /* RSBigCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBigCardViewController.m; sourceTree = "<group>"; };
+		D09F2ECC18BB2760004DC7E9 /* qrcode_found.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = qrcode_found.wav; path = Sounds/qrcode_found.wav; sourceTree = SOURCE_ROOT; };
 		D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSTitleView.xib; sourceTree = "<group>"; };
 		D0A1E9BE18963D9800D3C770 /* RSTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTitleView.h; sourceTree = "<group>"; };
 		D0A1E9BF18963D9800D3C770 /* RSTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTitleView.m; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 		D017348A18876DAA00C07608 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D09F2ECC18BB2760004DC7E9 /* qrcode_found.wav */,
 				D09F2EC018B5EF1C004DC7E9 /* Farrington-7B-Qiqi.ttf */,
 				D000DCBD18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.h */,
 				D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m */,
@@ -404,6 +407,7 @@
 				D017349C18876DAA00C07608 /* Images.xcassets in Resources */,
 				D09F2EC118B5EF1C004DC7E9 /* Farrington-7B-Qiqi.ttf in Resources */,
 				D000DC3A18AB45410037C0F8 /* Localizable.strings in Resources */,
+				D09F2ECD18BB2760004DC7E9 /* qrcode_found.wav in Resources */,
 				D017348E18876DAA00C07608 /* InfoPlist.strings in Resources */,
 				D017349718876DAA00C07608 /* Main.storyboard in Resources */,
 				D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */,

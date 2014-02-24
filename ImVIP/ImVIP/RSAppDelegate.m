@@ -66,7 +66,7 @@ new_class(RSWindowBackgroundView, UIImageView)
     
     // Transition to the first view controller
     [menuViewController transitionToViewController:RSPaneViewControllerTypeCards];
-
+    
     // Custom background
     RSWindowBackgroundView *backgroundView = [[RSWindowBackgroundView alloc] initWithFrame:self.window.bounds];
     backgroundView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
@@ -81,7 +81,7 @@ new_class(RSWindowBackgroundView, UIImageView)
     // Baidu Map
     self.mapManager = [[BMKMapManager alloc] init];
     [self.mapManager start:@"imq3rI54PfsGfgmXHLYbHREg" generalDelegate:nil];
-
+    
     return YES;
 }
 

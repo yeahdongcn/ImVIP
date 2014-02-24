@@ -12,6 +12,12 @@
 
 #import "RSTitleView.h"
 
+#import "RSScanViewController.h"
+
+#import <AVFoundation/AVFoundation.h>
+
+#import <SIAlertView.h>
+
 new_class(RSMenuTableHeaderView, UIView)
 
 @interface RSMenuViewController ()
@@ -29,6 +35,10 @@ new_class(RSMenuTableHeaderView, UIView)
 @property (nonatomic, strong) UIBarButtonItem *paneRevealLeftBarButtonItem;
 
 @property (nonatomic, strong) UIBarButtonItem *paneRevealRightBarButtonItem;
+
+@property (nonatomic) BOOL barcodesFound;
+
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 @end
 
@@ -131,7 +141,47 @@ new_class(RSMenuTableHeaderView, UIView)
     
     UINavigationController *paneNavigationViewController = self.paneViewControllerNavigationViewControllers[@(paneViewControllerType)];
     if (!paneNavigationViewController) {
-        UIViewController *paneViewController = [self.storyboard instantiateViewControllerWithIdentifier:self.paneViewControllerIdentifiers[@(paneViewControllerType)]];
+        NSString *identifier = self.paneViewControllerIdentifiers[@(paneViewControllerType)];
+        UIViewController *paneViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+        if ([identifier isEqualToString:@"Scanner"]) {
+            RSScanViewController *controller = (RSScanViewController *)paneViewController;
+            controller.barcodesHandler = [^(NSArray *barcodes) {
+                if (self.barcodesFound) {
+                    return;
+                }
+                self.barcodesFound = YES;
+                
+                if (!self.audioPlayer) {
+                    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                                         pathForResource:@"qrcode_found"
+                                                         ofType:@"wav"]];
+                    NSError *error = nil;
+                    self.audioPlayer = [[AVAudioPlayer alloc]
+                                        initWithContentsOfURL:url
+                                        error:&error];
+                    if (error) {
+                        self.audioPlayer = nil;
+                    }
+                }
+                [self.audioPlayer play];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Barcode Found") andMessage:[NSString stringWithFormat:RSLocalizedString(@"%d barcodes have been found"), [barcodes count]]];
+                    for (int i = 0; i < [barcodes count]; i++) {
+                        [alertView addButtonWithTitle:[[barcodes objectAtIndex:i] stringValue] type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView) {
+                            // TODO:
+                        }];
+                    }
+                    [alertView addButtonWithTitle:RSLocalizedString(@"Cancel") type:SIAlertViewButtonTypeCancel handler:^(SIAlertView *alertView) {
+                        self.barcodesFound = NO;
+                    }];
+                    
+                    alertView.transitionStyle = SIAlertViewTransitionStyleSlideFromBottom;
+                    
+                    [alertView show];
+                });
+            } copy];
+        }
         
         RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
         titleView.label.text = self.paneViewControllerTitles[@(paneViewControllerType)];

@@ -40,3 +40,6 @@
 "Delete" = "删除";
 "Delete Card" = "删除卡片";
 "%@ will be deleted" = "“%@”将会被删除";
+
+"Barcode Found" = "扫码成功";
+"%d barcodes have been found" = "已找到%d个条码";
