@@ -233,6 +233,7 @@ new_class(RSCardDeleteButton, UIButton)
     self.cardView = (RSCardView *)[[[NSBundle mainBundle] loadNibNamed:@"RSCardView" owner:nil options:nil] firstObject];
     self.cardView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
     self.cardView.layer.cornerRadius = 11.0f;
+    [self.cardView.button addTarget:self action:@selector(__onShow:) forControlEvents:UIControlEventTouchUpInside];
     [self.cardContentView addSubview:self.cardView];
     
     [self __reloadCard];

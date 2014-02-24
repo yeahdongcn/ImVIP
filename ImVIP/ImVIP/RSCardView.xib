@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -10,6 +10,13 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="189"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EV5-ca-M9o">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="189"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商户名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t74-8B-F99">
                     <rect key="frame" x="78" y="35" width="64" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -38,20 +45,25 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="EV5-ca-M9o" secondAttribute="trailing" id="03N-bC-5qy"/>
                 <constraint firstAttribute="centerX" secondItem="Rd6-Lt-qKQ" secondAttribute="centerX" id="29W-SU-lpM"/>
                 <constraint firstItem="ksD-bN-Iam" firstAttribute="top" secondItem="N6T-6p-tCB" secondAttribute="top" constant="20" symbolic="YES" id="5VO-Xd-Qb5"/>
                 <constraint firstItem="t74-8B-F99" firstAttribute="leading" secondItem="ksD-bN-Iam" secondAttribute="trailing" constant="8" symbolic="YES" id="B3R-jJ-8L0"/>
                 <constraint firstItem="ksD-bN-Iam" firstAttribute="centerY" secondItem="t74-8B-F99" secondAttribute="centerY" id="QiV-Bz-pEs"/>
                 <constraint firstItem="0CP-LR-huG" firstAttribute="leading" secondItem="N6T-6p-tCB" secondAttribute="leading" constant="20" symbolic="YES" id="YWb-Yv-6jC"/>
                 <constraint firstAttribute="centerX" secondItem="0CP-LR-huG" secondAttribute="centerX" id="aPG-cg-rpa"/>
+                <constraint firstItem="EV5-ca-M9o" firstAttribute="leading" secondItem="N6T-6p-tCB" secondAttribute="leading" id="agY-sp-qCz"/>
                 <constraint firstAttribute="centerY" secondItem="Rd6-Lt-qKQ" secondAttribute="centerY" id="bH1-Sk-fvW"/>
+                <constraint firstAttribute="bottom" secondItem="EV5-ca-M9o" secondAttribute="bottom" id="izF-bQ-GTi"/>
                 <constraint firstAttribute="trailing" secondItem="0CP-LR-huG" secondAttribute="trailing" constant="20" symbolic="YES" id="kEv-ol-4zc"/>
+                <constraint firstItem="EV5-ca-M9o" firstAttribute="top" secondItem="N6T-6p-tCB" secondAttribute="top" id="miC-ZH-3ZI"/>
                 <constraint firstItem="0CP-LR-huG" firstAttribute="top" secondItem="Rd6-Lt-qKQ" secondAttribute="bottom" constant="15" id="qFi-7T-4gA"/>
                 <constraint firstAttribute="bottom" secondItem="0CP-LR-huG" secondAttribute="bottom" constant="20" symbolic="YES" id="uvQ-IK-Xbk"/>
                 <constraint firstItem="ksD-bN-Iam" firstAttribute="leading" secondItem="N6T-6p-tCB" secondAttribute="leading" constant="20" symbolic="YES" id="yId-w9-vEw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="button" destination="EV5-ca-M9o" id="NgP-Ih-B25"/>
                 <outlet property="codeLabel" destination="Rd6-Lt-qKQ" id="VuB-n2-gXk"/>
                 <outlet property="codeView" destination="0CP-LR-huG" id="tKt-X4-7Ta"/>
                 <outlet property="iconView" destination="ksD-bN-Iam" id="vIP-g5-Jdx"/>
