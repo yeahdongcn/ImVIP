@@ -164,6 +164,10 @@ new_class(RSMenuTableHeaderView, UIView)
         if ([identifier isEqualToString:@"Scanner"]) {
             RSScanViewController *viewController = (RSScanViewController *)paneViewController;
             viewController.barcodesHandler = [^(NSArray *barcodes) {
+                if ([barcodes count] <= 0) {
+                    return;
+                }
+                
                 if (self.barcodesFound) {
                     return;
                 }

@@ -269,6 +269,10 @@ new_class(RSNewCardTextField, UITextField)
     if ([segue.identifier isEqualToString:@"scanCode"]) {
         __weak RSScanViewController *viewController = [segue destinationViewController];
         viewController.barcodesHandler = [^(NSArray *barcodes) {
+            if ([barcodes count] <= 0) {
+                return;
+            }
+            
             if (self.barcodesFound) {
                 return;
             }
