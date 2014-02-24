@@ -10,6 +10,8 @@
 
 #import <BmobSDK/BmobQuery.h>
 
+#import <BmobSDK/BmobUser.h>
+
 NSString *const RSDataCenterCardsWillArrive = @"com.pdq.imvip.datacenter.cardsWillArrive";
 NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDidArrive";
 NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUpdate";
@@ -68,12 +70,12 @@ NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUp
     return [self.cachedCards count];
 }
 
-- (void)saveCard:(NSDictionary *)info
-    withCallback:(void(^)(BOOL, NSError *))callback
+- (void)saveCardWithCardInfo:(NSDictionary *)cardInfo
+                withCallback:(void(^)(BOOL, NSError *))callback
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BmobObject *card = [[BmobObject alloc] initWithClassName:@"Card"];
-        [info enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [cardInfo enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             [card setObject:obj forKey:key];
         }];
         [card saveInBackgroundWithResultBlock:^(BOOL succeeded, NSError *error) {
@@ -190,6 +192,27 @@ NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUp
             }];
         }
     });
+}
+
+- (void)signUpWithUserInfo:(NSDictionary *)userInfo
+{
+    BmobUser *user = [[BmobUser alloc] init];
+    [user setUserName:@"小明"];
+    [user setEamil:@""];
+    [user setPassword:@"123456"];
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    }];
+}
+
+- (void)signInWithUserInfo:(NSDictionary *)userInfo
+{
+    [BmobUser logInWithUsernameInBackground:@"" password:@"" block:^(BmobUser *user, NSError *error) {
+    }];
+}
+
+- (void)signOut
+{
+    [BmobUser logout];
 }
 
 @end

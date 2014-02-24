@@ -194,7 +194,7 @@ new_class(RSNewCardTextField, UITextField)
         [card setObject:codeType forKey:@"codeType"];
         [card setObject:color forKey:@"color"];
         
-        [DataCenter saveCard:card withCallback:^(BOOL succeeded, NSError *error) {
+        [DataCenter saveCardWithCardInfo:card withCallback:^(BOOL succeeded, NSError *error) {
             callback(succeeded, error, YES);
         }];
     }

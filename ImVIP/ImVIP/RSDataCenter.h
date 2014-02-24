@@ -25,8 +25,8 @@ extern NSString *const RSDataCenterCardDidUpdate;
 
 - (NSUInteger)numberOfCachedCard;
 
-- (void)saveCard:(NSDictionary *)info
-    withCallback:(void(^)(BOOL, NSError *))callback;
+- (void)saveCardWithCardInfo:(NSDictionary *)cardInfo
+                withCallback:(void(^)(BOOL, NSError *))callback;
 
 - (void)updateCardAtIndex:(NSInteger)index
              withCallback:(void(^)(BOOL, NSError *))callback;
@@ -38,5 +38,9 @@ extern NSString *const RSDataCenterCardDidUpdate;
 
 - (void)saveAchievement:(NSDictionary *)info
            withCallback:(void(^)(BOOL, NSError *))callback;
+
+- (void)signUp;
+
+- (void)signIn;
 
 @end
