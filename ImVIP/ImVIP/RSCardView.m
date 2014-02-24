@@ -14,10 +14,21 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.codeLabel.font = [UIFont fontWithName:@"Farrington-7B-Qiqi" size:16];
-        });
+        [self addObserver:self forKeyPath:@"codeLabel" options:NSKeyValueObservingOptionInitial context:NULL];
     }
     return self;
 }
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"codeLabel"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"codeLabel"]) {
+        self.codeLabel.font = [UIFont fontWithName:@"Farrington-7B-Qiqi" size:16];
+    }
+}
+
 @end

@@ -20,16 +20,28 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.label.font = [UIFont fontWithName:@"FZQingKeBenYueSongS-R-GB" size:18];
-            
-            if (self.showIndicator) {
-                return;
-            }
-            self.showIndicator = NO;
-        });
+        [self addObserver:self forKeyPath:@"label" options:NSKeyValueObservingOptionInitial context:NULL];
+        [self addObserver:self forKeyPath:@"indicator" options:NSKeyValueObservingOptionInitial context:NULL];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"label"];
+    [self removeObserver:self forKeyPath:@"indicator"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"label"]) {
+        self.label.font = [UIFont fontWithName:@"FZQingKeBenYueSongS-R-GB" size:18];
+    } else if ([keyPath isEqualToString:@"indicator"]) {
+        if (self.showIndicator) {
+            return;
+        }
+        self.showIndicator = NO;
+    }
 }
 
 - (void)setShowIndicator:(BOOL)showIndicator

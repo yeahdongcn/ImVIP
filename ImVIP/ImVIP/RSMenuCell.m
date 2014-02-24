@@ -19,11 +19,21 @@ new_class(RSMenuCellSelectedBackgroundView, UIView)
         RSMenuCellSelectedBackgroundView *selectedBackgroundView = [RSMenuCellSelectedBackgroundView new];
         self.selectedBackgroundView = selectedBackgroundView;
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.textLabel.font = [UIFont fontWithName:@"FZQingKeBenYueSongS-R-GB" size:18];
-        });
+        [self addObserver:self forKeyPath:@"textLabel" options:NSKeyValueObservingOptionInitial context:NULL];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"textLabel"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"textLabel"]) {
+        self.textLabel.font = [UIFont fontWithName:@"FZQingKeBenYueSongS-R-GB" size:18];
+    }
 }
 
 @end
