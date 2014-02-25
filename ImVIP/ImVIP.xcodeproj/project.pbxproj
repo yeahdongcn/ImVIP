@@ -46,6 +46,8 @@
 		D09F2ECD18BB2760004DC7E9 /* qrcode_found.wav in Resources */ = {isa = PBXBuildFile; fileRef = D09F2ECC18BB2760004DC7E9 /* qrcode_found.wav */; };
 		D09F2ED018BB2FEA004DC7E9 /* RSWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2ECF18BB2FEA004DC7E9 /* RSWebBrowserViewController.m */; };
 		D09F2ED818BC408A004DC7E9 /* ObelixPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09F2ED718BC408A004DC7E9 /* ObelixPro.ttf */; };
+		D09F2EEB18BC9780004DC7E9 /* RSAchievementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09F2EEA18BC9780004DC7E9 /* RSAchievementCell.xib */; };
+		D09F2EEE18BC9A8C004DC7E9 /* RSAchievementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EED18BC9A8C004DC7E9 /* RSAchievementCell.m */; };
 		D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */; };
 		D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1E9BF18963D9800D3C770 /* RSTitleView.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
@@ -132,6 +134,9 @@
 		D09F2ECE18BB2FEA004DC7E9 /* RSWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSWebBrowserViewController.h; sourceTree = "<group>"; };
 		D09F2ECF18BB2FEA004DC7E9 /* RSWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSWebBrowserViewController.m; sourceTree = "<group>"; };
 		D09F2ED718BC408A004DC7E9 /* ObelixPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ObelixPro.ttf; path = Fonts/ObelixPro.ttf; sourceTree = SOURCE_ROOT; };
+		D09F2EEA18BC9780004DC7E9 /* RSAchievementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSAchievementCell.xib; sourceTree = "<group>"; };
+		D09F2EEC18BC9A8C004DC7E9 /* RSAchievementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAchievementCell.h; sourceTree = "<group>"; };
+		D09F2EED18BC9A8C004DC7E9 /* RSAchievementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAchievementCell.m; sourceTree = "<group>"; };
 		D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSTitleView.xib; sourceTree = "<group>"; };
 		D0A1E9BE18963D9800D3C770 /* RSTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTitleView.h; sourceTree = "<group>"; };
 		D0A1E9BF18963D9800D3C770 /* RSTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTitleView.m; sourceTree = "<group>"; };
@@ -209,7 +214,7 @@
 		D017348918876DAA00C07608 /* ImVIP */ = {
 			isa = PBXGroup;
 			children = (
-				D09F2EE818BC7B9E004DC7E9 /* Supporting Code */,
+				D09F2EE918BC8C5E004DC7E9 /* Controls */,
 				D0F76F0018B443450069CAB9 /* Data */,
 				D0D9C6381888F9950000D1E5 /* UISS */,
 				D017349218876DAA00C07608 /* RSAppDelegate.h */,
@@ -217,17 +222,10 @@
 				D017349518876DAA00C07608 /* Main.storyboard */,
 				D01734C218878BEE00C07608 /* RSMenuViewController.h */,
 				D01734C318878BEE00C07608 /* RSMenuViewController.m */,
-				D0194F7A18A9BA4A00297511 /* RSMenuCell.h */,
-				D0194F7B18A9BA4A00297511 /* RSMenuCell.m */,
 				D04FD25E1892BC0E00EA5646 /* RSProfileViewController.h */,
 				D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */,
 				D09E2CAE1893DA7100786A56 /* RSCardsViewController.h */,
 				D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */,
-				D045895A1894FA4D00077C69 /* RSCardCell.h */,
-				D045895B1894FA4D00077C69 /* RSCardCell.m */,
-				D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */,
-				D0A1E9BE18963D9800D3C770 /* RSTitleView.h */,
-				D0A1E9BF18963D9800D3C770 /* RSTitleView.m */,
 				D04B82E518A4DA5D007971B3 /* RSCardViewController.h */,
 				D04B82E618A4DA5D007971B3 /* RSCardViewController.m */,
 				D09F2EC918B74763004DC7E9 /* RSBigCardViewController.h */,
@@ -244,13 +242,8 @@
 				D000DCC418AE14780037C0F8 /* RSScanViewController.m */,
 				D09F2ECE18BB2FEA004DC7E9 /* RSWebBrowserViewController.h */,
 				D09F2ECF18BB2FEA004DC7E9 /* RSWebBrowserViewController.m */,
-				D0F76F0118B47F3E0069CAB9 /* RSPOIView.xib */,
-				D0F76F0318B481760069CAB9 /* RSPOIView.h */,
-				D0F76F0418B481770069CAB9 /* RSPOIView.m */,
-				D09F2EBA18B59413004DC7E9 /* RSCardView.xib */,
-				D09F2EBC18B59690004DC7E9 /* RSCardView.h */,
-				D09F2EBD18B59690004DC7E9 /* RSCardView.m */,
 				D017349B18876DAA00C07608 /* Images.xcassets */,
+				D09F2EE818BC7B9E004DC7E9 /* Supporting Code */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
 			);
 			path = ImVIP;
@@ -326,6 +319,29 @@
 				D09F2EC218B7422C004DC7E9 /* ANBlurredImageView */,
 			);
 			name = "Supporting Code";
+			sourceTree = "<group>";
+		};
+		D09F2EE918BC8C5E004DC7E9 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				D0194F7A18A9BA4A00297511 /* RSMenuCell.h */,
+				D0194F7B18A9BA4A00297511 /* RSMenuCell.m */,
+				D045895A1894FA4D00077C69 /* RSCardCell.h */,
+				D045895B1894FA4D00077C69 /* RSCardCell.m */,
+				D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */,
+				D0A1E9BE18963D9800D3C770 /* RSTitleView.h */,
+				D0A1E9BF18963D9800D3C770 /* RSTitleView.m */,
+				D0F76F0118B47F3E0069CAB9 /* RSPOIView.xib */,
+				D0F76F0318B481760069CAB9 /* RSPOIView.h */,
+				D0F76F0418B481770069CAB9 /* RSPOIView.m */,
+				D09F2EBA18B59413004DC7E9 /* RSCardView.xib */,
+				D09F2EBC18B59690004DC7E9 /* RSCardView.h */,
+				D09F2EBD18B59690004DC7E9 /* RSCardView.m */,
+				D09F2EEA18BC9780004DC7E9 /* RSAchievementCell.xib */,
+				D09F2EEC18BC9A8C004DC7E9 /* RSAchievementCell.h */,
+				D09F2EED18BC9A8C004DC7E9 /* RSAchievementCell.m */,
+			);
+			name = Controls;
 			sourceTree = "<group>";
 		};
 		D0D9C6381888F9950000D1E5 /* UISS */ = {
@@ -438,6 +454,7 @@
 			files = (
 				D017349C18876DAA00C07608 /* Images.xcassets in Resources */,
 				D09F2ED818BC408A004DC7E9 /* ObelixPro.ttf in Resources */,
+				D09F2EEB18BC9780004DC7E9 /* RSAchievementCell.xib in Resources */,
 				D09F2EC118B5EF1C004DC7E9 /* Farrington-7B-Qiqi.ttf in Resources */,
 				D000DC3A18AB45410037C0F8 /* Localizable.strings in Resources */,
 				D09F2ECD18BB2760004DC7E9 /* qrcode_found.wav in Resources */,
@@ -503,6 +520,7 @@
 				D000DCB718ADC1EB0037C0F8 /* RSMapViewController.m in Sources */,
 				D000DCBA18ADC5C30037C0F8 /* RSSalesViewController.m in Sources */,
 				D0F76EFC18B345640069CAB9 /* RSAchievements.m in Sources */,
+				D09F2EEE18BC9A8C004DC7E9 /* RSAchievementCell.m in Sources */,
 				D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */,
 				D09F2ED018BB2FEA004DC7E9 /* RSWebBrowserViewController.m in Sources */,
 				D09F2EBE18B59690004DC7E9 /* RSCardView.m in Sources */,

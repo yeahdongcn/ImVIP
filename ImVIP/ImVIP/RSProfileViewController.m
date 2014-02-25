@@ -8,9 +8,13 @@
 
 #import "RSProfileViewController.h"
 
+#import "RSAchievementCell.h"
+
 new_class(RSProfileViewBackgroundView, UIView)
 
 new_class(RSProfileViewAvatarView, UIView)
+
+new_class(RSProfileViewMoreButton, UIButton)
 
 @interface RSProfileViewController ()
 
@@ -43,26 +47,30 @@ new_class(RSProfileViewAvatarView, UIView)
     self.backgroundFrame = self.background.frame;
     
     self.username.text = @"Guest";
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"RSAchievementCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    RSAchievementCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.iconView.image = [UIImage imageNamed:@"0"];
+    cell.bgView.image = [UIImage imageNamed:@"cell_bg"];
     
     return cell;
 }

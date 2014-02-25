@@ -662,7 +662,7 @@
         <scene sceneID="fdF-Gm-fHw">
             <objects>
                 <tableViewController storyboardIdentifier="Profile" id="jHn-p4-uAz" customClass="RSProfileViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pM7-KY-PtN">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" id="pM7-KY-PtN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -753,20 +753,21 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="7Jr-Ip-0Vb">
-                            <rect key="frame" x="0.0" y="226" width="320" height="1"/>
+                            <rect key="frame" x="0.0" y="160" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcn-QF-bBk" customClass="RSProfileViewMoreButton">
+                                    <rect key="frame" x="284" y="13" width="16" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="profile_more"/>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="jcn-QF-bBk" firstAttribute="centerY" secondItem="7Jr-Ip-0Vb" secondAttribute="centerY" id="Uyo-73-OWe"/>
+                                <constraint firstAttribute="trailing" secondItem="jcn-QF-bBk" secondAttribute="trailing" constant="20" symbolic="YES" id="s3I-aX-vLj"/>
+                            </constraints>
                         </view>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="P50-hT-5PC">
-                                <rect key="frame" x="0.0" y="182" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P50-hT-5PC" id="70U-kx-VJV">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="jHn-p4-uAz" id="fd7-LV-otw"/>
                             <outlet property="delegate" destination="jHn-p4-uAz" id="sx4-io-sJE"/>
@@ -831,6 +832,7 @@
         <image name="new_image" width="16" height="16"/>
         <image name="new_scan" width="16" height="16"/>
         <image name="new_wallet" width="16" height="16"/>
+        <image name="profile_more" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
