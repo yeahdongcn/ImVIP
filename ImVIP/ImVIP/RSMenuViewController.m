@@ -190,9 +190,15 @@ new_class(RSMenuTableHeaderView, UIView)
                 dispatch_async(dispatch_get_main_queue(), ^{
                     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Barcode Found") andMessage:[NSString stringWithFormat:RSLocalizedString(@"%d barcodes have been found"), [barcodes count]]];
                     for (int i = 0; i < [barcodes count]; i++) {
-                        [alertView addButtonWithTitle:[[barcodes objectAtIndex:i] stringValue] type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView) {
+                        NSString *title = [[barcodes objectAtIndex:i] stringValue];
+                        [alertView addButtonWithTitle:title type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView) {
                             RSWebBrowserViewController *viewController = [RSWebBrowserViewController webBrowser];
-                            [viewController loadURLString:@"http://www.baidu.com"];
+                            viewController.text = title;
+                            if ([title hasPrefix:@"http://"] || [title hasPrefix:@"https://"]) {
+                                [viewController loadURLString:title];
+                            } else {
+                                [viewController loadURLString:[NSString stringWithFormat:@"http://www.baidu.com/s?wd=%@", title]];
+                            }
                             [paneNavigationViewController pushViewController:viewController animated:YES];
                             
                             double delayInSeconds = 1;

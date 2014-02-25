@@ -12,4 +12,6 @@
 
 + (RSWebBrowserViewController *)webBrowser;
 
+@property (nonatomic, copy) NSString *text;
+
 @end

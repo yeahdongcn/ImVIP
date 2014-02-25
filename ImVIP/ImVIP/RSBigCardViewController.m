@@ -10,6 +10,8 @@
 
 #import "ANBlurredImageView.h"
 
+#import "RSAppDelegate.h"
+
 #import <RSBarcodes/RSCodeGen.h>
 
 #import <ColorUtils.h>
@@ -23,6 +25,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *indicator;
 
 @property (nonatomic, strong) UIImageView *codeView;
+
+@property (nonatomic, weak) RSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @end
 
@@ -40,6 +44,15 @@
         self.closeButton.alpha = 0;
         self.indicator.alpha = 0;
     }];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
+    }
+    return self;
 }
 
 - (void)viewDidLoad
@@ -92,6 +105,20 @@
             self.indicator.alpha = 1.0f;
         }];
     });
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = YES;
 }
 
 @end

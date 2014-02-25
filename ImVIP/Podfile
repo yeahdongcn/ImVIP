@@ -14,4 +14,8 @@ pod 'TDImageColors'
 pod 'TestFlightSDK'
 pod 'UISS', :git => 'https://github.com/yeahdongcn/UISS.git'
 
+#UIActivity
+pod 'ARChromeActivity'
+pod 'ARSafariActivity'
+
 #end

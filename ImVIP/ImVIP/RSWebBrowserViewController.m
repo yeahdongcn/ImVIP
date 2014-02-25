@@ -10,7 +10,12 @@
 
 #import "RSAppDelegate.h"
 
+#import "RSTitleView.h"
+
 #import <ColorUtils.h>
+
+#import <ARChromeActivity.h>
+#import <ARSafariActivity.h>
 
 @interface RSWebBrowserViewController ()
 
@@ -36,6 +41,10 @@
     [self setEdgesForExtendedLayout:UIRectEdgeAll];
     
     self.webView.backgroundColor = [UIColor colorWithRGBValue:0xf3f3f7];
+    
+    RSTitleView *titleView = (RSTitleView *)[[[NSBundle mainBundle] loadNibNamed:@"RSTitleView" owner:nil options:nil] firstObject];
+    titleView.label.text = self.text;
+    self.navigationItem.titleView = titleView;
 }
 
 + (RSWebBrowserViewController *)webBrowser {
@@ -55,6 +64,14 @@
     [super viewWillDisappear:animated];
     
     self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = YES;
+}
+
+- (void)actionButtonPressed:(id)sender
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.webView.request.URL] applicationActivities:@[[[ARSafariActivity alloc] init], [[ARChromeActivity alloc] init]]];
+        [self presentViewController:activityViewController animated:YES completion:nil];
+    });
 }
 
 @end
