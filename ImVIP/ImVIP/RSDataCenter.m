@@ -8,11 +8,13 @@
 
 #import "RSDataCenter.h"
 
+#import <BmobSDK/Bmob.h>
+
 #import <BmobSDK/BmobQuery.h>
 
 NSString *const RSDataCenterCardsWillArrive = @"com.pdq.imvip.datacenter.cardsWillArrive";
 NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDidArrive";
-NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUpdate";
+NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDidUpdate";
 
 @interface RSDataCenter ()
 
@@ -21,6 +23,11 @@ NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUp
 @end
 
 @implementation RSDataCenter
+
+- (void)registerBmobWithAppKey:(NSString *)appKey
+{
+    [Bmob registWithAppKey:appKey];
+}
 
 + (instancetype)defaultCenter
 {

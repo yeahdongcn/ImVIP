@@ -20,6 +20,8 @@ extern NSString *const RSDataCenterCardDidUpdate;
 
 + (instancetype)defaultCenter;
 
+- (void)registerBmobWithAppKey:(NSString *)appKey;
+
 #pragma mark - Card
 
 - (NSUInteger)numberOfCachedCard;

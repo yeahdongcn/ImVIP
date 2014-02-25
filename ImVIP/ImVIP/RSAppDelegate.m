@@ -16,8 +16,6 @@
 
 #import "SFUIViewMacroses.h"
 
-#import <BmobSDK/Bmob.h>
-
 #import <TestFlight.h>
 
 #import <BMapKit.h>
@@ -73,7 +71,7 @@ new_class(RSWindowBackgroundView, UIImageView)
     [self.window insertSubview:backgroundView atIndex:0];
     
     // Bmob
-    [Bmob registWithAppKey:@"7f0528f19873c62d6ffbcfa2f25d1c1c"];
+    [DataCenter registerBmobWithAppKey:@"7f0528f19873c62d6ffbcfa2f25d1c1c"];
     
     // TestFlight
     [TestFlight takeOff:@"2d88fd65-7bc4-4e45-9dc9-01e9db1c23c5"];
