@@ -136,7 +136,7 @@ new_class(RSCardDeleteButton, UIButton)
             scale += 0.5f;
         }
     } else {
-        while (codeImage.size.width * (scale + 0.5f) <= 300.0f) {
+        while (codeImage.size.width * (scale + 0.5f) <= 260.0f) {
             scale += 0.5f;
         }
     }
