@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D000DC3A18AB45410037C0F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D000DC3C18AB45410037C0F8 /* Localizable.strings */; };
-		D000DCB218AB72220037C0F8 /* RSNewCardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB118AB72220037C0F8 /* RSNewCardViewController.mm */; };
+		D000DCB218AB72220037C0F8 /* RSNewCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB118AB72220037C0F8 /* RSNewCardViewController.m */; };
 		D000DCB418ADBCEC0037C0F8 /* FZQingKeBenYueSongS-R-GB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D000DCB318ADBCEC0037C0F8 /* FZQingKeBenYueSongS-R-GB.TTF */; };
 		D000DCB718ADC1EB0037C0F8 /* RSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB618ADC1EB0037C0F8 /* RSMapViewController.m */; };
 		D000DCBA18ADC5C30037C0F8 /* RSSalesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB918ADC5C30037C0F8 /* RSSalesViewController.m */; };
 		D000DCBC18ADC7CE0037C0F8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */; };
-		D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m */; };
+		D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm */; };
 		D000DCC218AE13A90037C0F8 /* RSStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */; };
 		D000DCC518AE14780037C0F8 /* RSScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCC418AE14780037C0F8 /* RSScanViewController.m */; };
 		D011DEBC18ABA8720093F905 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D011DEBB18ABA8720093F905 /* BmobSDK.framework */; };
@@ -72,7 +72,7 @@
 		D000DC3B18AB45410037C0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D000DC3D18AB45530037C0F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D000DCB018AB72220037C0F8 /* RSNewCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSNewCardViewController.h; sourceTree = "<group>"; };
-		D000DCB118AB72220037C0F8 /* RSNewCardViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RSNewCardViewController.mm; sourceTree = "<group>"; };
+		D000DCB118AB72220037C0F8 /* RSNewCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSNewCardViewController.m; sourceTree = "<group>"; };
 		D000DCB318ADBCEC0037C0F8 /* FZQingKeBenYueSongS-R-GB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FZQingKeBenYueSongS-R-GB.TTF"; path = "Fonts/FZQingKeBenYueSongS-R-GB.TTF"; sourceTree = SOURCE_ROOT; };
 		D000DCB518ADC1EB0037C0F8 /* RSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSMapViewController.h; sourceTree = "<group>"; };
 		D000DCB618ADC1EB0037C0F8 /* RSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMapViewController.m; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		D000DCB918ADC5C30037C0F8 /* RSSalesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSalesViewController.m; sourceTree = "<group>"; };
 		D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D000DCBD18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDynamicsDrawerViewController.h; sourceTree = "<group>"; };
-		D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDynamicsDrawerViewController.m; sourceTree = "<group>"; };
+		D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RSDynamicsDrawerViewController.mm; sourceTree = "<group>"; };
 		D000DCC018AE13A90037C0F8 /* RSStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSStatisticsViewController.h; sourceTree = "<group>"; };
 		D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSStatisticsViewController.m; sourceTree = "<group>"; };
 		D000DCC318AE14780037C0F8 /* RSScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSScanViewController.h; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 		D017348918876DAA00C07608 /* ImVIP */ = {
 			isa = PBXGroup;
 			children = (
-				D09F2EC218B7422C004DC7E9 /* ANBlurredImageView */,
+				D09F2EE818BC7B9E004DC7E9 /* Supporting Code */,
 				D0F76F0018B443450069CAB9 /* Data */,
 				D0D9C6381888F9950000D1E5 /* UISS */,
 				D017349218876DAA00C07608 /* RSAppDelegate.h */,
@@ -233,7 +233,7 @@
 				D09F2EC918B74763004DC7E9 /* RSBigCardViewController.h */,
 				D09F2ECA18B74763004DC7E9 /* RSBigCardViewController.m */,
 				D000DCB018AB72220037C0F8 /* RSNewCardViewController.h */,
-				D000DCB118AB72220037C0F8 /* RSNewCardViewController.mm */,
+				D000DCB118AB72220037C0F8 /* RSNewCardViewController.m */,
 				D000DCB518ADC1EB0037C0F8 /* RSMapViewController.h */,
 				D000DCB618ADC1EB0037C0F8 /* RSMapViewController.m */,
 				D000DCB818ADC5C30037C0F8 /* RSSalesViewController.h */,
@@ -250,9 +250,6 @@
 				D09F2EBA18B59413004DC7E9 /* RSCardView.xib */,
 				D09F2EBC18B59690004DC7E9 /* RSCardView.h */,
 				D09F2EBD18B59690004DC7E9 /* RSCardView.m */,
-				D000DCBD18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.h */,
-				D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m */,
-				D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */,
 				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
 			);
@@ -318,6 +315,17 @@
 				D09F2ECC18BB2760004DC7E9 /* qrcode_found.wav */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		D09F2EE818BC7B9E004DC7E9 /* Supporting Code */ = {
+			isa = PBXGroup;
+			children = (
+				D000DCBD18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.h */,
+				D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm */,
+				D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */,
+				D09F2EC218B7422C004DC7E9 /* ANBlurredImageView */,
+			);
+			name = "Supporting Code";
 			sourceTree = "<group>";
 		};
 		D0D9C6381888F9950000D1E5 /* UISS */ = {
@@ -503,12 +511,12 @@
 				D09F2EC718B7422C004DC7E9 /* ANBlurredImageView.m in Sources */,
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
 				D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */,
-				D000DCB218AB72220037C0F8 /* RSNewCardViewController.mm in Sources */,
+				D000DCB218AB72220037C0F8 /* RSNewCardViewController.m in Sources */,
 				D011DEC218AF9A0C0093F905 /* RSDataCenter.m in Sources */,
 				D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */,
 				D09F2ECB18B74763004DC7E9 /* RSBigCardViewController.m in Sources */,
 				D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */,
-				D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.m in Sources */,
+				D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,
 				D0F76F0518B481770069CAB9 /* RSPOIView.m in Sources */,
