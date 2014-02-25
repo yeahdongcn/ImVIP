@@ -118,18 +118,23 @@
         "UITableView": {
             "backgroundColor": "$tv_bg_color",
         },
-        "RSProfileViewBackgroundView": {
+        "RSProfileViewTopBanner": {
             "UIImageView": {
-                "image": "profile_bg",
+                "image": "banner_top",
             }
         },
-        "RSProfileViewAvatarView": {
+        "RSProfileViewBottomBanner": {
             "UIImageView": {
-                "image": "profile_avatar_bg",
+                "image": "banner_bottom",
             }
         },
-        "RSProfileViewMoreButton": {
-            "tintColor": "$card_show_button_bg_color",
+        "RSProfileViewAvatarButton": {
+            "image:default": "avatar_bg",
+            "image:highlighted": "avatar_bg_hl",
+        },
+        "RSProfileViewSettingsButton": {
+            "image:default": "settings",
+            "image:highlighted": "settings_hl",
         },
         "UILabel": {
             "textColor": "$navi_tint_color",

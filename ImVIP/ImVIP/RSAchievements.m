@@ -36,7 +36,7 @@
     NSString *text = nil;
     switch (numberOfCards) {
         case 1:
-            text = RSLocalizedString(@"First Blood");
+            text = RSLocalizedString(@"FIRST BLOOD");
             break;
         case 2:
             text = RSLocalizedString(@"Double Kill");

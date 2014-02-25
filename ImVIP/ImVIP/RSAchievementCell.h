@@ -16,4 +16,8 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *markView;
 
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+
+@property (nonatomic, weak) IBOutlet UILabel *subtitleLabel;
+
 @end

@@ -10,17 +10,19 @@
 
 #import "RSAchievementCell.h"
 
-new_class(RSProfileViewBackgroundView, UIView)
+#import <ColorUtils.h>
 
-new_class(RSProfileViewAvatarView, UIView)
+new_class(RSProfileViewTopBanner, UIView)
 
-new_class(RSProfileViewMoreButton, UIButton)
+new_class(RSProfileViewBottomBanner, UIView)
+
+new_class(RSProfileViewAvatarButton, UIButton)
+
+new_class(RSProfileViewSettingsButton, UIButton)
 
 @interface RSProfileViewController ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *background;
-
-@property (nonatomic, weak) IBOutlet UIButton *avatar;
 
 @property (nonatomic, weak) IBOutlet UILabel *username;
 
@@ -49,6 +51,8 @@ new_class(RSProfileViewMoreButton, UIButton)
     self.username.text = @"Guest";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"RSAchievementCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    
+    self.tableView.tableFooterView.backgroundColor = [UIColor colorWithRGBValue:0x69512e];
 }
 
 #pragma mark - Table view data source

@@ -217,6 +217,7 @@
 				D09F2EE918BC8C5E004DC7E9 /* Controls */,
 				D0F76F0018B443450069CAB9 /* Data */,
 				D0D9C6381888F9950000D1E5 /* UISS */,
+				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D017349218876DAA00C07608 /* RSAppDelegate.h */,
 				D017349318876DAA00C07608 /* RSAppDelegate.m */,
 				D017349518876DAA00C07608 /* Main.storyboard */,
@@ -242,7 +243,6 @@
 				D000DCC418AE14780037C0F8 /* RSScanViewController.m */,
 				D09F2ECE18BB2FEA004DC7E9 /* RSWebBrowserViewController.h */,
 				D09F2ECF18BB2FEA004DC7E9 /* RSWebBrowserViewController.m */,
-				D017349B18876DAA00C07608 /* Images.xcassets */,
 				D09F2EE818BC7B9E004DC7E9 /* Supporting Code */,
 				D017348A18876DAA00C07608 /* Supporting Files */,
 			);

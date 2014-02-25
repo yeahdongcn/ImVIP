@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="XxN-mf-K7s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="XxN-mf-K7s">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -667,19 +667,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="f0a-Ch-bHu">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LcE-c2-R6i" customClass="RSProfileViewBackgroundView">
-                                    <rect key="frame" x="53" y="0.0" width="267" height="160"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LcE-c2-R6i" customClass="RSProfileViewTopBanner">
+                                    <rect key="frame" x="53" y="0.0" width="267" height="74"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5bT-F3-tJp">
-                                            <rect key="frame" x="0.0" y="0.0" width="267" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="74"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmc-7w-YFZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="267" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="74"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -697,43 +697,16 @@
                                         <constraint firstItem="bmc-7w-YFZ" firstAttribute="top" secondItem="LcE-c2-R6i" secondAttribute="top" id="vbs-PZ-URt"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-br-zy7" customClass="RSProfileViewAvatarView">
-                                    <rect key="frame" x="55" y="116" width="88" height="88"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uir-Qm-Lda" customClass="RSProfileViewAvatarButton">
+                                    <rect key="frame" x="53" y="44" width="30" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ToQ-tY-0M2">
-                                            <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aen-Ft-iJn">
-                                            <rect key="frame" x="12" y="12" width="65" height="65"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="65" id="J9U-KL-cQN"/>
-                                                <constraint firstAttribute="width" constant="65" id="gdX-q8-fH2"/>
-                                            </constraints>
-                                            <state key="normal">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="__onAvatarClicked" destination="jHn-p4-uAz" eventType="touchUpInside" id="Icu-B9-VDU"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="ToQ-tY-0M2" firstAttribute="top" secondItem="ObE-br-zy7" secondAttribute="top" id="XQz-p3-AOU"/>
-                                        <constraint firstAttribute="width" constant="88" id="Ytt-ZU-cyc"/>
-                                        <constraint firstAttribute="trailing" secondItem="ToQ-tY-0M2" secondAttribute="trailing" id="euJ-IY-rRL"/>
-                                        <constraint firstAttribute="height" constant="88" id="iCt-wQ-Dqj"/>
-                                        <constraint firstAttribute="bottom" secondItem="ToQ-tY-0M2" secondAttribute="bottom" id="jkG-5T-utA"/>
-                                        <constraint firstAttribute="centerX" secondItem="aen-Ft-iJn" secondAttribute="centerX" id="vgk-J1-RVg"/>
-                                        <constraint firstItem="ToQ-tY-0M2" firstAttribute="leading" secondItem="ObE-br-zy7" secondAttribute="leading" id="xQO-qd-YFJ"/>
-                                        <constraint firstAttribute="centerY" secondItem="aen-Ft-iJn" secondAttribute="centerY" id="yYd-Y5-G0X"/>
-                                    </constraints>
-                                </view>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <connections>
+                                        <action selector="__onAvatarClicked" destination="jHn-p4-uAz" eventType="touchUpInside" id="um2-lv-j7Y"/>
+                                    </connections>
+                                </button>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WF-hI-Pca">
-                                    <rect key="frame" x="153" y="145" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="91" y="74" width="0.0" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -743,29 +716,41 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="LcE-c2-R6i" secondAttribute="bottom" id="5hN-RS-MKy"/>
-                                <constraint firstItem="9WF-hI-Pca" firstAttribute="leading" secondItem="ObE-br-zy7" secondAttribute="trailing" constant="10" id="9yF-Sr-25k"/>
-                                <constraint firstItem="ObE-br-zy7" firstAttribute="leading" secondItem="f0a-Ch-bHu" secondAttribute="leading" constant="55" id="TaV-c1-CJh"/>
+                                <constraint firstItem="Uir-Qm-Lda" firstAttribute="bottom" secondItem="LcE-c2-R6i" secondAttribute="bottom" id="IuD-nU-Tqs"/>
                                 <constraint firstItem="LcE-c2-R6i" firstAttribute="top" secondItem="f0a-Ch-bHu" secondAttribute="top" id="YqZ-ux-nZx"/>
                                 <constraint firstItem="LcE-c2-R6i" firstAttribute="leading" secondItem="f0a-Ch-bHu" secondAttribute="leading" constant="53" id="ZcL-ZE-vaH"/>
-                                <constraint firstItem="9WF-hI-Pca" firstAttribute="bottom" secondItem="LcE-c2-R6i" secondAttribute="bottom" constant="-15" id="bSf-rU-7O3"/>
-                                <constraint firstAttribute="bottom" secondItem="ObE-br-zy7" secondAttribute="bottom" constant="-44" id="fJ4-zo-72q"/>
+                                <constraint firstItem="9WF-hI-Pca" firstAttribute="bottom" secondItem="LcE-c2-R6i" secondAttribute="bottom" id="bSf-rU-7O3"/>
+                                <constraint firstItem="9WF-hI-Pca" firstAttribute="leading" secondItem="Uir-Qm-Lda" secondAttribute="trailing" constant="8" symbolic="YES" id="irB-RW-i3N"/>
                                 <constraint firstAttribute="trailing" secondItem="LcE-c2-R6i" secondAttribute="trailing" id="urN-Cm-XAq"/>
+                                <constraint firstItem="Uir-Qm-Lda" firstAttribute="leading" secondItem="LcE-c2-R6i" secondAttribute="leading" id="zWe-1Q-NdD"/>
                             </constraints>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="7Jr-Ip-0Vb">
-                            <rect key="frame" x="0.0" y="160" width="320" height="44"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="7Jr-Ip-0Vb" customClass="RSProfileViewBottomBanner">
+                            <rect key="frame" x="0.0" y="74" width="320" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcn-QF-bBk" customClass="RSProfileViewMoreButton">
-                                    <rect key="frame" x="284" y="13" width="16" height="18"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iuj-Dj-GA3">
+                                    <rect key="frame" x="53" y="0.0" width="267" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="profile_more"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcn-QF-bBk" customClass="RSProfileViewSettingsButton">
+                                    <rect key="frame" x="64" y="1" width="24" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="Fac-E3-v4L"/>
+                                        <constraint firstAttribute="height" constant="24" id="PAH-0e-l9v"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="jcn-QF-bBk" firstAttribute="centerY" secondItem="7Jr-Ip-0Vb" secondAttribute="centerY" id="Uyo-73-OWe"/>
-                                <constraint firstAttribute="trailing" secondItem="jcn-QF-bBk" secondAttribute="trailing" constant="20" symbolic="YES" id="s3I-aX-vLj"/>
+                                <constraint firstItem="jcn-QF-bBk" firstAttribute="leading" secondItem="7Jr-Ip-0Vb" secondAttribute="leading" constant="64" id="FoY-WV-TYx"/>
+                                <constraint firstItem="jcn-QF-bBk" firstAttribute="centerY" secondItem="7Jr-Ip-0Vb" secondAttribute="centerY" constant="-1" id="Uyo-73-OWe"/>
+                                <constraint firstItem="iuj-Dj-GA3" firstAttribute="top" secondItem="7Jr-Ip-0Vb" secondAttribute="top" id="XDX-7d-v2e"/>
+                                <constraint firstItem="iuj-Dj-GA3" firstAttribute="leading" secondItem="7Jr-Ip-0Vb" secondAttribute="leading" constant="53" id="b50-VD-Gou"/>
+                                <constraint firstAttribute="bottom" secondItem="iuj-Dj-GA3" secondAttribute="bottom" id="hE2-5B-94v"/>
+                                <constraint firstAttribute="trailing" secondItem="iuj-Dj-GA3" secondAttribute="trailing" id="uVN-4Z-f72"/>
                             </constraints>
                         </view>
                         <connections>
@@ -774,7 +759,6 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="avatar" destination="aen-Ft-iJn" id="9f0-sc-0LJ"/>
                         <outlet property="background" destination="5bT-F3-tJp" id="86D-r9-Obc"/>
                         <outlet property="username" destination="9WF-hI-Pca" id="OCy-MR-2PU"/>
                     </connections>
@@ -832,7 +816,6 @@
         <image name="new_image" width="16" height="16"/>
         <image name="new_scan" width="16" height="16"/>
         <image name="new_wallet" width="16" height="16"/>
-        <image name="profile_more" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
