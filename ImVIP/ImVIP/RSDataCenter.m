@@ -10,8 +10,6 @@
 
 #import <BmobSDK/BmobQuery.h>
 
-#import <BmobSDK/BmobUser.h>
-
 NSString *const RSDataCenterCardsWillArrive = @"com.pdq.imvip.datacenter.cardsWillArrive";
 NSString *const RSDataCenterCardsDidArrive  = @"com.pdq.imvip.datacenter.cardsDidArrive";
 NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUpdate";
@@ -34,6 +32,22 @@ NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUp
     return defaultCenter;
 }
 
+#pragma mark - Card
+
+- (NSUInteger)numberOfCachedCard
+{
+    return [self.cachedCards count];
+}
+
+- (BmobObject *)getCachedCardAtIndex:(NSInteger)index
+{
+    if (index < 0 || index >= [self numberOfCachedCard]) {
+        return nil;
+    } else {
+        return [self.cachedCards objectAtIndex:index];
+    }
+}
+
 - (void)getCardsAsyncWithCallback:(void(^)(NSArray *))callback
                  whetherNeedQuery:(BOOL)needQuery
 {
@@ -54,20 +68,6 @@ NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUp
             }];
         });
     }
-}
-
-- (BmobObject *)getCachedCardAtIndex:(NSInteger)index
-{
-    if (index < 0 || index >= [self numberOfCachedCard]) {
-        return nil;
-    } else {
-        return [self.cachedCards objectAtIndex:index];
-    }
-}
-
-- (NSUInteger)numberOfCachedCard
-{
-    return [self.cachedCards count];
 }
 
 - (void)saveCardWithCardInfo:(NSDictionary *)cardInfo
@@ -140,6 +140,8 @@ NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUp
     }];
 }
 
+#pragma mark - Achievement
+
 - (void)getAchievementAsyncWithCallback:(void(^)(BmobObject *))callback
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -194,20 +196,50 @@ NSString *const RSDataCenterCardDidUpdate = @"com.pdq.imvip.datacenter.cardDidUp
     });
 }
 
+#pragma mark - User
+
+- (BmobUser *)getUser
+{
+    return [BmobUser getCurrentObject];
+}
+
 - (void)signUpWithUserInfo:(NSDictionary *)userInfo
+              withCallback:(void(^)(BOOL, NSError *))callback
 {
     BmobUser *user = [[BmobUser alloc] init];
-    [user setUserName:@"小明"];
-    [user setEamil:@""];
-    [user setPassword:@"123456"];
+    [userInfo enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if ([key isEqualToString:@"username"]) {
+            [user setUserName:obj];
+        } else if ([key isEqualToString:@"password"]) {
+            [user setPassword:obj];
+        } else if ([key isEqualToString:@"email"]) {
+            [user setEamil:obj];
+        } else {
+            [user setObject:obj forKey:key];
+        }
+    }];
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (callback) {
+            callback(succeeded, error);
+        }
     }];
 }
 
 - (void)signInWithUserInfo:(NSDictionary *)userInfo
+              withCallback:(void(^)(BmobUser *, NSError *))callback
 {
-    [BmobUser logInWithUsernameInBackground:@"" password:@"" block:^(BmobUser *user, NSError *error) {
-    }];
+    [BmobUser logInWithUsernameInBackground:[userInfo objectForKey:@"username"]
+                                   password:[userInfo objectForKey:@"password"]
+                                      block:^(BmobUser *user, NSError *error) {
+                                          if (callback) {
+                                              callback(user, error);
+                                          }
+                                      }];
+}
+
+- (void)resetPasswordWithUserInfo:(NSDictionary *)userInfo
+{
+    [BmobUser requestPasswordResetInBackgroundWithEmail:[userInfo objectForKey:@"email"]];
 }
 
 - (void)signOut

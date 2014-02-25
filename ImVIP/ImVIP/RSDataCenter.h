@@ -10,6 +10,8 @@
 
 #import <BmobSDK/BmobObject.h>
 
+#import <BmobSDK/BmobUser.h>
+
 extern NSString *const RSDataCenterCardsWillArrive;
 extern NSString *const RSDataCenterCardsDidArrive;
 extern NSString *const RSDataCenterCardDidUpdate;
@@ -18,12 +20,14 @@ extern NSString *const RSDataCenterCardDidUpdate;
 
 + (instancetype)defaultCenter;
 
-- (void)getCardsAsyncWithCallback:(void(^)(NSArray *))callback
-                 whetherNeedQuery:(BOOL)needQuery;
+#pragma mark - Card
+
+- (NSUInteger)numberOfCachedCard;
 
 - (BmobObject *)getCachedCardAtIndex:(NSInteger)index;
 
-- (NSUInteger)numberOfCachedCard;
+- (void)getCardsAsyncWithCallback:(void(^)(NSArray *))callback
+                 whetherNeedQuery:(BOOL)needQuery;
 
 - (void)saveCardWithCardInfo:(NSDictionary *)cardInfo
                 withCallback:(void(^)(BOOL, NSError *))callback;
@@ -34,13 +38,25 @@ extern NSString *const RSDataCenterCardDidUpdate;
 - (void)deleteCardAtIndex:(NSInteger)index
              withCallback:(void(^)(BOOL, NSError *))callback;
 
+#pragma mark - Achievement
+
 - (void)getAchievementAsyncWithCallback:(void(^)(BmobObject *))callback;
 
 - (void)saveAchievement:(NSDictionary *)info
            withCallback:(void(^)(BOOL, NSError *))callback;
 
-- (void)signUp;
+#pragma mark - User
 
-- (void)signIn;
+- (BmobUser *)getUser;
+
+- (void)signUpWithUserInfo:(NSDictionary *)userInfo
+              withCallback:(void(^)(BOOL, NSError *))callback;
+
+- (void)signInWithUserInfo:(NSDictionary *)userInfo
+              withCallback:(void(^)(BmobUser *, NSError *))callback;
+
+- (void)resetPasswordWithUserInfo:(NSDictionary *)userInfo;
+
+- (void)signOut;
 
 @end
