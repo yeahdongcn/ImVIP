@@ -20,7 +20,7 @@
 
 @property (nonatomic, weak) IBOutlet UIButton *closeButton;
 
-@property (nonatomic, weak) IBOutlet UILabel *label;
+@property (nonatomic, weak) IBOutlet UIButton *indicator;
 
 @property (nonatomic, strong) UIImageView *codeView;
 
@@ -38,7 +38,7 @@
     [UIView animateWithDuration:0.3f animations:^{
         self.codeView.alpha = 0;
         self.closeButton.alpha = 0;
-        self.label.alpha = 0;
+        self.indicator.alpha = 0;
     }];
 }
 
@@ -49,7 +49,7 @@
     [self.navigationController setNavigationBarHidden:YES];
     
     [self.closeButton addTarget:self action:@selector(__clicked) forControlEvents:UIControlEventTouchUpInside];
-    self.label.textColor = [UIColor colorWithRGBValue:0x6b58ca];
+    self.indicator.tintColor = [UIColor colorWithRGBValue:0x1dc9af];
     
     [self.blurredView setImage:self.snapshot];
     [self.blurredView setBlurAmount:1];
@@ -79,17 +79,17 @@
     [self.view addSubview:self.codeView];
     
     self.closeButton.alpha = 0;
-    self.label.alpha = 0;
+    self.indicator.alpha = 0;
     if (!([codeType isEqualToString:AVMetadataObjectTypeQRCode]
           || [codeType isEqualToString:AVMetadataObjectTypeAztecCode])) {
-        self.label.transform = CGAffineTransformMakeRotation(M_PI_2);
+        self.indicator.transform = CGAffineTransformMakeRotation(M_PI_2);
     }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.blurredView blurInAnimationWithDuration:0.3f];
         [UIView animateWithDuration:0.3f animations:^{
             self.codeView.alpha = 1.0f;
             self.closeButton.alpha = 1.0f;
-            self.label.alpha = 1.0f;
+            self.indicator.alpha = 1.0f;
         }];
     });
 }
