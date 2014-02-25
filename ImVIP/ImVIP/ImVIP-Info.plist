@@ -26,6 +26,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>ObelixPro.ttf</string>
 		<string>Farrington-7B-Qiqi.ttf</string>
 		<string>FZQingKeBenYueSongS-R-GB.TTF</string>
 	</array>

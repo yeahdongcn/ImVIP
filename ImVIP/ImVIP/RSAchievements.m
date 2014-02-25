@@ -84,7 +84,7 @@
                                       kCRToastAnimationInTimeIntervalKey      : @(0.6),
                                       kCRToastTimeIntervalKey                 : @(3.0),
                                       kCRToastAnimationOutTimeIntervalKey     : @(0.6),
-                                      kCRToastFontKey                         : [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote],
+                                      kCRToastFontKey                         : [UIFont fontWithName:@"ObelixPro" size:16],
                                       kCRToastTextColorKey                    : [UIColor colorWithRGBValue:0xfafafa],
                                       kCRToastTextAlignmentKey                : @(NSTextAlignmentLeft),
                                       kCRToastAnimationInTypeKey              : @(CRToastAnimationTypeGravity),
