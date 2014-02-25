@@ -20,14 +20,11 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
 
 @property (nonatomic, strong) NSArray *cachedCards;
 
+@property (nonatomic, strong) BmobObject *cachedAchievement;
+
 @end
 
 @implementation RSDataCenter
-
-- (void)registerBmobWithAppKey:(NSString *)appKey
-{
-    [Bmob registWithAppKey:appKey];
-}
 
 + (instancetype)defaultCenter
 {
@@ -37,6 +34,24 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
         defaultCenter = [[self alloc] init];
     });
     return defaultCenter;
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self getAchievementAsyncWithCallback:^(BmobObject *achievement) {
+            self.cachedAchievement = achievement;
+        }];
+    }
+    return self;
+}
+
+#pragma mark - Register
+
+- (void)registerBmobWithAppKey:(NSString *)appKey
+{
+    [Bmob registWithAppKey:appKey];
 }
 
 #pragma mark - Card
@@ -149,6 +164,11 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
 
 #pragma mark - Achievement
 
+- (BmobObject *)getCachedAchievement
+{
+    return self.cachedAchievement;
+}
+
 - (void)getAchievementAsyncWithCallback:(void(^)(BmobObject *))callback
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -156,6 +176,8 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
         if (achievementId && [achievementId length] > 0) {
             BmobQuery *query = [BmobQuery queryWithClassName:@"Achievement"];
             [query getObjectInBackgroundWithId:achievementId block:^(BmobObject *achievement, NSError *error) {
+                self.cachedAchievement = achievement;
+                
                 if (callback) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         callback(achievement);
@@ -177,6 +199,9 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
                     [achievement setObject:obj forKey:key];
                 }];
                 [achievement updateInBackgroundWithResultBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        self.cachedAchievement = achievement;
+                    }
                     if (callback) {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             callback(succeeded, error);
@@ -191,6 +216,8 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
             }];
             [achievement saveInBackgroundWithResultBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
+                    self.cachedAchievement = achievement;
+                    
                     [[NSUserDefaults standardUserDefaults] setObject:achievement.objectId forKey:@"AchievementId"];
                 }
                 if (callback) {

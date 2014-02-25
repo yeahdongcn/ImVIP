@@ -20,6 +20,8 @@ extern NSString *const RSDataCenterCardDidUpdate;
 
 + (instancetype)defaultCenter;
 
+#pragma mark - Register
+
 - (void)registerBmobWithAppKey:(NSString *)appKey;
 
 #pragma mark - Card
@@ -41,6 +43,8 @@ extern NSString *const RSDataCenterCardDidUpdate;
              withCallback:(void(^)(BOOL, NSError *))callback;
 
 #pragma mark - Achievement
+
+- (BmobObject *)getCachedAchievement;
 
 - (void)getAchievementAsyncWithCallback:(void(^)(BmobObject *))callback;
 

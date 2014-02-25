@@ -26,6 +26,13 @@
 
 - (void)setNumberOfCards:(NSUInteger)numberOfCards
 {
+    BmobObject *oldAchievement = [DataCenter getCachedAchievement];
+    NSUInteger oldNumberOfCards = [[oldAchievement objectForKey:@"numberOfCards"] unsignedIntegerValue];
+    
+    if (numberOfCards <= oldNumberOfCards) {
+        return;
+    }
+    
     NSString *text = nil;
     switch (numberOfCards) {
         case 1:
