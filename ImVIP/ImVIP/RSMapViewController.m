@@ -207,7 +207,7 @@
 {
     RSPOIView *poiView = (RSPOIView *)[[[NSBundle mainBundle] loadNibNamed:@"RSPOIView" owner:nil options:nil] firstObject];
     poiView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
-    BMKPoiInfo *info = [self.poiInfoMap objectForKey:objc_getAssociatedObject(view.annotation, @"uid")];
+    BMKPoiInfo *info = (self.poiInfoMap)[objc_getAssociatedObject(view.annotation, @"uid")];
     poiView.nameLabel.text = info.name;
     poiView.addressLabel.text = info.address;
     [poiView.phoneButton setTitle:info.phone forState:UIControlStateNormal];
@@ -224,7 +224,7 @@
 {
     for (BMKPoiResult *result in poiResultList) {
         for (BMKPoiInfo *info in result.poiInfoList) {
-            [self.poiInfoMap setObject:info forKey:info.uid];
+            (self.poiInfoMap)[info.uid] = info;
             
             BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc] init];
             objc_setAssociatedObject(annotation, @"uid", info.uid, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

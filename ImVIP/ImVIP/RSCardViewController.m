@@ -248,6 +248,8 @@ new_class(RSCardDeleteButton, UIButton)
     [self.cardContentView addSubview:self.cardView];
     
     [self __reloadCard];
+    
+    [DataCenter logCardOpen];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

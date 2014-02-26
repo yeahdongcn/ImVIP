@@ -65,4 +65,10 @@ extern NSString *const RSDataCenterCardDidUpdate;
 
 - (void)signOut;
 
+#pragma mark - Statistic
+
+- (NSArray *)getCardOpenLogs;
+
+- (void)logCardOpen;
+
 @end

@@ -43,6 +43,15 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
         [self getAchievementAsyncWithCallback:^(BmobObject *achievement) {
             self.cachedAchievement = achievement;
         }];
+        
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"log_open_card"]) {
+            NSMutableArray *logs = [[NSMutableArray alloc] init];
+            for (int i = 0; i < 25; i++) {
+                [logs addObject:@(0)];
+            }
+            [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:logs] forKey:@"log_open_card"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
     }
     return self;
 }
@@ -66,7 +75,7 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
     if (index < 0 || index >= [self numberOfCachedCard]) {
         return nil;
     } else {
-        return [self.cachedCards objectAtIndex:index];
+        return (self.cachedCards)[index];
     }
 }
 
@@ -219,6 +228,7 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
                     self.cachedAchievement = achievement;
                     
                     [[NSUserDefaults standardUserDefaults] setObject:achievement.objectId forKey:@"AchievementId"];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
                 }
                 if (callback) {
                     dispatch_async(dispatch_get_main_queue(), ^{
@@ -262,8 +272,8 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
 - (void)signInWithUserInfo:(NSDictionary *)userInfo
               withCallback:(void(^)(BmobUser *, NSError *))callback
 {
-    [BmobUser logInWithUsernameInBackground:[userInfo objectForKey:@"username"]
-                                   password:[userInfo objectForKey:@"password"]
+    [BmobUser logInWithUsernameInBackground:userInfo[@"username"]
+                                   password:userInfo[@"password"]
                                       block:^(BmobUser *user, NSError *error) {
                                           if (callback) {
                                               callback(user, error);
@@ -273,12 +283,31 @@ NSString *const RSDataCenterCardDidUpdate   = @"com.pdq.imvip.datacenter.cardDid
 
 - (void)resetPasswordWithUserInfo:(NSDictionary *)userInfo
 {
-    [BmobUser requestPasswordResetInBackgroundWithEmail:[userInfo objectForKey:@"email"]];
+    [BmobUser requestPasswordResetInBackgroundWithEmail:userInfo[@"email"]];
 }
 
 - (void)signOut
 {
     [BmobUser logout];
+}
+
+#pragma mark - Statistic
+
+- (NSArray *)getCardOpenLogs
+{
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:@"log_open_card"] copy];
+}
+
+- (void)logCardOpen
+{
+    NSMutableArray *logs = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"log_open_card"]];
+    NSDate *now = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"HH"];
+    int hour = [[formatter stringFromDate:now] intValue];
+    logs[hour] = @([logs[hour] intValue] + 1);
+    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:logs] forKey:@"log_open_card"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

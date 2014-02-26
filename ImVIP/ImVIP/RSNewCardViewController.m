@@ -188,11 +188,11 @@ new_class(RSNewCardTextField, UITextField)
     } else {
         // We don't have the card yet, we have create then save
         NSMutableDictionary *card = [NSMutableDictionary new];
-        [card setObject:title forKey:@"title"];
-        [card setObject:tag forKey:@"tag"];
-        [card setObject:codeValue forKey:@"codeValue"];
-        [card setObject:codeType forKey:@"codeType"];
-        [card setObject:color forKey:@"color"];
+        card[@"title"] = title;
+        card[@"tag"] = tag;
+        card[@"codeValue"] = codeValue;
+        card[@"codeType"] = codeType;
+        card[@"color"] = color;
         
         [DataCenter saveCardWithCardInfo:card withCallback:^(BOOL succeeded, NSError *error) {
             callback(succeeded, error, YES);
@@ -295,8 +295,8 @@ new_class(RSNewCardTextField, UITextField)
             dispatch_async(dispatch_get_main_queue(), ^{
                 SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Barcode Found") andMessage:[NSString stringWithFormat:RSLocalizedString(@"%d barcodes have been found"), [barcodes count]]];
                 for (int i = 0; i < [barcodes count]; i++) {
-                    [alertView addButtonWithTitle:[[barcodes objectAtIndex:i] stringValue] type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView) {
-                        self.codeObject = [barcodes objectAtIndex:i];
+                    [alertView addButtonWithTitle:[barcodes[i] stringValue] type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView) {
+                        self.codeObject = barcodes[i];
                         self.codeField.text = [self.codeObject stringValue];
                         [viewController.navigationController popViewControllerAnimated:YES];
                         
@@ -334,7 +334,7 @@ new_class(RSNewCardTextField, UITextField)
 {
     dispatch_group_t group = dispatch_group_create();
     dispatch_group_enter(group);
-    UIImage *image = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image = (UIImage *)info[UIImagePickerControllerOriginalImage];
     TDImageColors *imageColors = [[TDImageColors alloc] initWithImage:image count:5];
     dispatch_group_leave(group);
     

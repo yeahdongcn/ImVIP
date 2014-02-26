@@ -159,7 +159,7 @@ new_class(RSMenuTableHeaderView, UIView)
         
         paneNavigationViewController = [[UINavigationController alloc] initWithRootViewController:paneViewController];
         
-        [self.paneViewControllerNavigationViewControllers setObject:paneNavigationViewController forKey:@(paneViewControllerType)];
+        (self.paneViewControllerNavigationViewControllers)[@(paneViewControllerType)] = paneNavigationViewController;
         
         if ([identifier isEqualToString:@"Scanner"]) {
             RSScanViewController *viewController = (RSScanViewController *)paneViewController;
@@ -190,7 +190,7 @@ new_class(RSMenuTableHeaderView, UIView)
                 dispatch_async(dispatch_get_main_queue(), ^{
                     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:RSLocalizedString(@"Barcode Found") andMessage:[NSString stringWithFormat:RSLocalizedString(@"%d barcodes have been found"), [barcodes count]]];
                     for (int i = 0; i < [barcodes count]; i++) {
-                        NSString *title = [[barcodes objectAtIndex:i] stringValue];
+                        NSString *title = [barcodes[i] stringValue];
                         [alertView addButtonWithTitle:title type:SIAlertViewButtonTypeDefault handler:^(SIAlertView *alertView) {
                             RSWebBrowserViewController *viewController = [RSWebBrowserViewController webBrowser];
                             viewController.text = title;

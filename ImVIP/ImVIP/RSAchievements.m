@@ -89,8 +89,8 @@
     NSInteger index = [self __reIndex:numberOfCards];
     NSString *text = [self titleAtIndex:index];
     NSMutableDictionary *achievement = [NSMutableDictionary new];
-    [achievement setObject:@(index) forKey:@"index"];
-    [achievement setObject:@(numberOfCards) forKey:@"numberOfCards"];
+    achievement[@"index"] = @(index);
+    achievement[@"numberOfCards"] = @(numberOfCards);
     [DataCenter saveAchievement:achievement withCallback:nil];
     
     if (text) {

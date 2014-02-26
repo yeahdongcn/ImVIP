@@ -10,7 +10,8 @@
 
 #pragma mark - Labels
 
-#define kJBStringLabel1987 localize(@"label.1985", @"1987")
-#define kJBStringLabel2013 localize(@"label.2013", @"2013")
+#define kJBStringLabel0 localize(@"label.0", @"0")
+#define kJBStringLabel24 localize(@"label.24", @"24")
 
-#define kJBStringLabelMm localize(@"label.mm", @"mm")
+#define kJBStringLabelTimes localize(@"label.times", @"次")
+#define kJBStringLabelHour localize(@"label.hour", @"点")

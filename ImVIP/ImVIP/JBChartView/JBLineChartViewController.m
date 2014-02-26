@@ -38,7 +38,7 @@ NSString * const kJBLineChartViewControllerNavButtonViewKey = @"view";
 - (void)chartToggleButtonPressed:(id)sender;
 
 // Helpers
-- (void)initFakeData;
+- (void)initData;
 
 @property (nonatomic, weak) RSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
@@ -53,7 +53,7 @@ NSString * const kJBLineChartViewControllerNavButtonViewKey = @"view";
     self = [super init];
     if (self)
     {
-        [self initFakeData]; // fake rain data
+        [self initData];
         
         self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
     }
@@ -65,7 +65,7 @@ NSString * const kJBLineChartViewControllerNavButtonViewKey = @"view";
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        [self initFakeData]; // fake rain data
+        [self initData];
         
         self.dynamicsDrawerViewController = ((RSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
     }
@@ -74,14 +74,9 @@ NSString * const kJBLineChartViewControllerNavButtonViewKey = @"view";
 
 #pragma mark - Data
 
-- (void)initFakeData
+- (void)initData
 {
-    NSMutableArray *mutableChartData = [NSMutableArray array];
-    for (int i=0; i<kJBLineChartViewControllerNumChartPoints; i++)
-    {
-        [mutableChartData addObject:[NSNumber numberWithFloat:arc4random() % kJBLineChartViewControllerMaxPointValue]];
-    }
-    _chartData = [NSArray arrayWithArray:mutableChartData];
+    _chartData = [DataCenter getCardOpenLogs];
 }
 
 #pragma mark - View Lifecycle
@@ -100,9 +95,9 @@ NSString * const kJBLineChartViewControllerNavButtonViewKey = @"view";
     
     JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(kJBNumericDefaultPadding, ceil(self.view.bounds.size.height * 0.5) - ceil(kJBLineChartViewControllerChartFooterHeight * 0.5), self.view.bounds.size.width - (kJBNumericDefaultPadding * 2), kJBLineChartViewControllerChartFooterHeight)];
     footerView.backgroundColor = [UIColor clearColor];
-    footerView.leftLabel.text = kJBStringLabel1987;
+    footerView.leftLabel.text = kJBStringLabel0;
     footerView.leftLabel.textColor = [UIColor whiteColor];
-    footerView.rightLabel.text = kJBStringLabel2013;
+    footerView.rightLabel.text = kJBStringLabel24;
     footerView.rightLabel.textColor = [UIColor whiteColor];
     footerView.sectionCount = kJBLineChartViewControllerNumChartPoints;
     self.lineChartView.footerView = footerView;
@@ -138,20 +133,22 @@ NSString * const kJBLineChartViewControllerNavButtonViewKey = @"view";
     [self.lineChartView setState:JBChartViewStateCollapsed];
     
     self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = NO;
+    
+    [self initData];
 }
 
 #pragma mark - JBLineChartViewDelegate
 
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView heightForIndex:(NSInteger)index
 {
-    return [[self.chartData objectAtIndex:index] floatValue];
+    return [(self.chartData)[index] floatValue];
 }
 
 - (void)lineChartView:(JBLineChartView *)lineChartView didSelectChartAtIndex:(NSInteger)index
 {
-    NSNumber *valueNumber = [self.chartData objectAtIndex:index];
-    [self.informationView setValueText:[NSString stringWithFormat:@"%d", [valueNumber intValue]] unitText:kJBStringLabelMm];
-    [self.informationView setTitleText:[NSString stringWithFormat:@"%d", [kJBStringLabel1987 intValue] + (int)index]];
+    NSNumber *valueNumber = (self.chartData)[index];
+    [self.informationView setValueText:[NSString stringWithFormat:@"%d", [valueNumber intValue]] unitText:kJBStringLabelTimes];
+    [self.informationView setTitleText:[NSString stringWithFormat:@"%d%@", [kJBStringLabel0 intValue] + (int)index, kJBStringLabelHour]];
     [self.informationView setHidden:NO animated:YES];
 }
 
