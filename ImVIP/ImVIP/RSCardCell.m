@@ -42,6 +42,9 @@ new_class(RSCardCellAccessoryView, UIButton)
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.borderView = [[RSCardCellBorderView alloc] initWithFrame:self.bounds];
+        [self addSubview:self.borderView];
+        
         RSCardCellAccessoryView *accessoryView = [RSCardCellAccessoryView buttonWithType:UIButtonTypeCustom];
         [accessoryView sizeToFit];
         self.accessoryView = accessoryView;

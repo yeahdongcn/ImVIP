@@ -10,6 +10,10 @@
 
 #import "RSCardViewController.h"
 
+#import "RSCardCell.h"
+
+#import <ColorUtils.h>
+
 @interface RSCardsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -121,13 +125,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    RSCardCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     BmobObject *card = [DataCenter getCachedCardAtIndex:[indexPath row]];
     cell.imageView.image = [UIImage imageNamed:@"icon"];
     cell.textLabel.text = [card objectForKey:@"title"];
     cell.detailTextLabel.text = [card objectForKey:@"updatedAt"];
+    cell.borderView.strokeColor = [UIColor colorWithString:[card objectForKey:@"color"]];
+    [cell.borderView setNeedsDisplay];
     
     return cell;
 }

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RSCardCellBorderView.h"
+
 @interface RSCardCell : UITableViewCell
+
+@property (nonatomic, strong) RSCardCellBorderView *borderView;
 
 @end

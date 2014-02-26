@@ -48,6 +48,7 @@
 		D09F2ED818BC408A004DC7E9 /* ObelixPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D09F2ED718BC408A004DC7E9 /* ObelixPro.ttf */; };
 		D09F2EEB18BC9780004DC7E9 /* RSAchievementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09F2EEA18BC9780004DC7E9 /* RSAchievementCell.xib */; };
 		D09F2EEE18BC9A8C004DC7E9 /* RSAchievementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EED18BC9A8C004DC7E9 /* RSAchievementCell.m */; };
+		D09F2EF118BDA9F7004DC7E9 /* RSCardCellBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EF018BDA9F7004DC7E9 /* RSCardCellBorderView.m */; };
 		D0A1E9BD18963D8300D3C770 /* RSTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */; };
 		D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1E9BF18963D9800D3C770 /* RSTitleView.m */; };
 		D0D9C63A1888F9950000D1E5 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D9C6391888F9950000D1E5 /* uiss.json */; };
@@ -137,6 +138,8 @@
 		D09F2EEA18BC9780004DC7E9 /* RSAchievementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSAchievementCell.xib; sourceTree = "<group>"; };
 		D09F2EEC18BC9A8C004DC7E9 /* RSAchievementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAchievementCell.h; sourceTree = "<group>"; };
 		D09F2EED18BC9A8C004DC7E9 /* RSAchievementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAchievementCell.m; sourceTree = "<group>"; };
+		D09F2EEF18BDA9F7004DC7E9 /* RSCardCellBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardCellBorderView.h; sourceTree = "<group>"; };
+		D09F2EF018BDA9F7004DC7E9 /* RSCardCellBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardCellBorderView.m; sourceTree = "<group>"; };
 		D0A1E9BC18963D8300D3C770 /* RSTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSTitleView.xib; sourceTree = "<group>"; };
 		D0A1E9BE18963D9800D3C770 /* RSTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTitleView.h; sourceTree = "<group>"; };
 		D0A1E9BF18963D9800D3C770 /* RSTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTitleView.m; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 				D09F2EEA18BC9780004DC7E9 /* RSAchievementCell.xib */,
 				D09F2EEC18BC9A8C004DC7E9 /* RSAchievementCell.h */,
 				D09F2EED18BC9A8C004DC7E9 /* RSAchievementCell.m */,
+				D09F2EEF18BDA9F7004DC7E9 /* RSCardCellBorderView.h */,
+				D09F2EF018BDA9F7004DC7E9 /* RSCardCellBorderView.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -519,6 +524,7 @@
 				D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */,
 				D000DCB718ADC1EB0037C0F8 /* RSMapViewController.m in Sources */,
 				D000DCBA18ADC5C30037C0F8 /* RSSalesViewController.m in Sources */,
+				D09F2EF118BDA9F7004DC7E9 /* RSCardCellBorderView.m in Sources */,
 				D0F76EFC18B345640069CAB9 /* RSAchievements.m in Sources */,
 				D09F2EEE18BC9A8C004DC7E9 /* RSAchievementCell.m in Sources */,
 				D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */,
