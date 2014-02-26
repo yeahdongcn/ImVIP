@@ -44,29 +44,20 @@
         case 3:
             text = RSLocalizedString(@"Triple Kill");
             break;
-        case 4:
+        case 5:
             text = RSLocalizedString(@"Killing Spree");
             break;
-        case 5:
+        case 8:
             text = RSLocalizedString(@"Dominating");
             break;
-        case 6:
+        case 13:
             text = RSLocalizedString(@"Mega Kill");
             break;
-        case 7:
+        case 21:
             text = RSLocalizedString(@"Unstoppable");
             break;
-        case 8:
+        case 34:
             text = RSLocalizedString(@"Wicked Sick");
-            break;
-        case 9:
-            text = RSLocalizedString(@"Monster Kill");
-            break;
-        case 10:
-            text = RSLocalizedString(@"Godlike");
-            break;
-        case 11:
-            text = RSLocalizedString(@"Holy Shit");
             break;
         default:
             break;

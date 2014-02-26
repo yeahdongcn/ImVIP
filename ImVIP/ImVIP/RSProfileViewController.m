@@ -71,7 +71,7 @@ new_class(RSProfileViewUserLabel, UILabel)
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,7 +80,7 @@ new_class(RSProfileViewUserLabel, UILabel)
     RSAchievementCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.iconView.image = [UIImage imageNamed:@"0"];
+    cell.iconView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d", [indexPath row]]];
 
     return cell;
 }
