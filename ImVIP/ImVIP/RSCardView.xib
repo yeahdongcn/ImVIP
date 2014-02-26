@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -42,6 +42,13 @@
                     <rect key="frame" x="20" y="120" width="260" height="49"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJR-sm-f53">
+                    <rect key="frame" x="150" y="37" width="31" height="15"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -49,11 +56,13 @@
                 <constraint firstAttribute="centerX" secondItem="Rd6-Lt-qKQ" secondAttribute="centerX" id="29W-SU-lpM"/>
                 <constraint firstItem="ksD-bN-Iam" firstAttribute="top" secondItem="N6T-6p-tCB" secondAttribute="top" constant="20" symbolic="YES" id="5VO-Xd-Qb5"/>
                 <constraint firstItem="t74-8B-F99" firstAttribute="leading" secondItem="ksD-bN-Iam" secondAttribute="trailing" constant="8" symbolic="YES" id="B3R-jJ-8L0"/>
+                <constraint firstItem="sJR-sm-f53" firstAttribute="leading" secondItem="t74-8B-F99" secondAttribute="trailing" constant="8" symbolic="YES" id="K9T-UC-QWL"/>
                 <constraint firstItem="ksD-bN-Iam" firstAttribute="centerY" secondItem="t74-8B-F99" secondAttribute="centerY" id="QiV-Bz-pEs"/>
                 <constraint firstItem="0CP-LR-huG" firstAttribute="leading" secondItem="N6T-6p-tCB" secondAttribute="leading" constant="20" symbolic="YES" id="YWb-Yv-6jC"/>
                 <constraint firstAttribute="centerX" secondItem="0CP-LR-huG" secondAttribute="centerX" id="aPG-cg-rpa"/>
                 <constraint firstItem="EV5-ca-M9o" firstAttribute="leading" secondItem="N6T-6p-tCB" secondAttribute="leading" id="agY-sp-qCz"/>
                 <constraint firstAttribute="centerY" secondItem="Rd6-Lt-qKQ" secondAttribute="centerY" id="bH1-Sk-fvW"/>
+                <constraint firstItem="t74-8B-F99" firstAttribute="centerY" secondItem="sJR-sm-f53" secondAttribute="centerY" id="cjR-4f-bwL"/>
                 <constraint firstAttribute="bottom" secondItem="EV5-ca-M9o" secondAttribute="bottom" id="izF-bQ-GTi"/>
                 <constraint firstAttribute="trailing" secondItem="0CP-LR-huG" secondAttribute="trailing" constant="20" symbolic="YES" id="kEv-ol-4zc"/>
                 <constraint firstItem="EV5-ca-M9o" firstAttribute="top" secondItem="N6T-6p-tCB" secondAttribute="top" id="miC-ZH-3ZI"/>
@@ -67,6 +76,7 @@
                 <outlet property="codeLabel" destination="Rd6-Lt-qKQ" id="VuB-n2-gXk"/>
                 <outlet property="codeView" destination="0CP-LR-huG" id="tKt-X4-7Ta"/>
                 <outlet property="iconView" destination="ksD-bN-Iam" id="vIP-g5-Jdx"/>
+                <outlet property="tagLabel" destination="sJR-sm-f53" id="UR7-Ng-9wE"/>
                 <outlet property="titleLabel" destination="t74-8B-F99" id="fqX-Y4-80w"/>
             </connections>
         </view>

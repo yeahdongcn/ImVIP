@@ -20,4 +20,6 @@
 
 @property (nonatomic, weak) IBOutlet UIButton *button;
 
+@property (nonatomic, weak) IBOutlet UILabel *tagLabel;
+
 @end

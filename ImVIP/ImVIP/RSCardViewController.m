@@ -119,6 +119,7 @@ new_class(RSCardDeleteButton, UIButton)
     // Get the card ready
     BmobObject *card = [DataCenter getCachedCardAtIndex:self.indexOfCard];
     NSString *title = [card objectForKey:@"title"];
+    NSString *tag = [card objectForKey:@"tag"];
     NSString *codeValue = [card objectForKey:@"codeValue"];
     NSString *codeType = [card objectForKey:@"codeType"];
     UIColor *color = [UIColor colorWithString:[card objectForKey:@"color"]];
@@ -146,6 +147,8 @@ new_class(RSCardDeleteButton, UIButton)
     
     // Update card view content
     self.cardView.titleLabel.text = title;
+    self.cardView.tagLabel.text = tag;
+    self.cardView.tagLabel.hidden = [tag length] == 0;
     self.cardView.codeLabel.text = code;
     self.cardView.codeView.image = resizeImage(codeImage, scale);
     self.cardView.backgroundColor = color;
@@ -163,6 +166,14 @@ new_class(RSCardDeleteButton, UIButton)
         if ([view isKindOfClass:[UILabel class]]) {
             UILabel *label = (UILabel *)view;
             label.textColor = [UIColor colorWithRGBValue:hex];
+            
+            if (label == self.cardView.tagLabel) {
+                if ([label.textColor isDarkColor]) {
+                    self.cardView.tagLabel.layer.borderColor = [[UIColor whiteColor] CGColor];
+                } else {
+                    self.cardView.tagLabel.layer.borderColor = [[UIColor blackColor] CGColor];
+                }
+            }
         }
     }
 }
