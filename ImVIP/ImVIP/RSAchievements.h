@@ -12,6 +12,8 @@
 
 + (instancetype)defaultAchievements;
 
+- (NSString *)titleAtIndex:(NSInteger)index;
+
 - (void)setNumberOfCards:(NSUInteger)numberOfCards;
 
 @end

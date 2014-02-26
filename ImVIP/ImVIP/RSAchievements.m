@@ -24,6 +24,59 @@
     return defaultAchievements;
 }
 
+- (NSString *)titleAtIndex:(NSInteger)index
+{
+    NSString *text = nil;
+    switch (index) {
+        case 0:
+            text = RSLocalizedString(@"FIRST BLOOD");
+            break;
+        case 1:
+            text = RSLocalizedString(@"AND SO IT BEGINS");
+            break;
+        case 2:
+            text = RSLocalizedString(@"CONSTRUCTOR");
+            break;
+        case 3:
+            text = RSLocalizedString(@"ENGINEER");
+            break;
+        case 4:
+            text = RSLocalizedString(@"THE ARCHITECT");
+            break;
+        case 5:
+            text = RSLocalizedString(@"SPECIALIST");
+            break;
+        case 6:
+            text = RSLocalizedString(@"SUPERSTAR");
+            break;
+        case 7:
+            text = RSLocalizedString(@"HOLY SHIT");
+            break;
+    }
+    return text;
+}
+
+- (NSInteger)__reIndex:(NSUInteger)aIndex
+{
+    if (aIndex <= 1) {
+        return 0;
+    } else if (aIndex <= 2) {
+        return 1;
+    } else if (aIndex <= 3) {
+        return 2;
+    } else if (aIndex <= 5) {
+        return 3;
+    } else if (aIndex <= 8) {
+        return 4;
+    } else if (aIndex <= 13) {
+        return 5;
+    } else if (aIndex <= 21) {
+        return 6;
+    } else {
+        return 7;
+    }
+}
+
 - (void)setNumberOfCards:(NSUInteger)numberOfCards
 {
     BmobObject *oldAchievement = [DataCenter getCachedAchievement];
@@ -33,42 +86,12 @@
         return;
     }
     
-    NSString *text = nil;
-    switch (numberOfCards) {
-        case 1:
-            text = RSLocalizedString(@"FIRST BLOOD");
-            break;
-        case 2:
-            text = RSLocalizedString(@"Double Kill");
-            break;
-        case 3:
-            text = RSLocalizedString(@"Triple Kill");
-            break;
-        case 5:
-            text = RSLocalizedString(@"Killing Spree");
-            break;
-        case 8:
-            text = RSLocalizedString(@"Dominating");
-            break;
-        case 13:
-            text = RSLocalizedString(@"Mega Kill");
-            break;
-        case 21:
-            text = RSLocalizedString(@"Unstoppable");
-            break;
-        case 34:
-            text = RSLocalizedString(@"Wicked Sick");
-            break;
-        default:
-            break;
-    }
-    
+    NSInteger index = [self __reIndex:numberOfCards];
+    NSString *text = [self titleAtIndex:index];
     NSMutableDictionary *achievement = [NSMutableDictionary new];
+    [achievement setObject:@(index) forKey:@"index"];
     [achievement setObject:@(numberOfCards) forKey:@"numberOfCards"];
-    [achievement setObject:text ? text : kRSTextDefault forKey:@"text"];
-    [DataCenter saveAchievement:achievement withCallback:^(BOOL succeeded, NSError *error) {
-        NSLog(@"Save achievement: succeeded = %d, error = %@", succeeded, error);
-    }];
+    [DataCenter saveAchievement:achievement withCallback:nil];
     
     if (text) {
         double delayInSeconds = 2;

@@ -340,6 +340,7 @@ new_class(RSNewCardTextField, UITextField)
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         self.colorView.backgroundColor = [imageColors.colors firstObject];
+        self.color = self.colorView.backgroundColor;
     });
     
     [self dismissViewControllerAnimated:YES completion:nil];

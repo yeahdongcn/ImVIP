@@ -58,8 +58,13 @@ new_class(RSProfileViewUserLabel, UILabel)
     self.username.text = @"Guest";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"RSAchievementCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-    self.tableView.tableFooterView.backgroundColor = [UIColor colorWithRGBValue:0x69512e];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -71,7 +76,12 @@ new_class(RSProfileViewUserLabel, UILabel)
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    BmobObject *achievement = [DataCenter getCachedAchievement];
+    if (achievement) {
+        return [[achievement objectForKey:@"index"] unsignedIntegerValue] + 1;
+    } else {
+        return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,7 +90,9 @@ new_class(RSProfileViewUserLabel, UILabel)
     RSAchievementCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.iconView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d", [indexPath row]]];
+    NSInteger index = [indexPath row];
+    cell.titleLabel.text = [Achievements titleAtIndex:index];
+    cell.iconView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d", index]];
 
     return cell;
 }
