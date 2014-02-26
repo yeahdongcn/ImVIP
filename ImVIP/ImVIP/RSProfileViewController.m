@@ -12,13 +12,15 @@
 
 #import <ColorUtils.h>
 
-new_class(RSProfileViewTopBanner, UIView)
+new_class(RSProfileViewTopBanner, UIImageView)
 
-new_class(RSProfileViewBottomBanner, UIView)
+new_class(RSProfileViewBottomBanner, UIImageView)
 
 new_class(RSProfileViewAvatarButton, UIButton)
 
 new_class(RSProfileViewSettingsButton, UIButton)
+
+new_class(RSProfileViewUserLabel, UILabel)
 
 @interface RSProfileViewController ()
 
@@ -40,6 +42,11 @@ new_class(RSProfileViewSettingsButton, UIButton)
 - (IBAction)__onBgClicked
 {
     NSLog(@"bg");
+}
+
+- (IBAction)__onSettingsClicked
+{
+    NSLog(@"settings");
 }
 
 - (void)viewDidLoad
@@ -74,8 +81,7 @@ new_class(RSProfileViewSettingsButton, UIButton)
     
     // Configure the cell...
     cell.iconView.image = [UIImage imageNamed:@"0"];
-    cell.bgView.image = [UIImage imageNamed:@"cell_bg"];
-    
+
     return cell;
 }
 

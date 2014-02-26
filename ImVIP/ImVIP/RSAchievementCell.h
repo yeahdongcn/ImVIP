@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class RSAchievementCellBgView;
+
 @interface RSAchievementCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UIImageView *bgView;
+@property (nonatomic, weak) IBOutlet RSAchievementCellBgView *bgView;
 
 @property (nonatomic, weak) IBOutlet UIImageView *iconView;
-
-@property (nonatomic, weak) IBOutlet UIImageView *markView;
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 

@@ -10,6 +10,8 @@
 
 #import <ColorUtils.h>
 
+new_class(RSAchievementCellBgView, UIImageView)
+
 @implementation RSAchievementCell
 
 - (id)initWithCoder:(NSCoder *)aDecoder

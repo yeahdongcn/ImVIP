@@ -116,28 +116,29 @@
     },
     "RSProfileViewController": {
         "UITableView": {
-            "backgroundColor": "$tv_bg_color",
+            "backgroundColor": "profile_tv_bg",
         },
         "RSProfileViewTopBanner": {
-            "UIImageView": {
-                "image": "banner_top",
-            }
+            "image": "profile_banner_top",
         },
         "RSProfileViewBottomBanner": {
-            "UIImageView": {
-                "image": "banner_bottom",
-            }
+            "image": "profile_banner_bottom",
         },
         "RSProfileViewAvatarButton": {
-            "image:default": "avatar_bg",
-            "image:highlighted": "avatar_bg_hl",
+            "image:default": "profile_avatar_bg",
+            "image:highlighted": "profile_avatar_bg_hl",
+            "image:selected": "profile_avatar_bg_hl",
         },
         "RSProfileViewSettingsButton": {
-            "image:default": "settings",
-            "image:highlighted": "settings_hl",
+            "image:default": "profile_settings",
+            "image:highlighted": "profile_settings_hl",
+            "image:selected": "profile_settings_hl",
         },
-        "UILabel": {
+        "RSProfileViewUserLabel": {
             "textColor": "$navi_tint_color",
+        },
+        "RSAchievementCellBgView": {
+            "image": "profile_tv_cell_bg",
         }
     },
     "RSPOIView": {
