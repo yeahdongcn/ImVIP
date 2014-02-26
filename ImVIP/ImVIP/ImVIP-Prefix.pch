@@ -22,6 +22,8 @@
 
 #import "RSStatistics.h"
 
+#import "JBConstants.h"
+
 static NSString *kRSTextDefault = @"";
 static NSString *kRSTextSpace   = @" ";
 

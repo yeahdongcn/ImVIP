@@ -14,7 +14,6 @@
 		D000DCBA18ADC5C30037C0F8 /* RSSalesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCB918ADC5C30037C0F8 /* RSSalesViewController.m */; };
 		D000DCBC18ADC7CE0037C0F8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */; };
 		D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm */; };
-		D000DCC218AE13A90037C0F8 /* RSStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */; };
 		D000DCC518AE14780037C0F8 /* RSScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCC418AE14780037C0F8 /* RSScanViewController.m */; };
 		D011DEBC18ABA8720093F905 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D011DEBB18ABA8720093F905 /* BmobSDK.framework */; };
 		D011DEC218AF9A0C0093F905 /* RSDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D011DEC118AF9A0C0093F905 /* RSDataCenter.m */; };
@@ -36,6 +35,10 @@
 		D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D045895B1894FA4D00077C69 /* RSCardCell.m */; };
 		D04B82E718A4DA5D007971B3 /* RSCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04B82E618A4DA5D007971B3 /* RSCardViewController.m */; };
 		D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */; };
+		D098AF5718BDCBB00084BA27 /* JBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D098AF4E18BDCBAF0084BA27 /* JBBaseViewController.m */; };
+		D098AF5918BDCBB00084BA27 /* JBChartInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D098AF5218BDCBB00084BA27 /* JBChartInformationView.m */; };
+		D098AF5A18BDCBB00084BA27 /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D098AF5418BDCBB00084BA27 /* JBLineChartFooterView.m */; };
+		D098AF5B18BDCBB00084BA27 /* JBLineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D098AF5618BDCBB00084BA27 /* JBLineChartViewController.m */; };
 		D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */; };
 		D09F2EBB18B59413004DC7E9 /* RSCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09F2EBA18B59413004DC7E9 /* RSCardView.xib */; };
 		D09F2EBE18B59690004DC7E9 /* RSCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F2EBD18B59690004DC7E9 /* RSCardView.m */; };
@@ -84,8 +87,6 @@
 		D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D000DCBD18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDynamicsDrawerViewController.h; sourceTree = "<group>"; };
 		D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RSDynamicsDrawerViewController.mm; sourceTree = "<group>"; };
-		D000DCC018AE13A90037C0F8 /* RSStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSStatisticsViewController.h; sourceTree = "<group>"; };
-		D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSStatisticsViewController.m; sourceTree = "<group>"; };
 		D000DCC318AE14780037C0F8 /* RSScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSScanViewController.h; sourceTree = "<group>"; };
 		D000DCC418AE14780037C0F8 /* RSScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSScanViewController.m; sourceTree = "<group>"; };
 		D011DEBB18ABA8720093F905 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Bmob/BmobSDK.framework; sourceTree = "<group>"; };
@@ -119,6 +120,19 @@
 		D04B82E618A4DA5D007971B3 /* RSCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardViewController.m; sourceTree = "<group>"; };
 		D04FD25E1892BC0E00EA5646 /* RSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSProfileViewController.h; sourceTree = "<group>"; };
 		D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSProfileViewController.m; sourceTree = "<group>"; };
+		D098AF4D18BDCBAF0084BA27 /* JBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBaseViewController.h; sourceTree = "<group>"; };
+		D098AF4E18BDCBAF0084BA27 /* JBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBaseViewController.m; sourceTree = "<group>"; };
+		D098AF5118BDCBAF0084BA27 /* JBChartInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartInformationView.h; sourceTree = "<group>"; };
+		D098AF5218BDCBB00084BA27 /* JBChartInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartInformationView.m; sourceTree = "<group>"; };
+		D098AF5318BDCBB00084BA27 /* JBLineChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartFooterView.h; sourceTree = "<group>"; };
+		D098AF5418BDCBB00084BA27 /* JBLineChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartFooterView.m; sourceTree = "<group>"; };
+		D098AF5518BDCBB00084BA27 /* JBLineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartViewController.h; sourceTree = "<group>"; };
+		D098AF5618BDCBB00084BA27 /* JBLineChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartViewController.m; sourceTree = "<group>"; };
+		D098AF5C18BDCBEF0084BA27 /* JBColorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBColorConstants.h; sourceTree = "<group>"; };
+		D098AF5D18BDCBEF0084BA27 /* JBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBConstants.h; sourceTree = "<group>"; };
+		D098AF5E18BDCBEF0084BA27 /* JBFontConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBFontConstants.h; sourceTree = "<group>"; };
+		D098AF5F18BDCBEF0084BA27 /* JBStringConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBStringConstants.h; sourceTree = "<group>"; };
+		D098AF6018BDCBEF0084BA27 /* JBUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBUIConstants.h; sourceTree = "<group>"; };
 		D09E2CAE1893DA7100786A56 /* RSCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardsViewController.h; sourceTree = "<group>"; };
 		D09E2CAF1893DA7100786A56 /* RSCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardsViewController.m; sourceTree = "<group>"; };
 		D09F2EBA18B59413004DC7E9 /* RSCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSCardView.xib; sourceTree = "<group>"; };
@@ -217,6 +231,7 @@
 		D017348918876DAA00C07608 /* ImVIP */ = {
 			isa = PBXGroup;
 			children = (
+				D098AF4C18BDCB3C0084BA27 /* JBChartView */,
 				D09F2EE918BC8C5E004DC7E9 /* Controls */,
 				D0F76F0018B443450069CAB9 /* Data */,
 				D0D9C6381888F9950000D1E5 /* UISS */,
@@ -240,8 +255,6 @@
 				D000DCB618ADC1EB0037C0F8 /* RSMapViewController.m */,
 				D000DCB818ADC5C30037C0F8 /* RSSalesViewController.h */,
 				D000DCB918ADC5C30037C0F8 /* RSSalesViewController.m */,
-				D000DCC018AE13A90037C0F8 /* RSStatisticsViewController.h */,
-				D000DCC118AE13A90037C0F8 /* RSStatisticsViewController.m */,
 				D000DCC318AE14780037C0F8 /* RSScanViewController.h */,
 				D000DCC418AE14780037C0F8 /* RSScanViewController.m */,
 				D09F2ECE18BB2FEA004DC7E9 /* RSWebBrowserViewController.h */,
@@ -282,6 +295,26 @@
 				D01734AB18876DAA00C07608 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D098AF4C18BDCB3C0084BA27 /* JBChartView */ = {
+			isa = PBXGroup;
+			children = (
+				D098AF5C18BDCBEF0084BA27 /* JBColorConstants.h */,
+				D098AF5D18BDCBEF0084BA27 /* JBConstants.h */,
+				D098AF5E18BDCBEF0084BA27 /* JBFontConstants.h */,
+				D098AF5F18BDCBEF0084BA27 /* JBStringConstants.h */,
+				D098AF6018BDCBEF0084BA27 /* JBUIConstants.h */,
+				D098AF4D18BDCBAF0084BA27 /* JBBaseViewController.h */,
+				D098AF4E18BDCBAF0084BA27 /* JBBaseViewController.m */,
+				D098AF5118BDCBAF0084BA27 /* JBChartInformationView.h */,
+				D098AF5218BDCBB00084BA27 /* JBChartInformationView.m */,
+				D098AF5318BDCBB00084BA27 /* JBLineChartFooterView.h */,
+				D098AF5418BDCBB00084BA27 /* JBLineChartFooterView.m */,
+				D098AF5518BDCBB00084BA27 /* JBLineChartViewController.h */,
+				D098AF5618BDCBB00084BA27 /* JBLineChartViewController.m */,
+			);
+			path = JBChartView;
 			sourceTree = "<group>";
 		};
 		D09F2EC218B7422C004DC7E9 /* ANBlurredImageView */ = {
@@ -530,7 +563,7 @@
 				D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */,
 				D09F2ED018BB2FEA004DC7E9 /* RSWebBrowserViewController.m in Sources */,
 				D09F2EBE18B59690004DC7E9 /* RSCardView.m in Sources */,
-				D000DCC218AE13A90037C0F8 /* RSStatisticsViewController.m in Sources */,
+				D098AF5B18BDCBB00084BA27 /* JBLineChartViewController.m in Sources */,
 				D000DCC518AE14780037C0F8 /* RSScanViewController.m in Sources */,
 				D09F2EC718B7422C004DC7E9 /* ANBlurredImageView.m in Sources */,
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
@@ -540,8 +573,11 @@
 				D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */,
 				D09F2ECB18B74763004DC7E9 /* RSBigCardViewController.m in Sources */,
 				D0A1E9C018963D9800D3C770 /* RSTitleView.m in Sources */,
+				D098AF5A18BDCBB00084BA27 /* JBLineChartFooterView.m in Sources */,
 				D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm in Sources */,
+				D098AF5718BDCBB00084BA27 /* JBBaseViewController.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
+				D098AF5918BDCBB00084BA27 /* JBChartInformationView.m in Sources */,
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,
 				D0F76F0518B481770069CAB9 /* RSPOIView.m in Sources */,
 				D04B82E718A4DA5D007971B3 /* RSCardViewController.m in Sources */,

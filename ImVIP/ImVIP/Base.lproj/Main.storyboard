@@ -372,10 +372,10 @@
             </objects>
             <point key="canvasLocation" x="-11" y="2797"/>
         </scene>
-        <!--Statistics View Controller-->
+        <!--Line Chart View Controller-->
         <scene sceneID="cqs-Gy-8ZW">
             <objects>
-                <viewController storyboardIdentifier="Statistics" id="42v-P3-IfJ" customClass="RSStatisticsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Statistics" id="42v-P3-IfJ" customClass="JBLineChartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MOI-S2-Khf"/>
                         <viewControllerLayoutGuide type="bottom" id="FJu-TH-3EJ"/>
