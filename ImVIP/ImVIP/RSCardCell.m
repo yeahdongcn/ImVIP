@@ -16,6 +16,8 @@ new_class(RSCardCellSelectedBackgroundView, UIView)
 
 new_class(RSCardCellAccessoryView, UIButton)
 
+new_class(RSCardCellTagLabel, UILabel)
+
 @interface RSCardCell ()
 
 @property (nonatomic, strong) UIImage *accessoryViewNormalImage;
@@ -52,6 +54,8 @@ new_class(RSCardCellAccessoryView, UIButton)
         RSCardCellSelectedBackgroundView *selectedBackgroundView = [RSCardCellSelectedBackgroundView new];
         self.selectedBackgroundView = selectedBackgroundView;
         
+        [self addObserver:self forKeyPath:@"tagLabel" options:NSKeyValueObservingOptionInitial context:NULL];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             self.accessoryViewNormalImage = [accessoryView imageForState:UIControlStateNormal];
             self.accessoryViewHighlightedImage = [accessoryView imageForState:UIControlStateHighlighted];
@@ -59,6 +63,20 @@ new_class(RSCardCellAccessoryView, UIButton)
         });
     }
     return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"tagLabel"]) {
+        self.tagLabel.layer.borderColor = [[UIColor blackColor] CGColor];
+        self.tagLabel.layer.borderWidth = 0.1f;
+        self.tagLabel.layer.cornerRadius = 3.0f;
+    }
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"tagLabel"];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated

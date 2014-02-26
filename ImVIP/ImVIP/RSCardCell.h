@@ -10,8 +10,12 @@
 
 #import "RSCardCellBorderView.h"
 
+@class RSCardCellTagLabel;
+
 @interface RSCardCell : UITableViewCell
 
 @property (nonatomic, strong) RSCardCellBorderView *borderView;
+
+@property (nonatomic, weak) IBOutlet RSCardCellTagLabel *tagLabel;
 
 @end

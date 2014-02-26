@@ -21,10 +21,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor= [UIColor clearColor];
-        self.border = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(3, 3, self.bounds.size.width - 6, self.bounds.size.height - 1)
+        self.border = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(3.0f, 3.0f, self.bounds.size.width - 6.0f, self.bounds.size.height - 1.0f)
                                               byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
-                                                    cornerRadii:CGSizeMake(11, 11)];
-        self.border.lineWidth = 0.1;
+                                                    cornerRadii:CGSizeMake(11.0f, 11.0f)];
+        self.border.lineWidth = 0.1f;
     }
     return self;
 }

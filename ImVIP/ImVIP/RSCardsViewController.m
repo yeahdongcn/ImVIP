@@ -134,6 +134,9 @@
     cell.detailTextLabel.text = [card objectForKey:@"updatedAt"];
     cell.borderView.strokeColor = [UIColor colorWithString:[card objectForKey:@"color"]];
     [cell.borderView setNeedsDisplay];
+    UILabel *tagLabel = (UILabel *)cell.tagLabel;
+    tagLabel.text = [card objectForKey:@"tag"];
+    tagLabel.hidden = [tagLabel.text length] == 0;
     
     return cell;
 }

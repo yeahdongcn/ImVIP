@@ -91,6 +91,10 @@
                 "textColor": "$tv_cell_subtitle_color",
                 "highlightedTextColor": "$tv_cell_subtitle_hl_color",
             },
+            "RSCardCellTagLabel": {
+                "textColor": "$tv_cell_subtitle_color",
+                "highlightedTextColor": "$tv_cell_subtitle_hl_color",
+            },
             "RSCardCellSelectedBackgroundView": {
                 "backgroundColor": "$tv_cell_selected_bg_color",
             }
