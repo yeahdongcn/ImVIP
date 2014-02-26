@@ -34,21 +34,6 @@ new_class(RSProfileViewUserLabel, UILabel)
 
 @implementation RSProfileViewController
 
-- (IBAction)__onAvatarClicked
-{
-    NSLog(@"avatar");
-}
-
-- (IBAction)__onBgClicked
-{
-    NSLog(@"bg");
-}
-
-- (IBAction)__onSettingsClicked
-{
-    NSLog(@"settings");
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -59,8 +59,9 @@ new_class(RSWindowBackgroundView, UIImageView)
     RSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
     
-    RSProfileViewController *userViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Profile"];
-    [self.dynamicsDrawerViewController setDrawerViewController:userViewController forDirection:MSDynamicsDrawerDirectionRight];
+    RSProfileViewController *profileViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Profile"];
+    [self.dynamicsDrawerViewController setDrawerViewController:profileViewController forDirection:MSDynamicsDrawerDirectionRight];
+//    [self.dynamicsDrawerViewController setDrawerViewController:[[UINavigationController alloc] initWithRootViewController:profileViewController] forDirection:MSDynamicsDrawerDirectionRight];
     
     // Transition to the first view controller
     [menuViewController transitionToViewController:RSPaneViewControllerTypeCards];

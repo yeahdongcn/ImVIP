@@ -135,6 +135,7 @@ NSString * const kJBLineChartViewControllerNavButtonViewKey = @"view";
     self.dynamicsDrawerViewController.panePanGestureRecognizer.enabled = NO;
     
     [self initData];
+    [self.lineChartView reloadData];
 }
 
 #pragma mark - JBLineChartViewDelegate
