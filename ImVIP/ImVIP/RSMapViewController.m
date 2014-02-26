@@ -16,8 +16,6 @@
 
 #import <BMapKit.h>
 
-#import <UIViewController+KNSemiModal.h>
-
 #import <objc/runtime.h>
 
 @interface RSMapViewController () <BMKMapViewDelegate, BMKSearchDelegate>
@@ -39,6 +37,8 @@
 @property (nonatomic) NSInteger radius;
 
 @property (nonatomic, strong) NSMutableDictionary *poiInfoMap;
+
+@property (nonatomic, strong) RSPOIView *poiView;
 
 @end
 
@@ -205,17 +205,31 @@
 
 - (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view;
 {
-    RSPOIView *poiView = (RSPOIView *)[[[NSBundle mainBundle] loadNibNamed:@"RSPOIView" owner:nil options:nil] firstObject];
-    poiView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
+    if ([[[view class] description] isEqualToString:@"LocationView"]) {
+        return;
+    }
+    
+    if (!self.poiView) {
+        self.poiView = (RSPOIView *)[[[NSBundle mainBundle] loadNibNamed:@"RSPOIView" owner:nil options:nil] firstObject];
+        self.poiView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
+        CGRect frame = self.poiView.frame;
+        frame.origin.y = self.view.frame.origin.y + self.view.frame.size.height;
+        self.poiView.frame = frame;
+        [self.view addSubview:self.poiView];
+    }
+    
     BMKPoiInfo *info = (self.poiInfoMap)[objc_getAssociatedObject(view.annotation, @"uid")];
-    poiView.nameLabel.text = info.name;
-    poiView.addressLabel.text = info.address;
-    [poiView.phoneButton setTitle:info.phone forState:UIControlStateNormal];
-    [self presentSemiView:poiView withOptions:@{
-                                                KNSemiModalOptionKeys.shadowRadius  : @(2.0),
-                                                KNSemiModalOptionKeys.shadowOpacity : @(0.2),
-                                                KNSemiModalOptionKeys.shadowOffset  : [NSValue valueWithCGSize:CGSizeZero],
-                                                }];
+    self.poiView.nameLabel.text = info.name;
+    self.poiView.addressLabel.text = info.address;
+    [self.poiView.phoneButton setTitle:info.phone forState:UIControlStateNormal];
+    
+    __block CGRect frame = self.poiView.frame;
+    if (frame.origin.y == self.view.frame.origin.y + self.view.frame.size.height) {
+        [UIView animateWithDuration:0.3f animations:^{
+            frame.origin.y -= self.poiView.bounds.size.height;
+            self.poiView.frame = frame;
+        }];
+    }
 }
 
 #pragma mark - BMKSearchDelegate

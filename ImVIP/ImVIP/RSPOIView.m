@@ -19,22 +19,30 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", [self.phoneButton titleForState:UIControlStateNormal]]]];
 }
 
-- (void)__clicked
+- (void)__clicked:(id)sender
 {
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:[self.phoneButton titleForState:UIControlStateNormal] andMessage:nil];
-    
-    [alertView addButtonWithTitle:RSLocalizedString(@"Cancel")
-                             type:SIAlertViewButtonTypeCancel
-                          handler:nil];
-    [alertView addButtonWithTitle:RSLocalizedString(@"Call")
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              [self __call];
-                          }];
-    
-    alertView.transitionStyle = SIAlertViewTransitionStyleSlideFromBottom;
-    
-    [alertView show];
+    if (sender == self.phoneButton) {
+        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:[self.phoneButton titleForState:UIControlStateNormal] andMessage:nil];
+        
+        [alertView addButtonWithTitle:RSLocalizedString(@"Cancel")
+                                 type:SIAlertViewButtonTypeCancel
+                              handler:nil];
+        [alertView addButtonWithTitle:RSLocalizedString(@"Call")
+                                 type:SIAlertViewButtonTypeDefault
+                              handler:^(SIAlertView *alertView) {
+                                  [self __call];
+                              }];
+        
+        alertView.transitionStyle = SIAlertViewTransitionStyleSlideFromBottom;
+        
+        [alertView show];
+    } else if (sender == self.closeButton) {
+        [UIView animateWithDuration:0.3f animations:^{
+            CGRect frame = self.frame;
+            frame.origin.y += self.bounds.size.height;
+            self.frame = frame;
+        }];
+    }
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -42,7 +50,8 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.phoneButton addTarget:self action:@selector(__clicked) forControlEvents:UIControlEventTouchUpInside];
+            [self.phoneButton addTarget:self action:@selector(__clicked:) forControlEvents:UIControlEventTouchUpInside];
+            [self.closeButton addTarget:self action:@selector(__clicked:) forControlEvents:UIControlEventTouchUpInside];
         });
     }
     return self;

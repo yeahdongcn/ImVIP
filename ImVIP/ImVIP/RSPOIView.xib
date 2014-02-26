@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -30,6 +30,11 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzR-OO-wWk">
+                    <rect key="frame" x="288" y="0.0" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="poi_close"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -38,14 +43,20 @@
                 <constraint firstAttribute="bottom" secondItem="yks-gb-4d5" secondAttribute="bottom" constant="20" symbolic="YES" id="EHN-FB-KVL"/>
                 <constraint firstItem="uB5-f5-OAe" firstAttribute="leading" secondItem="yks-gb-4d5" secondAttribute="leading" id="UQL-E1-cei"/>
                 <constraint firstItem="uB5-f5-OAe" firstAttribute="top" secondItem="LcM-L9-GmD" secondAttribute="top" constant="20" symbolic="YES" id="gWw-al-sh1"/>
+                <constraint firstAttribute="trailing" secondItem="UzR-OO-wWk" secondAttribute="trailing" id="mNp-Hv-pMH"/>
+                <constraint firstItem="UzR-OO-wWk" firstAttribute="top" secondItem="LcM-L9-GmD" secondAttribute="top" id="pxu-mX-Dfd"/>
                 <constraint firstItem="uB5-f5-OAe" firstAttribute="leading" secondItem="LcM-L9-GmD" secondAttribute="leading" constant="20" symbolic="YES" id="y2n-3e-P6n"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="addressLabel" destination="5mH-Y5-eiX" id="8zK-TC-gAq"/>
+                <outlet property="closeButton" destination="UzR-OO-wWk" id="QbF-Jb-7lb"/>
                 <outlet property="nameLabel" destination="uB5-f5-OAe" id="5MZ-bS-250"/>
                 <outlet property="phoneButton" destination="yks-gb-4d5" id="mFX-s0-fHn"/>
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="poi_close" width="32" height="32"/>
+    </resources>
 </document>

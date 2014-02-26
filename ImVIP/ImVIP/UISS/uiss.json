@@ -152,6 +152,7 @@
         },
         "UIButton": {
             "titleColor:normal": "$poi_button_text_color",
+            "tintColor": "$poi_button_text_color",
         }
     }
 }

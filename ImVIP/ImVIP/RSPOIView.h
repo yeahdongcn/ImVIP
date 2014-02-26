@@ -16,4 +16,6 @@
 
 @property (nonatomic, weak) IBOutlet UIButton *phoneButton;
 
+@property (nonatomic, weak) IBOutlet UIButton *closeButton;
+
 @end
