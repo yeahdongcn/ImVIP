@@ -10,10 +10,3 @@
 
 #define kJBNumericDefaultPadding 10.0f
 #define kJBNumericDefaultAnimationDuration 0.25f
-
-#pragma mark - Images
-
-#define kJBImageIconJawboneLogo @"icon-jawbone-logo.png"
-#define kJBImageIconArrow @"icon-arrow.png"
-#define kJBImageIconLineChart @"icon-line-chart.png"
-#define kJBImageIconBarChart @"icon-bar-chart.png"
