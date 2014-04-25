@@ -15,7 +15,6 @@
 		D000DCBC18ADC7CE0037C0F8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */; };
 		D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm */; };
 		D000DCC518AE14780037C0F8 /* RSScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000DCC418AE14780037C0F8 /* RSScanViewController.m */; };
-		D011DEBC18ABA8720093F905 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D011DEBB18ABA8720093F905 /* BmobSDK.framework */; };
 		D011DEC218AF9A0C0093F905 /* RSDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D011DEC118AF9A0C0093F905 /* RSDataCenter.m */; };
 		D017348418876DAA00C07608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348318876DAA00C07608 /* Foundation.framework */; };
 		D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D017348518876DAA00C07608 /* CoreGraphics.framework */; };
@@ -32,9 +31,13 @@
 		D01734AF18876DAA00C07608 /* ImVIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734AE18876DAA00C07608 /* ImVIPTests.m */; };
 		D01734C418878BEF00C07608 /* RSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01734C318878BEE00C07608 /* RSMenuViewController.m */; };
 		D0194F7C18A9BA4A00297511 /* RSMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0194F7B18A9BA4A00297511 /* RSMenuCell.m */; };
+		D044D0C518FB7E6B00134565 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D044D0C418FB7E6B00134565 /* BmobSDK.framework */; };
 		D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D045895B1894FA4D00077C69 /* RSCardCell.m */; };
 		D04B82E718A4DA5D007971B3 /* RSCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04B82E618A4DA5D007971B3 /* RSCardViewController.m */; };
 		D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */; };
+		D0501BA518F7D89800DFADB4 /* RSCard.m in Sources */ = {isa = PBXBuildFile; fileRef = D0501BA418F7D89800DFADB4 /* RSCard.m */; };
+		D0501BA818F7DB7600DFADB4 /* RSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D0501BA718F7DB7600DFADB4 /* RSUser.m */; };
+		D0501BAB18F7DD8800DFADB4 /* RSAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = D0501BAA18F7DD8800DFADB4 /* RSAchievement.m */; };
 		D098AF5718BDCBB00084BA27 /* JBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D098AF4E18BDCBAF0084BA27 /* JBBaseViewController.m */; };
 		D098AF5918BDCBB00084BA27 /* JBChartInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D098AF5218BDCBB00084BA27 /* JBChartInformationView.m */; };
 		D098AF5A18BDCBB00084BA27 /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D098AF5418BDCBB00084BA27 /* JBLineChartFooterView.m */; };
@@ -89,7 +92,6 @@
 		D000DCBE18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RSDynamicsDrawerViewController.mm; sourceTree = "<group>"; };
 		D000DCC318AE14780037C0F8 /* RSScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSScanViewController.h; sourceTree = "<group>"; };
 		D000DCC418AE14780037C0F8 /* RSScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSScanViewController.m; sourceTree = "<group>"; };
-		D011DEBB18ABA8720093F905 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Bmob/BmobSDK.framework; sourceTree = "<group>"; };
 		D011DEC018AF9A0C0093F905 /* RSDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDataCenter.h; sourceTree = "<group>"; };
 		D011DEC118AF9A0C0093F905 /* RSDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDataCenter.m; sourceTree = "<group>"; };
 		D017348018876DAA00C07608 /* ImVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,12 +116,19 @@
 		D01734C81887B3AC00C07608 /* SFUIViewMacroses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUIViewMacroses.h; sourceTree = "<group>"; };
 		D0194F7A18A9BA4A00297511 /* RSMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSMenuCell.h; sourceTree = "<group>"; };
 		D0194F7B18A9BA4A00297511 /* RSMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMenuCell.m; sourceTree = "<group>"; };
+		D044D0C418FB7E6B00134565 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Bmob/BmobSDK.framework; sourceTree = "<group>"; };
 		D045895A1894FA4D00077C69 /* RSCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardCell.h; sourceTree = "<group>"; };
 		D045895B1894FA4D00077C69 /* RSCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardCell.m; sourceTree = "<group>"; };
 		D04B82E518A4DA5D007971B3 /* RSCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCardViewController.h; sourceTree = "<group>"; };
 		D04B82E618A4DA5D007971B3 /* RSCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCardViewController.m; sourceTree = "<group>"; };
 		D04FD25E1892BC0E00EA5646 /* RSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSProfileViewController.h; sourceTree = "<group>"; };
 		D04FD25F1892BC0E00EA5646 /* RSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSProfileViewController.m; sourceTree = "<group>"; };
+		D0501BA318F7D89800DFADB4 /* RSCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCard.h; sourceTree = "<group>"; };
+		D0501BA418F7D89800DFADB4 /* RSCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCard.m; sourceTree = "<group>"; };
+		D0501BA618F7DB7600DFADB4 /* RSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUser.h; sourceTree = "<group>"; };
+		D0501BA718F7DB7600DFADB4 /* RSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUser.m; sourceTree = "<group>"; };
+		D0501BA918F7DD8800DFADB4 /* RSAchievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAchievement.h; sourceTree = "<group>"; };
+		D0501BAA18F7DD8800DFADB4 /* RSAchievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAchievement.m; sourceTree = "<group>"; };
 		D098AF4D18BDCBAF0084BA27 /* JBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBaseViewController.h; sourceTree = "<group>"; };
 		D098AF4E18BDCBAF0084BA27 /* JBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBaseViewController.m; sourceTree = "<group>"; };
 		D098AF5118BDCBAF0084BA27 /* JBChartInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartInformationView.h; sourceTree = "<group>"; };
@@ -173,11 +182,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D000DCBC18ADC7CE0037C0F8 /* AVFoundation.framework in Frameworks */,
+				D044D0C518FB7E6B00134565 /* BmobSDK.framework in Frameworks */,
 				D017348618876DAA00C07608 /* CoreGraphics.framework in Frameworks */,
 				D017348818876DAA00C07608 /* UIKit.framework in Frameworks */,
 				D017348418876DAA00C07608 /* Foundation.framework in Frameworks */,
 				ECC1382A82A84BA9A347A2AE /* libPods.a in Frameworks */,
-				D011DEBC18ABA8720093F905 /* BmobSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +226,8 @@
 		D017348218876DAA00C07608 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D044D0C418FB7E6B00134565 /* BmobSDK.framework */,
 				D000DCBB18ADC7CE0037C0F8 /* AVFoundation.framework */,
-				D011DEBB18ABA8720093F905 /* BmobSDK.framework */,
 				D017348318876DAA00C07608 /* Foundation.framework */,
 				D017348518876DAA00C07608 /* CoreGraphics.framework */,
 				D017348718876DAA00C07608 /* UIKit.framework */,
@@ -399,6 +408,12 @@
 				D0F76EFB18B345640069CAB9 /* RSAchievements.m */,
 				D0F76EFD18B442FC0069CAB9 /* RSStatistics.h */,
 				D0F76EFE18B442FC0069CAB9 /* RSStatistics.m */,
+				D0501BA318F7D89800DFADB4 /* RSCard.h */,
+				D0501BA418F7D89800DFADB4 /* RSCard.m */,
+				D0501BA618F7DB7600DFADB4 /* RSUser.h */,
+				D0501BA718F7DB7600DFADB4 /* RSUser.m */,
+				D0501BA918F7DD8800DFADB4 /* RSAchievement.h */,
+				D0501BAA18F7DD8800DFADB4 /* RSAchievement.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -564,11 +579,13 @@
 				D09F2ED018BB2FEA004DC7E9 /* RSWebBrowserViewController.m in Sources */,
 				D09F2EBE18B59690004DC7E9 /* RSCardView.m in Sources */,
 				D098AF5B18BDCBB00084BA27 /* JBLineChartViewController.m in Sources */,
+				D0501BA518F7D89800DFADB4 /* RSCard.m in Sources */,
 				D000DCC518AE14780037C0F8 /* RSScanViewController.m in Sources */,
 				D09F2EC718B7422C004DC7E9 /* ANBlurredImageView.m in Sources */,
 				D045895C1894FA4D00077C69 /* RSCardCell.m in Sources */,
 				D09E2CB01893DA7100786A56 /* RSCardsViewController.m in Sources */,
 				D000DCB218AB72220037C0F8 /* RSNewCardViewController.m in Sources */,
+				D0501BA818F7DB7600DFADB4 /* RSUser.m in Sources */,
 				D011DEC218AF9A0C0093F905 /* RSDataCenter.m in Sources */,
 				D04FD2601892BC0E00EA5646 /* RSProfileViewController.m in Sources */,
 				D09F2ECB18B74763004DC7E9 /* RSBigCardViewController.m in Sources */,
@@ -576,6 +593,7 @@
 				D098AF5A18BDCBB00084BA27 /* JBLineChartFooterView.m in Sources */,
 				D000DCBF18ADFD5A0037C0F8 /* RSDynamicsDrawerViewController.mm in Sources */,
 				D098AF5718BDCBB00084BA27 /* JBBaseViewController.m in Sources */,
+				D0501BAB18F7DD8800DFADB4 /* RSAchievement.m in Sources */,
 				D017349018876DAA00C07608 /* main.m in Sources */,
 				D098AF5918BDCBB00084BA27 /* JBChartInformationView.m in Sources */,
 				D017349418876DAA00C07608 /* RSAppDelegate.m in Sources */,
@@ -722,6 +740,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Bmob/",
+					"$(PROJECT_DIR)/Bmob",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImVIP/ImVIP-Prefix.pch";
@@ -740,6 +759,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Bmob/",
+					"$(PROJECT_DIR)/Bmob",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImVIP/ImVIP-Prefix.pch";

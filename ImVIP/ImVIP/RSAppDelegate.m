@@ -71,8 +71,8 @@ new_class(RSWindowBackgroundView, UIImageView)
     backgroundView.autoresizingMask = UIViewAutoresizingMake(@"W+H");
     [self.window insertSubview:backgroundView atIndex:0];
     
-    // Bmob
-    [DataCenter registerBmobWithAppKey:@"7f0528f19873c62d6ffbcfa2f25d1c1c"];
+//    // Bmob
+//    [DataCenter registerBmobWithAppKey:@"7f0528f19873c62d6ffbcfa2f25d1c1c"];
     
     // TestFlight
     [TestFlight takeOff:@"2d88fd65-7bc4-4e45-9dc9-01e9db1c23c5"];
@@ -80,6 +80,39 @@ new_class(RSWindowBackgroundView, UIImageView)
     // Baidu Map
     self.mapManager = [[BMKMapManager alloc] init];
     [self.mapManager start:@"imq3rI54PfsGfgmXHLYbHREg" generalDelegate:nil];
+    
+//    RSUser *user = [RSUser new];
+//    user.email = @"aaa@bbb.com";
+//    user.password = @"aa";
+//    user.username = @"aaa";
+//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        NSLog(@"a");
+//    }];
+    
+    
+    RSCard *card = [RSCard new];
+    card.title = @"atitle";
+    card.code = @"asassas";
+    [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            RSCard *newcard = [card fork];
+            newcard.code = @"bsbssbs";
+            [newcard saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [newcard likeAsyncWithCallback:^(BOOL isAdd) {
+//                        [newcard likeAsyncWithCallback:^(BOOL isAdd) {
+//                            
+//                        }];
+                    }];
+                    int a = 0;
+                    a++;
+                    [card forksAsyncWithCallback:^(NSArray *forks) {
+                        NSLog(@"%@", forks);
+                    }];
+                }
+            }];
+        }
+    }];
     
     return YES;
 }

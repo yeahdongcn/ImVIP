@@ -17,4 +17,8 @@ pod 'UISS', :git => 'https://github.com/yeahdongcn/UISS.git'
 pod 'ARChromeActivity'
 pod 'ARSafariActivity'
 
+pod 'AVOSCloud'
+#pod 'AVOSCloudUI'
+pod 'AVOSCloudSNS'
+
 #end

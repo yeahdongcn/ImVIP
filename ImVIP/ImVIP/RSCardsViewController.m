@@ -24,16 +24,19 @@
 
 @property (nonatomic) BOOL isViewAppear;
 
+@property (nonatomic, strong) NSArray *myCards;
+
 @end
 
 @implementation RSCardsViewController
 
 - (void)__refresh
 {
-    [DataCenter getCardsAsyncWithCallback:^(NSArray *cards) {
+    [RSCard myCardsWithCallback:^(NSArray *myCards) {
+        self.myCards = myCards;
         [self.refreshControl endRefreshing];
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-    } whetherNeedQuery:YES];
+    }];
 }
 
 - (void)__fakeRefresh
@@ -53,33 +56,16 @@
     }];
 }
 
-- (void)__cardsWillArrive:(NSNotification *)notification
-{
-    // Nothing to do currently
-}
-
-- (void)__cardsDidArrive:(NSNotification *)notification
-{
-    if (self.isViewAppear) {
-        [self __fakeRefresh];
-    } else {
-        self.needReload = YES;
-    }
-}
-
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__cardsWillArrive:) name:RSDataCenterCardsWillArrive object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__cardsDidArrive:) name:RSDataCenterCardsDidArrive object:nil];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad
@@ -119,7 +105,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [DataCenter numberOfCachedCard];
+    return [self.myCards count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
